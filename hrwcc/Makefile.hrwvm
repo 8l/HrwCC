@@ -1,0 +1,66 @@
+#The one and only
+PROGRAMS = hrwcc
+TESTFILES = testdata/features.c
+TESTFILES_ASM = $(TESTFILES:%.c=%.s)
+PROGARGS = -c -g $(TESTFILES)
+EXECUTEABLE = outfile
+
+#The parent directory
+DIRECTORY = hrwcc
+
+#The source files
+CPPSRC = hrwcc.cpp ../codegen/codegen.cpp ../codegen/typearith.cpp ../symbolTable/symbolTable.cpp ../parser/parser.cpp ../parser/syntaxTreeNode.cpp  ../scanner/scanner.cpp ../preproc/preproc.cpp ../preproc/stageutils.cpp ../preproc/substage.cpp ../preproc/directivestage.cpp ../preproc/commstage.cpp ../preproc/filestack.cpp ../linker/linker.cpp ../linker/asmopt.cpp ../linker/utils.cpp
+
+CPPOBJ = $(CPPSRC:%.cpp=%.s)
+
+#My custom cflags, one for release, one for debug and one for all
+CXXFLAGS = $(CXXFLAGSDEBUG) -ansi
+CXXFLAGSRELEASE = -O3 -DNDEBUG
+CXXFLAGSDEBUG = -Wall -g
+CXX = g++
+
+#File of dependency
+DEPENDFILE = .depend
+
+
+#Make executeable
+all: $(PROGRAMS)
+
+#Build executeable if obj have been modified
+$(PROGRAMS): $(CPPOBJ)
+			../vm/hrwvm ../hrwcc/hrwcc.exe -g -O -o $(EXECUTEABLE) $(CPPOBJ)
+
+#Compile with hrwcc
+%.s: %.cpp
+			../vm/hrwvm ../hrwcc/hrwcc.exe -c -g -O $<
+
+
+#I love ctags and vim
+.PHONY: tags
+tags:
+	exuberant-ctags --recurse *
+
+#Make dependencies of source
+dep: 
+	$(CXX) $(CXXFLAGS) -MM $(CPPSRC) > $(DEPENDFILE)
+
+#Include the dependency file
+-include $(DEPENDFILE)
+
+#Run the little proggy
+run: all
+	./$(PROGRAMS) $(PROGARGS)
+	gcc -g $(TESTFILES_ASM)
+
+#Pack all in a tar.bz2
+dist: clean
+	tar -cvjf ../$(DIRECTORY).tar.bz2 --exclude '*/.*' ../$(DIRECTORY)
+
+#Get rid of all files which are build by make
+clean:
+	rm -f $(CPPOBJ)
+
+
+
+
+

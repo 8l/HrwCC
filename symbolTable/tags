@@ -1,0 +1,115 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.5.4	//
+1(	testdata/.input.h.swp	/^/;"	f
+CPPOBJ	Makefile	/^CPPOBJ = $(CPPSRC:%.cpp=%.o)$/;"	m
+CPPSRC	Makefile	/^CPPSRC = test-symbolTable.cpp symbolTable.cpp ..\/parser\/parser.cpp ..\/parser\/syntaxTreeNode.cpp  ..\/scanner\/scanner.cpp ..\/util\/ctype.cpp ..\/util\/error.cpp ..\/util\/string.cpp ..\/preproc\/preproc.cpp ..\/preproc\/stageutils.cpp ..\/preproc\/substage.cpp ..\/preproc\/directivestage.cpp ..\/preproc\/commstage.cpp ..\/preproc\/filestack.cpp $/;"	m
+CXX	Makefile	/^CXX = g++$/;"	m
+CXXFLAGS	Makefile	/^CXXFLAGS = $(CXXFLAGSDEBUG) -ansi$/;"	m
+CXXFLAGSDEBUG	Makefile	/^CXXFLAGSDEBUG = -Wall -g$/;"	m
+CXXFLAGSRELEASE	Makefile	/^CXXFLAGSRELEASE = -O3 -DNDEBUG$/;"	m
+DEPENDFILE	Makefile	/^DEPENDFILE = .depend$/;"	m
+DIRECTORY	Makefile	/^DIRECTORY = symbolTable$/;"	m
+PROGARGS	Makefile	/^PROGARGS = $/;"	m
+PROGRAMS	Makefile	/^PROGRAMS = test-symbolTable$/;"	m
+SYMBOLTABLE_H	symbolTable.h	7;"	d
+SYMBOL_TYPE_FUNCTIONDECL	symbolTable.h	22;"	d
+SYMBOL_TYPE_FUNCTIONDEF	symbolTable.h	23;"	d
+SYMBOL_TYPE_GLOBALVAR	symbolTable.h	26;"	d
+SYMBOL_TYPE_LOCALVAR	symbolTable.h	25;"	d
+SYMBOL_TYPE_PARVAR	symbolTable.h	27;"	d
+SYMBOL_TYPE_STRING	symbolTable.h	28;"	d
+SYMBOL_TYPE_STRUCTDECL	symbolTable.h	24;"	d
+a	testdata/functions.c	/^		int a;$/;"	m	struct:mystruct	file:
+a	testdata/input.h	/^		int a;$/;"	m	struct:firststruct
+a	testdata/sizeof.c	/^		char a;$/;"	m	struct:mystruct2	file:
+a	testdata/sizeof.c	/^		int a;$/;"	m	struct:mystruct	file:
+a	testdata/sizeof.c	/^int a;$/;"	v
+aa	testdata/input.h	/^		unknown aa;$/;"	m	struct:firststruct
+b	testdata/functions.c	/^		char b[100]; $/;"	m	struct:mystruct	file:
+b	testdata/input.h	/^		char b;$/;"	m	struct:firststruct
+b	testdata/sizeof.c	/^		char b[100]; $/;"	m	struct:mystruct	file:
+b	testdata/sizeof.c	/^		mystruct b;$/;"	m	struct:mystruct2	file:
+b	testdata/sizeof.c	/^char b;$/;"	v
+c	testdata/input.h	/^		firststruct c[3];$/;"	m	struct:secondstruct
+c	testdata/input.h	/^		firststruct** c;$/;"	m	struct:firststruct
+c	testdata/sizeof.c	/^		int c;$/;"	m	struct:mystruct	file:
+c	testdata/sizeof.c	/^		int c;$/;"	m	struct:mystruct2	file:
+c	testdata/sizeof.c	/^mystruct c;$/;"	v
+c1	testdata/sizeof.c	/^mystruct2 c1;$/;"	v
+c2	testdata/sizeof.c	/^mystruct c2[3];$/;"	v
+c3	testdata/sizeof.c	/^char c3[11];$/;"	v
+c4	testdata/sizeof.c	/^unknowntype c4;$/;"	v
+cnterrors	symbolTable.h	/^		int cnterrors;$/;"	m	struct:symbolTable
+firstglobal	testdata/input.c	/^int firstglobal;$/;"	v
+firststruct	testdata/input.h	/^struct firststruct$/;"	s
+function1	testdata/input.c	/^void function1( int arg1, char arg2, char* arg3)$/;"	f
+global4	testdata/input.c	/^firststruct global4 [10];$/;"	v
+global5	testdata/input.c	/^char global5[6];$/;"	v
+list	symbolTable.h	/^		symbolTableNode_List list;$/;"	m	struct:symbolTable
+main	test-symbolTable.cpp	/^int main()$/;"	f
+main	testdata/input.c	/^int main( int argc, char** argv)$/;"	f
+mystruct	testdata/functions.c	/^struct mystruct$/;"	s	file:
+mystruct	testdata/sizeof.c	/^struct mystruct$/;"	s	file:
+mystruct2	testdata/sizeof.c	/^struct mystruct2$/;"	s	file:
+name	symbolTable.h	/^		token name;$/;"	m	struct:symbolTableNode
+next	testdata/input.h	/^		secondstruct* next;$/;"	m	struct:secondstruct
+p	testdata/functions.c	/^		mystruct* p;$/;"	m	struct:mystruct	file:
+p	testdata/sizeof.c	/^		mystruct* p;$/;"	m	struct:mystruct	file:
+p	testdata/sizeof.c	/^heho* p;$/;"	v
+parse	symbolTable.h	/^		parser* parse;$/;"	m	struct:symbolTable
+secondglobal	testdata/input.c	/^char* secondglobal;$/;"	v
+secondstruct	testdata/input.h	/^struct secondstruct$/;"	s
+structure	symbolTable.h	/^		syntaxTreeNode* structure;$/;"	m	struct:symbolTableNode
+symbolTable	symbolTable.h	/^struct symbolTable$/;"	s
+symbolTableNode	symbolTable.h	/^struct symbolTableNode$/;"	s
+symbol_AddSymbol	symbolTable.cpp	/^void symbol_AddSymbol( symbolTable* table, token name, int type, syntaxTreeNode* structure )$/;"	f
+symbol_ClearNonGlobalVariables	symbolTable.cpp	/^void symbol_ClearNonGlobalVariables(symbolTable* table)$/;"	f
+symbol_CountFunctionArgs	symbolTable.cpp	/^int symbol_CountFunctionArgs( symbolTable* table, syntaxTreeNode* func_decl)$/;"	f
+symbol_CountStructEntries	symbolTable.cpp	/^int symbol_CountStructEntries( symbolTable* table, syntaxTreeNode* structure )$/;"	f
+symbol_CreateSymbolTable	symbolTable.cpp	/^void symbol_CreateSymbolTable( parser* parser, symbolTable* table)$/;"	f
+symbol_DeclareFunction	symbolTable.cpp	/^int symbol_DeclareFunction (symbolTable* table, syntaxTreeNode* structure)$/;"	f
+symbol_DefineFunction	symbolTable.cpp	/^int symbol_DefineFunction (symbolTable* table, syntaxTreeNode* structure)$/;"	f
+symbol_DefineGlobalVariable	symbolTable.cpp	/^int symbol_DefineGlobalVariable (symbolTable* table, syntaxTreeNode* structure)$/;"	f
+symbol_DefineLocalVariable	symbolTable.cpp	/^int symbol_DefineLocalVariable (symbolTable* table, syntaxTreeNode* structure)$/;"	f
+symbol_DefineParVariable	symbolTable.cpp	/^int symbol_DefineParVariable (symbolTable* table, syntaxTreeNode* structure)$/;"	f
+symbol_DefineString	symbolTable.cpp	/^int symbol_DefineString( symbolTable* table, syntaxTreeNode* structure)$/;"	f
+symbol_DefineStruct	symbolTable.cpp	/^int symbol_DefineStruct (symbolTable* table, syntaxTreeNode* structure)$/;"	f
+symbol_EqualSignature	symbolTable.cpp	/^int symbol_EqualSignature( symbolTable* table, syntaxTreeNode* struct1, syntaxTreeNode* struct2)$/;"	f
+symbol_FindFunction	symbolTable.cpp	/^symbolTableNode* symbol_FindFunction (symbolTable* table, token name )$/;"	f
+symbol_FindGlobalVariable	symbolTable.cpp	/^symbolTableNode* symbol_FindGlobalVariable( symbolTable* table, token name)$/;"	f
+symbol_FindNonGlobalVariable	symbolTable.cpp	/^symbolTableNode* symbol_FindNonGlobalVariable( symbolTable* table, token name)$/;"	f
+symbol_FindString	symbolTable.cpp	/^symbolTableNode* symbol_FindString (symbolTable* table, token string)$/;"	f
+symbol_FindStruct	symbolTable.cpp	/^symbolTableNode* symbol_FindStruct (symbolTable* table, token name )$/;"	f
+symbol_FindTypedSymbol	symbolTable.cpp	/^symbolTableNode* symbol_FindTypedSymbol (symbolTable* table, token name, int type )$/;"	f
+symbol_FindVariable	symbolTable.cpp	/^symbolTableNode* symbol_FindVariable (symbolTable* table, token name )$/;"	f
+symbol_GetFunctionArg	symbolTable.cpp	/^syntaxTreeNode* symbol_GetFunctionArg( symbolTable* table, syntaxTreeNode* func_decl, int idx)$/;"	f
+symbol_GetGlobalOffset	symbolTable.cpp	/^int symbol_GetGlobalOffset( symbolTable* table, symbolTableNode* global )$/;"	f
+symbol_GetGlobalsBlockSize	symbolTable.cpp	/^int symbol_GetGlobalsBlockSize( symbolTable* table )$/;"	f
+symbol_GetLocalVarBlockSize	symbolTable.cpp	/^int symbol_GetLocalVarBlockSize( symbolTable* table )$/;"	f
+symbol_GetLocalVarOffset	symbolTable.cpp	/^int symbol_GetLocalVarOffset( symbolTable* table, symbolTableNode* variable )$/;"	f
+symbol_GetNonGlobalOffset	symbolTable.cpp	/^int symbol_GetNonGlobalOffset( symbolTable* table, symbolTableNode* nonglobal )$/;"	f
+symbol_GetOffsetInStruct	symbolTable.cpp	/^int symbol_GetOffsetInStruct( symbolTable* table, symbolTableNode* structNode, token entry)$/;"	f
+symbol_GetParameterBlockSize	symbolTable.cpp	/^int symbol_GetParameterBlockSize( symbolTable* table )$/;"	f
+symbol_GetParameterOffset	symbolTable.cpp	/^int symbol_GetParameterOffset( symbolTable* table, symbolTableNode* parameter )$/;"	f
+symbol_GetReturnType	symbolTable.cpp	/^syntaxTreeNode* symbol_GetReturnType( symbolTable* table, syntaxTreeNode* func_decl)$/;"	f
+symbol_GetStructEntry	symbolTable.cpp	/^syntaxTreeNode* symbol_GetStructEntry( symbolTable* table, syntaxTreeNode* structure, int idx)$/;"	f
+symbol_Sizeof_DataType	symbolTable.cpp	/^int symbol_Sizeof_DataType(symbolTable* table, syntaxTreeNode* data_type)$/;"	f
+symbol_Sizeof_String	symbolTable.cpp	/^int symbol_Sizeof_String (symbolTable* table, syntaxTreeNode* string)$/;"	f
+symbol_Sizeof_Structdef	symbolTable.cpp	/^int symbol_Sizeof_Structdef(symbolTable* table, syntaxTreeNode* structnode)$/;"	f
+symbol_Sizeof_Symbol	symbolTable.cpp	/^int symbol_Sizeof_Symbol( symbolTable* table, symbolTableNode* symbol )$/;"	f
+symbol_Sizeof_Vardecl	symbolTable.cpp	/^int symbol_Sizeof_Vardecl( symbolTable* table, syntaxTreeNode* var_decl)$/;"	f
+symbol_ToInt	symbolTable.cpp	/^int symbol_ToInt( symbolTable* table, token tok)$/;"	f
+symbol_printTable	symbolTable.cpp	/^void symbol_printTable( symbolTable* table)$/;"	f
+symbol_reportError	symbolTable.cpp	/^void symbol_reportError( symbolTable* table, char* errstr, token name)$/;"	f
+test	testdata/functions.c	/^void test(int p1, char** p1, mystruct p3)$/;"	f
+test	testdata/functions.c	/^void test(int p1, char** p2, mystruct p3)$/;"	f
+test	testdata/sizeof.c	/^void test(int p1, char** p2, mystruct p3)$/;"	f
+test_Functions	test-symbolTable.cpp	/^void test_Functions()$/;"	f
+test_Sizeof	test-symbolTable.cpp	/^void test_Sizeof()$/;"	f
+test_parser	test-symbolTable.cpp	/^void test_parser()$/;"	f
+thirdglobal	testdata/input.c	/^secondstruct thirdglobal;$/;"	v
+type	symbolTable.h	/^		int type;$/;"	m	struct:symbolTableNode

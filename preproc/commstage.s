@@ -1,0 +1,620 @@
+
+.section	.text
+
+.globl	commstage_init
+.type	commstage_init,@function
+commstage_init	:	
+	pushl	%ebp
+	movl	%esp,%ebp
+	subl	$0,%esp
+
+	subl	$4,%esp
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$592,%eax
+	movl	%eax,0(%esp)
+	call	initLine
+	addl	$4,%esp
+
+	movl	$0,%eax
+	jmp	commstage_init_ret
+commstage_init_ret	:	
+	movl	%ebp,%esp
+	popl	%ebp
+	ret	
+
+.globl	commstage_destroy
+.type	commstage_destroy,@function
+commstage_destroy	:	
+	pushl	%ebp
+	movl	%esp,%ebp
+	subl	$0,%esp
+
+	movl	$0,%eax
+	jmp	commstage_destroy_ret
+commstage_destroy_ret	:	
+	movl	%ebp,%esp
+	popl	%ebp
+	ret	
+
+.globl	commstage_getNext
+.type	commstage_getNext,@function
+commstage_getNext	:	
+	pushl	%ebp
+	movl	%esp,%ebp
+	subl	$34,%esp
+
+	movl	%ebp,%eax
+	addl	$12,%eax
+	movl	(%eax),%eax
+	addl	$0,%eax
+	movl	%eax,%ebx
+	movb	$0,(%ebx)
+
+commstage_getNext_while_0	:	
+	movl	%ebp,%eax
+	addl	$12,%eax
+	movl	(%eax),%eax
+	addl	$0,%eax
+	movb	(%eax),%al
+	movsbl	%al,%eax
+	movl	%eax,%ebx
+	cmpl	$0,%ebx
+	movl	$1,%eax
+	je	commstage_getNext_reltrue_1
+	movl	$0,%eax
+commstage_getNext_reltrue_1	:	
+	testl	%eax,%eax
+	jz	commstage_getNext_endwhile_0
+
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$592,%eax
+	movl	%eax,-34(%ebp)
+
+	movl	%ebp,%eax
+	addl	$-34,%eax
+	movl	(%eax),%eax
+	addl	$6660,%eax
+	movl	(%eax),%eax
+	pushl	%eax
+	movl	%ebp,%eax
+	addl	$-34,%eax
+	movl	(%eax),%eax
+	addl	$6656,%eax
+	movl	(%eax),%eax
+	popl	%ebx
+	cmpl	%eax,%ebx
+	movl	$1,%eax
+	je	commstage_getNext_reltrue_3
+	movl	$0,%eax
+commstage_getNext_reltrue_3	:	
+	testl	%eax,%eax
+	jnz	commstage_getNext_ifbl_2
+	jmp	commstage_getNext_elsebl_2
+commstage_getNext_ifbl_2	:	
+
+	subl	$12,%esp
+	movl	8(%ebp),%eax
+	movl	%eax,0(%esp)
+	movl	$1,4(%esp)
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$592,%eax
+	movl	%eax,8(%esp)
+	call	getNextLine
+	addl	$12,%esp
+	movl	%eax,-4(%ebp)
+
+	movl	-4(%ebp),%ebx
+	cmpl	$0,%ebx
+	movl	$1,%eax
+	jne	commstage_getNext_reltrue_5
+	movl	$0,%eax
+commstage_getNext_reltrue_5	:	
+	testl	%eax,%eax
+	jnz	commstage_getNext_ifbl_4
+	jmp	commstage_getNext_elsebl_4
+commstage_getNext_ifbl_4	:	
+
+	movl	-4(%ebp),%eax
+	jmp	commstage_getNext_ret
+commstage_getNext_elsebl_4	:	
+commstage_getNext_endif_4	:	
+	jmp	commstage_getNext_endif_2
+commstage_getNext_elsebl_2	:	
+commstage_getNext_endif_2	:	
+
+	subl	$4,%esp
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$592,%eax
+	movl	%eax,0(%esp)
+	call	updateLineProperties
+	addl	$4,%esp
+
+	movl	%ebp,%eax
+	addl	$-34,%eax
+	movl	(%eax),%eax
+	addl	$6664,%eax
+	movl	(%eax),%eax
+	movl	%eax,%ebx
+	cmpl	$0,%ebx
+	movl	$1,%eax
+	je	commstage_getNext_reltrue_7
+	movl	$0,%eax
+commstage_getNext_reltrue_7	:	
+	testl	%eax,%eax
+	jnz	commstage_getNext_ifbl_6
+	jmp	commstage_getNext_elsebl_6
+commstage_getNext_ifbl_6	:	
+
+	movl	%ebp,%eax
+	addl	$-17,%eax
+	pushl	%eax
+	movl	%ebp,%eax
+	addl	$-34,%eax
+	movl	(%eax),%eax
+	addl	$6660,%eax
+	movl	(%eax),%eax
+	pushl	%eax
+	movl	%ebp,%eax
+	addl	$-34,%eax
+	movl	(%eax),%eax
+	addl	$0,%eax
+	popl	%esi
+	imull	$13,%esi
+	addl	%esi,%eax
+	popl	%ebx
+	movl	(%eax),%ecx
+	movl	%ecx,(%ebx)
+	addl	$4,%eax
+	addl	$4,%ebx
+	movl	(%eax),%ecx
+	movl	%ecx,(%ebx)
+	addl	$4,%eax
+	addl	$4,%ebx
+	movl	(%eax),%ecx
+	movl	%ecx,(%ebx)
+	addl	$4,%eax
+	addl	$4,%ebx
+	movb	(%eax),%cl
+	movb	%cl,(%ebx)
+	addl	$1,%eax
+	addl	$1,%ebx
+
+	movl	%ebp,%eax
+	addl	$-30,%eax
+	pushl	%eax
+	movl	%ebp,%eax
+	addl	$-34,%eax
+	movl	(%eax),%eax
+	addl	$6660,%eax
+	movl	(%eax),%eax
+	movl	%eax,%ebx
+	addl	$1,%ebx
+	movl	%ebx,%eax
+	pushl	%eax
+	movl	%ebp,%eax
+	addl	$-34,%eax
+	movl	(%eax),%eax
+	addl	$0,%eax
+	popl	%esi
+	imull	$13,%esi
+	addl	%esi,%eax
+	popl	%ebx
+	movl	(%eax),%ecx
+	movl	%ecx,(%ebx)
+	addl	$4,%eax
+	addl	$4,%ebx
+	movl	(%eax),%ecx
+	movl	%ecx,(%ebx)
+	addl	$4,%eax
+	addl	$4,%ebx
+	movl	(%eax),%ecx
+	movl	%ecx,(%ebx)
+	addl	$4,%eax
+	addl	$4,%ebx
+	movb	(%eax),%cl
+	movb	%cl,(%ebx)
+	addl	$1,%eax
+	addl	$1,%ebx
+
+	movl	%ebp,%eax
+	addl	$-17,%eax
+	addl	$0,%eax
+	movb	(%eax),%al
+	movsbl	%al,%eax
+	movl	%eax,%ebx
+	cmpl	$47,%ebx
+	movl	$1,%eax
+	je	commstage_getNext_reltrue_10
+	movl	$0,%eax
+commstage_getNext_reltrue_10	:	
+	testl	%eax,%eax
+	jz	commstage_getNext_logtermfalse_9
+	movl	%ebp,%eax
+	addl	$-30,%eax
+	addl	$0,%eax
+	movb	(%eax),%al
+	movsbl	%al,%eax
+	movl	%eax,%ebx
+	cmpl	$47,%ebx
+	movl	$1,%eax
+	je	commstage_getNext_reltrue_11
+	movl	$0,%eax
+commstage_getNext_reltrue_11	:	
+	testl	%eax,%eax
+	jz	commstage_getNext_logtermfalse_9
+	movl	$1,%eax
+	jmp	commstage_getNext_logtermtrue_9
+commstage_getNext_logtermfalse_9	:	
+	movl	$0,%eax
+commstage_getNext_logtermtrue_9	:	
+	testl	%eax,%eax
+	jnz	commstage_getNext_ifbl_8
+	jmp	commstage_getNext_elsebl_8
+commstage_getNext_ifbl_8	:	
+
+	movl	%ebp,%eax
+	addl	$-34,%eax
+	movl	(%eax),%eax
+	addl	$6660,%eax
+	pushl	%eax
+	movl	%ebp,%eax
+	addl	$-34,%eax
+	movl	(%eax),%eax
+	addl	$6656,%eax
+	movl	(%eax),%eax
+	movl	%eax,%ebx
+	subl	$1,%ebx
+	movl	%ebx,%eax
+	popl	%ebx
+	movl	%eax,(%ebx)
+	jmp	commstage_getNext_endif_8
+commstage_getNext_elsebl_8	:	
+
+	movl	%ebp,%eax
+	addl	$-17,%eax
+	addl	$0,%eax
+	movb	(%eax),%al
+	movsbl	%al,%eax
+	movl	%eax,%ebx
+	cmpl	$47,%ebx
+	movl	$1,%eax
+	je	commstage_getNext_reltrue_14
+	movl	$0,%eax
+commstage_getNext_reltrue_14	:	
+	testl	%eax,%eax
+	jz	commstage_getNext_logtermfalse_13
+	movl	%ebp,%eax
+	addl	$-30,%eax
+	addl	$0,%eax
+	movb	(%eax),%al
+	movsbl	%al,%eax
+	movl	%eax,%ebx
+	cmpl	$42,%ebx
+	movl	$1,%eax
+	je	commstage_getNext_reltrue_15
+	movl	$0,%eax
+commstage_getNext_reltrue_15	:	
+	testl	%eax,%eax
+	jz	commstage_getNext_logtermfalse_13
+	movl	$1,%eax
+	jmp	commstage_getNext_logtermtrue_13
+commstage_getNext_logtermfalse_13	:	
+	movl	$0,%eax
+commstage_getNext_logtermtrue_13	:	
+	testl	%eax,%eax
+	jnz	commstage_getNext_ifbl_12
+	jmp	commstage_getNext_elsebl_12
+commstage_getNext_ifbl_12	:	
+
+	movl	%ebp,%eax
+	addl	$-34,%eax
+	movl	(%eax),%eax
+	addl	$6660,%eax
+	pushl	%eax
+	movl	%ebp,%eax
+	addl	$-34,%eax
+	movl	(%eax),%eax
+	addl	$6660,%eax
+	movl	(%eax),%eax
+	movl	%eax,%ebx
+	addl	$1,%ebx
+	movl	%ebx,%eax
+	popl	%ebx
+	movl	%eax,(%ebx)
+
+commstage_getNext_while_16	:	
+	movl	%ebp,%eax
+	addl	$-34,%eax
+	movl	(%eax),%eax
+	addl	$6660,%eax
+	movl	(%eax),%eax
+	pushl	%eax
+	movl	%ebp,%eax
+	addl	$-34,%eax
+	movl	(%eax),%eax
+	addl	$6656,%eax
+	movl	(%eax),%eax
+	popl	%ebx
+	cmpl	%eax,%ebx
+	movl	$1,%eax
+	jl	commstage_getNext_reltrue_17
+	movl	$0,%eax
+commstage_getNext_reltrue_17	:	
+	testl	%eax,%eax
+	jz	commstage_getNext_endwhile_16
+
+	movl	%ebp,%eax
+	addl	$-17,%eax
+	pushl	%eax
+	movl	%ebp,%eax
+	addl	$-34,%eax
+	movl	(%eax),%eax
+	addl	$6660,%eax
+	movl	(%eax),%eax
+	pushl	%eax
+	movl	%ebp,%eax
+	addl	$-34,%eax
+	movl	(%eax),%eax
+	addl	$0,%eax
+	popl	%esi
+	imull	$13,%esi
+	addl	%esi,%eax
+	popl	%ebx
+	movl	(%eax),%ecx
+	movl	%ecx,(%ebx)
+	addl	$4,%eax
+	addl	$4,%ebx
+	movl	(%eax),%ecx
+	movl	%ecx,(%ebx)
+	addl	$4,%eax
+	addl	$4,%ebx
+	movl	(%eax),%ecx
+	movl	%ecx,(%ebx)
+	addl	$4,%eax
+	addl	$4,%ebx
+	movb	(%eax),%cl
+	movb	%cl,(%ebx)
+	addl	$1,%eax
+	addl	$1,%ebx
+
+	movl	%ebp,%eax
+	addl	$-30,%eax
+	pushl	%eax
+	movl	%ebp,%eax
+	addl	$-34,%eax
+	movl	(%eax),%eax
+	addl	$6660,%eax
+	movl	(%eax),%eax
+	movl	%eax,%ebx
+	addl	$1,%ebx
+	movl	%ebx,%eax
+	pushl	%eax
+	movl	%ebp,%eax
+	addl	$-34,%eax
+	movl	(%eax),%eax
+	addl	$0,%eax
+	popl	%esi
+	imull	$13,%esi
+	addl	%esi,%eax
+	popl	%ebx
+	movl	(%eax),%ecx
+	movl	%ecx,(%ebx)
+	addl	$4,%eax
+	addl	$4,%ebx
+	movl	(%eax),%ecx
+	movl	%ecx,(%ebx)
+	addl	$4,%eax
+	addl	$4,%ebx
+	movl	(%eax),%ecx
+	movl	%ecx,(%ebx)
+	addl	$4,%eax
+	addl	$4,%ebx
+	movb	(%eax),%cl
+	movb	%cl,(%ebx)
+	addl	$1,%eax
+	addl	$1,%ebx
+
+	movl	%ebp,%eax
+	addl	$-17,%eax
+	addl	$0,%eax
+	movb	(%eax),%al
+	movsbl	%al,%eax
+	movl	%eax,%ebx
+	cmpl	$42,%ebx
+	movl	$1,%eax
+	je	commstage_getNext_reltrue_20
+	movl	$0,%eax
+commstage_getNext_reltrue_20	:	
+	testl	%eax,%eax
+	jz	commstage_getNext_logtermfalse_19
+	movl	%ebp,%eax
+	addl	$-30,%eax
+	addl	$0,%eax
+	movb	(%eax),%al
+	movsbl	%al,%eax
+	movl	%eax,%ebx
+	cmpl	$47,%ebx
+	movl	$1,%eax
+	je	commstage_getNext_reltrue_21
+	movl	$0,%eax
+commstage_getNext_reltrue_21	:	
+	testl	%eax,%eax
+	jz	commstage_getNext_logtermfalse_19
+	movl	$1,%eax
+	jmp	commstage_getNext_logtermtrue_19
+commstage_getNext_logtermfalse_19	:	
+	movl	$0,%eax
+commstage_getNext_logtermtrue_19	:	
+	testl	%eax,%eax
+	jnz	commstage_getNext_ifbl_18
+	jmp	commstage_getNext_elsebl_18
+commstage_getNext_ifbl_18	:	
+
+	movl	%ebp,%eax
+	addl	$-34,%eax
+	movl	(%eax),%eax
+	addl	$6660,%eax
+	pushl	%eax
+	movl	%ebp,%eax
+	addl	$-34,%eax
+	movl	(%eax),%eax
+	addl	$6660,%eax
+	movl	(%eax),%eax
+	movl	%eax,%ebx
+	addl	$2,%ebx
+	movl	%ebx,%eax
+	popl	%ebx
+	movl	%eax,(%ebx)
+	jmp	commstage_getNext_endwhile_16
+commstage_getNext_elsebl_18	:	
+commstage_getNext_endif_18	:	
+
+	movl	%ebp,%eax
+	addl	$-34,%eax
+	movl	(%eax),%eax
+	addl	$6660,%eax
+	pushl	%eax
+	movl	%ebp,%eax
+	addl	$-34,%eax
+	movl	(%eax),%eax
+	addl	$6660,%eax
+	movl	(%eax),%eax
+	movl	%eax,%ebx
+	addl	$1,%ebx
+	movl	%ebx,%eax
+	popl	%ebx
+	movl	%eax,(%ebx)
+
+	movl	%ebp,%eax
+	addl	$-34,%eax
+	movl	(%eax),%eax
+	addl	$6660,%eax
+	movl	(%eax),%eax
+	pushl	%eax
+	movl	%ebp,%eax
+	addl	$-34,%eax
+	movl	(%eax),%eax
+	addl	$6656,%eax
+	movl	(%eax),%eax
+	popl	%ebx
+	cmpl	%eax,%ebx
+	movl	$1,%eax
+	je	commstage_getNext_reltrue_23
+	movl	$0,%eax
+commstage_getNext_reltrue_23	:	
+	testl	%eax,%eax
+	jnz	commstage_getNext_ifbl_22
+	jmp	commstage_getNext_elsebl_22
+commstage_getNext_ifbl_22	:	
+
+	subl	$12,%esp
+	movl	8(%ebp),%eax
+	movl	%eax,0(%esp)
+	movl	$1,4(%esp)
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$592,%eax
+	movl	%eax,8(%esp)
+	call	getNextLine
+	addl	$12,%esp
+	movl	%eax,-4(%ebp)
+
+	movl	-4(%ebp),%ebx
+	cmpl	$0,%ebx
+	movl	$1,%eax
+	jne	commstage_getNext_reltrue_25
+	movl	$0,%eax
+commstage_getNext_reltrue_25	:	
+	testl	%eax,%eax
+	jnz	commstage_getNext_ifbl_24
+	jmp	commstage_getNext_elsebl_24
+commstage_getNext_ifbl_24	:	
+
+	movl	-4(%ebp),%eax
+	jmp	commstage_getNext_ret
+commstage_getNext_elsebl_24	:	
+commstage_getNext_endif_24	:	
+	jmp	commstage_getNext_endif_22
+commstage_getNext_elsebl_22	:	
+commstage_getNext_endif_22	:	
+	jmp	commstage_getNext_while_16
+commstage_getNext_endwhile_16	:	
+	jmp	commstage_getNext_endif_12
+commstage_getNext_elsebl_12	:	
+commstage_getNext_endif_12	:	
+commstage_getNext_endif_8	:	
+	jmp	commstage_getNext_endif_6
+commstage_getNext_elsebl_6	:	
+commstage_getNext_endif_6	:	
+
+	movl	%ebp,%eax
+	addl	$12,%eax
+	movl	(%eax),%eax
+	pushl	%eax
+	movl	%ebp,%eax
+	addl	$-34,%eax
+	movl	(%eax),%eax
+	addl	$6660,%eax
+	movl	(%eax),%eax
+	pushl	%eax
+	movl	%ebp,%eax
+	addl	$-34,%eax
+	movl	(%eax),%eax
+	addl	$0,%eax
+	popl	%esi
+	imull	$13,%esi
+	addl	%esi,%eax
+	popl	%ebx
+	movl	(%eax),%ecx
+	movl	%ecx,(%ebx)
+	addl	$4,%eax
+	addl	$4,%ebx
+	movl	(%eax),%ecx
+	movl	%ecx,(%ebx)
+	addl	$4,%eax
+	addl	$4,%ebx
+	movl	(%eax),%ecx
+	movl	%ecx,(%ebx)
+	addl	$4,%eax
+	addl	$4,%ebx
+	movb	(%eax),%cl
+	movb	%cl,(%ebx)
+	addl	$1,%eax
+	addl	$1,%ebx
+
+	movl	%ebp,%eax
+	addl	$-34,%eax
+	movl	(%eax),%eax
+	addl	$6660,%eax
+	pushl	%eax
+	movl	%ebp,%eax
+	addl	$-34,%eax
+	movl	(%eax),%eax
+	addl	$6660,%eax
+	movl	(%eax),%eax
+	movl	%eax,%ebx
+	addl	$1,%ebx
+	movl	%ebx,%eax
+	popl	%ebx
+	movl	%eax,(%ebx)
+	jmp	commstage_getNext_while_0
+commstage_getNext_endwhile_0	:	
+
+	movl	$0,%eax
+	jmp	commstage_getNext_ret
+commstage_getNext_ret	:	
+	movl	%ebp,%esp
+	popl	%ebp
+	ret	
+
+.section	.data
+symtab	:	

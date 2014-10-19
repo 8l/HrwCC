@@ -1,0 +1,7037 @@
+
+.section	.text
+
+.globl	Clear_MarkersList
+.type	Clear_MarkersList,@function
+Clear_MarkersList	:	
+	pushl	%ebp
+	movl	%esp,%ebp
+	subl	$0,%esp
+
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$0,%eax
+	movl	%eax,%ebx
+	movl	$0,(%ebx)
+
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$4,%eax
+	movl	%eax,%ebx
+	movl	$0,(%ebx)
+Clear_MarkersList_ret	:	
+	movl	%ebp,%esp
+	popl	%ebp
+	ret	
+
+.globl	Is_Member_Of_MarkersList
+.type	Is_Member_Of_MarkersList,@function
+Is_Member_Of_MarkersList	:	
+	pushl	%ebp
+	movl	%esp,%ebp
+	subl	$4,%esp
+
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$0,%eax
+	movl	(%eax),%eax
+	movl	%eax,-4(%ebp)
+
+Is_Member_Of_MarkersList_while_0	:	
+	movl	-4(%ebp),%ebx
+	cmpl	$0,%ebx
+	movl	$1,%eax
+	jne	Is_Member_Of_MarkersList_reltrue_1
+	movl	$0,%eax
+Is_Member_Of_MarkersList_reltrue_1	:	
+	testl	%eax,%eax
+	jz	Is_Member_Of_MarkersList_endwhile_0
+
+	movl	-4(%ebp),%ebx
+	cmpl	12(%ebp),%ebx
+	movl	$1,%eax
+	je	Is_Member_Of_MarkersList_reltrue_3
+	movl	$0,%eax
+Is_Member_Of_MarkersList_reltrue_3	:	
+	testl	%eax,%eax
+	jnz	Is_Member_Of_MarkersList_ifbl_2
+	jmp	Is_Member_Of_MarkersList_elsebl_2
+Is_Member_Of_MarkersList_ifbl_2	:	
+
+	movl	$1,%eax
+	jmp	Is_Member_Of_MarkersList_ret
+Is_Member_Of_MarkersList_elsebl_2	:	
+Is_Member_Of_MarkersList_endif_2	:	
+
+	movl	%ebp,%eax
+	addl	$-4,%eax
+	movl	(%eax),%eax
+	addl	$136,%eax
+	movl	(%eax),%eax
+	movl	%eax,-4(%ebp)
+	jmp	Is_Member_Of_MarkersList_while_0
+Is_Member_Of_MarkersList_endwhile_0	:	
+
+	movl	$0,%eax
+	jmp	Is_Member_Of_MarkersList_ret
+Is_Member_Of_MarkersList_ret	:	
+	movl	%ebp,%esp
+	popl	%ebp
+	ret	
+
+.globl	Get_Front_Of_MarkersList
+.type	Get_Front_Of_MarkersList,@function
+Get_Front_Of_MarkersList	:	
+	pushl	%ebp
+	movl	%esp,%ebp
+	subl	$0,%esp
+
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$0,%eax
+	movl	(%eax),%eax
+	jmp	Get_Front_Of_MarkersList_ret
+Get_Front_Of_MarkersList_ret	:	
+	movl	%ebp,%esp
+	popl	%ebp
+	ret	
+
+.globl	Get_Back_Of_MarkersList
+.type	Get_Back_Of_MarkersList,@function
+Get_Back_Of_MarkersList	:	
+	pushl	%ebp
+	movl	%esp,%ebp
+	subl	$0,%esp
+
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$4,%eax
+	movl	(%eax),%eax
+	jmp	Get_Back_Of_MarkersList_ret
+Get_Back_Of_MarkersList_ret	:	
+	movl	%ebp,%esp
+	popl	%ebp
+	ret	
+
+.globl	Get_Next_In_MarkersList
+.type	Get_Next_In_MarkersList,@function
+Get_Next_In_MarkersList	:	
+	pushl	%ebp
+	movl	%esp,%ebp
+	subl	$0,%esp
+
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$136,%eax
+	movl	(%eax),%eax
+	jmp	Get_Next_In_MarkersList_ret
+Get_Next_In_MarkersList_ret	:	
+	movl	%ebp,%esp
+	popl	%ebp
+	ret	
+
+.globl	Set_Next_In_MarkersList
+.type	Set_Next_In_MarkersList,@function
+Set_Next_In_MarkersList	:	
+	pushl	%ebp
+	movl	%esp,%ebp
+	subl	$0,%esp
+
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$136,%eax
+	pushl	%eax
+	movl	12(%ebp),%eax
+	popl	%ebx
+	movl	%eax,(%ebx)
+Set_Next_In_MarkersList_ret	:	
+	movl	%ebp,%esp
+	popl	%ebp
+	ret	
+
+.globl	Get_Prev_In_MarkersList
+.type	Get_Prev_In_MarkersList,@function
+Get_Prev_In_MarkersList	:	
+	pushl	%ebp
+	movl	%esp,%ebp
+	subl	$0,%esp
+
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$132,%eax
+	movl	(%eax),%eax
+	jmp	Get_Prev_In_MarkersList_ret
+Get_Prev_In_MarkersList_ret	:	
+	movl	%ebp,%esp
+	popl	%ebp
+	ret	
+
+.globl	Set_Prev_In_MarkersList
+.type	Set_Prev_In_MarkersList,@function
+Set_Prev_In_MarkersList	:	
+	pushl	%ebp
+	movl	%esp,%ebp
+	subl	$0,%esp
+
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$132,%eax
+	pushl	%eax
+	movl	12(%ebp),%eax
+	popl	%ebx
+	movl	%eax,(%ebx)
+Set_Prev_In_MarkersList_ret	:	
+	movl	%ebp,%esp
+	popl	%ebp
+	ret	
+
+.globl	Add_To_Front_Of_MarkersList
+.type	Add_To_Front_Of_MarkersList,@function
+Add_To_Front_Of_MarkersList	:	
+	pushl	%ebp
+	movl	%esp,%ebp
+	subl	$0,%esp
+
+	movl	%ebp,%eax
+	addl	$12,%eax
+	movl	(%eax),%eax
+	addl	$132,%eax
+	movl	%eax,%ebx
+	movl	$0,(%ebx)
+
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$0,%eax
+	movl	(%eax),%eax
+	movl	%eax,%ebx
+	cmpl	$0,%ebx
+	movl	$1,%eax
+	je	Add_To_Front_Of_MarkersList_reltrue_5
+	movl	$0,%eax
+Add_To_Front_Of_MarkersList_reltrue_5	:	
+	testl	%eax,%eax
+	jnz	Add_To_Front_Of_MarkersList_ifbl_4
+	jmp	Add_To_Front_Of_MarkersList_elsebl_4
+Add_To_Front_Of_MarkersList_ifbl_4	:	
+
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$0,%eax
+	pushl	%eax
+	movl	12(%ebp),%eax
+	popl	%ebx
+	movl	%eax,(%ebx)
+
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$4,%eax
+	pushl	%eax
+	movl	12(%ebp),%eax
+	popl	%ebx
+	movl	%eax,(%ebx)
+
+	movl	%ebp,%eax
+	addl	$12,%eax
+	movl	(%eax),%eax
+	addl	$136,%eax
+	movl	%eax,%ebx
+	movl	$0,(%ebx)
+	jmp	Add_To_Front_Of_MarkersList_endif_4
+Add_To_Front_Of_MarkersList_elsebl_4	:	
+
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$0,%eax
+	movl	(%eax),%eax
+	addl	$132,%eax
+	pushl	%eax
+	movl	12(%ebp),%eax
+	popl	%ebx
+	movl	%eax,(%ebx)
+
+	movl	%ebp,%eax
+	addl	$12,%eax
+	movl	(%eax),%eax
+	addl	$136,%eax
+	pushl	%eax
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$0,%eax
+	movl	(%eax),%eax
+	popl	%ebx
+	movl	%eax,(%ebx)
+
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$0,%eax
+	pushl	%eax
+	movl	12(%ebp),%eax
+	popl	%ebx
+	movl	%eax,(%ebx)
+Add_To_Front_Of_MarkersList_endif_4	:	
+Add_To_Front_Of_MarkersList_ret	:	
+	movl	%ebp,%esp
+	popl	%ebp
+	ret	
+
+.globl	Add_To_Back_Of_MarkersList
+.type	Add_To_Back_Of_MarkersList,@function
+Add_To_Back_Of_MarkersList	:	
+	pushl	%ebp
+	movl	%esp,%ebp
+	subl	$0,%esp
+
+	movl	%ebp,%eax
+	addl	$12,%eax
+	movl	(%eax),%eax
+	addl	$136,%eax
+	movl	%eax,%ebx
+	movl	$0,(%ebx)
+
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$4,%eax
+	movl	(%eax),%eax
+	movl	%eax,%ebx
+	cmpl	$0,%ebx
+	movl	$1,%eax
+	je	Add_To_Back_Of_MarkersList_reltrue_7
+	movl	$0,%eax
+Add_To_Back_Of_MarkersList_reltrue_7	:	
+	testl	%eax,%eax
+	jnz	Add_To_Back_Of_MarkersList_ifbl_6
+	jmp	Add_To_Back_Of_MarkersList_elsebl_6
+Add_To_Back_Of_MarkersList_ifbl_6	:	
+
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$0,%eax
+	pushl	%eax
+	movl	12(%ebp),%eax
+	popl	%ebx
+	movl	%eax,(%ebx)
+
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$4,%eax
+	pushl	%eax
+	movl	12(%ebp),%eax
+	popl	%ebx
+	movl	%eax,(%ebx)
+
+	movl	%ebp,%eax
+	addl	$12,%eax
+	movl	(%eax),%eax
+	addl	$132,%eax
+	movl	%eax,%ebx
+	movl	$0,(%ebx)
+	jmp	Add_To_Back_Of_MarkersList_endif_6
+Add_To_Back_Of_MarkersList_elsebl_6	:	
+
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$4,%eax
+	movl	(%eax),%eax
+	addl	$136,%eax
+	pushl	%eax
+	movl	12(%ebp),%eax
+	popl	%ebx
+	movl	%eax,(%ebx)
+
+	movl	%ebp,%eax
+	addl	$12,%eax
+	movl	(%eax),%eax
+	addl	$132,%eax
+	pushl	%eax
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$4,%eax
+	movl	(%eax),%eax
+	popl	%ebx
+	movl	%eax,(%ebx)
+
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$4,%eax
+	pushl	%eax
+	movl	12(%ebp),%eax
+	popl	%ebx
+	movl	%eax,(%ebx)
+Add_To_Back_Of_MarkersList_endif_6	:	
+Add_To_Back_Of_MarkersList_ret	:	
+	movl	%ebp,%esp
+	popl	%ebp
+	ret	
+
+.globl	Add_To_MarkersList_After
+.type	Add_To_MarkersList_After,@function
+Add_To_MarkersList_After	:	
+	pushl	%ebp
+	movl	%esp,%ebp
+	subl	$0,%esp
+
+	movl	%ebp,%eax
+	addl	$12,%eax
+	movl	(%eax),%eax
+	addl	$136,%eax
+	pushl	%eax
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$136,%eax
+	movl	(%eax),%eax
+	popl	%ebx
+	movl	%eax,(%ebx)
+
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$136,%eax
+	pushl	%eax
+	movl	12(%ebp),%eax
+	popl	%ebx
+	movl	%eax,(%ebx)
+Add_To_MarkersList_After_ret	:	
+	movl	%ebp,%esp
+	popl	%ebp
+	ret	
+
+.globl	Append_MarkersList
+.type	Append_MarkersList,@function
+Append_MarkersList	:	
+	pushl	%ebp
+	movl	%esp,%ebp
+	subl	$0,%esp
+
+	movl	%ebp,%eax
+	addl	$12,%eax
+	movl	(%eax),%eax
+	addl	$0,%eax
+	movl	(%eax),%eax
+	movl	%eax,%ebx
+	cmpl	$0,%ebx
+	movl	$1,%eax
+	jne	Append_MarkersList_reltrue_9
+	movl	$0,%eax
+Append_MarkersList_reltrue_9	:	
+	testl	%eax,%eax
+	jnz	Append_MarkersList_ifbl_8
+	jmp	Append_MarkersList_elsebl_8
+Append_MarkersList_ifbl_8	:	
+
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$0,%eax
+	movl	(%eax),%eax
+	movl	%eax,%ebx
+	cmpl	$0,%ebx
+	movl	$1,%eax
+	je	Append_MarkersList_reltrue_11
+	movl	$0,%eax
+Append_MarkersList_reltrue_11	:	
+	testl	%eax,%eax
+	jnz	Append_MarkersList_ifbl_10
+	jmp	Append_MarkersList_elsebl_10
+Append_MarkersList_ifbl_10	:	
+
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$0,%eax
+	pushl	%eax
+	movl	%ebp,%eax
+	addl	$12,%eax
+	movl	(%eax),%eax
+	addl	$0,%eax
+	movl	(%eax),%eax
+	popl	%ebx
+	movl	%eax,(%ebx)
+
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$4,%eax
+	pushl	%eax
+	movl	%ebp,%eax
+	addl	$12,%eax
+	movl	(%eax),%eax
+	addl	$4,%eax
+	movl	(%eax),%eax
+	popl	%ebx
+	movl	%eax,(%ebx)
+	jmp	Append_MarkersList_endif_10
+Append_MarkersList_elsebl_10	:	
+
+	movl	%ebp,%eax
+	addl	$12,%eax
+	movl	(%eax),%eax
+	addl	$0,%eax
+	movl	(%eax),%eax
+	addl	$132,%eax
+	pushl	%eax
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$4,%eax
+	movl	(%eax),%eax
+	popl	%ebx
+	movl	%eax,(%ebx)
+
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$4,%eax
+	movl	(%eax),%eax
+	addl	$136,%eax
+	pushl	%eax
+	movl	%ebp,%eax
+	addl	$12,%eax
+	movl	(%eax),%eax
+	addl	$0,%eax
+	movl	(%eax),%eax
+	popl	%ebx
+	movl	%eax,(%ebx)
+
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$4,%eax
+	pushl	%eax
+	movl	%ebp,%eax
+	addl	$12,%eax
+	movl	(%eax),%eax
+	addl	$4,%eax
+	movl	(%eax),%eax
+	popl	%ebx
+	movl	%eax,(%ebx)
+Append_MarkersList_endif_10	:	
+	jmp	Append_MarkersList_endif_8
+Append_MarkersList_elsebl_8	:	
+Append_MarkersList_endif_8	:	
+Append_MarkersList_ret	:	
+	movl	%ebp,%esp
+	popl	%ebp
+	ret	
+
+.globl	Remove_From_Front_Of_MarkersList
+.type	Remove_From_Front_Of_MarkersList,@function
+Remove_From_Front_Of_MarkersList	:	
+	pushl	%ebp
+	movl	%esp,%ebp
+	subl	$4,%esp
+
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$0,%eax
+	movl	(%eax),%eax
+	movl	%eax,-4(%ebp)
+
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$0,%eax
+	pushl	%eax
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$0,%eax
+	movl	(%eax),%eax
+	addl	$136,%eax
+	movl	(%eax),%eax
+	popl	%ebx
+	movl	%eax,(%ebx)
+
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$0,%eax
+	movl	(%eax),%eax
+	movl	%eax,%ebx
+	cmpl	$0,%ebx
+	movl	$1,%eax
+	je	Remove_From_Front_Of_MarkersList_reltrue_13
+	movl	$0,%eax
+Remove_From_Front_Of_MarkersList_reltrue_13	:	
+	testl	%eax,%eax
+	jnz	Remove_From_Front_Of_MarkersList_ifbl_12
+	jmp	Remove_From_Front_Of_MarkersList_elsebl_12
+Remove_From_Front_Of_MarkersList_ifbl_12	:	
+
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$4,%eax
+	movl	%eax,%ebx
+	movl	$0,(%ebx)
+	jmp	Remove_From_Front_Of_MarkersList_endif_12
+Remove_From_Front_Of_MarkersList_elsebl_12	:	
+
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$0,%eax
+	movl	(%eax),%eax
+	addl	$132,%eax
+	movl	%eax,%ebx
+	movl	$0,(%ebx)
+Remove_From_Front_Of_MarkersList_endif_12	:	
+
+	movl	-4(%ebp),%eax
+	jmp	Remove_From_Front_Of_MarkersList_ret
+Remove_From_Front_Of_MarkersList_ret	:	
+	movl	%ebp,%esp
+	popl	%ebp
+	ret	
+
+.globl	Remove_From_MarkersList
+.type	Remove_From_MarkersList,@function
+Remove_From_MarkersList	:	
+	pushl	%ebp
+	movl	%esp,%ebp
+	subl	$0,%esp
+
+	movl	%ebp,%eax
+	addl	$12,%eax
+	movl	(%eax),%eax
+	addl	$132,%eax
+	movl	(%eax),%eax
+	movl	%eax,%ebx
+	cmpl	$0,%ebx
+	movl	$1,%eax
+	jne	Remove_From_MarkersList_reltrue_15
+	movl	$0,%eax
+Remove_From_MarkersList_reltrue_15	:	
+	testl	%eax,%eax
+	jnz	Remove_From_MarkersList_ifbl_14
+	jmp	Remove_From_MarkersList_elsebl_14
+Remove_From_MarkersList_ifbl_14	:	
+
+	movl	%ebp,%eax
+	addl	$12,%eax
+	movl	(%eax),%eax
+	addl	$132,%eax
+	movl	(%eax),%eax
+	addl	$136,%eax
+	pushl	%eax
+	movl	%ebp,%eax
+	addl	$12,%eax
+	movl	(%eax),%eax
+	addl	$136,%eax
+	movl	(%eax),%eax
+	popl	%ebx
+	movl	%eax,(%ebx)
+	jmp	Remove_From_MarkersList_endif_14
+Remove_From_MarkersList_elsebl_14	:	
+
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$0,%eax
+	pushl	%eax
+	movl	%ebp,%eax
+	addl	$12,%eax
+	movl	(%eax),%eax
+	addl	$136,%eax
+	movl	(%eax),%eax
+	popl	%ebx
+	movl	%eax,(%ebx)
+Remove_From_MarkersList_endif_14	:	
+
+	movl	%ebp,%eax
+	addl	$12,%eax
+	movl	(%eax),%eax
+	addl	$136,%eax
+	movl	(%eax),%eax
+	movl	%eax,%ebx
+	cmpl	$0,%ebx
+	movl	$1,%eax
+	jne	Remove_From_MarkersList_reltrue_17
+	movl	$0,%eax
+Remove_From_MarkersList_reltrue_17	:	
+	testl	%eax,%eax
+	jnz	Remove_From_MarkersList_ifbl_16
+	jmp	Remove_From_MarkersList_elsebl_16
+Remove_From_MarkersList_ifbl_16	:	
+
+	movl	%ebp,%eax
+	addl	$12,%eax
+	movl	(%eax),%eax
+	addl	$136,%eax
+	movl	(%eax),%eax
+	addl	$132,%eax
+	pushl	%eax
+	movl	%ebp,%eax
+	addl	$12,%eax
+	movl	(%eax),%eax
+	addl	$132,%eax
+	movl	(%eax),%eax
+	popl	%ebx
+	movl	%eax,(%ebx)
+	jmp	Remove_From_MarkersList_endif_16
+Remove_From_MarkersList_elsebl_16	:	
+
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$4,%eax
+	pushl	%eax
+	movl	%ebp,%eax
+	addl	$12,%eax
+	movl	(%eax),%eax
+	addl	$132,%eax
+	movl	(%eax),%eax
+	popl	%ebx
+	movl	%eax,(%ebx)
+Remove_From_MarkersList_endif_16	:	
+Remove_From_MarkersList_ret	:	
+	movl	%ebp,%esp
+	popl	%ebp
+	ret	
+
+.globl	Is_MarkersList_Empty
+.type	Is_MarkersList_Empty,@function
+Is_MarkersList_Empty	:	
+	pushl	%ebp
+	movl	%esp,%ebp
+	subl	$0,%esp
+
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$0,%eax
+	movl	(%eax),%eax
+	movl	%eax,%ebx
+	cmpl	$0,%ebx
+	movl	$1,%eax
+	je	Is_MarkersList_Empty_reltrue_18
+	movl	$0,%eax
+Is_MarkersList_Empty_reltrue_18	:	
+	jmp	Is_MarkersList_Empty_ret
+Is_MarkersList_Empty_ret	:	
+	movl	%ebp,%esp
+	popl	%ebp
+	ret	
+
+.globl	Clear_LinesList
+.type	Clear_LinesList,@function
+Clear_LinesList	:	
+	pushl	%ebp
+	movl	%esp,%ebp
+	subl	$0,%esp
+
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$0,%eax
+	movl	%eax,%ebx
+	movl	$0,(%ebx)
+
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$4,%eax
+	movl	%eax,%ebx
+	movl	$0,(%ebx)
+Clear_LinesList_ret	:	
+	movl	%ebp,%esp
+	popl	%ebp
+	ret	
+
+.globl	Is_Member_Of_LinesList
+.type	Is_Member_Of_LinesList,@function
+Is_Member_Of_LinesList	:	
+	pushl	%ebp
+	movl	%esp,%ebp
+	subl	$4,%esp
+
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$0,%eax
+	movl	(%eax),%eax
+	movl	%eax,-4(%ebp)
+
+Is_Member_Of_LinesList_while_19	:	
+	movl	-4(%ebp),%ebx
+	cmpl	$0,%ebx
+	movl	$1,%eax
+	jne	Is_Member_Of_LinesList_reltrue_20
+	movl	$0,%eax
+Is_Member_Of_LinesList_reltrue_20	:	
+	testl	%eax,%eax
+	jz	Is_Member_Of_LinesList_endwhile_19
+
+	movl	-4(%ebp),%ebx
+	cmpl	12(%ebp),%ebx
+	movl	$1,%eax
+	je	Is_Member_Of_LinesList_reltrue_22
+	movl	$0,%eax
+Is_Member_Of_LinesList_reltrue_22	:	
+	testl	%eax,%eax
+	jnz	Is_Member_Of_LinesList_ifbl_21
+	jmp	Is_Member_Of_LinesList_elsebl_21
+Is_Member_Of_LinesList_ifbl_21	:	
+
+	movl	$1,%eax
+	jmp	Is_Member_Of_LinesList_ret
+Is_Member_Of_LinesList_elsebl_21	:	
+Is_Member_Of_LinesList_endif_21	:	
+
+	movl	%ebp,%eax
+	addl	$-4,%eax
+	movl	(%eax),%eax
+	addl	$548,%eax
+	movl	(%eax),%eax
+	movl	%eax,-4(%ebp)
+	jmp	Is_Member_Of_LinesList_while_19
+Is_Member_Of_LinesList_endwhile_19	:	
+
+	movl	$0,%eax
+	jmp	Is_Member_Of_LinesList_ret
+Is_Member_Of_LinesList_ret	:	
+	movl	%ebp,%esp
+	popl	%ebp
+	ret	
+
+.globl	Get_Front_Of_LinesList
+.type	Get_Front_Of_LinesList,@function
+Get_Front_Of_LinesList	:	
+	pushl	%ebp
+	movl	%esp,%ebp
+	subl	$0,%esp
+
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$0,%eax
+	movl	(%eax),%eax
+	jmp	Get_Front_Of_LinesList_ret
+Get_Front_Of_LinesList_ret	:	
+	movl	%ebp,%esp
+	popl	%ebp
+	ret	
+
+.globl	Get_Back_Of_LinesList
+.type	Get_Back_Of_LinesList,@function
+Get_Back_Of_LinesList	:	
+	pushl	%ebp
+	movl	%esp,%ebp
+	subl	$0,%esp
+
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$4,%eax
+	movl	(%eax),%eax
+	jmp	Get_Back_Of_LinesList_ret
+Get_Back_Of_LinesList_ret	:	
+	movl	%ebp,%esp
+	popl	%ebp
+	ret	
+
+.globl	Get_Next_In_LinesList
+.type	Get_Next_In_LinesList,@function
+Get_Next_In_LinesList	:	
+	pushl	%ebp
+	movl	%esp,%ebp
+	subl	$0,%esp
+
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$548,%eax
+	movl	(%eax),%eax
+	jmp	Get_Next_In_LinesList_ret
+Get_Next_In_LinesList_ret	:	
+	movl	%ebp,%esp
+	popl	%ebp
+	ret	
+
+.globl	Set_Next_In_LinesList
+.type	Set_Next_In_LinesList,@function
+Set_Next_In_LinesList	:	
+	pushl	%ebp
+	movl	%esp,%ebp
+	subl	$0,%esp
+
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$548,%eax
+	pushl	%eax
+	movl	12(%ebp),%eax
+	popl	%ebx
+	movl	%eax,(%ebx)
+Set_Next_In_LinesList_ret	:	
+	movl	%ebp,%esp
+	popl	%ebp
+	ret	
+
+.globl	Get_Prev_In_LinesList
+.type	Get_Prev_In_LinesList,@function
+Get_Prev_In_LinesList	:	
+	pushl	%ebp
+	movl	%esp,%ebp
+	subl	$0,%esp
+
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$544,%eax
+	movl	(%eax),%eax
+	jmp	Get_Prev_In_LinesList_ret
+Get_Prev_In_LinesList_ret	:	
+	movl	%ebp,%esp
+	popl	%ebp
+	ret	
+
+.globl	Set_Prev_In_LinesList
+.type	Set_Prev_In_LinesList,@function
+Set_Prev_In_LinesList	:	
+	pushl	%ebp
+	movl	%esp,%ebp
+	subl	$0,%esp
+
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$544,%eax
+	pushl	%eax
+	movl	12(%ebp),%eax
+	popl	%ebx
+	movl	%eax,(%ebx)
+Set_Prev_In_LinesList_ret	:	
+	movl	%ebp,%esp
+	popl	%ebp
+	ret	
+
+.globl	Add_To_Front_Of_LinesList
+.type	Add_To_Front_Of_LinesList,@function
+Add_To_Front_Of_LinesList	:	
+	pushl	%ebp
+	movl	%esp,%ebp
+	subl	$0,%esp
+
+	movl	%ebp,%eax
+	addl	$12,%eax
+	movl	(%eax),%eax
+	addl	$544,%eax
+	movl	%eax,%ebx
+	movl	$0,(%ebx)
+
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$0,%eax
+	movl	(%eax),%eax
+	movl	%eax,%ebx
+	cmpl	$0,%ebx
+	movl	$1,%eax
+	je	Add_To_Front_Of_LinesList_reltrue_24
+	movl	$0,%eax
+Add_To_Front_Of_LinesList_reltrue_24	:	
+	testl	%eax,%eax
+	jnz	Add_To_Front_Of_LinesList_ifbl_23
+	jmp	Add_To_Front_Of_LinesList_elsebl_23
+Add_To_Front_Of_LinesList_ifbl_23	:	
+
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$0,%eax
+	pushl	%eax
+	movl	12(%ebp),%eax
+	popl	%ebx
+	movl	%eax,(%ebx)
+
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$4,%eax
+	pushl	%eax
+	movl	12(%ebp),%eax
+	popl	%ebx
+	movl	%eax,(%ebx)
+
+	movl	%ebp,%eax
+	addl	$12,%eax
+	movl	(%eax),%eax
+	addl	$548,%eax
+	movl	%eax,%ebx
+	movl	$0,(%ebx)
+	jmp	Add_To_Front_Of_LinesList_endif_23
+Add_To_Front_Of_LinesList_elsebl_23	:	
+
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$0,%eax
+	movl	(%eax),%eax
+	addl	$544,%eax
+	pushl	%eax
+	movl	12(%ebp),%eax
+	popl	%ebx
+	movl	%eax,(%ebx)
+
+	movl	%ebp,%eax
+	addl	$12,%eax
+	movl	(%eax),%eax
+	addl	$548,%eax
+	pushl	%eax
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$0,%eax
+	movl	(%eax),%eax
+	popl	%ebx
+	movl	%eax,(%ebx)
+
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$0,%eax
+	pushl	%eax
+	movl	12(%ebp),%eax
+	popl	%ebx
+	movl	%eax,(%ebx)
+Add_To_Front_Of_LinesList_endif_23	:	
+Add_To_Front_Of_LinesList_ret	:	
+	movl	%ebp,%esp
+	popl	%ebp
+	ret	
+
+.globl	Add_To_Back_Of_LinesList
+.type	Add_To_Back_Of_LinesList,@function
+Add_To_Back_Of_LinesList	:	
+	pushl	%ebp
+	movl	%esp,%ebp
+	subl	$0,%esp
+
+	movl	%ebp,%eax
+	addl	$12,%eax
+	movl	(%eax),%eax
+	addl	$548,%eax
+	movl	%eax,%ebx
+	movl	$0,(%ebx)
+
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$4,%eax
+	movl	(%eax),%eax
+	movl	%eax,%ebx
+	cmpl	$0,%ebx
+	movl	$1,%eax
+	je	Add_To_Back_Of_LinesList_reltrue_26
+	movl	$0,%eax
+Add_To_Back_Of_LinesList_reltrue_26	:	
+	testl	%eax,%eax
+	jnz	Add_To_Back_Of_LinesList_ifbl_25
+	jmp	Add_To_Back_Of_LinesList_elsebl_25
+Add_To_Back_Of_LinesList_ifbl_25	:	
+
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$0,%eax
+	pushl	%eax
+	movl	12(%ebp),%eax
+	popl	%ebx
+	movl	%eax,(%ebx)
+
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$4,%eax
+	pushl	%eax
+	movl	12(%ebp),%eax
+	popl	%ebx
+	movl	%eax,(%ebx)
+
+	movl	%ebp,%eax
+	addl	$12,%eax
+	movl	(%eax),%eax
+	addl	$544,%eax
+	movl	%eax,%ebx
+	movl	$0,(%ebx)
+	jmp	Add_To_Back_Of_LinesList_endif_25
+Add_To_Back_Of_LinesList_elsebl_25	:	
+
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$4,%eax
+	movl	(%eax),%eax
+	addl	$548,%eax
+	pushl	%eax
+	movl	12(%ebp),%eax
+	popl	%ebx
+	movl	%eax,(%ebx)
+
+	movl	%ebp,%eax
+	addl	$12,%eax
+	movl	(%eax),%eax
+	addl	$544,%eax
+	pushl	%eax
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$4,%eax
+	movl	(%eax),%eax
+	popl	%ebx
+	movl	%eax,(%ebx)
+
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$4,%eax
+	pushl	%eax
+	movl	12(%ebp),%eax
+	popl	%ebx
+	movl	%eax,(%ebx)
+Add_To_Back_Of_LinesList_endif_25	:	
+Add_To_Back_Of_LinesList_ret	:	
+	movl	%ebp,%esp
+	popl	%ebp
+	ret	
+
+.globl	Add_To_LinesList_After
+.type	Add_To_LinesList_After,@function
+Add_To_LinesList_After	:	
+	pushl	%ebp
+	movl	%esp,%ebp
+	subl	$0,%esp
+
+	movl	%ebp,%eax
+	addl	$12,%eax
+	movl	(%eax),%eax
+	addl	$548,%eax
+	pushl	%eax
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$548,%eax
+	movl	(%eax),%eax
+	popl	%ebx
+	movl	%eax,(%ebx)
+
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$548,%eax
+	pushl	%eax
+	movl	12(%ebp),%eax
+	popl	%ebx
+	movl	%eax,(%ebx)
+Add_To_LinesList_After_ret	:	
+	movl	%ebp,%esp
+	popl	%ebp
+	ret	
+
+.globl	Append_LinesList
+.type	Append_LinesList,@function
+Append_LinesList	:	
+	pushl	%ebp
+	movl	%esp,%ebp
+	subl	$0,%esp
+
+	movl	%ebp,%eax
+	addl	$12,%eax
+	movl	(%eax),%eax
+	addl	$0,%eax
+	movl	(%eax),%eax
+	movl	%eax,%ebx
+	cmpl	$0,%ebx
+	movl	$1,%eax
+	jne	Append_LinesList_reltrue_28
+	movl	$0,%eax
+Append_LinesList_reltrue_28	:	
+	testl	%eax,%eax
+	jnz	Append_LinesList_ifbl_27
+	jmp	Append_LinesList_elsebl_27
+Append_LinesList_ifbl_27	:	
+
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$0,%eax
+	movl	(%eax),%eax
+	movl	%eax,%ebx
+	cmpl	$0,%ebx
+	movl	$1,%eax
+	je	Append_LinesList_reltrue_30
+	movl	$0,%eax
+Append_LinesList_reltrue_30	:	
+	testl	%eax,%eax
+	jnz	Append_LinesList_ifbl_29
+	jmp	Append_LinesList_elsebl_29
+Append_LinesList_ifbl_29	:	
+
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$0,%eax
+	pushl	%eax
+	movl	%ebp,%eax
+	addl	$12,%eax
+	movl	(%eax),%eax
+	addl	$0,%eax
+	movl	(%eax),%eax
+	popl	%ebx
+	movl	%eax,(%ebx)
+
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$4,%eax
+	pushl	%eax
+	movl	%ebp,%eax
+	addl	$12,%eax
+	movl	(%eax),%eax
+	addl	$4,%eax
+	movl	(%eax),%eax
+	popl	%ebx
+	movl	%eax,(%ebx)
+	jmp	Append_LinesList_endif_29
+Append_LinesList_elsebl_29	:	
+
+	movl	%ebp,%eax
+	addl	$12,%eax
+	movl	(%eax),%eax
+	addl	$0,%eax
+	movl	(%eax),%eax
+	addl	$544,%eax
+	pushl	%eax
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$4,%eax
+	movl	(%eax),%eax
+	popl	%ebx
+	movl	%eax,(%ebx)
+
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$4,%eax
+	movl	(%eax),%eax
+	addl	$548,%eax
+	pushl	%eax
+	movl	%ebp,%eax
+	addl	$12,%eax
+	movl	(%eax),%eax
+	addl	$0,%eax
+	movl	(%eax),%eax
+	popl	%ebx
+	movl	%eax,(%ebx)
+
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$4,%eax
+	pushl	%eax
+	movl	%ebp,%eax
+	addl	$12,%eax
+	movl	(%eax),%eax
+	addl	$4,%eax
+	movl	(%eax),%eax
+	popl	%ebx
+	movl	%eax,(%ebx)
+Append_LinesList_endif_29	:	
+	jmp	Append_LinesList_endif_27
+Append_LinesList_elsebl_27	:	
+Append_LinesList_endif_27	:	
+Append_LinesList_ret	:	
+	movl	%ebp,%esp
+	popl	%ebp
+	ret	
+
+.globl	Remove_From_Front_Of_LinesList
+.type	Remove_From_Front_Of_LinesList,@function
+Remove_From_Front_Of_LinesList	:	
+	pushl	%ebp
+	movl	%esp,%ebp
+	subl	$4,%esp
+
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$0,%eax
+	movl	(%eax),%eax
+	movl	%eax,-4(%ebp)
+
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$0,%eax
+	pushl	%eax
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$0,%eax
+	movl	(%eax),%eax
+	addl	$548,%eax
+	movl	(%eax),%eax
+	popl	%ebx
+	movl	%eax,(%ebx)
+
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$0,%eax
+	movl	(%eax),%eax
+	movl	%eax,%ebx
+	cmpl	$0,%ebx
+	movl	$1,%eax
+	je	Remove_From_Front_Of_LinesList_reltrue_32
+	movl	$0,%eax
+Remove_From_Front_Of_LinesList_reltrue_32	:	
+	testl	%eax,%eax
+	jnz	Remove_From_Front_Of_LinesList_ifbl_31
+	jmp	Remove_From_Front_Of_LinesList_elsebl_31
+Remove_From_Front_Of_LinesList_ifbl_31	:	
+
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$4,%eax
+	movl	%eax,%ebx
+	movl	$0,(%ebx)
+	jmp	Remove_From_Front_Of_LinesList_endif_31
+Remove_From_Front_Of_LinesList_elsebl_31	:	
+
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$0,%eax
+	movl	(%eax),%eax
+	addl	$544,%eax
+	movl	%eax,%ebx
+	movl	$0,(%ebx)
+Remove_From_Front_Of_LinesList_endif_31	:	
+
+	movl	-4(%ebp),%eax
+	jmp	Remove_From_Front_Of_LinesList_ret
+Remove_From_Front_Of_LinesList_ret	:	
+	movl	%ebp,%esp
+	popl	%ebp
+	ret	
+
+.globl	Remove_From_LinesList
+.type	Remove_From_LinesList,@function
+Remove_From_LinesList	:	
+	pushl	%ebp
+	movl	%esp,%ebp
+	subl	$0,%esp
+
+	movl	%ebp,%eax
+	addl	$12,%eax
+	movl	(%eax),%eax
+	addl	$544,%eax
+	movl	(%eax),%eax
+	movl	%eax,%ebx
+	cmpl	$0,%ebx
+	movl	$1,%eax
+	jne	Remove_From_LinesList_reltrue_34
+	movl	$0,%eax
+Remove_From_LinesList_reltrue_34	:	
+	testl	%eax,%eax
+	jnz	Remove_From_LinesList_ifbl_33
+	jmp	Remove_From_LinesList_elsebl_33
+Remove_From_LinesList_ifbl_33	:	
+
+	movl	%ebp,%eax
+	addl	$12,%eax
+	movl	(%eax),%eax
+	addl	$544,%eax
+	movl	(%eax),%eax
+	addl	$548,%eax
+	pushl	%eax
+	movl	%ebp,%eax
+	addl	$12,%eax
+	movl	(%eax),%eax
+	addl	$548,%eax
+	movl	(%eax),%eax
+	popl	%ebx
+	movl	%eax,(%ebx)
+	jmp	Remove_From_LinesList_endif_33
+Remove_From_LinesList_elsebl_33	:	
+
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$0,%eax
+	pushl	%eax
+	movl	%ebp,%eax
+	addl	$12,%eax
+	movl	(%eax),%eax
+	addl	$548,%eax
+	movl	(%eax),%eax
+	popl	%ebx
+	movl	%eax,(%ebx)
+Remove_From_LinesList_endif_33	:	
+
+	movl	%ebp,%eax
+	addl	$12,%eax
+	movl	(%eax),%eax
+	addl	$548,%eax
+	movl	(%eax),%eax
+	movl	%eax,%ebx
+	cmpl	$0,%ebx
+	movl	$1,%eax
+	jne	Remove_From_LinesList_reltrue_36
+	movl	$0,%eax
+Remove_From_LinesList_reltrue_36	:	
+	testl	%eax,%eax
+	jnz	Remove_From_LinesList_ifbl_35
+	jmp	Remove_From_LinesList_elsebl_35
+Remove_From_LinesList_ifbl_35	:	
+
+	movl	%ebp,%eax
+	addl	$12,%eax
+	movl	(%eax),%eax
+	addl	$548,%eax
+	movl	(%eax),%eax
+	addl	$544,%eax
+	pushl	%eax
+	movl	%ebp,%eax
+	addl	$12,%eax
+	movl	(%eax),%eax
+	addl	$544,%eax
+	movl	(%eax),%eax
+	popl	%ebx
+	movl	%eax,(%ebx)
+	jmp	Remove_From_LinesList_endif_35
+Remove_From_LinesList_elsebl_35	:	
+
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$4,%eax
+	pushl	%eax
+	movl	%ebp,%eax
+	addl	$12,%eax
+	movl	(%eax),%eax
+	addl	$544,%eax
+	movl	(%eax),%eax
+	popl	%ebx
+	movl	%eax,(%ebx)
+Remove_From_LinesList_endif_35	:	
+Remove_From_LinesList_ret	:	
+	movl	%ebp,%esp
+	popl	%ebp
+	ret	
+
+.globl	Is_LinesList_Empty
+.type	Is_LinesList_Empty,@function
+Is_LinesList_Empty	:	
+	pushl	%ebp
+	movl	%esp,%ebp
+	subl	$0,%esp
+
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$0,%eax
+	movl	(%eax),%eax
+	movl	%eax,%ebx
+	cmpl	$0,%ebx
+	movl	$1,%eax
+	je	Is_LinesList_Empty_reltrue_37
+	movl	$0,%eax
+Is_LinesList_Empty_reltrue_37	:	
+	jmp	Is_LinesList_Empty_ret
+Is_LinesList_Empty_ret	:	
+	movl	%ebp,%esp
+	popl	%ebp
+	ret	
+
+.globl	Clear_FilesList
+.type	Clear_FilesList,@function
+Clear_FilesList	:	
+	pushl	%ebp
+	movl	%esp,%ebp
+	subl	$0,%esp
+
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$0,%eax
+	movl	%eax,%ebx
+	movl	$0,(%ebx)
+
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$4,%eax
+	movl	%eax,%ebx
+	movl	$0,(%ebx)
+Clear_FilesList_ret	:	
+	movl	%ebp,%esp
+	popl	%ebp
+	ret	
+
+.globl	Is_Member_Of_FilesList
+.type	Is_Member_Of_FilesList,@function
+Is_Member_Of_FilesList	:	
+	pushl	%ebp
+	movl	%esp,%ebp
+	subl	$4,%esp
+
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$0,%eax
+	movl	(%eax),%eax
+	movl	%eax,-4(%ebp)
+
+Is_Member_Of_FilesList_while_38	:	
+	movl	-4(%ebp),%ebx
+	cmpl	$0,%ebx
+	movl	$1,%eax
+	jne	Is_Member_Of_FilesList_reltrue_39
+	movl	$0,%eax
+Is_Member_Of_FilesList_reltrue_39	:	
+	testl	%eax,%eax
+	jz	Is_Member_Of_FilesList_endwhile_38
+
+	movl	-4(%ebp),%ebx
+	cmpl	12(%ebp),%ebx
+	movl	$1,%eax
+	je	Is_Member_Of_FilesList_reltrue_41
+	movl	$0,%eax
+Is_Member_Of_FilesList_reltrue_41	:	
+	testl	%eax,%eax
+	jnz	Is_Member_Of_FilesList_ifbl_40
+	jmp	Is_Member_Of_FilesList_elsebl_40
+Is_Member_Of_FilesList_ifbl_40	:	
+
+	movl	$1,%eax
+	jmp	Is_Member_Of_FilesList_ret
+Is_Member_Of_FilesList_elsebl_40	:	
+Is_Member_Of_FilesList_endif_40	:	
+
+	movl	%ebp,%eax
+	addl	$-4,%eax
+	movl	(%eax),%eax
+	addl	$276,%eax
+	movl	(%eax),%eax
+	movl	%eax,-4(%ebp)
+	jmp	Is_Member_Of_FilesList_while_38
+Is_Member_Of_FilesList_endwhile_38	:	
+
+	movl	$0,%eax
+	jmp	Is_Member_Of_FilesList_ret
+Is_Member_Of_FilesList_ret	:	
+	movl	%ebp,%esp
+	popl	%ebp
+	ret	
+
+.globl	Get_Front_Of_FilesList
+.type	Get_Front_Of_FilesList,@function
+Get_Front_Of_FilesList	:	
+	pushl	%ebp
+	movl	%esp,%ebp
+	subl	$0,%esp
+
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$0,%eax
+	movl	(%eax),%eax
+	jmp	Get_Front_Of_FilesList_ret
+Get_Front_Of_FilesList_ret	:	
+	movl	%ebp,%esp
+	popl	%ebp
+	ret	
+
+.globl	Get_Back_Of_FilesList
+.type	Get_Back_Of_FilesList,@function
+Get_Back_Of_FilesList	:	
+	pushl	%ebp
+	movl	%esp,%ebp
+	subl	$0,%esp
+
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$4,%eax
+	movl	(%eax),%eax
+	jmp	Get_Back_Of_FilesList_ret
+Get_Back_Of_FilesList_ret	:	
+	movl	%ebp,%esp
+	popl	%ebp
+	ret	
+
+.globl	Get_Next_In_FilesList
+.type	Get_Next_In_FilesList,@function
+Get_Next_In_FilesList	:	
+	pushl	%ebp
+	movl	%esp,%ebp
+	subl	$0,%esp
+
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$276,%eax
+	movl	(%eax),%eax
+	jmp	Get_Next_In_FilesList_ret
+Get_Next_In_FilesList_ret	:	
+	movl	%ebp,%esp
+	popl	%ebp
+	ret	
+
+.globl	Set_Next_In_FilesList
+.type	Set_Next_In_FilesList,@function
+Set_Next_In_FilesList	:	
+	pushl	%ebp
+	movl	%esp,%ebp
+	subl	$0,%esp
+
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$276,%eax
+	pushl	%eax
+	movl	12(%ebp),%eax
+	popl	%ebx
+	movl	%eax,(%ebx)
+Set_Next_In_FilesList_ret	:	
+	movl	%ebp,%esp
+	popl	%ebp
+	ret	
+
+.globl	Get_Prev_In_FilesList
+.type	Get_Prev_In_FilesList,@function
+Get_Prev_In_FilesList	:	
+	pushl	%ebp
+	movl	%esp,%ebp
+	subl	$0,%esp
+
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$272,%eax
+	movl	(%eax),%eax
+	jmp	Get_Prev_In_FilesList_ret
+Get_Prev_In_FilesList_ret	:	
+	movl	%ebp,%esp
+	popl	%ebp
+	ret	
+
+.globl	Set_Prev_In_FilesList
+.type	Set_Prev_In_FilesList,@function
+Set_Prev_In_FilesList	:	
+	pushl	%ebp
+	movl	%esp,%ebp
+	subl	$0,%esp
+
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$272,%eax
+	pushl	%eax
+	movl	12(%ebp),%eax
+	popl	%ebx
+	movl	%eax,(%ebx)
+Set_Prev_In_FilesList_ret	:	
+	movl	%ebp,%esp
+	popl	%ebp
+	ret	
+
+.globl	Add_To_Front_Of_FilesList
+.type	Add_To_Front_Of_FilesList,@function
+Add_To_Front_Of_FilesList	:	
+	pushl	%ebp
+	movl	%esp,%ebp
+	subl	$0,%esp
+
+	movl	%ebp,%eax
+	addl	$12,%eax
+	movl	(%eax),%eax
+	addl	$272,%eax
+	movl	%eax,%ebx
+	movl	$0,(%ebx)
+
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$0,%eax
+	movl	(%eax),%eax
+	movl	%eax,%ebx
+	cmpl	$0,%ebx
+	movl	$1,%eax
+	je	Add_To_Front_Of_FilesList_reltrue_43
+	movl	$0,%eax
+Add_To_Front_Of_FilesList_reltrue_43	:	
+	testl	%eax,%eax
+	jnz	Add_To_Front_Of_FilesList_ifbl_42
+	jmp	Add_To_Front_Of_FilesList_elsebl_42
+Add_To_Front_Of_FilesList_ifbl_42	:	
+
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$0,%eax
+	pushl	%eax
+	movl	12(%ebp),%eax
+	popl	%ebx
+	movl	%eax,(%ebx)
+
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$4,%eax
+	pushl	%eax
+	movl	12(%ebp),%eax
+	popl	%ebx
+	movl	%eax,(%ebx)
+
+	movl	%ebp,%eax
+	addl	$12,%eax
+	movl	(%eax),%eax
+	addl	$276,%eax
+	movl	%eax,%ebx
+	movl	$0,(%ebx)
+	jmp	Add_To_Front_Of_FilesList_endif_42
+Add_To_Front_Of_FilesList_elsebl_42	:	
+
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$0,%eax
+	movl	(%eax),%eax
+	addl	$272,%eax
+	pushl	%eax
+	movl	12(%ebp),%eax
+	popl	%ebx
+	movl	%eax,(%ebx)
+
+	movl	%ebp,%eax
+	addl	$12,%eax
+	movl	(%eax),%eax
+	addl	$276,%eax
+	pushl	%eax
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$0,%eax
+	movl	(%eax),%eax
+	popl	%ebx
+	movl	%eax,(%ebx)
+
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$0,%eax
+	pushl	%eax
+	movl	12(%ebp),%eax
+	popl	%ebx
+	movl	%eax,(%ebx)
+Add_To_Front_Of_FilesList_endif_42	:	
+Add_To_Front_Of_FilesList_ret	:	
+	movl	%ebp,%esp
+	popl	%ebp
+	ret	
+
+.globl	Add_To_Back_Of_FilesList
+.type	Add_To_Back_Of_FilesList,@function
+Add_To_Back_Of_FilesList	:	
+	pushl	%ebp
+	movl	%esp,%ebp
+	subl	$0,%esp
+
+	movl	%ebp,%eax
+	addl	$12,%eax
+	movl	(%eax),%eax
+	addl	$276,%eax
+	movl	%eax,%ebx
+	movl	$0,(%ebx)
+
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$4,%eax
+	movl	(%eax),%eax
+	movl	%eax,%ebx
+	cmpl	$0,%ebx
+	movl	$1,%eax
+	je	Add_To_Back_Of_FilesList_reltrue_45
+	movl	$0,%eax
+Add_To_Back_Of_FilesList_reltrue_45	:	
+	testl	%eax,%eax
+	jnz	Add_To_Back_Of_FilesList_ifbl_44
+	jmp	Add_To_Back_Of_FilesList_elsebl_44
+Add_To_Back_Of_FilesList_ifbl_44	:	
+
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$0,%eax
+	pushl	%eax
+	movl	12(%ebp),%eax
+	popl	%ebx
+	movl	%eax,(%ebx)
+
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$4,%eax
+	pushl	%eax
+	movl	12(%ebp),%eax
+	popl	%ebx
+	movl	%eax,(%ebx)
+
+	movl	%ebp,%eax
+	addl	$12,%eax
+	movl	(%eax),%eax
+	addl	$272,%eax
+	movl	%eax,%ebx
+	movl	$0,(%ebx)
+	jmp	Add_To_Back_Of_FilesList_endif_44
+Add_To_Back_Of_FilesList_elsebl_44	:	
+
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$4,%eax
+	movl	(%eax),%eax
+	addl	$276,%eax
+	pushl	%eax
+	movl	12(%ebp),%eax
+	popl	%ebx
+	movl	%eax,(%ebx)
+
+	movl	%ebp,%eax
+	addl	$12,%eax
+	movl	(%eax),%eax
+	addl	$272,%eax
+	pushl	%eax
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$4,%eax
+	movl	(%eax),%eax
+	popl	%ebx
+	movl	%eax,(%ebx)
+
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$4,%eax
+	pushl	%eax
+	movl	12(%ebp),%eax
+	popl	%ebx
+	movl	%eax,(%ebx)
+Add_To_Back_Of_FilesList_endif_44	:	
+Add_To_Back_Of_FilesList_ret	:	
+	movl	%ebp,%esp
+	popl	%ebp
+	ret	
+
+.globl	Add_To_FilesList_After
+.type	Add_To_FilesList_After,@function
+Add_To_FilesList_After	:	
+	pushl	%ebp
+	movl	%esp,%ebp
+	subl	$0,%esp
+
+	movl	%ebp,%eax
+	addl	$12,%eax
+	movl	(%eax),%eax
+	addl	$276,%eax
+	pushl	%eax
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$276,%eax
+	movl	(%eax),%eax
+	popl	%ebx
+	movl	%eax,(%ebx)
+
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$276,%eax
+	pushl	%eax
+	movl	12(%ebp),%eax
+	popl	%ebx
+	movl	%eax,(%ebx)
+Add_To_FilesList_After_ret	:	
+	movl	%ebp,%esp
+	popl	%ebp
+	ret	
+
+.globl	Append_FilesList
+.type	Append_FilesList,@function
+Append_FilesList	:	
+	pushl	%ebp
+	movl	%esp,%ebp
+	subl	$0,%esp
+
+	movl	%ebp,%eax
+	addl	$12,%eax
+	movl	(%eax),%eax
+	addl	$0,%eax
+	movl	(%eax),%eax
+	movl	%eax,%ebx
+	cmpl	$0,%ebx
+	movl	$1,%eax
+	jne	Append_FilesList_reltrue_47
+	movl	$0,%eax
+Append_FilesList_reltrue_47	:	
+	testl	%eax,%eax
+	jnz	Append_FilesList_ifbl_46
+	jmp	Append_FilesList_elsebl_46
+Append_FilesList_ifbl_46	:	
+
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$0,%eax
+	movl	(%eax),%eax
+	movl	%eax,%ebx
+	cmpl	$0,%ebx
+	movl	$1,%eax
+	je	Append_FilesList_reltrue_49
+	movl	$0,%eax
+Append_FilesList_reltrue_49	:	
+	testl	%eax,%eax
+	jnz	Append_FilesList_ifbl_48
+	jmp	Append_FilesList_elsebl_48
+Append_FilesList_ifbl_48	:	
+
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$0,%eax
+	pushl	%eax
+	movl	%ebp,%eax
+	addl	$12,%eax
+	movl	(%eax),%eax
+	addl	$0,%eax
+	movl	(%eax),%eax
+	popl	%ebx
+	movl	%eax,(%ebx)
+
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$4,%eax
+	pushl	%eax
+	movl	%ebp,%eax
+	addl	$12,%eax
+	movl	(%eax),%eax
+	addl	$4,%eax
+	movl	(%eax),%eax
+	popl	%ebx
+	movl	%eax,(%ebx)
+	jmp	Append_FilesList_endif_48
+Append_FilesList_elsebl_48	:	
+
+	movl	%ebp,%eax
+	addl	$12,%eax
+	movl	(%eax),%eax
+	addl	$0,%eax
+	movl	(%eax),%eax
+	addl	$272,%eax
+	pushl	%eax
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$4,%eax
+	movl	(%eax),%eax
+	popl	%ebx
+	movl	%eax,(%ebx)
+
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$4,%eax
+	movl	(%eax),%eax
+	addl	$276,%eax
+	pushl	%eax
+	movl	%ebp,%eax
+	addl	$12,%eax
+	movl	(%eax),%eax
+	addl	$0,%eax
+	movl	(%eax),%eax
+	popl	%ebx
+	movl	%eax,(%ebx)
+
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$4,%eax
+	pushl	%eax
+	movl	%ebp,%eax
+	addl	$12,%eax
+	movl	(%eax),%eax
+	addl	$4,%eax
+	movl	(%eax),%eax
+	popl	%ebx
+	movl	%eax,(%ebx)
+Append_FilesList_endif_48	:	
+	jmp	Append_FilesList_endif_46
+Append_FilesList_elsebl_46	:	
+Append_FilesList_endif_46	:	
+Append_FilesList_ret	:	
+	movl	%ebp,%esp
+	popl	%ebp
+	ret	
+
+.globl	Remove_From_Front_Of_FilesList
+.type	Remove_From_Front_Of_FilesList,@function
+Remove_From_Front_Of_FilesList	:	
+	pushl	%ebp
+	movl	%esp,%ebp
+	subl	$4,%esp
+
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$0,%eax
+	movl	(%eax),%eax
+	movl	%eax,-4(%ebp)
+
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$0,%eax
+	pushl	%eax
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$0,%eax
+	movl	(%eax),%eax
+	addl	$276,%eax
+	movl	(%eax),%eax
+	popl	%ebx
+	movl	%eax,(%ebx)
+
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$0,%eax
+	movl	(%eax),%eax
+	movl	%eax,%ebx
+	cmpl	$0,%ebx
+	movl	$1,%eax
+	je	Remove_From_Front_Of_FilesList_reltrue_51
+	movl	$0,%eax
+Remove_From_Front_Of_FilesList_reltrue_51	:	
+	testl	%eax,%eax
+	jnz	Remove_From_Front_Of_FilesList_ifbl_50
+	jmp	Remove_From_Front_Of_FilesList_elsebl_50
+Remove_From_Front_Of_FilesList_ifbl_50	:	
+
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$4,%eax
+	movl	%eax,%ebx
+	movl	$0,(%ebx)
+	jmp	Remove_From_Front_Of_FilesList_endif_50
+Remove_From_Front_Of_FilesList_elsebl_50	:	
+
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$0,%eax
+	movl	(%eax),%eax
+	addl	$272,%eax
+	movl	%eax,%ebx
+	movl	$0,(%ebx)
+Remove_From_Front_Of_FilesList_endif_50	:	
+
+	movl	-4(%ebp),%eax
+	jmp	Remove_From_Front_Of_FilesList_ret
+Remove_From_Front_Of_FilesList_ret	:	
+	movl	%ebp,%esp
+	popl	%ebp
+	ret	
+
+.globl	Remove_From_FilesList
+.type	Remove_From_FilesList,@function
+Remove_From_FilesList	:	
+	pushl	%ebp
+	movl	%esp,%ebp
+	subl	$0,%esp
+
+	movl	%ebp,%eax
+	addl	$12,%eax
+	movl	(%eax),%eax
+	addl	$272,%eax
+	movl	(%eax),%eax
+	movl	%eax,%ebx
+	cmpl	$0,%ebx
+	movl	$1,%eax
+	jne	Remove_From_FilesList_reltrue_53
+	movl	$0,%eax
+Remove_From_FilesList_reltrue_53	:	
+	testl	%eax,%eax
+	jnz	Remove_From_FilesList_ifbl_52
+	jmp	Remove_From_FilesList_elsebl_52
+Remove_From_FilesList_ifbl_52	:	
+
+	movl	%ebp,%eax
+	addl	$12,%eax
+	movl	(%eax),%eax
+	addl	$272,%eax
+	movl	(%eax),%eax
+	addl	$276,%eax
+	pushl	%eax
+	movl	%ebp,%eax
+	addl	$12,%eax
+	movl	(%eax),%eax
+	addl	$276,%eax
+	movl	(%eax),%eax
+	popl	%ebx
+	movl	%eax,(%ebx)
+	jmp	Remove_From_FilesList_endif_52
+Remove_From_FilesList_elsebl_52	:	
+
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$0,%eax
+	pushl	%eax
+	movl	%ebp,%eax
+	addl	$12,%eax
+	movl	(%eax),%eax
+	addl	$276,%eax
+	movl	(%eax),%eax
+	popl	%ebx
+	movl	%eax,(%ebx)
+Remove_From_FilesList_endif_52	:	
+
+	movl	%ebp,%eax
+	addl	$12,%eax
+	movl	(%eax),%eax
+	addl	$276,%eax
+	movl	(%eax),%eax
+	movl	%eax,%ebx
+	cmpl	$0,%ebx
+	movl	$1,%eax
+	jne	Remove_From_FilesList_reltrue_55
+	movl	$0,%eax
+Remove_From_FilesList_reltrue_55	:	
+	testl	%eax,%eax
+	jnz	Remove_From_FilesList_ifbl_54
+	jmp	Remove_From_FilesList_elsebl_54
+Remove_From_FilesList_ifbl_54	:	
+
+	movl	%ebp,%eax
+	addl	$12,%eax
+	movl	(%eax),%eax
+	addl	$276,%eax
+	movl	(%eax),%eax
+	addl	$272,%eax
+	pushl	%eax
+	movl	%ebp,%eax
+	addl	$12,%eax
+	movl	(%eax),%eax
+	addl	$272,%eax
+	movl	(%eax),%eax
+	popl	%ebx
+	movl	%eax,(%ebx)
+	jmp	Remove_From_FilesList_endif_54
+Remove_From_FilesList_elsebl_54	:	
+
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$4,%eax
+	pushl	%eax
+	movl	%ebp,%eax
+	addl	$12,%eax
+	movl	(%eax),%eax
+	addl	$272,%eax
+	movl	(%eax),%eax
+	popl	%ebx
+	movl	%eax,(%ebx)
+Remove_From_FilesList_endif_54	:	
+Remove_From_FilesList_ret	:	
+	movl	%ebp,%esp
+	popl	%ebp
+	ret	
+
+.globl	Is_FilesList_Empty
+.type	Is_FilesList_Empty,@function
+Is_FilesList_Empty	:	
+	pushl	%ebp
+	movl	%esp,%ebp
+	subl	$0,%esp
+
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$0,%eax
+	movl	(%eax),%eax
+	movl	%eax,%ebx
+	cmpl	$0,%ebx
+	movl	$1,%eax
+	je	Is_FilesList_Empty_reltrue_56
+	movl	$0,%eax
+Is_FilesList_Empty_reltrue_56	:	
+	jmp	Is_FilesList_Empty_ret
+Is_FilesList_Empty_ret	:	
+	movl	%ebp,%esp
+	popl	%ebp
+	ret	
+
+.globl	linker_create
+.type	linker_create,@function
+linker_create	:	
+	pushl	%ebp
+	movl	%esp,%ebp
+	subl	$21381,%esp
+
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$0,%eax
+	movl	%eax,%ebx
+	movl	$1,(%ebx)
+
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$4,%eax
+	pushl	%eax
+	movl	$0,%ebx
+	subl	$1,%ebx
+	movl	%ebx,%eax
+	popl	%ebx
+	movl	%eax,(%ebx)
+
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$48,%eax
+	movl	%eax,%ebx
+	movl	$3,(%ebx)
+
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$52,%eax
+	movl	%eax,%ebx
+	movl	$0,(%ebx)
+
+	subl	$4,%esp
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$8,%eax
+	movl	%eax,0(%esp)
+	call	Clear_MarkersList
+	addl	$4,%esp
+
+	subl	$4,%esp
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$16,%eax
+	movl	%eax,0(%esp)
+	call	Clear_MarkersList
+	addl	$4,%esp
+
+	subl	$4,%esp
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$32,%eax
+	movl	%eax,0(%esp)
+	call	Clear_LinesList
+	addl	$4,%esp
+
+	subl	$4,%esp
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$40,%eax
+	movl	%eax,0(%esp)
+	call	Clear_LinesList
+	addl	$4,%esp
+
+	subl	$4,%esp
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$24,%eax
+	movl	%eax,0(%esp)
+	call	Clear_FilesList
+	addl	$4,%esp
+
+	subl	$8,%esp
+	movl	%ebp,%eax
+	addl	$-20740,%eax
+	movl	%eax,0(%esp)
+	movl	$symtab+0,4(%esp)
+	call	preproc_create
+	addl	$8,%esp
+
+	subl	$8,%esp
+	movl	%ebp,%eax
+	addl	$-20740,%eax
+	movl	%eax,0(%esp)
+	movl	$symtab+23,4(%esp)
+	call	preproc_addDefine
+	addl	$8,%esp
+
+	subl	$8,%esp
+	movl	%ebp,%eax
+	addl	$-20761,%eax
+	movl	%eax,0(%esp)
+	movl	%ebp,%eax
+	addl	$-20740,%eax
+	movl	%eax,4(%esp)
+	call	scanner_init
+	addl	$8,%esp
+
+	subl	$8,%esp
+	movl	%ebp,%eax
+	addl	$-21357,%eax
+	movl	%eax,0(%esp)
+	movl	%ebp,%eax
+	addl	$-20761,%eax
+	movl	%eax,4(%esp)
+	call	parser_init
+	addl	$8,%esp
+
+	subl	$8,%esp
+	movl	%ebp,%eax
+	addl	$-21357,%eax
+	movl	%eax,0(%esp)
+	movl	%ebp,%eax
+	addl	$-21373,%eax
+	movl	%eax,4(%esp)
+	call	symbol_CreateSymbolTable
+	addl	$8,%esp
+
+	subl	$8,%esp
+	movl	%ebp,%eax
+	addl	$-21357,%eax
+	movl	%eax,0(%esp)
+	movl	%ebp,%eax
+	addl	$-21373,%eax
+	movl	%eax,4(%esp)
+	call	parser_setSymbolTable
+	addl	$8,%esp
+
+	subl	$0,%esp
+	call	syntax_CreateTreeNode
+	addl	$0,%esp
+	movl	%eax,-21377(%ebp)
+
+	subl	$8,%esp
+	movl	%ebp,%eax
+	addl	$-21357,%eax
+	movl	%eax,0(%esp)
+	movl	-21377(%ebp),%eax
+	movl	%eax,4(%esp)
+	call	parser_buildSyntaxTree
+	addl	$8,%esp
+
+	subl	$4,%esp
+	movl	%ebp,%eax
+	addl	$-21373,%eax
+	movl	%eax,0(%esp)
+	call	symbol_CountFunctions
+	addl	$4,%esp
+	movl	%eax,-8(%ebp)
+
+	movl	$0,-4(%ebp)
+
+linker_create_while_57	:	
+	movl	-4(%ebp),%ebx
+	cmpl	-8(%ebp),%ebx
+	movl	$1,%eax
+	jl	linker_create_reltrue_58
+	movl	$0,%eax
+linker_create_reltrue_58	:	
+	testl	%eax,%eax
+	jz	linker_create_endwhile_57
+
+	subl	$8,%esp
+	movl	%ebp,%eax
+	addl	$-21373,%eax
+	movl	%eax,0(%esp)
+	movl	-4(%ebp),%eax
+	movl	%eax,4(%esp)
+	call	symbol_GetFunction
+	addl	$8,%esp
+	movl	%eax,-21381(%ebp)
+
+	subl	$4,%esp
+	movl	$140,0(%esp)
+	call	malloc
+	addl	$4,%esp
+	movl	%eax,-12(%ebp)
+
+	movl	-12(%ebp),%ebx
+	cmpl	$0,%ebx
+	movl	$1,%eax
+	je	linker_create_reltrue_60
+	movl	$0,%eax
+linker_create_reltrue_60	:	
+	testl	%eax,%eax
+	jnz	linker_create_ifbl_59
+	jmp	linker_create_elsebl_59
+linker_create_ifbl_59	:	
+
+	movl	$0,%ebx
+	subl	$20003,%ebx
+	movl	%ebx,%eax
+	jmp	linker_create_ret
+linker_create_elsebl_59	:	
+linker_create_endif_59	:	
+
+	subl	$12,%esp
+	movl	-12(%ebp),%eax
+	movl	%eax,0(%esp)
+	movl	$0,4(%esp)
+	movl	$140,8(%esp)
+	call	memset
+	addl	$12,%esp
+
+	subl	$8,%esp
+	movl	%ebp,%eax
+	addl	$-12,%eax
+	movl	(%eax),%eax
+	addl	$0,%eax
+	movl	%eax,0(%esp)
+	movl	%ebp,%eax
+	addl	$-21381,%eax
+	movl	(%eax),%eax
+	addl	$0,%eax
+	addl	$16,%eax
+	movl	%eax,4(%esp)
+	call	strcpy
+	addl	$8,%esp
+
+	subl	$8,%esp
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$16,%eax
+	movl	%eax,0(%esp)
+	movl	-12(%ebp),%eax
+	movl	%eax,4(%esp)
+	call	Add_To_Front_Of_MarkersList
+	addl	$8,%esp
+
+	movl	-4(%ebp),%ebx
+	addl	$1,%ebx
+	movl	%ebx,%eax
+	movl	%eax,-4(%ebp)
+	jmp	linker_create_while_57
+linker_create_endwhile_57	:	
+
+	subl	$4,%esp
+	movl	-21377(%ebp),%eax
+	movl	%eax,0(%esp)
+	call	syntax_FreeSyntaxTree
+	addl	$4,%esp
+
+	subl	$4,%esp
+	movl	%ebp,%eax
+	addl	$-21373,%eax
+	movl	%eax,0(%esp)
+	call	symbol_destroy
+	addl	$4,%esp
+
+	subl	$4,%esp
+	movl	%ebp,%eax
+	addl	$-20740,%eax
+	movl	%eax,0(%esp)
+	call	preproc_destroy
+	addl	$4,%esp
+
+	movl	$0,%eax
+	jmp	linker_create_ret
+linker_create_ret	:	
+	movl	%ebp,%esp
+	popl	%ebp
+	ret	
+
+.globl	linker_destroy
+.type	linker_destroy,@function
+linker_destroy	:	
+	pushl	%ebp
+	movl	%esp,%ebp
+	subl	$0,%esp
+
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$0,%eax
+	movl	(%eax),%eax
+	movl	%eax,%ebx
+	cmpl	$1,%ebx
+	movl	$1,%eax
+	jne	linker_destroy_reltrue_62
+	movl	$0,%eax
+linker_destroy_reltrue_62	:	
+	testl	%eax,%eax
+	jnz	linker_destroy_ifbl_61
+	jmp	linker_destroy_elsebl_61
+linker_destroy_ifbl_61	:	
+
+	movl	$0,%ebx
+	subl	$20000,%ebx
+	movl	%ebx,%eax
+	jmp	linker_destroy_ret
+linker_destroy_elsebl_61	:	
+linker_destroy_endif_61	:	
+
+	subl	$4,%esp
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$8,%eax
+	movl	%eax,0(%esp)
+	call	freeMarkersList
+	addl	$4,%esp
+
+	subl	$4,%esp
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$16,%eax
+	movl	%eax,0(%esp)
+	call	freeMarkersList
+	addl	$4,%esp
+
+	subl	$4,%esp
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$32,%eax
+	movl	%eax,0(%esp)
+	call	freeLinesList
+	addl	$4,%esp
+
+	subl	$4,%esp
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$40,%eax
+	movl	%eax,0(%esp)
+	call	freeLinesList
+	addl	$4,%esp
+
+	subl	$4,%esp
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$24,%eax
+	movl	%eax,0(%esp)
+	call	freeFilesList
+	addl	$4,%esp
+
+	movl	$0,%eax
+	jmp	linker_destroy_ret
+linker_destroy_ret	:	
+	movl	%ebp,%esp
+	popl	%ebp
+	ret	
+
+.globl	findInMarkersList
+.type	findInMarkersList,@function
+findInMarkersList	:	
+	pushl	%ebp
+	movl	%esp,%ebp
+	subl	$4,%esp
+
+	subl	$4,%esp
+	movl	8(%ebp),%eax
+	movl	%eax,0(%esp)
+	call	Get_Front_Of_MarkersList
+	addl	$4,%esp
+	movl	%eax,-4(%ebp)
+
+findInMarkersList_while_63	:	
+	movl	-4(%ebp),%ebx
+	cmpl	$0,%ebx
+	movl	$1,%eax
+	jne	findInMarkersList_reltrue_64
+	movl	$0,%eax
+findInMarkersList_reltrue_64	:	
+	testl	%eax,%eax
+	jz	findInMarkersList_endwhile_63
+
+	subl	$8,%esp
+	movl	12(%ebp),%eax
+	movl	%eax,0(%esp)
+	movl	%ebp,%eax
+	addl	$-4,%eax
+	movl	(%eax),%eax
+	addl	$0,%eax
+	movl	%eax,4(%esp)
+	call	strcmp
+	addl	$8,%esp
+	movl	%eax,%ebx
+	cmpl	$0,%ebx
+	movl	$1,%eax
+	je	findInMarkersList_reltrue_66
+	movl	$0,%eax
+findInMarkersList_reltrue_66	:	
+	testl	%eax,%eax
+	jnz	findInMarkersList_ifbl_65
+	jmp	findInMarkersList_elsebl_65
+findInMarkersList_ifbl_65	:	
+
+	movl	-4(%ebp),%eax
+	jmp	findInMarkersList_ret
+findInMarkersList_elsebl_65	:	
+findInMarkersList_endif_65	:	
+
+	subl	$4,%esp
+	movl	-4(%ebp),%eax
+	movl	%eax,0(%esp)
+	call	Get_Next_In_MarkersList
+	addl	$4,%esp
+	movl	%eax,-4(%ebp)
+	jmp	findInMarkersList_while_63
+findInMarkersList_endwhile_63	:	
+
+	movl	$0,%eax
+	jmp	findInMarkersList_ret
+findInMarkersList_ret	:	
+	movl	%ebp,%esp
+	popl	%ebp
+	ret	
+
+.globl	getMarkerAddr
+.type	getMarkerAddr,@function
+getMarkerAddr	:	
+	pushl	%ebp
+	movl	%esp,%ebp
+	subl	$4,%esp
+
+	subl	$8,%esp
+	movl	8(%ebp),%eax
+	movl	%eax,0(%esp)
+	movl	12(%ebp),%eax
+	movl	%eax,4(%esp)
+	call	findInMarkersList
+	addl	$8,%esp
+	movl	%eax,-4(%ebp)
+
+	movl	-4(%ebp),%ebx
+	cmpl	$0,%ebx
+	movl	$1,%eax
+	jne	getMarkerAddr_reltrue_68
+	movl	$0,%eax
+getMarkerAddr_reltrue_68	:	
+	testl	%eax,%eax
+	jnz	getMarkerAddr_ifbl_67
+	jmp	getMarkerAddr_elsebl_67
+getMarkerAddr_ifbl_67	:	
+
+	movl	%ebp,%eax
+	addl	$-4,%eax
+	movl	(%eax),%eax
+	addl	$128,%eax
+	movl	(%eax),%eax
+	jmp	getMarkerAddr_ret
+getMarkerAddr_elsebl_67	:	
+getMarkerAddr_endif_67	:	
+
+	movl	$0,%ebx
+	subl	$1,%ebx
+	movl	%ebx,%eax
+	jmp	getMarkerAddr_ret
+getMarkerAddr_ret	:	
+	movl	%ebp,%esp
+	popl	%ebp
+	ret	
+
+.globl	isMarkerLine
+.type	isMarkerLine,@function
+isMarkerLine	:	
+	pushl	%ebp
+	movl	%esp,%ebp
+	subl	$136,%esp
+
+	movl	%ebp,%eax
+	addl	$12,%eax
+	movl	(%eax),%eax
+	addl	$516,%eax
+	movl	(%eax),%eax
+	movl	%eax,-8(%ebp)
+
+	subl	$12,%esp
+	movl	8(%ebp),%eax
+	movl	%eax,0(%esp)
+	movl	12(%ebp),%eax
+	movl	%eax,4(%esp)
+	movl	%ebp,%eax
+	addl	$-136,%eax
+	movl	%eax,8(%esp)
+	call	getNextIdentifierInLine
+	addl	$12,%esp
+	movl	%eax,-4(%ebp)
+
+	movl	-4(%ebp),%ebx
+	cmpl	$0,%ebx
+	movl	$1,%eax
+	jl	isMarkerLine_reltrue_70
+	movl	$0,%eax
+isMarkerLine_reltrue_70	:	
+	testl	%eax,%eax
+	jnz	isMarkerLine_ifbl_69
+	jmp	isMarkerLine_elsebl_69
+isMarkerLine_ifbl_69	:	
+
+	movl	-4(%ebp),%eax
+	jmp	isMarkerLine_ret
+isMarkerLine_elsebl_69	:	
+
+	movl	-4(%ebp),%ebx
+	cmpl	$0,%ebx
+	movl	$1,%eax
+	je	isMarkerLine_reltrue_72
+	movl	$0,%eax
+isMarkerLine_reltrue_72	:	
+	testl	%eax,%eax
+	jnz	isMarkerLine_ifbl_71
+	jmp	isMarkerLine_elsebl_71
+isMarkerLine_ifbl_71	:	
+
+	movl	$0,%eax
+	jmp	isMarkerLine_ret
+isMarkerLine_elsebl_71	:	
+
+	subl	$4,%esp
+	movl	12(%ebp),%eax
+	movl	%eax,0(%esp)
+	call	lnk_disposeWhitespace
+	addl	$4,%esp
+
+	movl	%ebp,%eax
+	addl	$12,%eax
+	movl	(%eax),%eax
+	addl	$516,%eax
+	movl	(%eax),%eax
+	pushl	%eax
+	movl	%ebp,%eax
+	addl	$12,%eax
+	movl	(%eax),%eax
+	addl	$0,%eax
+	popl	%esi
+	addl	%esi,%eax
+	movb	(%eax),%al
+	movsbl	%al,%eax
+	movl	%eax,%ebx
+	cmpl	$58,%ebx
+	movl	$1,%eax
+	je	isMarkerLine_reltrue_74
+	movl	$0,%eax
+isMarkerLine_reltrue_74	:	
+	testl	%eax,%eax
+	jnz	isMarkerLine_ifbl_73
+	jmp	isMarkerLine_elsebl_73
+isMarkerLine_ifbl_73	:	
+
+	movl	%ebp,%eax
+	addl	$12,%eax
+	movl	(%eax),%eax
+	addl	$516,%eax
+	pushl	%eax
+	movl	-8(%ebp),%eax
+	popl	%ebx
+	movl	%eax,(%ebx)
+
+	movl	$1,%eax
+	jmp	isMarkerLine_ret
+isMarkerLine_elsebl_73	:	
+isMarkerLine_endif_73	:	
+
+	movl	%ebp,%eax
+	addl	$12,%eax
+	movl	(%eax),%eax
+	addl	$516,%eax
+	pushl	%eax
+	movl	-8(%ebp),%eax
+	popl	%ebx
+	movl	%eax,(%ebx)
+
+	movl	$0,%eax
+	jmp	isMarkerLine_ret
+isMarkerLine_endif_71	:	
+isMarkerLine_endif_69	:	
+
+	movl	$0,%eax
+	jmp	isMarkerLine_ret
+isMarkerLine_ret	:	
+	movl	%ebp,%esp
+	popl	%ebp
+	ret	
+
+.globl	addMarker
+.type	addMarker,@function
+addMarker	:	
+	pushl	%ebp
+	movl	%esp,%ebp
+	subl	$140,%esp
+
+	subl	$12,%esp
+	movl	8(%ebp),%eax
+	movl	%eax,0(%esp)
+	movl	12(%ebp),%eax
+	movl	%eax,4(%esp)
+	movl	%ebp,%eax
+	addl	$-132,%eax
+	movl	%eax,8(%esp)
+	call	getNextIdentifierInLine
+	addl	$12,%esp
+	movl	%eax,-4(%ebp)
+
+	movl	-4(%ebp),%ebx
+	cmpl	$0,%ebx
+	movl	$1,%eax
+	jl	addMarker_reltrue_76
+	movl	$0,%eax
+addMarker_reltrue_76	:	
+	testl	%eax,%eax
+	jnz	addMarker_ifbl_75
+	jmp	addMarker_elsebl_75
+addMarker_ifbl_75	:	
+
+	movl	-4(%ebp),%eax
+	jmp	addMarker_ret
+addMarker_elsebl_75	:	
+
+	movl	-4(%ebp),%ebx
+	cmpl	$0,%ebx
+	movl	$1,%eax
+	je	addMarker_reltrue_78
+	movl	$0,%eax
+addMarker_reltrue_78	:	
+	testl	%eax,%eax
+	jnz	addMarker_ifbl_77
+	jmp	addMarker_elsebl_77
+addMarker_ifbl_77	:	
+
+	movl	$0,%eax
+	jmp	addMarker_ret
+addMarker_elsebl_77	:	
+
+	subl	$4,%esp
+	movl	16(%ebp),%eax
+	movl	%eax,0(%esp)
+	call	Get_Front_Of_MarkersList
+	addl	$4,%esp
+	movl	%eax,-140(%ebp)
+
+addMarker_while_79	:	
+	movl	-140(%ebp),%ebx
+	cmpl	$0,%ebx
+	movl	$1,%eax
+	jne	addMarker_reltrue_80
+	movl	$0,%eax
+addMarker_reltrue_80	:	
+	testl	%eax,%eax
+	jz	addMarker_endwhile_79
+
+	subl	$8,%esp
+	movl	%ebp,%eax
+	addl	$-140,%eax
+	movl	(%eax),%eax
+	addl	$0,%eax
+	movl	%eax,0(%esp)
+	movl	%ebp,%eax
+	addl	$-132,%eax
+	movl	%eax,4(%esp)
+	call	strcmp
+	addl	$8,%esp
+	movl	%eax,%ebx
+	cmpl	$0,%ebx
+	movl	$1,%eax
+	je	addMarker_reltrue_82
+	movl	$0,%eax
+addMarker_reltrue_82	:	
+	testl	%eax,%eax
+	jnz	addMarker_ifbl_81
+	jmp	addMarker_elsebl_81
+addMarker_ifbl_81	:	
+
+	subl	$8,%esp
+	movl	$symtab+33,0(%esp)
+	movl	%ebp,%eax
+	addl	$-140,%eax
+	movl	(%eax),%eax
+	addl	$0,%eax
+	movl	%eax,4(%esp)
+	call	printf
+	addl	$8,%esp
+
+	movl	$0,%eax
+	jmp	addMarker_ret
+addMarker_elsebl_81	:	
+addMarker_endif_81	:	
+
+	subl	$4,%esp
+	movl	-140(%ebp),%eax
+	movl	%eax,0(%esp)
+	call	Get_Next_In_MarkersList
+	addl	$4,%esp
+	movl	%eax,-140(%ebp)
+	jmp	addMarker_while_79
+addMarker_endwhile_79	:	
+
+	subl	$4,%esp
+	movl	$140,0(%esp)
+	call	malloc
+	addl	$4,%esp
+	movl	%eax,-136(%ebp)
+
+	movl	-136(%ebp),%ebx
+	cmpl	$0,%ebx
+	movl	$1,%eax
+	je	addMarker_reltrue_84
+	movl	$0,%eax
+addMarker_reltrue_84	:	
+	testl	%eax,%eax
+	jnz	addMarker_ifbl_83
+	jmp	addMarker_elsebl_83
+addMarker_ifbl_83	:	
+
+	movl	$0,%ebx
+	subl	$20003,%ebx
+	movl	%ebx,%eax
+	jmp	addMarker_ret
+addMarker_elsebl_83	:	
+addMarker_endif_83	:	
+
+	subl	$12,%esp
+	movl	%ebp,%eax
+	addl	$-136,%eax
+	movl	(%eax),%eax
+	addl	$0,%eax
+	movl	%eax,0(%esp)
+	movl	$0,4(%esp)
+	movl	$128,8(%esp)
+	call	memset
+	addl	$12,%esp
+
+	subl	$8,%esp
+	movl	%ebp,%eax
+	addl	$-136,%eax
+	movl	(%eax),%eax
+	addl	$0,%eax
+	movl	%eax,0(%esp)
+	movl	%ebp,%eax
+	addl	$-132,%eax
+	movl	%eax,4(%esp)
+	call	strcpy
+	addl	$8,%esp
+
+	movl	%ebp,%eax
+	addl	$-136,%eax
+	movl	(%eax),%eax
+	addl	$128,%eax
+	pushl	%eax
+	movl	20(%ebp),%eax
+	popl	%ebx
+	movl	%eax,(%ebx)
+
+	subl	$8,%esp
+	movl	16(%ebp),%eax
+	movl	%eax,0(%esp)
+	movl	-136(%ebp),%eax
+	movl	%eax,4(%esp)
+	call	Add_To_Front_Of_MarkersList
+	addl	$8,%esp
+addMarker_endif_77	:	
+addMarker_endif_75	:	
+
+	movl	$0,%eax
+	jmp	addMarker_ret
+addMarker_ret	:	
+	movl	%ebp,%esp
+	popl	%ebp
+	ret	
+
+.globl	printMarkersList
+.type	printMarkersList,@function
+printMarkersList	:	
+	pushl	%ebp
+	movl	%esp,%ebp
+	subl	$4,%esp
+
+	subl	$4,%esp
+	movl	8(%ebp),%eax
+	movl	%eax,0(%esp)
+	call	Get_Front_Of_MarkersList
+	addl	$4,%esp
+	movl	%eax,-4(%ebp)
+
+printMarkersList_while_85	:	
+	movl	-4(%ebp),%ebx
+	cmpl	$0,%ebx
+	movl	$1,%eax
+	jne	printMarkersList_reltrue_86
+	movl	$0,%eax
+printMarkersList_reltrue_86	:	
+	testl	%eax,%eax
+	jz	printMarkersList_endwhile_85
+
+	subl	$8,%esp
+	movl	$symtab+108,0(%esp)
+	movl	%ebp,%eax
+	addl	$-4,%eax
+	movl	(%eax),%eax
+	addl	$0,%eax
+	movl	%eax,4(%esp)
+	call	printf
+	addl	$8,%esp
+
+	subl	$8,%esp
+	movl	$symtab+121,0(%esp)
+	movl	%ebp,%eax
+	addl	$-4,%eax
+	movl	(%eax),%eax
+	addl	$128,%eax
+	movl	(%eax),%eax
+	movl	%eax,4(%esp)
+	call	printf
+	addl	$8,%esp
+
+	subl	$4,%esp
+	movl	-4(%ebp),%eax
+	movl	%eax,0(%esp)
+	call	Get_Next_In_MarkersList
+	addl	$4,%esp
+	movl	%eax,-4(%ebp)
+	jmp	printMarkersList_while_85
+printMarkersList_endwhile_85	:	
+printMarkersList_ret	:	
+	movl	%ebp,%esp
+	popl	%ebp
+	ret	
+
+.globl	printLinesList
+.type	printLinesList,@function
+printLinesList	:	
+	pushl	%ebp
+	movl	%esp,%ebp
+	subl	$4,%esp
+
+	subl	$4,%esp
+	movl	8(%ebp),%eax
+	movl	%eax,0(%esp)
+	call	Get_Front_Of_LinesList
+	addl	$4,%esp
+	movl	%eax,-4(%ebp)
+
+printLinesList_while_87	:	
+	movl	-4(%ebp),%ebx
+	cmpl	$0,%ebx
+	movl	$1,%eax
+	jne	printLinesList_reltrue_88
+	movl	$0,%eax
+printLinesList_reltrue_88	:	
+	testl	%eax,%eax
+	jz	printLinesList_endwhile_87
+
+	subl	$8,%esp
+	movl	$symtab+126,0(%esp)
+	movl	%ebp,%eax
+	addl	$-4,%eax
+	movl	(%eax),%eax
+	addl	$0,%eax
+	movl	%eax,4(%esp)
+	call	printf
+	addl	$8,%esp
+
+	subl	$8,%esp
+	movl	$symtab+132,0(%esp)
+	movl	%ebp,%eax
+	addl	$-4,%eax
+	movl	(%eax),%eax
+	addl	$540,%eax
+	movl	(%eax),%eax
+	movl	%eax,4(%esp)
+	call	printf
+	addl	$8,%esp
+
+	subl	$8,%esp
+	movl	$symtab+136,0(%esp)
+	movl	%ebp,%eax
+	addl	$-4,%eax
+	movl	(%eax),%eax
+	addl	$532,%eax
+	movl	(%eax),%eax
+	movl	%eax,4(%esp)
+	call	printf
+	addl	$8,%esp
+
+	subl	$4,%esp
+	movl	-4(%ebp),%eax
+	movl	%eax,0(%esp)
+	call	Get_Next_In_LinesList
+	addl	$4,%esp
+	movl	%eax,-4(%ebp)
+	jmp	printLinesList_while_87
+printLinesList_endwhile_87	:	
+printLinesList_ret	:	
+	movl	%ebp,%esp
+	popl	%ebp
+	ret	
+
+.globl	syncGloblsWithMarkers
+.type	syncGloblsWithMarkers,@function
+syncGloblsWithMarkers	:	
+	pushl	%ebp
+	movl	%esp,%ebp
+	subl	$16,%esp
+
+	subl	$4,%esp
+	movl	8(%ebp),%eax
+	movl	%eax,0(%esp)
+	call	Get_Front_Of_MarkersList
+	addl	$4,%esp
+	movl	%eax,-8(%ebp)
+
+syncGloblsWithMarkers_while_89	:	
+	movl	-8(%ebp),%ebx
+	cmpl	$0,%ebx
+	movl	$1,%eax
+	jne	syncGloblsWithMarkers_reltrue_90
+	movl	$0,%eax
+syncGloblsWithMarkers_reltrue_90	:	
+	testl	%eax,%eax
+	jz	syncGloblsWithMarkers_endwhile_89
+
+	subl	$4,%esp
+	movl	12(%ebp),%eax
+	movl	%eax,0(%esp)
+	call	Get_Front_Of_MarkersList
+	addl	$4,%esp
+	movl	%eax,-12(%ebp)
+
+syncGloblsWithMarkers_while_91	:	
+	movl	-12(%ebp),%ebx
+	cmpl	$0,%ebx
+	movl	$1,%eax
+	jne	syncGloblsWithMarkers_reltrue_92
+	movl	$0,%eax
+syncGloblsWithMarkers_reltrue_92	:	
+	testl	%eax,%eax
+	jz	syncGloblsWithMarkers_endwhile_91
+
+	subl	$8,%esp
+	movl	%ebp,%eax
+	addl	$-12,%eax
+	movl	(%eax),%eax
+	addl	$0,%eax
+	movl	%eax,0(%esp)
+	movl	%ebp,%eax
+	addl	$-8,%eax
+	movl	(%eax),%eax
+	addl	$0,%eax
+	movl	%eax,4(%esp)
+	call	strcmp
+	addl	$8,%esp
+	movl	%eax,%ebx
+	cmpl	$0,%ebx
+	movl	$1,%eax
+	je	syncGloblsWithMarkers_reltrue_94
+	movl	$0,%eax
+syncGloblsWithMarkers_reltrue_94	:	
+	testl	%eax,%eax
+	jnz	syncGloblsWithMarkers_ifbl_93
+	jmp	syncGloblsWithMarkers_elsebl_93
+syncGloblsWithMarkers_ifbl_93	:	
+
+	movl	%ebp,%eax
+	addl	$-8,%eax
+	movl	(%eax),%eax
+	addl	$128,%eax
+	movl	(%eax),%eax
+	pushl	%eax
+	movl	$0,%ebx
+	subl	$1,%ebx
+	movl	%ebx,%eax
+	popl	%ebx
+	cmpl	%eax,%ebx
+	movl	$1,%eax
+	jne	syncGloblsWithMarkers_reltrue_96
+	movl	$0,%eax
+syncGloblsWithMarkers_reltrue_96	:	
+	testl	%eax,%eax
+	jnz	syncGloblsWithMarkers_ifbl_95
+	jmp	syncGloblsWithMarkers_elsebl_95
+syncGloblsWithMarkers_ifbl_95	:	
+
+	subl	$8,%esp
+	movl	$symtab+140,0(%esp)
+	movl	%ebp,%eax
+	addl	$-8,%eax
+	movl	(%eax),%eax
+	addl	$0,%eax
+	movl	%eax,4(%esp)
+	call	printf
+	addl	$8,%esp
+	jmp	syncGloblsWithMarkers_endif_95
+syncGloblsWithMarkers_elsebl_95	:	
+
+	movl	%ebp,%eax
+	addl	$-8,%eax
+	movl	(%eax),%eax
+	addl	$128,%eax
+	pushl	%eax
+	movl	%ebp,%eax
+	addl	$-12,%eax
+	movl	(%eax),%eax
+	addl	$128,%eax
+	movl	(%eax),%eax
+	popl	%ebx
+	movl	%eax,(%ebx)
+syncGloblsWithMarkers_endif_95	:	
+	jmp	syncGloblsWithMarkers_endwhile_91
+syncGloblsWithMarkers_elsebl_93	:	
+syncGloblsWithMarkers_endif_93	:	
+
+	subl	$4,%esp
+	movl	-12(%ebp),%eax
+	movl	%eax,0(%esp)
+	call	Get_Next_In_MarkersList
+	addl	$4,%esp
+	movl	%eax,-12(%ebp)
+	jmp	syncGloblsWithMarkers_while_91
+syncGloblsWithMarkers_endwhile_91	:	
+
+	movl	$0,-4(%ebp)
+
+	movl	%ebp,%eax
+	addl	$-8,%eax
+	movl	(%eax),%eax
+	addl	$128,%eax
+	movl	(%eax),%eax
+	pushl	%eax
+	movl	$0,%ebx
+	subl	$1,%ebx
+	movl	%ebx,%eax
+	popl	%ebx
+	cmpl	%eax,%ebx
+	movl	$1,%eax
+	je	syncGloblsWithMarkers_reltrue_98
+	movl	$0,%eax
+syncGloblsWithMarkers_reltrue_98	:	
+	testl	%eax,%eax
+	jnz	syncGloblsWithMarkers_ifbl_97
+	jmp	syncGloblsWithMarkers_elsebl_97
+syncGloblsWithMarkers_ifbl_97	:	
+
+	subl	$8,%esp
+	movl	$symtab+224,0(%esp)
+	movl	%ebp,%eax
+	addl	$-8,%eax
+	movl	(%eax),%eax
+	addl	$0,%eax
+	movl	%eax,4(%esp)
+	call	printf
+	addl	$8,%esp
+
+	movl	$1,-4(%ebp)
+	jmp	syncGloblsWithMarkers_endif_97
+syncGloblsWithMarkers_elsebl_97	:	
+syncGloblsWithMarkers_endif_97	:	
+
+	movl	-8(%ebp),%eax
+	movl	%eax,-16(%ebp)
+
+	subl	$4,%esp
+	movl	-8(%ebp),%eax
+	movl	%eax,0(%esp)
+	call	Get_Next_In_MarkersList
+	addl	$4,%esp
+	movl	%eax,-8(%ebp)
+
+	movl	-4(%ebp),%ebx
+	cmpl	$1,%ebx
+	movl	$1,%eax
+	je	syncGloblsWithMarkers_reltrue_100
+	movl	$0,%eax
+syncGloblsWithMarkers_reltrue_100	:	
+	testl	%eax,%eax
+	jnz	syncGloblsWithMarkers_ifbl_99
+	jmp	syncGloblsWithMarkers_elsebl_99
+syncGloblsWithMarkers_ifbl_99	:	
+
+	subl	$8,%esp
+	movl	8(%ebp),%eax
+	movl	%eax,0(%esp)
+	movl	-16(%ebp),%eax
+	movl	%eax,4(%esp)
+	call	Remove_From_MarkersList
+	addl	$8,%esp
+	jmp	syncGloblsWithMarkers_endif_99
+syncGloblsWithMarkers_elsebl_99	:	
+syncGloblsWithMarkers_endif_99	:	
+	jmp	syncGloblsWithMarkers_while_89
+syncGloblsWithMarkers_endwhile_89	:	
+syncGloblsWithMarkers_ret	:	
+	movl	%ebp,%esp
+	popl	%ebp
+	ret	
+
+.globl	getSizeIdentifier
+.type	getSizeIdentifier,@function
+getSizeIdentifier	:	
+	pushl	%ebp
+	movl	%esp,%ebp
+	subl	$12,%esp
+
+	subl	$12,%esp
+	movl	%ebp,%eax
+	addl	$-12,%eax
+	movl	%eax,0(%esp)
+	movl	$0,4(%esp)
+	movl	$8,8(%esp)
+	call	memset
+	addl	$12,%esp
+
+	movl	$0,-4(%ebp)
+
+getSizeIdentifier_while_101	:	
+	subl	$4,%esp
+	movl	%ebp,%eax
+	addl	$12,%eax
+	movl	(%eax),%eax
+	addl	$516,%eax
+	movl	(%eax),%eax
+	pushl	%eax
+	movl	%ebp,%eax
+	addl	$12,%eax
+	movl	(%eax),%eax
+	addl	$0,%eax
+	popl	%esi
+	addl	%esi,%eax
+	movb	(%eax),%al
+	movsbl	%al,%eax
+	movl	%eax,0(%esp)
+	call	isdigit
+	addl	$4,%esp
+	testl	%eax,%eax
+	jz	getSizeIdentifier_logtermfalse_102
+	movl	-4(%ebp),%ebx
+	cmpl	$8,%ebx
+	movl	$1,%eax
+	jl	getSizeIdentifier_reltrue_103
+	movl	$0,%eax
+getSizeIdentifier_reltrue_103	:	
+	testl	%eax,%eax
+	jz	getSizeIdentifier_logtermfalse_102
+	movl	$1,%eax
+	jmp	getSizeIdentifier_logtermtrue_102
+getSizeIdentifier_logtermfalse_102	:	
+	movl	$0,%eax
+getSizeIdentifier_logtermtrue_102	:	
+	testl	%eax,%eax
+	jz	getSizeIdentifier_endwhile_101
+
+	pushl	-4(%ebp)
+	movl	%ebp,%eax
+	addl	$12,%eax
+	movl	(%eax),%eax
+	addl	$516,%eax
+	movl	(%eax),%eax
+	pushl	%eax
+	movl	%ebp,%eax
+	addl	$12,%eax
+	movl	(%eax),%eax
+	addl	$0,%eax
+	popl	%esi
+	addl	%esi,%eax
+	movb	(%eax),%al
+	popl	%esi
+	movb	%al,-12(%ebp,%esi,1)
+
+	movl	%ebp,%eax
+	addl	$12,%eax
+	movl	(%eax),%eax
+	addl	$516,%eax
+	pushl	%eax
+	movl	%ebp,%eax
+	addl	$12,%eax
+	movl	(%eax),%eax
+	addl	$516,%eax
+	movl	(%eax),%eax
+	movl	%eax,%ebx
+	addl	$1,%ebx
+	movl	%ebx,%eax
+	popl	%ebx
+	movl	%eax,(%ebx)
+
+	movl	-4(%ebp),%ebx
+	addl	$1,%ebx
+	movl	%ebx,%eax
+	movl	%eax,-4(%ebp)
+	jmp	getSizeIdentifier_while_101
+getSizeIdentifier_endwhile_101	:	
+
+	subl	$4,%esp
+	movl	%ebp,%eax
+	addl	$-12,%eax
+	movl	%eax,0(%esp)
+	call	atoi
+	addl	$4,%esp
+	jmp	getSizeIdentifier_ret
+getSizeIdentifier_ret	:	
+	movl	%ebp,%esp
+	popl	%ebp
+	ret	
+
+.globl	getStringSize
+.type	getStringSize,@function
+getStringSize	:	
+	pushl	%ebp
+	movl	%esp,%ebp
+	subl	$4,%esp
+
+	movl	%ebp,%eax
+	addl	$12,%eax
+	movl	(%eax),%eax
+	addl	$516,%eax
+	movl	(%eax),%eax
+	pushl	%eax
+	movl	%ebp,%eax
+	addl	$12,%eax
+	movl	(%eax),%eax
+	addl	$0,%eax
+	popl	%esi
+	addl	%esi,%eax
+	movb	(%eax),%al
+	movsbl	%al,%eax
+	movl	%eax,%ebx
+	cmpl	$34,%ebx
+	movl	$1,%eax
+	jne	getStringSize_reltrue_105
+	movl	$0,%eax
+getStringSize_reltrue_105	:	
+	testl	%eax,%eax
+	jnz	getStringSize_ifbl_104
+	jmp	getStringSize_elsebl_104
+getStringSize_ifbl_104	:	
+
+	subl	$8,%esp
+	movl	$symtab+329,0(%esp)
+	subl	$8,%esp
+	movl	8(%ebp),%eax
+	movl	%eax,0(%esp)
+	movl	%ebp,%eax
+	addl	$12,%eax
+	movl	(%eax),%eax
+	addl	$536,%eax
+	movl	(%eax),%eax
+	movl	%eax,4(%esp)
+	call	getFilename
+	addl	$8,%esp
+	movl	%eax,4(%esp)
+	call	printf
+	addl	$8,%esp
+
+	subl	$8,%esp
+	movl	$symtab+374,0(%esp)
+	movl	%ebp,%eax
+	addl	$12,%eax
+	movl	(%eax),%eax
+	addl	$540,%eax
+	movl	(%eax),%eax
+	movl	%eax,4(%esp)
+	call	printf
+	addl	$8,%esp
+
+	movl	$0,%ebx
+	subl	$1,%ebx
+	movl	%ebx,%eax
+	jmp	getStringSize_ret
+getStringSize_elsebl_104	:	
+getStringSize_endif_104	:	
+
+	movl	%ebp,%eax
+	addl	$12,%eax
+	movl	(%eax),%eax
+	addl	$516,%eax
+	pushl	%eax
+	movl	%ebp,%eax
+	addl	$12,%eax
+	movl	(%eax),%eax
+	addl	$516,%eax
+	movl	(%eax),%eax
+	movl	%eax,%ebx
+	addl	$1,%ebx
+	movl	%ebx,%eax
+	popl	%ebx
+	movl	%eax,(%ebx)
+
+	movl	$1,-4(%ebp)
+
+getStringSize_while_106	:	
+	movl	%ebp,%eax
+	addl	$12,%eax
+	movl	(%eax),%eax
+	addl	$516,%eax
+	movl	(%eax),%eax
+	pushl	%eax
+	movl	%ebp,%eax
+	addl	$12,%eax
+	movl	(%eax),%eax
+	addl	$0,%eax
+	popl	%esi
+	addl	%esi,%eax
+	movb	(%eax),%al
+	movsbl	%al,%eax
+	movl	%eax,%ebx
+	cmpl	$34,%ebx
+	movl	$1,%eax
+	jne	getStringSize_reltrue_108
+	movl	$0,%eax
+getStringSize_reltrue_108	:	
+	testl	%eax,%eax
+	jz	getStringSize_logtermfalse_107
+	movl	%ebp,%eax
+	addl	$12,%eax
+	movl	(%eax),%eax
+	addl	$516,%eax
+	movl	(%eax),%eax
+	pushl	%eax
+	movl	%ebp,%eax
+	addl	$12,%eax
+	movl	(%eax),%eax
+	addl	$512,%eax
+	movl	(%eax),%eax
+	popl	%ebx
+	cmpl	%eax,%ebx
+	movl	$1,%eax
+	jl	getStringSize_reltrue_109
+	movl	$0,%eax
+getStringSize_reltrue_109	:	
+	testl	%eax,%eax
+	jz	getStringSize_logtermfalse_107
+	movl	$1,%eax
+	jmp	getStringSize_logtermtrue_107
+getStringSize_logtermfalse_107	:	
+	movl	$0,%eax
+getStringSize_logtermtrue_107	:	
+	testl	%eax,%eax
+	jz	getStringSize_endwhile_106
+
+	movl	%ebp,%eax
+	addl	$12,%eax
+	movl	(%eax),%eax
+	addl	$516,%eax
+	movl	(%eax),%eax
+	pushl	%eax
+	movl	%ebp,%eax
+	addl	$12,%eax
+	movl	(%eax),%eax
+	addl	$0,%eax
+	popl	%esi
+	addl	%esi,%eax
+	movb	(%eax),%al
+	movsbl	%al,%eax
+	movl	%eax,%ebx
+	cmpl	$92,%ebx
+	movl	$1,%eax
+	je	getStringSize_reltrue_111
+	movl	$0,%eax
+getStringSize_reltrue_111	:	
+	testl	%eax,%eax
+	jnz	getStringSize_ifbl_110
+	jmp	getStringSize_elsebl_110
+getStringSize_ifbl_110	:	
+
+	movl	%ebp,%eax
+	addl	$12,%eax
+	movl	(%eax),%eax
+	addl	$516,%eax
+	pushl	%eax
+	movl	%ebp,%eax
+	addl	$12,%eax
+	movl	(%eax),%eax
+	addl	$516,%eax
+	movl	(%eax),%eax
+	movl	%eax,%ebx
+	addl	$1,%ebx
+	movl	%ebx,%eax
+	popl	%ebx
+	movl	%eax,(%ebx)
+	jmp	getStringSize_endif_110
+getStringSize_elsebl_110	:	
+getStringSize_endif_110	:	
+
+	movl	-4(%ebp),%ebx
+	addl	$1,%ebx
+	movl	%ebx,%eax
+	movl	%eax,-4(%ebp)
+
+	movl	%ebp,%eax
+	addl	$12,%eax
+	movl	(%eax),%eax
+	addl	$516,%eax
+	pushl	%eax
+	movl	%ebp,%eax
+	addl	$12,%eax
+	movl	(%eax),%eax
+	addl	$516,%eax
+	movl	(%eax),%eax
+	movl	%eax,%ebx
+	addl	$1,%ebx
+	movl	%ebx,%eax
+	popl	%ebx
+	movl	%eax,(%ebx)
+	jmp	getStringSize_while_106
+getStringSize_endwhile_106	:	
+
+	movl	-4(%ebp),%eax
+	jmp	getStringSize_ret
+getStringSize_ret	:	
+	movl	%ebp,%esp
+	popl	%ebp
+	ret	
+
+.globl	parseSourceFile
+.type	parseSourceFile,@function
+parseSourceFile	:	
+	pushl	%ebp
+	movl	%esp,%ebp
+	subl	$568,%esp
+
+	movl	%ebp,%eax
+	addl	$-568,%eax
+	addl	$536,%eax
+	pushl	%eax
+	movl	%ebp,%eax
+	addl	$12,%eax
+	movl	(%eax),%eax
+	addl	$0,%eax
+	movl	(%eax),%eax
+	popl	%ebx
+	movl	%eax,(%ebx)
+
+	movl	%ebp,%eax
+	addl	$-568,%eax
+	addl	$540,%eax
+	movl	%eax,%ebx
+	movl	$0,(%ebx)
+
+	movl	$0,-8(%ebp)
+
+	movl	$0,-12(%ebp)
+
+parseSourceFile_while_112	:	
+	subl	$12,%esp
+	movl	8(%ebp),%eax
+	movl	%eax,0(%esp)
+	movl	16(%ebp),%eax
+	movl	%eax,4(%esp)
+	movl	%ebp,%eax
+	addl	$-568,%eax
+	movl	%eax,8(%esp)
+	call	readLine
+	addl	$12,%esp
+	movl	%eax,%ebx
+	cmpl	$0,%ebx
+	movl	$1,%eax
+	jge	parseSourceFile_reltrue_113
+	movl	$0,%eax
+parseSourceFile_reltrue_113	:	
+	testl	%eax,%eax
+	jz	parseSourceFile_endwhile_112
+
+	movl	%ebp,%eax
+	addl	$-568,%eax
+	addl	$540,%eax
+	pushl	%eax
+	movl	%ebp,%eax
+	addl	$-568,%eax
+	addl	$540,%eax
+	movl	(%eax),%eax
+	movl	%eax,%ebx
+	addl	$1,%ebx
+	movl	%ebx,%eax
+	popl	%ebx
+	movl	%eax,(%ebx)
+
+	subl	$4,%esp
+	movl	%ebp,%eax
+	addl	$-568,%eax
+	movl	%eax,0(%esp)
+	call	lnk_disposeWhitespace
+	addl	$4,%esp
+
+	movl	%ebp,%eax
+	addl	$-568,%eax
+	addl	$520,%eax
+	movl	%eax,%ebx
+	movl	$0,(%ebx)
+
+	movl	%ebp,%eax
+	addl	$-568,%eax
+	addl	$524,%eax
+	movl	%eax,%ebx
+	movl	$0,(%ebx)
+
+	movl	%ebp,%eax
+	addl	$-568,%eax
+	addl	$528,%eax
+	movl	%eax,%ebx
+	movl	$0,(%ebx)
+
+	subl	$12,%esp
+	movl	%ebp,%eax
+	addl	$-568,%eax
+	addl	$0,%eax
+	movl	%eax,0(%esp)
+	movl	%ebp,%eax
+	addl	$-568,%eax
+	addl	$516,%eax
+	movl	(%eax),%eax
+	movl	%eax,4(%esp)
+	movl	$symtab+390,8(%esp)
+	call	substrcmp
+	addl	$12,%esp
+	movl	%eax,%ebx
+	cmpl	$0,%ebx
+	movl	$1,%eax
+	je	parseSourceFile_reltrue_115
+	movl	$0,%eax
+parseSourceFile_reltrue_115	:	
+	testl	%eax,%eax
+	jnz	parseSourceFile_ifbl_114
+	jmp	parseSourceFile_elsebl_114
+parseSourceFile_ifbl_114	:	
+
+	movl	%ebp,%eax
+	addl	$-568,%eax
+	addl	$516,%eax
+	pushl	%eax
+	movl	%ebp,%eax
+	addl	$-568,%eax
+	addl	$516,%eax
+	movl	(%eax),%eax
+	movl	%eax,%ebx
+	addl	$8,%ebx
+	movl	%ebx,%eax
+	popl	%ebx
+	movl	%eax,(%ebx)
+
+	subl	$4,%esp
+	movl	%ebp,%eax
+	addl	$-568,%eax
+	movl	%eax,0(%esp)
+	call	lnk_disposeWhitespace
+	addl	$4,%esp
+
+	movl	$0,-8(%ebp)
+
+	movl	$0,-12(%ebp)
+
+	subl	$12,%esp
+	movl	%ebp,%eax
+	addl	$-568,%eax
+	addl	$0,%eax
+	movl	%eax,0(%esp)
+	movl	%ebp,%eax
+	addl	$-568,%eax
+	addl	$516,%eax
+	movl	(%eax),%eax
+	movl	%eax,4(%esp)
+	movl	$symtab+399,8(%esp)
+	call	substrcmp
+	addl	$12,%esp
+	movl	%eax,%ebx
+	cmpl	$0,%ebx
+	movl	$1,%eax
+	je	parseSourceFile_reltrue_117
+	movl	$0,%eax
+parseSourceFile_reltrue_117	:	
+	testl	%eax,%eax
+	jnz	parseSourceFile_ifbl_116
+	jmp	parseSourceFile_elsebl_116
+parseSourceFile_ifbl_116	:	
+
+	movl	$1,-8(%ebp)
+	jmp	parseSourceFile_endif_116
+parseSourceFile_elsebl_116	:	
+
+	subl	$12,%esp
+	movl	%ebp,%eax
+	addl	$-568,%eax
+	addl	$0,%eax
+	movl	%eax,0(%esp)
+	movl	%ebp,%eax
+	addl	$-568,%eax
+	addl	$516,%eax
+	movl	(%eax),%eax
+	movl	%eax,4(%esp)
+	movl	$symtab+405,8(%esp)
+	call	substrcmp
+	addl	$12,%esp
+	movl	%eax,%ebx
+	cmpl	$0,%ebx
+	movl	$1,%eax
+	je	parseSourceFile_reltrue_119
+	movl	$0,%eax
+parseSourceFile_reltrue_119	:	
+	testl	%eax,%eax
+	jnz	parseSourceFile_ifbl_118
+	jmp	parseSourceFile_elsebl_118
+parseSourceFile_ifbl_118	:	
+
+	movl	$1,-12(%ebp)
+	jmp	parseSourceFile_endif_118
+parseSourceFile_elsebl_118	:	
+
+	subl	$8,%esp
+	movl	$symtab+411,0(%esp)
+	subl	$8,%esp
+	movl	8(%ebp),%eax
+	movl	%eax,0(%esp)
+	movl	%ebp,%eax
+	addl	$-568,%eax
+	addl	$536,%eax
+	movl	(%eax),%eax
+	movl	%eax,4(%esp)
+	call	getFilename
+	addl	$8,%esp
+	movl	%eax,4(%esp)
+	call	printf
+	addl	$8,%esp
+
+	subl	$8,%esp
+	movl	$symtab+459,0(%esp)
+	movl	%ebp,%eax
+	addl	$-568,%eax
+	addl	$540,%eax
+	movl	(%eax),%eax
+	movl	%eax,4(%esp)
+	call	printf
+	addl	$8,%esp
+parseSourceFile_endif_118	:	
+parseSourceFile_endif_116	:	
+	jmp	parseSourceFile_while_112
+parseSourceFile_elsebl_114	:	
+
+	subl	$12,%esp
+	movl	%ebp,%eax
+	addl	$-568,%eax
+	addl	$0,%eax
+	movl	%eax,0(%esp)
+	movl	%ebp,%eax
+	addl	$-568,%eax
+	addl	$516,%eax
+	movl	(%eax),%eax
+	movl	%eax,4(%esp)
+	movl	$symtab+512,8(%esp)
+	call	substrcmp
+	addl	$12,%esp
+	movl	%eax,%ebx
+	cmpl	$0,%ebx
+	movl	$1,%eax
+	je	parseSourceFile_reltrue_121
+	movl	$0,%eax
+parseSourceFile_reltrue_121	:	
+	testl	%eax,%eax
+	jnz	parseSourceFile_ifbl_120
+	jmp	parseSourceFile_elsebl_120
+parseSourceFile_ifbl_120	:	
+
+	movl	%ebp,%eax
+	addl	$-568,%eax
+	addl	$524,%eax
+	movl	%eax,%ebx
+	movl	$1,(%ebx)
+	jmp	parseSourceFile_endif_120
+parseSourceFile_elsebl_120	:	
+
+	movl	-12(%ebp),%ebx
+	cmpl	$0,%ebx
+	movl	$1,%eax
+	je	parseSourceFile_reltrue_124
+	movl	$0,%eax
+parseSourceFile_reltrue_124	:	
+	testl	%eax,%eax
+	jz	parseSourceFile_logtermfalse_123
+	subl	$12,%esp
+	movl	%ebp,%eax
+	addl	$-568,%eax
+	addl	$0,%eax
+	movl	%eax,0(%esp)
+	movl	%ebp,%eax
+	addl	$-568,%eax
+	addl	$516,%eax
+	movl	(%eax),%eax
+	movl	%eax,4(%esp)
+	movl	$symtab+519,8(%esp)
+	call	substrcmp
+	addl	$12,%esp
+	movl	%eax,%ebx
+	cmpl	$0,%ebx
+	movl	$1,%eax
+	je	parseSourceFile_reltrue_125
+	movl	$0,%eax
+parseSourceFile_reltrue_125	:	
+	testl	%eax,%eax
+	jz	parseSourceFile_logtermfalse_123
+	movl	$1,%eax
+	jmp	parseSourceFile_logtermtrue_123
+parseSourceFile_logtermfalse_123	:	
+	movl	$0,%eax
+parseSourceFile_logtermtrue_123	:	
+	testl	%eax,%eax
+	jnz	parseSourceFile_ifbl_122
+	jmp	parseSourceFile_elsebl_122
+parseSourceFile_ifbl_122	:	
+
+	movl	%ebp,%eax
+	addl	$-568,%eax
+	addl	$520,%eax
+	movl	%eax,%ebx
+	movl	$1,(%ebx)
+
+	subl	$12,%esp
+	movl	8(%ebp),%eax
+	movl	%eax,0(%esp)
+	movl	%ebp,%eax
+	addl	$-568,%eax
+	movl	%eax,4(%esp)
+	movl	$0,8(%esp)
+	call	commentLine
+	addl	$12,%esp
+	jmp	parseSourceFile_endif_122
+parseSourceFile_elsebl_122	:	
+parseSourceFile_endif_122	:	
+parseSourceFile_endif_120	:	
+parseSourceFile_endif_114	:	
+
+	movl	%ebp,%eax
+	addl	$-568,%eax
+	addl	$512,%eax
+	movl	(%eax),%eax
+	movl	%eax,%ebx
+	cmpl	$0,%ebx
+	movl	$1,%eax
+	je	parseSourceFile_reltrue_128
+	movl	$0,%eax
+parseSourceFile_reltrue_128	:	
+	testl	%eax,%eax
+	jnz	parseSourceFile_logexprtrue_127
+	movl	%ebp,%eax
+	addl	$-568,%eax
+	addl	$516,%eax
+	movl	(%eax),%eax
+	pushl	%eax
+	movl	%ebp,%eax
+	addl	$-568,%eax
+	addl	$512,%eax
+	movl	(%eax),%eax
+	popl	%ebx
+	cmpl	%eax,%ebx
+	movl	$1,%eax
+	je	parseSourceFile_reltrue_129
+	movl	$0,%eax
+parseSourceFile_reltrue_129	:	
+	testl	%eax,%eax
+	jnz	parseSourceFile_logexprtrue_127
+	movl	$0,%eax
+	jmp	parseSourceFile_logexprfalse_127
+parseSourceFile_logexprtrue_127	:	
+	movl	$1,%eax
+parseSourceFile_logexprfalse_127	:	
+	testl	%eax,%eax
+	jnz	parseSourceFile_ifbl_126
+	jmp	parseSourceFile_elsebl_126
+parseSourceFile_ifbl_126	:	
+
+	movl	%ebp,%eax
+	addl	$-568,%eax
+	addl	$520,%eax
+	movl	%eax,%ebx
+	movl	$1,(%ebx)
+	jmp	parseSourceFile_endif_126
+parseSourceFile_elsebl_126	:	
+parseSourceFile_endif_126	:	
+
+	movl	%ebp,%eax
+	addl	$-568,%eax
+	addl	$516,%eax
+	movl	(%eax),%eax
+	pushl	%eax
+	movl	%ebp,%eax
+	addl	$-568,%eax
+	addl	$0,%eax
+	popl	%esi
+	addl	%esi,%eax
+	movb	(%eax),%al
+	movsbl	%al,%eax
+	movl	%eax,%ebx
+	cmpl	$35,%ebx
+	movl	$1,%eax
+	je	parseSourceFile_reltrue_131
+	movl	$0,%eax
+parseSourceFile_reltrue_131	:	
+	testl	%eax,%eax
+	jnz	parseSourceFile_ifbl_130
+	jmp	parseSourceFile_elsebl_130
+parseSourceFile_ifbl_130	:	
+
+	movl	%ebp,%eax
+	addl	$-568,%eax
+	addl	$520,%eax
+	movl	%eax,%ebx
+	movl	$1,(%ebx)
+	jmp	parseSourceFile_endif_130
+parseSourceFile_elsebl_130	:	
+parseSourceFile_endif_130	:	
+
+	movl	%ebp,%eax
+	addl	$12,%eax
+	movl	(%eax),%eax
+	addl	$260,%eax
+	movl	(%eax),%eax
+	movl	%eax,%ebx
+	cmpl	$1,%ebx
+	movl	$1,%eax
+	jne	parseSourceFile_reltrue_133
+	movl	$0,%eax
+parseSourceFile_reltrue_133	:	
+	testl	%eax,%eax
+	jnz	parseSourceFile_ifbl_132
+	jmp	parseSourceFile_elsebl_132
+parseSourceFile_ifbl_132	:	
+
+	movl	%ebp,%eax
+	addl	$-568,%eax
+	addl	$520,%eax
+	movl	(%eax),%eax
+	movl	%eax,%ebx
+	cmpl	$1,%ebx
+	movl	$1,%eax
+	je	parseSourceFile_reltrue_135
+	movl	$0,%eax
+parseSourceFile_reltrue_135	:	
+	testl	%eax,%eax
+	jnz	parseSourceFile_ifbl_134
+	jmp	parseSourceFile_elsebl_134
+parseSourceFile_ifbl_134	:	
+	jmp	parseSourceFile_while_112
+parseSourceFile_elsebl_134	:	
+parseSourceFile_endif_134	:	
+
+	subl	$4,%esp
+	movl	%ebp,%eax
+	addl	$-568,%eax
+	movl	%eax,0(%esp)
+	call	disposeComments
+	addl	$4,%esp
+	jmp	parseSourceFile_endif_132
+parseSourceFile_elsebl_132	:	
+parseSourceFile_endif_132	:	
+
+	movl	%ebp,%eax
+	addl	$-568,%eax
+	addl	$528,%eax
+	pushl	%eax
+	subl	$8,%esp
+	movl	8(%ebp),%eax
+	movl	%eax,0(%esp)
+	movl	%ebp,%eax
+	addl	$-568,%eax
+	movl	%eax,4(%esp)
+	call	isMarkerLine
+	addl	$8,%esp
+	popl	%ebx
+	movl	%eax,(%ebx)
+
+	movl	-8(%ebp),%ebx
+	cmpl	$1,%ebx
+	movl	$1,%eax
+	je	parseSourceFile_reltrue_137
+	movl	$0,%eax
+parseSourceFile_reltrue_137	:	
+	testl	%eax,%eax
+	jnz	parseSourceFile_ifbl_136
+	jmp	parseSourceFile_elsebl_136
+parseSourceFile_ifbl_136	:	
+
+	movl	%ebp,%eax
+	addl	$-568,%eax
+	addl	$532,%eax
+	pushl	%eax
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$48,%eax
+	movl	(%eax),%eax
+	popl	%ebx
+	movl	%eax,(%ebx)
+
+	movl	%ebp,%eax
+	addl	$-568,%eax
+	addl	$520,%eax
+	movl	(%eax),%eax
+	movl	%eax,%ebx
+	cmpl	$0,%ebx
+	movl	$1,%eax
+	je	parseSourceFile_reltrue_140
+	movl	$0,%eax
+parseSourceFile_reltrue_140	:	
+	testl	%eax,%eax
+	jz	parseSourceFile_logtermfalse_139
+	movl	%ebp,%eax
+	addl	$-568,%eax
+	addl	$524,%eax
+	movl	(%eax),%eax
+	movl	%eax,%ebx
+	cmpl	$0,%ebx
+	movl	$1,%eax
+	je	parseSourceFile_reltrue_141
+	movl	$0,%eax
+parseSourceFile_reltrue_141	:	
+	testl	%eax,%eax
+	jz	parseSourceFile_logtermfalse_139
+	movl	%ebp,%eax
+	addl	$-568,%eax
+	addl	$528,%eax
+	movl	(%eax),%eax
+	movl	%eax,%ebx
+	cmpl	$0,%ebx
+	movl	$1,%eax
+	je	parseSourceFile_reltrue_142
+	movl	$0,%eax
+parseSourceFile_reltrue_142	:	
+	testl	%eax,%eax
+	jz	parseSourceFile_logtermfalse_139
+	movl	$1,%eax
+	jmp	parseSourceFile_logtermtrue_139
+parseSourceFile_logtermfalse_139	:	
+	movl	$0,%eax
+parseSourceFile_logtermtrue_139	:	
+	testl	%eax,%eax
+	jnz	parseSourceFile_ifbl_138
+	jmp	parseSourceFile_elsebl_138
+parseSourceFile_ifbl_138	:	
+
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$48,%eax
+	pushl	%eax
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$48,%eax
+	movl	(%eax),%eax
+	movl	%eax,%ebx
+	addl	$1,%ebx
+	movl	%ebx,%eax
+	popl	%ebx
+	movl	%eax,(%ebx)
+	jmp	parseSourceFile_endif_138
+parseSourceFile_elsebl_138	:	
+parseSourceFile_endif_138	:	
+
+	subl	$8,%esp
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$32,%eax
+	movl	%eax,0(%esp)
+	movl	%ebp,%eax
+	addl	$-568,%eax
+	movl	%eax,4(%esp)
+	call	addLine
+	addl	$8,%esp
+	movl	%eax,-4(%ebp)
+
+	movl	-4(%ebp),%ebx
+	cmpl	$0,%ebx
+	movl	$1,%eax
+	jne	parseSourceFile_reltrue_144
+	movl	$0,%eax
+parseSourceFile_reltrue_144	:	
+	testl	%eax,%eax
+	jnz	parseSourceFile_ifbl_143
+	jmp	parseSourceFile_elsebl_143
+parseSourceFile_ifbl_143	:	
+
+	movl	$0,%ebx
+	subl	$20003,%ebx
+	movl	%ebx,%eax
+	jmp	parseSourceFile_ret
+parseSourceFile_elsebl_143	:	
+parseSourceFile_endif_143	:	
+	jmp	parseSourceFile_endif_136
+parseSourceFile_elsebl_136	:	
+
+	movl	-12(%ebp),%ebx
+	cmpl	$1,%ebx
+	movl	$1,%eax
+	je	parseSourceFile_reltrue_146
+	movl	$0,%eax
+parseSourceFile_reltrue_146	:	
+	testl	%eax,%eax
+	jnz	parseSourceFile_ifbl_145
+	jmp	parseSourceFile_elsebl_145
+parseSourceFile_ifbl_145	:	
+
+	movl	%ebp,%eax
+	addl	$-568,%eax
+	addl	$532,%eax
+	pushl	%eax
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$52,%eax
+	movl	(%eax),%eax
+	popl	%ebx
+	movl	%eax,(%ebx)
+
+	movl	$0,-16(%ebp)
+
+	subl	$12,%esp
+	movl	%ebp,%eax
+	addl	$-568,%eax
+	addl	$0,%eax
+	movl	%eax,0(%esp)
+	movl	%ebp,%eax
+	addl	$-568,%eax
+	addl	$516,%eax
+	movl	(%eax),%eax
+	movl	%eax,4(%esp)
+	movl	$symtab+519,8(%esp)
+	call	substrcmp
+	addl	$12,%esp
+	movl	%eax,%ebx
+	cmpl	$0,%ebx
+	movl	$1,%eax
+	jne	parseSourceFile_reltrue_148
+	movl	$0,%eax
+parseSourceFile_reltrue_148	:	
+	testl	%eax,%eax
+	jnz	parseSourceFile_ifbl_147
+	jmp	parseSourceFile_elsebl_147
+parseSourceFile_ifbl_147	:	
+	jmp	parseSourceFile_endif_147
+parseSourceFile_elsebl_147	:	
+
+	subl	$12,%esp
+	movl	%ebp,%eax
+	addl	$-568,%eax
+	addl	$0,%eax
+	movl	%eax,0(%esp)
+	movl	%ebp,%eax
+	addl	$-568,%eax
+	addl	$516,%eax
+	movl	(%eax),%eax
+	movl	%eax,4(%esp)
+	movl	$symtab+521,8(%esp)
+	call	substrcmp
+	addl	$12,%esp
+	movl	%eax,%ebx
+	cmpl	$0,%ebx
+	movl	$1,%eax
+	je	parseSourceFile_reltrue_150
+	movl	$0,%eax
+parseSourceFile_reltrue_150	:	
+	testl	%eax,%eax
+	jnz	parseSourceFile_ifbl_149
+	jmp	parseSourceFile_elsebl_149
+parseSourceFile_ifbl_149	:	
+
+	movl	%ebp,%eax
+	addl	$-568,%eax
+	addl	$516,%eax
+	pushl	%eax
+	movl	%ebp,%eax
+	addl	$-568,%eax
+	addl	$516,%eax
+	movl	(%eax),%eax
+	movl	%eax,%ebx
+	addl	$7,%ebx
+	movl	%ebx,%eax
+	popl	%ebx
+	movl	%eax,(%ebx)
+
+	subl	$4,%esp
+	movl	%ebp,%eax
+	addl	$-568,%eax
+	movl	%eax,0(%esp)
+	call	lnk_disposeWhitespace
+	addl	$4,%esp
+
+	subl	$8,%esp
+	movl	8(%ebp),%eax
+	movl	%eax,0(%esp)
+	movl	%ebp,%eax
+	addl	$-568,%eax
+	movl	%eax,4(%esp)
+	call	getStringSize
+	addl	$8,%esp
+	movl	%eax,-16(%ebp)
+	jmp	parseSourceFile_endif_149
+parseSourceFile_elsebl_149	:	
+
+	subl	$12,%esp
+	movl	%ebp,%eax
+	addl	$-568,%eax
+	addl	$0,%eax
+	movl	%eax,0(%esp)
+	movl	%ebp,%eax
+	addl	$-568,%eax
+	addl	$516,%eax
+	movl	(%eax),%eax
+	movl	%eax,4(%esp)
+	movl	$symtab+529,8(%esp)
+	call	substrcmp
+	addl	$12,%esp
+	movl	%eax,%ebx
+	cmpl	$0,%ebx
+	movl	$1,%eax
+	je	parseSourceFile_reltrue_152
+	movl	$0,%eax
+parseSourceFile_reltrue_152	:	
+	testl	%eax,%eax
+	jnz	parseSourceFile_ifbl_151
+	jmp	parseSourceFile_elsebl_151
+parseSourceFile_ifbl_151	:	
+
+	movl	$1,-16(%ebp)
+	jmp	parseSourceFile_endif_151
+parseSourceFile_elsebl_151	:	
+
+	subl	$12,%esp
+	movl	%ebp,%eax
+	addl	$-568,%eax
+	addl	$0,%eax
+	movl	%eax,0(%esp)
+	movl	%ebp,%eax
+	addl	$-568,%eax
+	addl	$516,%eax
+	movl	(%eax),%eax
+	movl	%eax,4(%esp)
+	movl	$symtab+535,8(%esp)
+	call	substrcmp
+	addl	$12,%esp
+	movl	%eax,%ebx
+	cmpl	$0,%ebx
+	movl	$1,%eax
+	je	parseSourceFile_reltrue_154
+	movl	$0,%eax
+parseSourceFile_reltrue_154	:	
+	testl	%eax,%eax
+	jnz	parseSourceFile_ifbl_153
+	jmp	parseSourceFile_elsebl_153
+parseSourceFile_ifbl_153	:	
+
+	movl	$4,-16(%ebp)
+	jmp	parseSourceFile_endif_153
+parseSourceFile_elsebl_153	:	
+
+	subl	$12,%esp
+	movl	%ebp,%eax
+	addl	$-568,%eax
+	addl	$0,%eax
+	movl	%eax,0(%esp)
+	movl	%ebp,%eax
+	addl	$-568,%eax
+	addl	$516,%eax
+	movl	(%eax),%eax
+	movl	%eax,4(%esp)
+	movl	$symtab+541,8(%esp)
+	call	substrcmp
+	addl	$12,%esp
+	movl	%eax,%ebx
+	cmpl	$0,%ebx
+	movl	$1,%eax
+	je	parseSourceFile_reltrue_156
+	movl	$0,%eax
+parseSourceFile_reltrue_156	:	
+	testl	%eax,%eax
+	jnz	parseSourceFile_ifbl_155
+	jmp	parseSourceFile_elsebl_155
+parseSourceFile_ifbl_155	:	
+
+	movl	%ebp,%eax
+	addl	$-568,%eax
+	addl	$516,%eax
+	pushl	%eax
+	movl	%ebp,%eax
+	addl	$-568,%eax
+	addl	$516,%eax
+	movl	(%eax),%eax
+	movl	%eax,%ebx
+	addl	$5,%ebx
+	movl	%ebx,%eax
+	popl	%ebx
+	movl	%eax,(%ebx)
+
+	subl	$4,%esp
+	movl	%ebp,%eax
+	addl	$-568,%eax
+	movl	%eax,0(%esp)
+	call	lnk_disposeWhitespace
+	addl	$4,%esp
+
+	subl	$8,%esp
+	movl	8(%ebp),%eax
+	movl	%eax,0(%esp)
+	movl	%ebp,%eax
+	addl	$-568,%eax
+	movl	%eax,4(%esp)
+	call	getSizeIdentifier
+	addl	$8,%esp
+	movl	%eax,-16(%ebp)
+
+	subl	$8,%esp
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$40,%eax
+	movl	%eax,0(%esp)
+	movl	%ebp,%eax
+	addl	$-568,%eax
+	movl	%eax,4(%esp)
+	call	addLine
+	addl	$8,%esp
+
+parseSourceFile_while_157	:	
+	subl	$12,%esp
+	movl	8(%ebp),%eax
+	movl	%eax,0(%esp)
+	movl	16(%ebp),%eax
+	movl	%eax,4(%esp)
+	movl	%ebp,%eax
+	addl	$-568,%eax
+	movl	%eax,8(%esp)
+	call	readLine
+	addl	$12,%esp
+	movl	%eax,%ebx
+	cmpl	$0,%ebx
+	movl	$1,%eax
+	jge	parseSourceFile_reltrue_158
+	movl	$0,%eax
+parseSourceFile_reltrue_158	:	
+	testl	%eax,%eax
+	jz	parseSourceFile_endwhile_157
+
+	subl	$4,%esp
+	movl	%ebp,%eax
+	addl	$-568,%eax
+	movl	%eax,0(%esp)
+	call	lnk_disposeWhitespace
+	addl	$4,%esp
+
+	subl	$12,%esp
+	movl	%ebp,%eax
+	addl	$-568,%eax
+	addl	$0,%eax
+	movl	%eax,0(%esp)
+	movl	%ebp,%eax
+	addl	$-568,%eax
+	addl	$516,%eax
+	movl	(%eax),%eax
+	movl	%eax,4(%esp)
+	movl	$symtab+547,8(%esp)
+	call	substrcmp
+	addl	$12,%esp
+	movl	%eax,%ebx
+	cmpl	$0,%ebx
+	movl	$1,%eax
+	je	parseSourceFile_reltrue_160
+	movl	$0,%eax
+parseSourceFile_reltrue_160	:	
+	testl	%eax,%eax
+	jnz	parseSourceFile_ifbl_159
+	jmp	parseSourceFile_elsebl_159
+parseSourceFile_ifbl_159	:	
+	jmp	parseSourceFile_endwhile_157
+parseSourceFile_elsebl_159	:	
+parseSourceFile_endif_159	:	
+
+	subl	$8,%esp
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$40,%eax
+	movl	%eax,0(%esp)
+	movl	%ebp,%eax
+	addl	$-568,%eax
+	movl	%eax,4(%esp)
+	call	addLine
+	addl	$8,%esp
+	jmp	parseSourceFile_while_157
+parseSourceFile_endwhile_157	:	
+	jmp	parseSourceFile_endif_155
+parseSourceFile_elsebl_155	:	
+
+	subl	$8,%esp
+	movl	$symtab+553,0(%esp)
+	subl	$8,%esp
+	movl	8(%ebp),%eax
+	movl	%eax,0(%esp)
+	movl	%ebp,%eax
+	addl	$-568,%eax
+	addl	$536,%eax
+	movl	(%eax),%eax
+	movl	%eax,4(%esp)
+	call	getFilename
+	addl	$8,%esp
+	movl	%eax,4(%esp)
+	call	printf
+	addl	$8,%esp
+
+	subl	$8,%esp
+	movl	$symtab+374,0(%esp)
+	movl	%ebp,%eax
+	addl	$-568,%eax
+	addl	$540,%eax
+	movl	(%eax),%eax
+	movl	%eax,4(%esp)
+	call	printf
+	addl	$8,%esp
+
+	movl	$0,%ebx
+	subl	$1,%ebx
+	movl	%ebx,%eax
+	jmp	parseSourceFile_ret
+parseSourceFile_endif_155	:	
+parseSourceFile_endif_153	:	
+parseSourceFile_endif_151	:	
+parseSourceFile_endif_149	:	
+parseSourceFile_endif_147	:	
+
+	movl	-16(%ebp),%ebx
+	cmpl	$0,%ebx
+	movl	$1,%eax
+	jl	parseSourceFile_reltrue_162
+	movl	$0,%eax
+parseSourceFile_reltrue_162	:	
+	testl	%eax,%eax
+	jnz	parseSourceFile_ifbl_161
+	jmp	parseSourceFile_elsebl_161
+parseSourceFile_ifbl_161	:	
+
+	movl	-16(%ebp),%eax
+	jmp	parseSourceFile_ret
+parseSourceFile_elsebl_161	:	
+parseSourceFile_endif_161	:	
+
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$52,%eax
+	pushl	%eax
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$52,%eax
+	movl	(%eax),%eax
+	movl	%eax,%ebx
+	addl	-16(%ebp),%ebx
+	movl	%ebx,%eax
+	popl	%ebx
+	movl	%eax,(%ebx)
+
+	subl	$8,%esp
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$40,%eax
+	movl	%eax,0(%esp)
+	movl	%ebp,%eax
+	addl	$-568,%eax
+	movl	%eax,4(%esp)
+	call	addLine
+	addl	$8,%esp
+
+	movl	-4(%ebp),%ebx
+	cmpl	$0,%ebx
+	movl	$1,%eax
+	jne	parseSourceFile_reltrue_164
+	movl	$0,%eax
+parseSourceFile_reltrue_164	:	
+	testl	%eax,%eax
+	jnz	parseSourceFile_ifbl_163
+	jmp	parseSourceFile_elsebl_163
+parseSourceFile_ifbl_163	:	
+
+	movl	$0,%ebx
+	subl	$20003,%ebx
+	movl	%ebx,%eax
+	jmp	parseSourceFile_ret
+parseSourceFile_elsebl_163	:	
+parseSourceFile_endif_163	:	
+	jmp	parseSourceFile_endif_145
+parseSourceFile_elsebl_145	:	
+parseSourceFile_endif_145	:	
+parseSourceFile_endif_136	:	
+	jmp	parseSourceFile_while_112
+parseSourceFile_endwhile_112	:	
+
+	movl	$0,%eax
+	jmp	parseSourceFile_ret
+parseSourceFile_ret	:	
+	movl	%ebp,%esp
+	popl	%ebp
+	ret	
+
+.globl	linker_appendFile
+.type	linker_appendFile,@function
+linker_appendFile	:	
+	pushl	%ebp
+	movl	%esp,%ebp
+	subl	$16,%esp
+
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$0,%eax
+	movl	(%eax),%eax
+	movl	%eax,%ebx
+	cmpl	$1,%ebx
+	movl	$1,%eax
+	jne	linker_appendFile_reltrue_166
+	movl	$0,%eax
+linker_appendFile_reltrue_166	:	
+	testl	%eax,%eax
+	jnz	linker_appendFile_ifbl_165
+	jmp	linker_appendFile_elsebl_165
+linker_appendFile_ifbl_165	:	
+
+	movl	$0,%ebx
+	subl	$20000,%ebx
+	movl	%ebx,%eax
+	jmp	linker_appendFile_ret
+linker_appendFile_elsebl_165	:	
+linker_appendFile_endif_165	:	
+
+	subl	$12,%esp
+	movl	12(%ebp),%eax
+	movl	%eax,0(%esp)
+	movl	$0,4(%esp)
+	movl	$0,8(%esp)
+	call	open
+	addl	$12,%esp
+	movl	%eax,-4(%ebp)
+
+	movl	-4(%ebp),%ebx
+	cmpl	$0,%ebx
+	movl	$1,%eax
+	jl	linker_appendFile_reltrue_168
+	movl	$0,%eax
+linker_appendFile_reltrue_168	:	
+	testl	%eax,%eax
+	jnz	linker_appendFile_ifbl_167
+	jmp	linker_appendFile_elsebl_167
+linker_appendFile_ifbl_167	:	
+
+	movl	$0,%ebx
+	subl	$20002,%ebx
+	movl	%ebx,%eax
+	jmp	linker_appendFile_ret
+linker_appendFile_elsebl_167	:	
+linker_appendFile_endif_167	:	
+
+	subl	$8,%esp
+	movl	8(%ebp),%eax
+	movl	%eax,0(%esp)
+	movl	12(%ebp),%eax
+	movl	%eax,4(%esp)
+	call	addFileToList
+	addl	$8,%esp
+	movl	%eax,-12(%ebp)
+
+	movl	-12(%ebp),%ebx
+	cmpl	$0,%ebx
+	movl	$1,%eax
+	je	linker_appendFile_reltrue_170
+	movl	$0,%eax
+linker_appendFile_reltrue_170	:	
+	testl	%eax,%eax
+	jnz	linker_appendFile_ifbl_169
+	jmp	linker_appendFile_elsebl_169
+linker_appendFile_ifbl_169	:	
+
+	movl	$0,%ebx
+	subl	$20003,%ebx
+	movl	%ebx,%eax
+	jmp	linker_appendFile_ret
+linker_appendFile_elsebl_169	:	
+linker_appendFile_endif_169	:	
+
+	movl	%ebp,%eax
+	addl	$-12,%eax
+	movl	(%eax),%eax
+	addl	$260,%eax
+	pushl	%eax
+	movl	16(%ebp),%eax
+	popl	%ebx
+	movl	%eax,(%ebx)
+
+	movl	%ebp,%eax
+	addl	$-12,%eax
+	movl	(%eax),%eax
+	addl	$264,%eax
+	movl	%eax,-16(%ebp)
+
+	movl	-16(%ebp),%ebx
+	cmpl	$0,%ebx
+	movl	$1,%eax
+	je	linker_appendFile_reltrue_172
+	movl	$0,%eax
+linker_appendFile_reltrue_172	:	
+	testl	%eax,%eax
+	jnz	linker_appendFile_ifbl_171
+	jmp	linker_appendFile_elsebl_171
+linker_appendFile_ifbl_171	:	
+
+	movl	$0,%ebx
+	subl	$20003,%ebx
+	movl	%ebx,%eax
+	jmp	linker_appendFile_ret
+linker_appendFile_elsebl_171	:	
+linker_appendFile_endif_171	:	
+
+	subl	$16,%esp
+	movl	8(%ebp),%eax
+	movl	%eax,0(%esp)
+	movl	-12(%ebp),%eax
+	movl	%eax,4(%esp)
+	movl	-4(%ebp),%eax
+	movl	%eax,8(%esp)
+	movl	-16(%ebp),%eax
+	movl	%eax,12(%esp)
+	call	parseSourceFile
+	addl	$16,%esp
+	movl	%eax,-8(%ebp)
+
+	movl	-8(%ebp),%ebx
+	cmpl	$0,%ebx
+	movl	$1,%eax
+	jl	linker_appendFile_reltrue_174
+	movl	$0,%eax
+linker_appendFile_reltrue_174	:	
+	testl	%eax,%eax
+	jnz	linker_appendFile_ifbl_173
+	jmp	linker_appendFile_elsebl_173
+linker_appendFile_ifbl_173	:	
+
+	movl	-8(%ebp),%eax
+	jmp	linker_appendFile_ret
+linker_appendFile_elsebl_173	:	
+linker_appendFile_endif_173	:	
+
+	subl	$4,%esp
+	movl	-4(%ebp),%eax
+	movl	%eax,0(%esp)
+	call	close
+	addl	$4,%esp
+
+	movl	$0,%eax
+	jmp	linker_appendFile_ret
+linker_appendFile_ret	:	
+	movl	%ebp,%esp
+	popl	%ebp
+	ret	
+
+.globl	resolveMarkers
+.type	resolveMarkers,@function
+resolveMarkers	:	
+	pushl	%ebp
+	movl	%esp,%ebp
+	subl	$34,%esp
+
+	subl	$4,%esp
+	movl	16(%ebp),%eax
+	movl	%eax,0(%esp)
+	call	Get_Front_Of_LinesList
+	addl	$4,%esp
+	movl	%eax,-30(%ebp)
+
+resolveMarkers_while_175	:	
+	movl	-30(%ebp),%ebx
+	cmpl	$0,%ebx
+	movl	$1,%eax
+	jne	resolveMarkers_reltrue_176
+	movl	$0,%eax
+resolveMarkers_reltrue_176	:	
+	testl	%eax,%eax
+	jz	resolveMarkers_endwhile_175
+
+	movl	$0,-26(%ebp)
+
+	movl	%ebp,%eax
+	addl	$-30,%eax
+	movl	(%eax),%eax
+	addl	$536,%eax
+	movl	(%eax),%eax
+	pushl	%eax
+	movl	%ebp,%eax
+	addl	$12,%eax
+	movl	(%eax),%eax
+	addl	$0,%eax
+	movl	(%eax),%eax
+	popl	%ebx
+	cmpl	%eax,%ebx
+	movl	$1,%eax
+	je	resolveMarkers_reltrue_179
+	movl	$0,%eax
+resolveMarkers_reltrue_179	:	
+	testl	%eax,%eax
+	jz	resolveMarkers_logtermfalse_178
+	movl	%ebp,%eax
+	addl	$-30,%eax
+	movl	(%eax),%eax
+	addl	$528,%eax
+	movl	(%eax),%eax
+	movl	%eax,%ebx
+	cmpl	$1,%ebx
+	movl	$1,%eax
+	je	resolveMarkers_reltrue_181
+	movl	$0,%eax
+resolveMarkers_reltrue_181	:	
+	testl	%eax,%eax
+	jnz	resolveMarkers_logexprtrue_180
+	movl	%ebp,%eax
+	addl	$-30,%eax
+	movl	(%eax),%eax
+	addl	$524,%eax
+	movl	(%eax),%eax
+	movl	%eax,%ebx
+	cmpl	$1,%ebx
+	movl	$1,%eax
+	je	resolveMarkers_reltrue_182
+	movl	$0,%eax
+resolveMarkers_reltrue_182	:	
+	testl	%eax,%eax
+	jnz	resolveMarkers_logexprtrue_180
+	movl	$0,%eax
+	jmp	resolveMarkers_logexprfalse_180
+resolveMarkers_logexprtrue_180	:	
+	movl	$1,%eax
+resolveMarkers_logexprfalse_180	:	
+	testl	%eax,%eax
+	jz	resolveMarkers_logtermfalse_178
+	movl	$1,%eax
+	jmp	resolveMarkers_logtermtrue_178
+resolveMarkers_logtermfalse_178	:	
+	movl	$0,%eax
+resolveMarkers_logtermtrue_178	:	
+	testl	%eax,%eax
+	jnz	resolveMarkers_ifbl_177
+	jmp	resolveMarkers_elsebl_177
+resolveMarkers_ifbl_177	:	
+
+	movl	%ebp,%eax
+	addl	$-30,%eax
+	movl	(%eax),%eax
+	addl	$516,%eax
+	movl	%eax,%ebx
+	movl	$0,(%ebx)
+
+	subl	$4,%esp
+	movl	-30(%ebp),%eax
+	movl	%eax,0(%esp)
+	call	lnk_disposeWhitespace
+	addl	$4,%esp
+
+	movl	%ebp,%eax
+	addl	$-30,%eax
+	movl	(%eax),%eax
+	addl	$524,%eax
+	movl	(%eax),%eax
+	movl	%eax,%ebx
+	cmpl	$1,%ebx
+	movl	$1,%eax
+	je	resolveMarkers_reltrue_184
+	movl	$0,%eax
+resolveMarkers_reltrue_184	:	
+	testl	%eax,%eax
+	jnz	resolveMarkers_ifbl_183
+	jmp	resolveMarkers_elsebl_183
+resolveMarkers_ifbl_183	:	
+
+	movl	%ebp,%eax
+	addl	$-30,%eax
+	movl	(%eax),%eax
+	addl	$516,%eax
+	pushl	%eax
+	movl	%ebp,%eax
+	addl	$-30,%eax
+	movl	(%eax),%eax
+	addl	$516,%eax
+	movl	(%eax),%eax
+	movl	%eax,%ebx
+	addl	$6,%ebx
+	movl	%ebx,%eax
+	popl	%ebx
+	movl	%eax,(%ebx)
+
+	subl	$4,%esp
+	movl	-30(%ebp),%eax
+	movl	%eax,0(%esp)
+	call	lnk_disposeWhitespace
+	addl	$4,%esp
+
+	subl	$16,%esp
+	movl	8(%ebp),%eax
+	movl	%eax,0(%esp)
+	movl	-30(%ebp),%eax
+	movl	%eax,4(%esp)
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$8,%eax
+	movl	%eax,8(%esp)
+	movl	$0,%ebx
+	subl	$1,%ebx
+	movl	%ebx,%eax
+	movl	%eax,12(%esp)
+	call	addMarker
+	addl	$16,%esp
+	movl	%eax,-4(%ebp)
+
+	movl	-4(%ebp),%ebx
+	cmpl	$0,%ebx
+	movl	$1,%eax
+	jne	resolveMarkers_reltrue_186
+	movl	$0,%eax
+resolveMarkers_reltrue_186	:	
+	testl	%eax,%eax
+	jnz	resolveMarkers_ifbl_185
+	jmp	resolveMarkers_elsebl_185
+resolveMarkers_ifbl_185	:	
+
+	movl	-4(%ebp),%eax
+	jmp	resolveMarkers_ret
+resolveMarkers_elsebl_185	:	
+resolveMarkers_endif_185	:	
+	jmp	resolveMarkers_endif_183
+resolveMarkers_elsebl_183	:	
+
+	subl	$16,%esp
+	movl	8(%ebp),%eax
+	movl	%eax,0(%esp)
+	movl	-30(%ebp),%eax
+	movl	%eax,4(%esp)
+	movl	%ebp,%eax
+	addl	$12,%eax
+	movl	(%eax),%eax
+	addl	$264,%eax
+	movl	%eax,8(%esp)
+	movl	%ebp,%eax
+	addl	$-30,%eax
+	movl	(%eax),%eax
+	addl	$532,%eax
+	movl	(%eax),%eax
+	movl	%eax,12(%esp)
+	call	addMarker
+	addl	$16,%esp
+	movl	%eax,-4(%ebp)
+
+	movl	-4(%ebp),%ebx
+	cmpl	$0,%ebx
+	movl	$1,%eax
+	jne	resolveMarkers_reltrue_188
+	movl	$0,%eax
+resolveMarkers_reltrue_188	:	
+	testl	%eax,%eax
+	jnz	resolveMarkers_ifbl_187
+	jmp	resolveMarkers_elsebl_187
+resolveMarkers_ifbl_187	:	
+
+	movl	-4(%ebp),%eax
+	jmp	resolveMarkers_ret
+resolveMarkers_elsebl_187	:	
+resolveMarkers_endif_187	:	
+resolveMarkers_endif_183	:	
+
+	movl	%ebp,%eax
+	addl	$12,%eax
+	movl	(%eax),%eax
+	addl	$260,%eax
+	movl	(%eax),%eax
+	movl	%eax,%ebx
+	cmpl	$1,%ebx
+	movl	$1,%eax
+	jne	resolveMarkers_reltrue_190
+	movl	$0,%eax
+resolveMarkers_reltrue_190	:	
+	testl	%eax,%eax
+	jnz	resolveMarkers_ifbl_189
+	jmp	resolveMarkers_elsebl_189
+resolveMarkers_ifbl_189	:	
+
+	movl	$1,-26(%ebp)
+	jmp	resolveMarkers_endif_189
+resolveMarkers_elsebl_189	:	
+
+	movl	%ebp,%eax
+	addl	$-30,%eax
+	movl	(%eax),%eax
+	addl	$520,%eax
+	movl	%eax,%ebx
+	movl	$1,(%ebx)
+
+	subl	$12,%esp
+	movl	%ebp,%eax
+	addl	$-14,%eax
+	movl	%eax,0(%esp)
+	movl	$0,4(%esp)
+	movl	$8,%ebx
+	addl	$4,%ebx
+	movl	%ebx,%eax
+	movl	%eax,8(%esp)
+	call	memset
+	addl	$12,%esp
+
+	subl	$12,%esp
+	movl	%ebp,%eax
+	addl	$-22,%eax
+	movl	%eax,0(%esp)
+	movl	$0,4(%esp)
+	movl	$8,8(%esp)
+	call	memset
+	addl	$12,%esp
+
+	subl	$8,%esp
+	movl	%ebp,%eax
+	addl	$-14,%eax
+	movl	%eax,0(%esp)
+	movl	$symtab+595,4(%esp)
+	call	strcat
+	addl	$8,%esp
+
+	subl	$8,%esp
+	movl	%ebp,%eax
+	addl	$-14,%eax
+	movl	%eax,0(%esp)
+	subl	$8,%esp
+	movl	%ebp,%eax
+	addl	$-22,%eax
+	movl	%eax,0(%esp)
+	movl	%ebp,%eax
+	addl	$-30,%eax
+	movl	(%eax),%eax
+	addl	$532,%eax
+	movl	(%eax),%eax
+	movl	%eax,4(%esp)
+	call	convertAddr
+	addl	$8,%esp
+	movl	%eax,4(%esp)
+	call	strcat
+	addl	$8,%esp
+
+	subl	$8,%esp
+	movl	%ebp,%eax
+	addl	$-14,%eax
+	movl	%eax,0(%esp)
+	movl	$symtab+599,4(%esp)
+	call	strcat
+	addl	$8,%esp
+
+	subl	$12,%esp
+	movl	8(%ebp),%eax
+	movl	%eax,0(%esp)
+	movl	-30(%ebp),%eax
+	movl	%eax,4(%esp)
+	movl	%ebp,%eax
+	addl	$-14,%eax
+	movl	%eax,8(%esp)
+	call	commentLine
+	addl	$12,%esp
+resolveMarkers_endif_189	:	
+	jmp	resolveMarkers_endif_177
+resolveMarkers_elsebl_177	:	
+resolveMarkers_endif_177	:	
+
+	movl	-30(%ebp),%eax
+	movl	%eax,-34(%ebp)
+
+	subl	$4,%esp
+	movl	-30(%ebp),%eax
+	movl	%eax,0(%esp)
+	call	Get_Next_In_LinesList
+	addl	$4,%esp
+	movl	%eax,-30(%ebp)
+
+	movl	-26(%ebp),%ebx
+	cmpl	$1,%ebx
+	movl	$1,%eax
+	je	resolveMarkers_reltrue_192
+	movl	$0,%eax
+resolveMarkers_reltrue_192	:	
+	testl	%eax,%eax
+	jnz	resolveMarkers_ifbl_191
+	jmp	resolveMarkers_elsebl_191
+resolveMarkers_ifbl_191	:	
+
+	subl	$8,%esp
+	movl	16(%ebp),%eax
+	movl	%eax,0(%esp)
+	movl	-34(%ebp),%eax
+	movl	%eax,4(%esp)
+	call	Remove_From_LinesList
+	addl	$8,%esp
+	jmp	resolveMarkers_endif_191
+resolveMarkers_elsebl_191	:	
+resolveMarkers_endif_191	:	
+	jmp	resolveMarkers_while_175
+resolveMarkers_endwhile_175	:	
+
+	movl	$0,%eax
+	jmp	resolveMarkers_ret
+resolveMarkers_ret	:	
+	movl	%ebp,%esp
+	popl	%ebp
+	ret	
+
+.globl	resolveFileMarkers
+.type	resolveFileMarkers,@function
+resolveFileMarkers	:	
+	pushl	%ebp
+	movl	%esp,%ebp
+	subl	$8,%esp
+
+	subl	$4,%esp
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$24,%eax
+	movl	%eax,0(%esp)
+	call	Get_Front_Of_FilesList
+	addl	$4,%esp
+	movl	%eax,-8(%ebp)
+
+resolveFileMarkers_while_193	:	
+	movl	-8(%ebp),%ebx
+	cmpl	$0,%ebx
+	movl	$1,%eax
+	jne	resolveFileMarkers_reltrue_194
+	movl	$0,%eax
+resolveFileMarkers_reltrue_194	:	
+	testl	%eax,%eax
+	jz	resolveFileMarkers_endwhile_193
+
+	subl	$4,%esp
+	movl	%ebp,%eax
+	addl	$-8,%eax
+	movl	(%eax),%eax
+	addl	$264,%eax
+	movl	%eax,0(%esp)
+	call	Clear_MarkersList
+	addl	$4,%esp
+
+	subl	$12,%esp
+	movl	8(%ebp),%eax
+	movl	%eax,0(%esp)
+	movl	-8(%ebp),%eax
+	movl	%eax,4(%esp)
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$32,%eax
+	movl	%eax,8(%esp)
+	call	resolveMarkers
+	addl	$12,%esp
+	movl	%eax,-4(%ebp)
+
+	movl	-4(%ebp),%ebx
+	cmpl	$0,%ebx
+	movl	$1,%eax
+	jne	resolveFileMarkers_reltrue_196
+	movl	$0,%eax
+resolveFileMarkers_reltrue_196	:	
+	testl	%eax,%eax
+	jnz	resolveFileMarkers_ifbl_195
+	jmp	resolveFileMarkers_elsebl_195
+resolveFileMarkers_ifbl_195	:	
+
+	movl	-4(%ebp),%eax
+	jmp	resolveFileMarkers_ret
+resolveFileMarkers_elsebl_195	:	
+resolveFileMarkers_endif_195	:	
+
+	subl	$12,%esp
+	movl	8(%ebp),%eax
+	movl	%eax,0(%esp)
+	movl	-8(%ebp),%eax
+	movl	%eax,4(%esp)
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$40,%eax
+	movl	%eax,8(%esp)
+	call	resolveMarkers
+	addl	$12,%esp
+	movl	%eax,-4(%ebp)
+
+	movl	-4(%ebp),%ebx
+	cmpl	$0,%ebx
+	movl	$1,%eax
+	jne	resolveFileMarkers_reltrue_198
+	movl	$0,%eax
+resolveFileMarkers_reltrue_198	:	
+	testl	%eax,%eax
+	jnz	resolveFileMarkers_ifbl_197
+	jmp	resolveFileMarkers_elsebl_197
+resolveFileMarkers_ifbl_197	:	
+
+	movl	-4(%ebp),%eax
+	jmp	resolveFileMarkers_ret
+resolveFileMarkers_elsebl_197	:	
+resolveFileMarkers_endif_197	:	
+
+	subl	$8,%esp
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$8,%eax
+	movl	%eax,0(%esp)
+	movl	%ebp,%eax
+	addl	$-8,%eax
+	movl	(%eax),%eax
+	addl	$264,%eax
+	movl	%eax,4(%esp)
+	call	syncGloblsWithMarkers
+	addl	$8,%esp
+
+	subl	$4,%esp
+	movl	-8(%ebp),%eax
+	movl	%eax,0(%esp)
+	call	Get_Next_In_FilesList
+	addl	$4,%esp
+	movl	%eax,-8(%ebp)
+	jmp	resolveFileMarkers_while_193
+resolveFileMarkers_endwhile_193	:	
+
+	movl	$0,%eax
+	jmp	resolveFileMarkers_ret
+resolveFileMarkers_ret	:	
+	movl	%ebp,%esp
+	popl	%ebp
+	ret	
+
+.globl	replaceNextMarker
+.type	replaceNextMarker,@function
+replaceNextMarker	:	
+	pushl	%ebp
+	movl	%esp,%ebp
+	subl	$152,%esp
+
+	movl	$0,-12(%ebp)
+
+	movl	%ebp,%eax
+	addl	$12,%eax
+	movl	(%eax),%eax
+	addl	$516,%eax
+	movl	(%eax),%eax
+	pushl	%eax
+	movl	%ebp,%eax
+	addl	$12,%eax
+	movl	(%eax),%eax
+	addl	$0,%eax
+	popl	%esi
+	addl	%esi,%eax
+	movb	(%eax),%al
+	movsbl	%al,%eax
+	movl	%eax,%ebx
+	cmpl	$36,%ebx
+	movl	$1,%eax
+	je	replaceNextMarker_reltrue_200
+	movl	$0,%eax
+replaceNextMarker_reltrue_200	:	
+	testl	%eax,%eax
+	jnz	replaceNextMarker_ifbl_199
+	jmp	replaceNextMarker_elsebl_199
+replaceNextMarker_ifbl_199	:	
+
+	movl	%ebp,%eax
+	addl	$16,%eax
+	movl	(%eax),%eax
+	addl	$516,%eax
+	movl	(%eax),%eax
+	pushl	%eax
+	movl	%ebp,%eax
+	addl	$16,%eax
+	movl	(%eax),%eax
+	addl	$0,%eax
+	popl	%esi
+	addl	%esi,%eax
+	pushl	%eax
+	movl	%ebp,%eax
+	addl	$12,%eax
+	movl	(%eax),%eax
+	addl	$516,%eax
+	movl	(%eax),%eax
+	pushl	%eax
+	movl	%ebp,%eax
+	addl	$12,%eax
+	movl	(%eax),%eax
+	addl	$0,%eax
+	popl	%esi
+	addl	%esi,%eax
+	movb	(%eax),%al
+	popl	%ebx
+	movb	%al,(%ebx)
+
+	movl	%ebp,%eax
+	addl	$16,%eax
+	movl	(%eax),%eax
+	addl	$516,%eax
+	pushl	%eax
+	movl	%ebp,%eax
+	addl	$16,%eax
+	movl	(%eax),%eax
+	addl	$516,%eax
+	movl	(%eax),%eax
+	movl	%eax,%ebx
+	addl	$1,%ebx
+	movl	%ebx,%eax
+	popl	%ebx
+	movl	%eax,(%ebx)
+
+	movl	%ebp,%eax
+	addl	$12,%eax
+	movl	(%eax),%eax
+	addl	$516,%eax
+	pushl	%eax
+	movl	%ebp,%eax
+	addl	$12,%eax
+	movl	(%eax),%eax
+	addl	$516,%eax
+	movl	(%eax),%eax
+	movl	%eax,%ebx
+	addl	$1,%ebx
+	movl	%ebx,%eax
+	popl	%ebx
+	movl	%eax,(%ebx)
+
+	movl	$1,-12(%ebp)
+	jmp	replaceNextMarker_endif_199
+replaceNextMarker_elsebl_199	:	
+replaceNextMarker_endif_199	:	
+
+	subl	$12,%esp
+	movl	8(%ebp),%eax
+	movl	%eax,0(%esp)
+	movl	12(%ebp),%eax
+	movl	%eax,4(%esp)
+	movl	%ebp,%eax
+	addl	$-148,%eax
+	movl	%eax,8(%esp)
+	call	getNextIdentifierInLine
+	addl	$12,%esp
+	movl	%eax,-4(%ebp)
+
+	movl	-4(%ebp),%ebx
+	cmpl	$1,%ebx
+	movl	$1,%eax
+	je	replaceNextMarker_reltrue_202
+	movl	$0,%eax
+replaceNextMarker_reltrue_202	:	
+	testl	%eax,%eax
+	jnz	replaceNextMarker_ifbl_201
+	jmp	replaceNextMarker_elsebl_201
+replaceNextMarker_ifbl_201	:	
+
+	subl	$8,%esp
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$16,%eax
+	movl	%eax,0(%esp)
+	movl	%ebp,%eax
+	addl	$-148,%eax
+	movl	%eax,4(%esp)
+	call	findInMarkersList
+	addl	$8,%esp
+	movl	%eax,-152(%ebp)
+
+	movl	-152(%ebp),%ebx
+	cmpl	$0,%ebx
+	movl	$1,%eax
+	jne	replaceNextMarker_reltrue_204
+	movl	$0,%eax
+replaceNextMarker_reltrue_204	:	
+	testl	%eax,%eax
+	jnz	replaceNextMarker_ifbl_203
+	jmp	replaceNextMarker_elsebl_203
+replaceNextMarker_ifbl_203	:	
+
+	subl	$8,%esp
+	movl	%ebp,%eax
+	addl	$16,%eax
+	movl	(%eax),%eax
+	addl	$0,%eax
+	movl	%eax,0(%esp)
+	movl	%ebp,%eax
+	addl	$-148,%eax
+	movl	%eax,4(%esp)
+	call	strcat
+	addl	$8,%esp
+
+	movl	%ebp,%eax
+	addl	$16,%eax
+	movl	(%eax),%eax
+	addl	$516,%eax
+	pushl	%eax
+	movl	%ebp,%eax
+	addl	$16,%eax
+	movl	(%eax),%eax
+	addl	$516,%eax
+	movl	(%eax),%eax
+	pushl	%eax
+	subl	$4,%esp
+	movl	%ebp,%eax
+	addl	$-148,%eax
+	movl	%eax,0(%esp)
+	call	strlen
+	addl	$4,%esp
+	popl	%ebx
+	addl	%eax,%ebx
+	movl	%ebx,%eax
+	popl	%ebx
+	movl	%eax,(%ebx)
+
+	movl	$0,%eax
+	jmp	replaceNextMarker_ret
+replaceNextMarker_elsebl_203	:	
+
+	subl	$8,%esp
+	movl	20(%ebp),%eax
+	movl	%eax,0(%esp)
+	movl	%ebp,%eax
+	addl	$-148,%eax
+	movl	%eax,4(%esp)
+	call	getMarkerAddr
+	addl	$8,%esp
+	movl	%eax,-8(%ebp)
+
+	pushl	-8(%ebp)
+	movl	$0,%ebx
+	subl	$1,%ebx
+	movl	%ebx,%eax
+	popl	%ebx
+	cmpl	%eax,%ebx
+	movl	$1,%eax
+	je	replaceNextMarker_reltrue_206
+	movl	$0,%eax
+replaceNextMarker_reltrue_206	:	
+	testl	%eax,%eax
+	jnz	replaceNextMarker_ifbl_205
+	jmp	replaceNextMarker_elsebl_205
+replaceNextMarker_ifbl_205	:	
+
+	subl	$8,%esp
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$8,%eax
+	movl	%eax,0(%esp)
+	movl	%ebp,%eax
+	addl	$-148,%eax
+	movl	%eax,4(%esp)
+	call	getMarkerAddr
+	addl	$8,%esp
+	movl	%eax,-8(%ebp)
+
+	pushl	-8(%ebp)
+	movl	$0,%ebx
+	subl	$1,%ebx
+	movl	%ebx,%eax
+	popl	%ebx
+	cmpl	%eax,%ebx
+	movl	$1,%eax
+	je	replaceNextMarker_reltrue_208
+	movl	$0,%eax
+replaceNextMarker_reltrue_208	:	
+	testl	%eax,%eax
+	jnz	replaceNextMarker_ifbl_207
+	jmp	replaceNextMarker_elsebl_207
+replaceNextMarker_ifbl_207	:	
+
+	subl	$8,%esp
+	movl	$symtab+601,0(%esp)
+	movl	%ebp,%eax
+	addl	$-148,%eax
+	movl	%eax,4(%esp)
+	call	printf
+	addl	$8,%esp
+
+	subl	$8,%esp
+	movl	$symtab+671,0(%esp)
+	subl	$8,%esp
+	movl	8(%ebp),%eax
+	movl	%eax,0(%esp)
+	movl	%ebp,%eax
+	addl	$12,%eax
+	movl	(%eax),%eax
+	addl	$536,%eax
+	movl	(%eax),%eax
+	movl	%eax,4(%esp)
+	call	getFilename
+	addl	$8,%esp
+	movl	%eax,4(%esp)
+	call	printf
+	addl	$8,%esp
+
+	subl	$8,%esp
+	movl	$symtab+675,0(%esp)
+	movl	%ebp,%eax
+	addl	$12,%eax
+	movl	(%eax),%eax
+	addl	$540,%eax
+	movl	(%eax),%eax
+	movl	%eax,4(%esp)
+	call	printf
+	addl	$8,%esp
+
+	movl	$0,%ebx
+	subl	$1,%ebx
+	movl	%ebx,%eax
+	jmp	replaceNextMarker_ret
+replaceNextMarker_elsebl_207	:	
+replaceNextMarker_endif_207	:	
+	jmp	replaceNextMarker_endif_205
+replaceNextMarker_elsebl_205	:	
+replaceNextMarker_endif_205	:	
+
+	movl	%ebp,%eax
+	addl	$12,%eax
+	movl	(%eax),%eax
+	addl	$516,%eax
+	movl	(%eax),%eax
+	pushl	%eax
+	movl	%ebp,%eax
+	addl	$12,%eax
+	movl	(%eax),%eax
+	addl	$0,%eax
+	popl	%esi
+	addl	%esi,%eax
+	movb	(%eax),%al
+	movsbl	%al,%eax
+	movl	%eax,%ebx
+	cmpl	$43,%ebx
+	movl	$1,%eax
+	je	replaceNextMarker_reltrue_210
+	movl	$0,%eax
+replaceNextMarker_reltrue_210	:	
+	testl	%eax,%eax
+	jnz	replaceNextMarker_ifbl_209
+	jmp	replaceNextMarker_elsebl_209
+replaceNextMarker_ifbl_209	:	
+
+	movl	%ebp,%eax
+	addl	$12,%eax
+	movl	(%eax),%eax
+	addl	$516,%eax
+	pushl	%eax
+	movl	%ebp,%eax
+	addl	$12,%eax
+	movl	(%eax),%eax
+	addl	$516,%eax
+	movl	(%eax),%eax
+	movl	%eax,%ebx
+	addl	$1,%ebx
+	movl	%ebx,%eax
+	popl	%ebx
+	movl	%eax,(%ebx)
+
+	pushl	-8(%ebp)
+	subl	$8,%esp
+	movl	8(%ebp),%eax
+	movl	%eax,0(%esp)
+	movl	12(%ebp),%eax
+	movl	%eax,4(%esp)
+	call	getSizeIdentifier
+	addl	$8,%esp
+	popl	%ebx
+	addl	%eax,%ebx
+	movl	%ebx,%eax
+	movl	%eax,-8(%ebp)
+	jmp	replaceNextMarker_endif_209
+replaceNextMarker_elsebl_209	:	
+replaceNextMarker_endif_209	:	
+
+	subl	$8,%esp
+	movl	%ebp,%eax
+	addl	$16,%eax
+	movl	(%eax),%eax
+	addl	$0,%eax
+	movl	%eax,0(%esp)
+	subl	$8,%esp
+	movl	%ebp,%eax
+	addl	$-20,%eax
+	movl	%eax,0(%esp)
+	movl	-8(%ebp),%eax
+	movl	%eax,4(%esp)
+	call	convertAddr
+	addl	$8,%esp
+	movl	%eax,4(%esp)
+	call	strcat
+	addl	$8,%esp
+
+	movl	%ebp,%eax
+	addl	$16,%eax
+	movl	(%eax),%eax
+	addl	$516,%eax
+	pushl	%eax
+	subl	$4,%esp
+	movl	%ebp,%eax
+	addl	$16,%eax
+	movl	(%eax),%eax
+	addl	$0,%eax
+	movl	%eax,0(%esp)
+	call	strlen
+	addl	$4,%esp
+	popl	%ebx
+	movl	%eax,(%ebx)
+replaceNextMarker_endif_203	:	
+	jmp	replaceNextMarker_endif_201
+replaceNextMarker_elsebl_201	:	
+
+	movl	-12(%ebp),%ebx
+	cmpl	$1,%ebx
+	movl	$1,%eax
+	je	replaceNextMarker_reltrue_213
+	movl	$0,%eax
+replaceNextMarker_reltrue_213	:	
+	testl	%eax,%eax
+	jz	replaceNextMarker_logtermfalse_212
+	movl	-4(%ebp),%ebx
+	cmpl	$0,%ebx
+	movl	$1,%eax
+	je	replaceNextMarker_reltrue_214
+	movl	$0,%eax
+replaceNextMarker_reltrue_214	:	
+	testl	%eax,%eax
+	jz	replaceNextMarker_logtermfalse_212
+	movl	$1,%eax
+	jmp	replaceNextMarker_logtermtrue_212
+replaceNextMarker_logtermfalse_212	:	
+	movl	$0,%eax
+replaceNextMarker_logtermtrue_212	:	
+	testl	%eax,%eax
+	jnz	replaceNextMarker_ifbl_211
+	jmp	replaceNextMarker_elsebl_211
+replaceNextMarker_ifbl_211	:	
+
+replaceNextMarker_while_215	:	
+	movl	%ebp,%eax
+	addl	$12,%eax
+	movl	(%eax),%eax
+	addl	$516,%eax
+	movl	(%eax),%eax
+	pushl	%eax
+	movl	%ebp,%eax
+	addl	$12,%eax
+	movl	(%eax),%eax
+	addl	$0,%eax
+	popl	%esi
+	addl	%esi,%eax
+	movb	(%eax),%al
+	movsbl	%al,%eax
+	movl	%eax,%ebx
+	cmpl	$44,%ebx
+	movl	$1,%eax
+	jne	replaceNextMarker_reltrue_217
+	movl	$0,%eax
+replaceNextMarker_reltrue_217	:	
+	testl	%eax,%eax
+	jz	replaceNextMarker_logtermfalse_216
+	movl	%ebp,%eax
+	addl	$12,%eax
+	movl	(%eax),%eax
+	addl	$516,%eax
+	movl	(%eax),%eax
+	pushl	%eax
+	movl	%ebp,%eax
+	addl	$12,%eax
+	movl	(%eax),%eax
+	addl	$512,%eax
+	movl	(%eax),%eax
+	popl	%ebx
+	cmpl	%eax,%ebx
+	movl	$1,%eax
+	jle	replaceNextMarker_reltrue_218
+	movl	$0,%eax
+replaceNextMarker_reltrue_218	:	
+	testl	%eax,%eax
+	jz	replaceNextMarker_logtermfalse_216
+	movl	$1,%eax
+	jmp	replaceNextMarker_logtermtrue_216
+replaceNextMarker_logtermfalse_216	:	
+	movl	$0,%eax
+replaceNextMarker_logtermtrue_216	:	
+	testl	%eax,%eax
+	jz	replaceNextMarker_endwhile_215
+
+	movl	%ebp,%eax
+	addl	$16,%eax
+	movl	(%eax),%eax
+	addl	$516,%eax
+	movl	(%eax),%eax
+	pushl	%eax
+	movl	%ebp,%eax
+	addl	$16,%eax
+	movl	(%eax),%eax
+	addl	$0,%eax
+	popl	%esi
+	addl	%esi,%eax
+	pushl	%eax
+	movl	%ebp,%eax
+	addl	$12,%eax
+	movl	(%eax),%eax
+	addl	$516,%eax
+	movl	(%eax),%eax
+	pushl	%eax
+	movl	%ebp,%eax
+	addl	$12,%eax
+	movl	(%eax),%eax
+	addl	$0,%eax
+	popl	%esi
+	addl	%esi,%eax
+	movb	(%eax),%al
+	popl	%ebx
+	movb	%al,(%ebx)
+
+	movl	%ebp,%eax
+	addl	$16,%eax
+	movl	(%eax),%eax
+	addl	$516,%eax
+	pushl	%eax
+	movl	%ebp,%eax
+	addl	$16,%eax
+	movl	(%eax),%eax
+	addl	$516,%eax
+	movl	(%eax),%eax
+	movl	%eax,%ebx
+	addl	$1,%ebx
+	movl	%ebx,%eax
+	popl	%ebx
+	movl	%eax,(%ebx)
+
+	movl	%ebp,%eax
+	addl	$12,%eax
+	movl	(%eax),%eax
+	addl	$516,%eax
+	pushl	%eax
+	movl	%ebp,%eax
+	addl	$12,%eax
+	movl	(%eax),%eax
+	addl	$516,%eax
+	movl	(%eax),%eax
+	movl	%eax,%ebx
+	addl	$1,%ebx
+	movl	%ebx,%eax
+	popl	%ebx
+	movl	%eax,(%ebx)
+	jmp	replaceNextMarker_while_215
+replaceNextMarker_endwhile_215	:	
+	jmp	replaceNextMarker_endif_211
+replaceNextMarker_elsebl_211	:	
+replaceNextMarker_endif_211	:	
+replaceNextMarker_endif_201	:	
+
+	movl	$0,%eax
+	jmp	replaceNextMarker_ret
+replaceNextMarker_ret	:	
+	movl	%ebp,%esp
+	popl	%ebp
+	ret	
+
+.globl	replaceMarkers
+.type	replaceMarkers,@function
+replaceMarkers	:	
+	pushl	%ebp
+	movl	%esp,%ebp
+	subl	$132,%esp
+
+	subl	$12,%esp
+	movl	12(%ebp),%eax
+	movl	%eax,0(%esp)
+	movl	16(%ebp),%eax
+	movl	%eax,4(%esp)
+	movl	$552,8(%esp)
+	call	memcpy
+	addl	$12,%esp
+
+	movl	%ebp,%eax
+	addl	$16,%eax
+	movl	(%eax),%eax
+	addl	$516,%eax
+	movl	(%eax),%eax
+	pushl	%eax
+	movl	%ebp,%eax
+	addl	$16,%eax
+	movl	(%eax),%eax
+	addl	$512,%eax
+	movl	(%eax),%eax
+	popl	%ebx
+	cmpl	%eax,%ebx
+	movl	$1,%eax
+	je	replaceMarkers_reltrue_221
+	movl	$0,%eax
+replaceMarkers_reltrue_221	:	
+	testl	%eax,%eax
+	jnz	replaceMarkers_logexprtrue_220
+	movl	%ebp,%eax
+	addl	$16,%eax
+	movl	(%eax),%eax
+	addl	$520,%eax
+	movl	(%eax),%eax
+	movl	%eax,%ebx
+	cmpl	$1,%ebx
+	movl	$1,%eax
+	je	replaceMarkers_reltrue_222
+	movl	$0,%eax
+replaceMarkers_reltrue_222	:	
+	testl	%eax,%eax
+	jnz	replaceMarkers_logexprtrue_220
+	movl	$0,%eax
+	jmp	replaceMarkers_logexprfalse_220
+replaceMarkers_logexprtrue_220	:	
+	movl	$1,%eax
+replaceMarkers_logexprfalse_220	:	
+	testl	%eax,%eax
+	jnz	replaceMarkers_ifbl_219
+	jmp	replaceMarkers_elsebl_219
+replaceMarkers_ifbl_219	:	
+
+	movl	$0,%eax
+	jmp	replaceMarkers_ret
+replaceMarkers_elsebl_219	:	
+replaceMarkers_endif_219	:	
+
+	subl	$4,%esp
+	movl	16(%ebp),%eax
+	movl	%eax,0(%esp)
+	call	lnk_disposeWhitespace
+	addl	$4,%esp
+
+	subl	$12,%esp
+	movl	8(%ebp),%eax
+	movl	%eax,0(%esp)
+	movl	16(%ebp),%eax
+	movl	%eax,4(%esp)
+	movl	%ebp,%eax
+	addl	$-132,%eax
+	movl	%eax,8(%esp)
+	call	getNextIdentifierInLine
+	addl	$12,%esp
+	movl	%eax,-4(%ebp)
+
+	movl	-4(%ebp),%ebx
+	cmpl	$0,%ebx
+	movl	$1,%eax
+	jl	replaceMarkers_reltrue_224
+	movl	$0,%eax
+replaceMarkers_reltrue_224	:	
+	testl	%eax,%eax
+	jnz	replaceMarkers_ifbl_223
+	jmp	replaceMarkers_elsebl_223
+replaceMarkers_ifbl_223	:	
+
+	movl	-4(%ebp),%eax
+	jmp	replaceMarkers_ret
+replaceMarkers_elsebl_223	:	
+
+	movl	-4(%ebp),%ebx
+	cmpl	$0,%ebx
+	movl	$1,%eax
+	je	replaceMarkers_reltrue_226
+	movl	$0,%eax
+replaceMarkers_reltrue_226	:	
+	testl	%eax,%eax
+	jnz	replaceMarkers_ifbl_225
+	jmp	replaceMarkers_elsebl_225
+replaceMarkers_ifbl_225	:	
+
+	subl	$8,%esp
+	movl	$symtab+681,0(%esp)
+	movl	%ebp,%eax
+	addl	$16,%eax
+	movl	(%eax),%eax
+	addl	$0,%eax
+	movl	%eax,4(%esp)
+	call	printf
+	addl	$8,%esp
+
+	subl	$8,%esp
+	movl	$symtab+706,0(%esp)
+	subl	$8,%esp
+	movl	8(%ebp),%eax
+	movl	%eax,0(%esp)
+	movl	%ebp,%eax
+	addl	$16,%eax
+	movl	(%eax),%eax
+	addl	$536,%eax
+	movl	(%eax),%eax
+	movl	%eax,4(%esp)
+	call	getFilename
+	addl	$8,%esp
+	movl	%eax,4(%esp)
+	call	printf
+	addl	$8,%esp
+
+	subl	$8,%esp
+	movl	$symtab+121,0(%esp)
+	movl	%ebp,%eax
+	addl	$16,%eax
+	movl	(%eax),%eax
+	addl	$540,%eax
+	movl	(%eax),%eax
+	movl	%eax,4(%esp)
+	call	printf
+	addl	$8,%esp
+
+	movl	$0,%ebx
+	subl	$1,%ebx
+	movl	%ebx,%eax
+	jmp	replaceMarkers_ret
+replaceMarkers_elsebl_225	:	
+
+	subl	$4,%esp
+	movl	16(%ebp),%eax
+	movl	%eax,0(%esp)
+	call	lnk_disposeWhitespace
+	addl	$4,%esp
+
+	subl	$12,%esp
+	movl	%ebp,%eax
+	addl	$12,%eax
+	movl	(%eax),%eax
+	addl	$0,%eax
+	movl	%eax,0(%esp)
+	movl	$0,4(%esp)
+	movl	$512,8(%esp)
+	call	memset
+	addl	$12,%esp
+
+	subl	$12,%esp
+	movl	%ebp,%eax
+	addl	$12,%eax
+	movl	(%eax),%eax
+	addl	$0,%eax
+	movl	%eax,0(%esp)
+	movl	%ebp,%eax
+	addl	$16,%eax
+	movl	(%eax),%eax
+	addl	$0,%eax
+	movl	%eax,4(%esp)
+	movl	%ebp,%eax
+	addl	$16,%eax
+	movl	(%eax),%eax
+	addl	$516,%eax
+	movl	(%eax),%eax
+	movl	%eax,8(%esp)
+	call	memcpy
+	addl	$12,%esp
+
+	movl	%ebp,%eax
+	addl	$12,%eax
+	movl	(%eax),%eax
+	addl	$516,%eax
+	pushl	%eax
+	movl	%ebp,%eax
+	addl	$16,%eax
+	movl	(%eax),%eax
+	addl	$516,%eax
+	movl	(%eax),%eax
+	popl	%ebx
+	movl	%eax,(%ebx)
+
+	subl	$16,%esp
+	movl	8(%ebp),%eax
+	movl	%eax,0(%esp)
+	movl	16(%ebp),%eax
+	movl	%eax,4(%esp)
+	movl	12(%ebp),%eax
+	movl	%eax,8(%esp)
+	movl	20(%ebp),%eax
+	movl	%eax,12(%esp)
+	call	replaceNextMarker
+	addl	$16,%esp
+	movl	%eax,-4(%ebp)
+
+	movl	-4(%ebp),%ebx
+	cmpl	$0,%ebx
+	movl	$1,%eax
+	jne	replaceMarkers_reltrue_228
+	movl	$0,%eax
+replaceMarkers_reltrue_228	:	
+	testl	%eax,%eax
+	jnz	replaceMarkers_ifbl_227
+	jmp	replaceMarkers_elsebl_227
+replaceMarkers_ifbl_227	:	
+
+	movl	-4(%ebp),%eax
+	jmp	replaceMarkers_ret
+replaceMarkers_elsebl_227	:	
+replaceMarkers_endif_227	:	
+
+replaceMarkers_while_229	:	
+	movl	%ebp,%eax
+	addl	$16,%eax
+	movl	(%eax),%eax
+	addl	$516,%eax
+	movl	(%eax),%eax
+	pushl	%eax
+	movl	%ebp,%eax
+	addl	$16,%eax
+	movl	(%eax),%eax
+	addl	$0,%eax
+	popl	%esi
+	addl	%esi,%eax
+	movb	(%eax),%al
+	movsbl	%al,%eax
+	movl	%eax,%ebx
+	cmpl	$44,%ebx
+	movl	$1,%eax
+	jne	replaceMarkers_reltrue_231
+	movl	$0,%eax
+replaceMarkers_reltrue_231	:	
+	testl	%eax,%eax
+	jz	replaceMarkers_logtermfalse_230
+	movl	%ebp,%eax
+	addl	$16,%eax
+	movl	(%eax),%eax
+	addl	$516,%eax
+	movl	(%eax),%eax
+	pushl	%eax
+	movl	%ebp,%eax
+	addl	$16,%eax
+	movl	(%eax),%eax
+	addl	$512,%eax
+	movl	(%eax),%eax
+	popl	%ebx
+	cmpl	%eax,%ebx
+	movl	$1,%eax
+	jle	replaceMarkers_reltrue_232
+	movl	$0,%eax
+replaceMarkers_reltrue_232	:	
+	testl	%eax,%eax
+	jz	replaceMarkers_logtermfalse_230
+	movl	$1,%eax
+	jmp	replaceMarkers_logtermtrue_230
+replaceMarkers_logtermfalse_230	:	
+	movl	$0,%eax
+replaceMarkers_logtermtrue_230	:	
+	testl	%eax,%eax
+	jz	replaceMarkers_endwhile_229
+
+	movl	%ebp,%eax
+	addl	$12,%eax
+	movl	(%eax),%eax
+	addl	$516,%eax
+	movl	(%eax),%eax
+	pushl	%eax
+	movl	%ebp,%eax
+	addl	$12,%eax
+	movl	(%eax),%eax
+	addl	$0,%eax
+	popl	%esi
+	addl	%esi,%eax
+	pushl	%eax
+	movl	%ebp,%eax
+	addl	$16,%eax
+	movl	(%eax),%eax
+	addl	$516,%eax
+	movl	(%eax),%eax
+	pushl	%eax
+	movl	%ebp,%eax
+	addl	$16,%eax
+	movl	(%eax),%eax
+	addl	$0,%eax
+	popl	%esi
+	addl	%esi,%eax
+	movb	(%eax),%al
+	popl	%ebx
+	movb	%al,(%ebx)
+
+	movl	%ebp,%eax
+	addl	$12,%eax
+	movl	(%eax),%eax
+	addl	$516,%eax
+	pushl	%eax
+	movl	%ebp,%eax
+	addl	$12,%eax
+	movl	(%eax),%eax
+	addl	$516,%eax
+	movl	(%eax),%eax
+	movl	%eax,%ebx
+	addl	$1,%ebx
+	movl	%ebx,%eax
+	popl	%ebx
+	movl	%eax,(%ebx)
+
+	movl	%ebp,%eax
+	addl	$16,%eax
+	movl	(%eax),%eax
+	addl	$516,%eax
+	pushl	%eax
+	movl	%ebp,%eax
+	addl	$16,%eax
+	movl	(%eax),%eax
+	addl	$516,%eax
+	movl	(%eax),%eax
+	movl	%eax,%ebx
+	addl	$1,%ebx
+	movl	%ebx,%eax
+	popl	%ebx
+	movl	%eax,(%ebx)
+	jmp	replaceMarkers_while_229
+replaceMarkers_endwhile_229	:	
+
+	movl	%ebp,%eax
+	addl	$16,%eax
+	movl	(%eax),%eax
+	addl	$516,%eax
+	movl	(%eax),%eax
+	pushl	%eax
+	movl	%ebp,%eax
+	addl	$16,%eax
+	movl	(%eax),%eax
+	addl	$512,%eax
+	movl	(%eax),%eax
+	popl	%ebx
+	cmpl	%eax,%ebx
+	movl	$1,%eax
+	je	replaceMarkers_reltrue_234
+	movl	$0,%eax
+replaceMarkers_reltrue_234	:	
+	testl	%eax,%eax
+	jnz	replaceMarkers_ifbl_233
+	jmp	replaceMarkers_elsebl_233
+replaceMarkers_ifbl_233	:	
+
+	movl	$0,%eax
+	jmp	replaceMarkers_ret
+replaceMarkers_elsebl_233	:	
+
+	movl	%ebp,%eax
+	addl	$12,%eax
+	movl	(%eax),%eax
+	addl	$516,%eax
+	movl	(%eax),%eax
+	pushl	%eax
+	movl	%ebp,%eax
+	addl	$12,%eax
+	movl	(%eax),%eax
+	addl	$0,%eax
+	popl	%esi
+	addl	%esi,%eax
+	pushl	%eax
+	movl	%ebp,%eax
+	addl	$16,%eax
+	movl	(%eax),%eax
+	addl	$516,%eax
+	movl	(%eax),%eax
+	pushl	%eax
+	movl	%ebp,%eax
+	addl	$16,%eax
+	movl	(%eax),%eax
+	addl	$0,%eax
+	popl	%esi
+	addl	%esi,%eax
+	movb	(%eax),%al
+	popl	%ebx
+	movb	%al,(%ebx)
+
+	movl	%ebp,%eax
+	addl	$12,%eax
+	movl	(%eax),%eax
+	addl	$516,%eax
+	pushl	%eax
+	movl	%ebp,%eax
+	addl	$12,%eax
+	movl	(%eax),%eax
+	addl	$516,%eax
+	movl	(%eax),%eax
+	movl	%eax,%ebx
+	addl	$1,%ebx
+	movl	%ebx,%eax
+	popl	%ebx
+	movl	%eax,(%ebx)
+
+	movl	%ebp,%eax
+	addl	$16,%eax
+	movl	(%eax),%eax
+	addl	$516,%eax
+	pushl	%eax
+	movl	%ebp,%eax
+	addl	$16,%eax
+	movl	(%eax),%eax
+	addl	$516,%eax
+	movl	(%eax),%eax
+	movl	%eax,%ebx
+	addl	$1,%ebx
+	movl	%ebx,%eax
+	popl	%ebx
+	movl	%eax,(%ebx)
+replaceMarkers_endif_233	:	
+
+	subl	$4,%esp
+	movl	16(%ebp),%eax
+	movl	%eax,0(%esp)
+	call	lnk_disposeWhitespace
+	addl	$4,%esp
+
+	subl	$16,%esp
+	movl	8(%ebp),%eax
+	movl	%eax,0(%esp)
+	movl	16(%ebp),%eax
+	movl	%eax,4(%esp)
+	movl	12(%ebp),%eax
+	movl	%eax,8(%esp)
+	movl	20(%ebp),%eax
+	movl	%eax,12(%esp)
+	call	replaceNextMarker
+	addl	$16,%esp
+	movl	%eax,-4(%ebp)
+
+	movl	-4(%ebp),%ebx
+	cmpl	$0,%ebx
+	movl	$1,%eax
+	jne	replaceMarkers_reltrue_236
+	movl	$0,%eax
+replaceMarkers_reltrue_236	:	
+	testl	%eax,%eax
+	jnz	replaceMarkers_ifbl_235
+	jmp	replaceMarkers_elsebl_235
+replaceMarkers_ifbl_235	:	
+
+	movl	-4(%ebp),%eax
+	jmp	replaceMarkers_ret
+replaceMarkers_elsebl_235	:	
+replaceMarkers_endif_235	:	
+
+replaceMarkers_while_237	:	
+	movl	%ebp,%eax
+	addl	$16,%eax
+	movl	(%eax),%eax
+	addl	$516,%eax
+	movl	(%eax),%eax
+	pushl	%eax
+	movl	%ebp,%eax
+	addl	$16,%eax
+	movl	(%eax),%eax
+	addl	$512,%eax
+	movl	(%eax),%eax
+	popl	%ebx
+	cmpl	%eax,%ebx
+	movl	$1,%eax
+	jle	replaceMarkers_reltrue_238
+	movl	$0,%eax
+replaceMarkers_reltrue_238	:	
+	testl	%eax,%eax
+	jz	replaceMarkers_endwhile_237
+
+	movl	%ebp,%eax
+	addl	$12,%eax
+	movl	(%eax),%eax
+	addl	$516,%eax
+	movl	(%eax),%eax
+	pushl	%eax
+	movl	%ebp,%eax
+	addl	$12,%eax
+	movl	(%eax),%eax
+	addl	$0,%eax
+	popl	%esi
+	addl	%esi,%eax
+	pushl	%eax
+	movl	%ebp,%eax
+	addl	$16,%eax
+	movl	(%eax),%eax
+	addl	$516,%eax
+	movl	(%eax),%eax
+	pushl	%eax
+	movl	%ebp,%eax
+	addl	$16,%eax
+	movl	(%eax),%eax
+	addl	$0,%eax
+	popl	%esi
+	addl	%esi,%eax
+	movb	(%eax),%al
+	popl	%ebx
+	movb	%al,(%ebx)
+
+	movl	%ebp,%eax
+	addl	$12,%eax
+	movl	(%eax),%eax
+	addl	$516,%eax
+	pushl	%eax
+	movl	%ebp,%eax
+	addl	$12,%eax
+	movl	(%eax),%eax
+	addl	$516,%eax
+	movl	(%eax),%eax
+	movl	%eax,%ebx
+	addl	$1,%ebx
+	movl	%ebx,%eax
+	popl	%ebx
+	movl	%eax,(%ebx)
+
+	movl	%ebp,%eax
+	addl	$16,%eax
+	movl	(%eax),%eax
+	addl	$516,%eax
+	pushl	%eax
+	movl	%ebp,%eax
+	addl	$16,%eax
+	movl	(%eax),%eax
+	addl	$516,%eax
+	movl	(%eax),%eax
+	movl	%eax,%ebx
+	addl	$1,%ebx
+	movl	%ebx,%eax
+	popl	%ebx
+	movl	%eax,(%ebx)
+	jmp	replaceMarkers_while_237
+replaceMarkers_endwhile_237	:	
+replaceMarkers_endif_225	:	
+replaceMarkers_endif_223	:	
+
+	movl	$0,%eax
+	jmp	replaceMarkers_ret
+replaceMarkers_ret	:	
+	movl	%ebp,%esp
+	popl	%ebp
+	ret	
+
+.globl	updateLinesAddresses
+.type	updateLinesAddresses,@function
+updateLinesAddresses	:	
+	pushl	%ebp
+	movl	%esp,%ebp
+	subl	$4,%esp
+
+	subl	$4,%esp
+	movl	8(%ebp),%eax
+	movl	%eax,0(%esp)
+	call	Get_Front_Of_LinesList
+	addl	$4,%esp
+	movl	%eax,-4(%ebp)
+
+updateLinesAddresses_while_239	:	
+	movl	-4(%ebp),%ebx
+	cmpl	$0,%ebx
+	movl	$1,%eax
+	jne	updateLinesAddresses_reltrue_240
+	movl	$0,%eax
+updateLinesAddresses_reltrue_240	:	
+	testl	%eax,%eax
+	jz	updateLinesAddresses_endwhile_239
+
+	movl	%ebp,%eax
+	addl	$-4,%eax
+	movl	(%eax),%eax
+	addl	$532,%eax
+	pushl	%eax
+	movl	%ebp,%eax
+	addl	$-4,%eax
+	movl	(%eax),%eax
+	addl	$532,%eax
+	movl	(%eax),%eax
+	movl	%eax,%ebx
+	addl	12(%ebp),%ebx
+	movl	%ebx,%eax
+	popl	%ebx
+	movl	%eax,(%ebx)
+
+	subl	$4,%esp
+	movl	-4(%ebp),%eax
+	movl	%eax,0(%esp)
+	call	Get_Next_In_LinesList
+	addl	$4,%esp
+	movl	%eax,-4(%ebp)
+	jmp	updateLinesAddresses_while_239
+updateLinesAddresses_endwhile_239	:	
+updateLinesAddresses_ret	:	
+	movl	%ebp,%esp
+	popl	%ebp
+	ret	
+
+.globl	escapeBufferCharacters
+.type	escapeBufferCharacters,@function
+escapeBufferCharacters	:	
+	pushl	%ebp
+	movl	%esp,%ebp
+	subl	$13,%esp
+
+	movl	$0,-4(%ebp)
+
+	subl	$4,%esp
+	movl	8(%ebp),%eax
+	movl	%eax,0(%esp)
+	call	strlen
+	addl	$4,%esp
+	movl	%eax,-12(%ebp)
+
+escapeBufferCharacters_while_241	:	
+	movl	-4(%ebp),%ebx
+	cmpl	-12(%ebp),%ebx
+	movl	$1,%eax
+	jl	escapeBufferCharacters_reltrue_242
+	movl	$0,%eax
+escapeBufferCharacters_reltrue_242	:	
+	testl	%eax,%eax
+	jz	escapeBufferCharacters_endwhile_241
+
+	pushl	-4(%ebp)
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	popl	%esi
+	addl	%esi,%eax
+	movb	(%eax),%al
+	movsbl	%al,%eax
+	movl	%eax,%ebx
+	cmpl	$92,%ebx
+	movl	$1,%eax
+	je	escapeBufferCharacters_reltrue_244
+	movl	$0,%eax
+escapeBufferCharacters_reltrue_244	:	
+	testl	%eax,%eax
+	jnz	escapeBufferCharacters_ifbl_243
+	jmp	escapeBufferCharacters_elsebl_243
+escapeBufferCharacters_ifbl_243	:	
+
+	movl	-4(%ebp),%ebx
+	addl	$1,%ebx
+	movl	%ebx,%eax
+	pushl	%eax
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	popl	%esi
+	addl	%esi,%eax
+	movb	(%eax),%al
+	movb	%al,-13(%ebp)
+
+	movsbl	-13(%ebp),%eax
+	movl	%eax,%ebx
+	cmpl	$110,%ebx
+	movl	$1,%eax
+	je	escapeBufferCharacters_reltrue_248
+	movl	$0,%eax
+escapeBufferCharacters_reltrue_248	:	
+	testl	%eax,%eax
+	jnz	escapeBufferCharacters_logexprtrue_247
+	movsbl	-13(%ebp),%eax
+	movl	%eax,%ebx
+	cmpl	$114,%ebx
+	movl	$1,%eax
+	je	escapeBufferCharacters_reltrue_249
+	movl	$0,%eax
+escapeBufferCharacters_reltrue_249	:	
+	testl	%eax,%eax
+	jnz	escapeBufferCharacters_logexprtrue_247
+	movsbl	-13(%ebp),%eax
+	movl	%eax,%ebx
+	cmpl	$116,%ebx
+	movl	$1,%eax
+	je	escapeBufferCharacters_reltrue_250
+	movl	$0,%eax
+escapeBufferCharacters_reltrue_250	:	
+	testl	%eax,%eax
+	jnz	escapeBufferCharacters_logexprtrue_247
+	movsbl	-13(%ebp),%eax
+	movl	%eax,%ebx
+	cmpl	$92,%ebx
+	movl	$1,%eax
+	je	escapeBufferCharacters_reltrue_251
+	movl	$0,%eax
+escapeBufferCharacters_reltrue_251	:	
+	testl	%eax,%eax
+	jnz	escapeBufferCharacters_logexprtrue_247
+	movsbl	-13(%ebp),%eax
+	movl	%eax,%ebx
+	cmpl	$98,%ebx
+	movl	$1,%eax
+	je	escapeBufferCharacters_reltrue_252
+	movl	$0,%eax
+escapeBufferCharacters_reltrue_252	:	
+	testl	%eax,%eax
+	jnz	escapeBufferCharacters_logexprtrue_247
+	movsbl	-13(%ebp),%eax
+	movl	%eax,%ebx
+	cmpl	$39,%ebx
+	movl	$1,%eax
+	je	escapeBufferCharacters_reltrue_253
+	movl	$0,%eax
+escapeBufferCharacters_reltrue_253	:	
+	testl	%eax,%eax
+	jnz	escapeBufferCharacters_logexprtrue_247
+	movsbl	-13(%ebp),%eax
+	movl	%eax,%ebx
+	cmpl	$34,%ebx
+	movl	$1,%eax
+	je	escapeBufferCharacters_reltrue_254
+	movl	$0,%eax
+escapeBufferCharacters_reltrue_254	:	
+	testl	%eax,%eax
+	jnz	escapeBufferCharacters_logexprtrue_247
+	movsbl	-13(%ebp),%eax
+	movl	%eax,%ebx
+	cmpl	$48,%ebx
+	movl	$1,%eax
+	je	escapeBufferCharacters_reltrue_255
+	movl	$0,%eax
+escapeBufferCharacters_reltrue_255	:	
+	testl	%eax,%eax
+	jnz	escapeBufferCharacters_logexprtrue_247
+	movl	$0,%eax
+	jmp	escapeBufferCharacters_logexprfalse_247
+escapeBufferCharacters_logexprtrue_247	:	
+	movl	$1,%eax
+escapeBufferCharacters_logexprfalse_247	:	
+	testl	%eax,%eax
+	movl	$1,%eax
+	jz	escapeBufferCharacters_logfactfalse_246
+	movl	$0,%eax
+escapeBufferCharacters_logfactfalse_246	:	
+	testl	%eax,%eax
+	jnz	escapeBufferCharacters_ifbl_245
+	jmp	escapeBufferCharacters_elsebl_245
+escapeBufferCharacters_ifbl_245	:	
+
+	movl	-4(%ebp),%eax
+	movl	%eax,-8(%ebp)
+
+escapeBufferCharacters_while_256	:	
+	movl	-8(%ebp),%ebx
+	cmpl	-12(%ebp),%ebx
+	movl	$1,%eax
+	jl	escapeBufferCharacters_reltrue_257
+	movl	$0,%eax
+escapeBufferCharacters_reltrue_257	:	
+	testl	%eax,%eax
+	jz	escapeBufferCharacters_endwhile_256
+
+	pushl	-8(%ebp)
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	popl	%esi
+	addl	%esi,%eax
+	pushl	%eax
+	movl	-8(%ebp),%ebx
+	addl	$1,%ebx
+	movl	%ebx,%eax
+	pushl	%eax
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	popl	%esi
+	addl	%esi,%eax
+	movb	(%eax),%al
+	popl	%ebx
+	movb	%al,(%ebx)
+
+	movl	-8(%ebp),%ebx
+	addl	$1,%ebx
+	movl	%ebx,%eax
+	pushl	%eax
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	popl	%esi
+	addl	%esi,%eax
+	movl	%eax,%ebx
+	movb	$0,(%ebx)
+
+	movl	-8(%ebp),%ebx
+	addl	$1,%ebx
+	movl	%ebx,%eax
+	movl	%eax,-8(%ebp)
+	jmp	escapeBufferCharacters_while_256
+escapeBufferCharacters_endwhile_256	:	
+	jmp	escapeBufferCharacters_endif_245
+escapeBufferCharacters_elsebl_245	:	
+escapeBufferCharacters_endif_245	:	
+	jmp	escapeBufferCharacters_endif_243
+escapeBufferCharacters_elsebl_243	:	
+escapeBufferCharacters_endif_243	:	
+
+	movl	-4(%ebp),%ebx
+	addl	$1,%ebx
+	movl	%ebx,%eax
+	movl	%eax,-4(%ebp)
+	jmp	escapeBufferCharacters_while_241
+escapeBufferCharacters_endwhile_241	:	
+escapeBufferCharacters_ret	:	
+	movl	%ebp,%esp
+	popl	%ebp
+	ret	
+
+.globl	linker_produce
+.type	linker_produce,@function
+linker_produce	:	
+	pushl	%ebp
+	movl	%esp,%ebp
+	subl	$584,%esp
+
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$0,%eax
+	movl	(%eax),%eax
+	movl	%eax,%ebx
+	cmpl	$1,%ebx
+	movl	$1,%eax
+	jne	linker_produce_reltrue_259
+	movl	$0,%eax
+linker_produce_reltrue_259	:	
+	testl	%eax,%eax
+	jnz	linker_produce_ifbl_258
+	jmp	linker_produce_elsebl_258
+linker_produce_ifbl_258	:	
+
+	movl	$0,%ebx
+	subl	$20000,%ebx
+	movl	%ebx,%eax
+	jmp	linker_produce_ret
+linker_produce_elsebl_258	:	
+linker_produce_endif_258	:	
+
+	subl	$8,%esp
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$40,%eax
+	movl	%eax,0(%esp)
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$48,%eax
+	movl	(%eax),%eax
+	movl	%eax,4(%esp)
+	call	updateLinesAddresses
+	addl	$8,%esp
+
+	subl	$4,%esp
+	movl	8(%ebp),%eax
+	movl	%eax,0(%esp)
+	call	resolveFileMarkers
+	addl	$4,%esp
+	movl	%eax,-12(%ebp)
+
+	movl	-12(%ebp),%ebx
+	cmpl	$0,%ebx
+	movl	$1,%eax
+	jne	linker_produce_reltrue_261
+	movl	$0,%eax
+linker_produce_reltrue_261	:	
+	testl	%eax,%eax
+	jnz	linker_produce_ifbl_260
+	jmp	linker_produce_elsebl_260
+linker_produce_ifbl_260	:	
+
+	movl	-12(%ebp),%eax
+	jmp	linker_produce_ret
+linker_produce_elsebl_260	:	
+linker_produce_endif_260	:	
+
+	subl	$12,%esp
+	movl	12(%ebp),%eax
+	movl	%eax,0(%esp)
+	movl	$64,%ebx
+	orl	$1,%ebx
+	orl	$512,%ebx
+	movl	%ebx,%eax
+	movl	%eax,4(%esp)
+	movl	$0777,8(%esp)
+	call	open
+	addl	$12,%esp
+	movl	%eax,-4(%ebp)
+
+	movl	-4(%ebp),%ebx
+	cmpl	$0,%ebx
+	movl	$1,%eax
+	jl	linker_produce_reltrue_263
+	movl	$0,%eax
+linker_produce_reltrue_263	:	
+	testl	%eax,%eax
+	jnz	linker_produce_ifbl_262
+	jmp	linker_produce_elsebl_262
+linker_produce_ifbl_262	:	
+
+	movl	$0,%ebx
+	subl	$20001,%ebx
+	movl	%ebx,%eax
+	jmp	linker_produce_ret
+linker_produce_elsebl_262	:	
+linker_produce_endif_262	:	
+
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$4,%eax
+	pushl	%eax
+	movl	-4(%ebp),%eax
+	popl	%ebx
+	movl	%eax,(%ebx)
+
+	subl	$8,%esp
+	movl	8(%ebp),%eax
+	movl	%eax,0(%esp)
+	movl	$symtab+725,4(%esp)
+	call	appendOutput
+	addl	$8,%esp
+
+	subl	$8,%esp
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$8,%eax
+	movl	%eax,0(%esp)
+	movl	$symtab+771,4(%esp)
+	call	getMarkerAddr
+	addl	$8,%esp
+	movl	%eax,-8(%ebp)
+
+	movl	-8(%ebp),%ebx
+	cmpl	$0,%ebx
+	movl	$1,%eax
+	jl	linker_produce_reltrue_265
+	movl	$0,%eax
+linker_produce_reltrue_265	:	
+	testl	%eax,%eax
+	jnz	linker_produce_ifbl_264
+	jmp	linker_produce_elsebl_264
+linker_produce_ifbl_264	:	
+
+	subl	$8,%esp
+	movl	$symtab+776,0(%esp)
+	movl	$symtab+771,4(%esp)
+	call	printf
+	addl	$8,%esp
+
+	movl	$0,%ebx
+	subl	$20004,%ebx
+	movl	%ebx,%eax
+	jmp	linker_produce_ret
+linker_produce_elsebl_264	:	
+linker_produce_endif_264	:	
+
+	subl	$8,%esp
+	movl	8(%ebp),%eax
+	movl	%eax,0(%esp)
+	movl	$symtab+830,4(%esp)
+	call	appendOutput
+	addl	$8,%esp
+
+	subl	$8,%esp
+	movl	8(%ebp),%eax
+	movl	%eax,0(%esp)
+	movl	$symtab+847,4(%esp)
+	call	appendOutput
+	addl	$8,%esp
+
+	subl	$8,%esp
+	movl	8(%ebp),%eax
+	movl	%eax,0(%esp)
+	subl	$8,%esp
+	movl	%ebp,%eax
+	addl	$-584,%eax
+	movl	%eax,0(%esp)
+	movl	-8(%ebp),%eax
+	movl	%eax,4(%esp)
+	call	convertAddr
+	addl	$8,%esp
+	movl	%eax,4(%esp)
+	call	appendOutput
+	addl	$8,%esp
+
+	subl	$8,%esp
+	movl	8(%ebp),%eax
+	movl	%eax,0(%esp)
+	movl	$symtab+853,4(%esp)
+	call	appendOutput
+	addl	$8,%esp
+
+	subl	$8,%esp
+	movl	8(%ebp),%eax
+	movl	%eax,0(%esp)
+	movl	$symtab+855,4(%esp)
+	call	appendOutput
+	addl	$8,%esp
+
+	subl	$8,%esp
+	movl	8(%ebp),%eax
+	movl	%eax,0(%esp)
+	movl	$symtab+867,4(%esp)
+	call	appendOutput
+	addl	$8,%esp
+
+	movl	$0,%ebx
+	subl	$1,%ebx
+	movl	%ebx,%eax
+	movl	%eax,-16(%ebp)
+
+	subl	$4,%esp
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$32,%eax
+	movl	%eax,0(%esp)
+	call	Get_Front_Of_LinesList
+	addl	$4,%esp
+	movl	%eax,-20(%ebp)
+
+linker_produce_while_266	:	
+	movl	-20(%ebp),%ebx
+	cmpl	$0,%ebx
+	movl	$1,%eax
+	jne	linker_produce_reltrue_267
+	movl	$0,%eax
+linker_produce_reltrue_267	:	
+	testl	%eax,%eax
+	jz	linker_produce_endwhile_266
+
+	pushl	-16(%ebp)
+	movl	%ebp,%eax
+	addl	$-20,%eax
+	movl	(%eax),%eax
+	addl	$536,%eax
+	movl	(%eax),%eax
+	popl	%ebx
+	cmpl	%eax,%ebx
+	movl	$1,%eax
+	jne	linker_produce_reltrue_269
+	movl	$0,%eax
+linker_produce_reltrue_269	:	
+	testl	%eax,%eax
+	jnz	linker_produce_ifbl_268
+	jmp	linker_produce_elsebl_268
+linker_produce_ifbl_268	:	
+
+	subl	$8,%esp
+	movl	8(%ebp),%eax
+	movl	%eax,0(%esp)
+	movl	%ebp,%eax
+	addl	$-20,%eax
+	movl	(%eax),%eax
+	addl	$536,%eax
+	movl	(%eax),%eax
+	movl	%eax,4(%esp)
+	call	getFileOfList
+	addl	$8,%esp
+	movl	%eax,-576(%ebp)
+	jmp	linker_produce_endif_268
+linker_produce_elsebl_268	:	
+linker_produce_endif_268	:	
+
+	subl	$16,%esp
+	movl	8(%ebp),%eax
+	movl	%eax,0(%esp)
+	movl	%ebp,%eax
+	addl	$-572,%eax
+	movl	%eax,4(%esp)
+	movl	-20(%ebp),%eax
+	movl	%eax,8(%esp)
+	movl	%ebp,%eax
+	addl	$-576,%eax
+	movl	(%eax),%eax
+	addl	$264,%eax
+	movl	%eax,12(%esp)
+	call	replaceMarkers
+	addl	$16,%esp
+	movl	%eax,-12(%ebp)
+
+	movl	-12(%ebp),%ebx
+	cmpl	$0,%ebx
+	movl	$1,%eax
+	jne	linker_produce_reltrue_271
+	movl	$0,%eax
+linker_produce_reltrue_271	:	
+	testl	%eax,%eax
+	jnz	linker_produce_ifbl_270
+	jmp	linker_produce_elsebl_270
+linker_produce_ifbl_270	:	
+
+	movl	-12(%ebp),%eax
+	jmp	linker_produce_ret
+linker_produce_elsebl_270	:	
+linker_produce_endif_270	:	
+
+	subl	$8,%esp
+	movl	8(%ebp),%eax
+	movl	%eax,0(%esp)
+	movl	%ebp,%eax
+	addl	$-572,%eax
+	addl	$0,%eax
+	movl	%eax,4(%esp)
+	call	appendOutput
+	addl	$8,%esp
+
+	subl	$8,%esp
+	movl	8(%ebp),%eax
+	movl	%eax,0(%esp)
+	movl	$symtab+853,4(%esp)
+	call	appendOutput
+	addl	$8,%esp
+
+	movl	%ebp,%eax
+	addl	$-20,%eax
+	movl	(%eax),%eax
+	addl	$536,%eax
+	movl	(%eax),%eax
+	movl	%eax,-16(%ebp)
+
+	subl	$4,%esp
+	movl	-20(%ebp),%eax
+	movl	%eax,0(%esp)
+	call	Get_Next_In_LinesList
+	addl	$4,%esp
+	movl	%eax,-20(%ebp)
+	jmp	linker_produce_while_266
+linker_produce_endwhile_266	:	
+
+	subl	$8,%esp
+	movl	8(%ebp),%eax
+	movl	%eax,0(%esp)
+	movl	$symtab+879,4(%esp)
+	call	appendOutput
+	addl	$8,%esp
+
+	subl	$4,%esp
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$40,%eax
+	movl	%eax,0(%esp)
+	call	Get_Front_Of_LinesList
+	addl	$4,%esp
+	movl	%eax,-20(%ebp)
+
+linker_produce_while_272	:	
+	movl	-20(%ebp),%ebx
+	cmpl	$0,%ebx
+	movl	$1,%eax
+	jne	linker_produce_reltrue_273
+	movl	$0,%eax
+linker_produce_reltrue_273	:	
+	testl	%eax,%eax
+	jz	linker_produce_endwhile_272
+
+	subl	$4,%esp
+	movl	%ebp,%eax
+	addl	$-20,%eax
+	movl	(%eax),%eax
+	addl	$0,%eax
+	movl	%eax,0(%esp)
+	call	escapeBufferCharacters
+	addl	$4,%esp
+
+	subl	$8,%esp
+	movl	8(%ebp),%eax
+	movl	%eax,0(%esp)
+	movl	%ebp,%eax
+	addl	$-20,%eax
+	movl	(%eax),%eax
+	addl	$0,%eax
+	movl	%eax,4(%esp)
+	call	appendOutput
+	addl	$8,%esp
+
+	subl	$8,%esp
+	movl	8(%ebp),%eax
+	movl	%eax,0(%esp)
+	movl	$symtab+853,4(%esp)
+	call	appendOutput
+	addl	$8,%esp
+
+	subl	$4,%esp
+	movl	-20(%ebp),%eax
+	movl	%eax,0(%esp)
+	call	Get_Next_In_LinesList
+	addl	$4,%esp
+	movl	%eax,-20(%ebp)
+	jmp	linker_produce_while_272
+linker_produce_endwhile_272	:	
+
+	movl	$0,%eax
+	jmp	linker_produce_ret
+linker_produce_ret	:	
+	movl	%ebp,%esp
+	popl	%ebp
+	ret	
+
+.section	.data
+symtab	:	
+.string	"../include/hrwcccomp.h"
+.string	"__HRWCC__"
+.string	"LINKER_WARNING: marker [%s] already defined before - ignoring this one...\n"
+.string	"marker: [%s:"
+.string	"%d]\n"
+.string	"{%s}:"
+.string	"%d:"
+.string	"%d\n"
+.string	"LINKER_WARNING: .globl [%s] definition already found before - ignoring this one...\n"
+.string	"LINKER_WARNING: .globl [%s] definition was not found - this label will not be available in other files!\n"
+.string	"LINKER_ERROR: unrecognized .string type [%s:"
+.string	"%d] - ignoring\n"
+.string	".section"
+.string	".text"
+.string	".data"
+.string	"LINKER_WARNING: invalid .section statement [%s:"
+.string	"%d] - ignoring following lines till a valid section\n"
+.string	".globl"
+.string	"."
+.string	".string"
+.string	".byte"
+.string	".long"
+.string	".rept"
+.string	".endr"
+.string	"LINKER_ERROR: unrecognized data type [%s:"
+.string	" [@"
+.string	"]"
+.string	"LINKER_ERROR: Could not resolve marker [%s] - no definition found... "
+.string	"[%s"
+.string	":%d]\n"
+.string	"LINKER_ERROR: Line [%s] "
+.string	"is malformed! [%s:"
+.string	"# linked executable code generated by HRWCC\n\n"
+.string	"main"
+.string	"LINKER_ERROR: reference to entry point (%s) missing!\n"
+.string	".section .text\n\n"
+.string	"call "
+.string	"\n"
+.string	"pushl %eax\n"
+.string	"call exit\n\n"
+.string	"\n.section .data\n\n"

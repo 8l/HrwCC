@@ -1,0 +1,42 @@
+
+#Code 
+.section .text
+
+#0x80000000:
+	movl 1(%eax), %eax
+	addl $3, %eax
+	subl $9, %eax
+	addl (%esp), %eax
+
+#0x80000100:
+	cmpl %eax, %ebx
+	je   1
+	addb $1, %al
+
+#0x80000200:
+
+#	pushl 0x80000010
+#	call 0x80000300
+	
+
+
+#0x80000300:
+#	movl %esp, %ebp
+#	ret
+	
+#Program constants
+.section .data
+
+#0x80000010:
+     .rept 10
+      	.rept 3
+      		.long 0
+      	.endr
+      	.long 0
+      	.byte 0
+      	.string "foo"
+      .endr #48
+      .byte '\n'
+	.string "hello \nworld2\nx"
+	.byte 'a'
+        .string "hello\" world1\n"

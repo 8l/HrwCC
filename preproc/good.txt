@@ -1,0 +1,1214 @@
+
+
+
+
+
+
+
+		
+
+
+
+
+
+
+
+		
+
+		void puts(char* text);
+		void printf(char* text, int arg1);
+		
+		
+		int sprintf(char *str, char *format, int arg1);
+
+		int open(char* filename, int flag, int mode);
+		int read(int fd, void* buf, int size);
+		int write(int fd, void* buf, int size);
+		void close(int fd);
+
+		void memset(void* text, int val, int size);
+		void memcpy(void* dest, void* src, int size);
+	    void *malloc(int size);
+	    void *realloc(void *ptr, int size);
+	    void free(void *ptr);
+
+		void exit(int status);
+
+
+		int isalnum(int c);
+		int isalpha(int c);
+		int isdigit(int c);
+		int isblank(int c);
+		char tolower(int c);
+		char toupper(int c);
+
+		int atoi(char* text);
+	
+		void strcpy(char *dest, char *src);
+		void strncpy(char *dest, char *src, int maxsize);
+		void strcat(char *str1, char *str2);
+		void strncat(char *str1, char *str2, int size);
+		int strcmp(char *str1, char *str2);
+		int strncmp(char *str1, char *str2, int len);
+		int strlen(char *str);
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+struct token
+{
+		
+		int type;
+
+		
+		int pos_col;
+		int pos_line;
+		int pos_fileid;
+
+		
+		char content[128];
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+struct syntaxTreeNode_ListNode
+{
+		
+		syntaxTreeNode* child;
+
+		
+		 
+     syntaxTreeNode_ListNode * prevsyntaxTreeNode_List; 
+	 syntaxTreeNode_ListNode * nextsyntaxTreeNode_List;				
+};
+
+
+
+		
+struct syntaxTreeNode_List {					
+    syntaxTreeNode_ListNode *head;			
+	syntaxTreeNode_ListNode *tail;			
+};			
+ 
+void Clear_syntaxTreeNode_List(syntaxTreeNode_List *listPtr); 
+int Is_Member_Of_syntaxTreeNode_List(syntaxTreeNode_List *listPtr, syntaxTreeNode_ListNode  *nodePtr); 
+ syntaxTreeNode_ListNode  * Get_Front_Of_syntaxTreeNode_List(syntaxTreeNode_List *listPtr); 
+ syntaxTreeNode_ListNode  * Get_Back_Of_syntaxTreeNode_List(syntaxTreeNode_List *listPtr); 
+ syntaxTreeNode_ListNode  * Get_Next_In_syntaxTreeNode_List(syntaxTreeNode_ListNode  *nodePtr); 
+void Set_Next_In_syntaxTreeNode_List(syntaxTreeNode_ListNode  *nodePtr, syntaxTreeNode_ListNode  *value); 
+ syntaxTreeNode_ListNode  * Get_Prev_In_syntaxTreeNode_List( syntaxTreeNode_ListNode  *nodePtr); 
+void Set_Prev_In_syntaxTreeNode_List( syntaxTreeNode_ListNode  *nodePtr,  syntaxTreeNode_ListNode  *value); 
+void Add_To_Front_Of_syntaxTreeNode_List( syntaxTreeNode_List *listPtr,  syntaxTreeNode_ListNode  *nodePtr); 
+void Add_To_Back_Of_syntaxTreeNode_List( syntaxTreeNode_List *listPtr,  syntaxTreeNode_ListNode  *nodePtr); 
+void Add_To_syntaxTreeNode_List_After( syntaxTreeNode_ListNode  *nodePtr,  syntaxTreeNode_ListNode  *nodePtrToAppend); 
+void Append_syntaxTreeNode_List( syntaxTreeNode_List *listToModify,  syntaxTreeNode_List *listToAppend); 
+ syntaxTreeNode_ListNode  * Remove_From_Front_Of_syntaxTreeNode_List( syntaxTreeNode_List *listPtr); 
+void Remove_From_syntaxTreeNode_List( syntaxTreeNode_List *listPtr,  syntaxTreeNode_ListNode  *nodePtr); 
+int Is_syntaxTreeNode_List_Empty( syntaxTreeNode_List *listPtr) ;
+
+
+
+struct syntaxTreeNode
+{
+		
+		syntaxTreeNode_List children;
+
+		
+		token tok;
+};
+
+
+
+
+
+syntaxTreeNode* syntax_CreateTreeNode();
+
+void syntax_AddChildNode( syntaxTreeNode* parent, token childToken);
+
+void syntax_AddChildTree( syntaxTreeNode* parent, syntaxTreeNode* child);
+
+int syntax_CountChilds( syntaxTreeNode* parent); 
+
+syntaxTreeNode* syntax_GetChild( syntaxTreeNode* parent, int idx);
+
+
+int syntax_EqualTrees( syntaxTreeNode* tree1, syntaxTreeNode* tree2);
+
+
+void syntax_FreeSyntaxTree( syntaxTreeNode* root );
+
+
+void syntax_printTree( syntaxTreeNode* root );
+
+
+syntaxTreeNode* syntax_CopyTree(syntaxTreeNode* root);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+	struct Character
+	{
+		char value; 
+		int fileId; 
+		int line;   
+		int column; 
+	};
+
+	
+	struct FileStackItem
+	{
+		int fh;          
+		Character prev;  
+		int fileId;      
+		int line;        
+		int column;      
+	};
+
+
+	
+	struct FilenameNode
+	{
+		int id;
+		char name[256 ];
+		
+		 
+     FilenameNode * prevFilenamesList; 
+	 FilenameNode * nextFilenamesList;
+	};
+
+	
+			
+struct FilenamesList {					
+    FilenameNode *head;			
+	FilenameNode *tail;			
+};
+	 
+void Clear_FilenamesList(FilenamesList *listPtr); 
+int Is_Member_Of_FilenamesList(FilenamesList *listPtr, FilenameNode *nodePtr); 
+ FilenameNode * Get_Front_Of_FilenamesList(FilenamesList *listPtr); 
+ FilenameNode * Get_Back_Of_FilenamesList(FilenamesList *listPtr); 
+ FilenameNode * Get_Next_In_FilenamesList(FilenameNode *nodePtr); 
+void Set_Next_In_FilenamesList(FilenameNode *nodePtr, FilenameNode *value); 
+ FilenameNode * Get_Prev_In_FilenamesList( FilenameNode *nodePtr); 
+void Set_Prev_In_FilenamesList( FilenameNode *nodePtr,  FilenameNode *value); 
+void Add_To_Front_Of_FilenamesList( FilenamesList *listPtr,  FilenameNode *nodePtr); 
+void Add_To_Back_Of_FilenamesList( FilenamesList *listPtr,  FilenameNode *nodePtr); 
+void Add_To_FilenamesList_After( FilenameNode *nodePtr,  FilenameNode *nodePtrToAppend); 
+void Append_FilenamesList( FilenamesList *listToModify,  FilenamesList *listToAppend); 
+ FilenameNode * Remove_From_Front_Of_FilenamesList( FilenamesList *listPtr); 
+void Remove_From_FilenamesList( FilenamesList *listPtr,  FilenameNode *nodePtr); 
+int Is_FilenamesList_Empty( FilenamesList *listPtr) ;
+	
+	
+	struct ParameterElement
+	{
+		Character name[64   ];        
+		Character replacement[64   ]; 
+		 
+     ParameterElement * prevParametersList; 
+	 ParameterElement * nextParametersList;
+	};
+
+	
+			
+struct ParametersList {					
+    ParameterElement *head;			
+	ParameterElement *tail;			
+};
+	 
+void Clear_ParametersList(ParametersList *listPtr); 
+int Is_Member_Of_ParametersList(ParametersList *listPtr, ParameterElement *nodePtr); 
+ ParameterElement * Get_Front_Of_ParametersList(ParametersList *listPtr); 
+ ParameterElement * Get_Back_Of_ParametersList(ParametersList *listPtr); 
+ ParameterElement * Get_Next_In_ParametersList(ParameterElement *nodePtr); 
+void Set_Next_In_ParametersList(ParameterElement *nodePtr, ParameterElement *value); 
+ ParameterElement * Get_Prev_In_ParametersList( ParameterElement *nodePtr); 
+void Set_Prev_In_ParametersList( ParameterElement *nodePtr,  ParameterElement *value); 
+void Add_To_Front_Of_ParametersList( ParametersList *listPtr,  ParameterElement *nodePtr); 
+void Add_To_Back_Of_ParametersList( ParametersList *listPtr,  ParameterElement *nodePtr); 
+void Add_To_ParametersList_After( ParameterElement *nodePtr,  ParameterElement *nodePtrToAppend); 
+void Append_ParametersList( ParametersList *listToModify,  ParametersList *listToAppend); 
+ ParameterElement * Remove_From_Front_Of_ParametersList( ParametersList *listPtr); 
+void Remove_From_ParametersList( ParametersList *listPtr,  ParameterElement *nodePtr); 
+int Is_ParametersList_Empty( ParametersList *listPtr) ;
+
+
+	
+	struct DefineElementNode
+	{
+		Character name[64   ];
+		Character *value;
+		int valueLength;
+		
+		ParametersList parameters;
+		 
+     DefineElementNode * prevDefinesList; 
+	 DefineElementNode * nextDefinesList;
+	};
+
+	
+			
+struct DefinesList {					
+    DefineElementNode *head;			
+	DefineElementNode *tail;			
+};
+	 
+void Clear_DefinesList(DefinesList *listPtr); 
+int Is_Member_Of_DefinesList(DefinesList *listPtr, DefineElementNode *nodePtr); 
+ DefineElementNode * Get_Front_Of_DefinesList(DefinesList *listPtr); 
+ DefineElementNode * Get_Back_Of_DefinesList(DefinesList *listPtr); 
+ DefineElementNode * Get_Next_In_DefinesList(DefineElementNode *nodePtr); 
+void Set_Next_In_DefinesList(DefineElementNode *nodePtr, DefineElementNode *value); 
+ DefineElementNode * Get_Prev_In_DefinesList( DefineElementNode *nodePtr); 
+void Set_Prev_In_DefinesList( DefineElementNode *nodePtr,  DefineElementNode *value); 
+void Add_To_Front_Of_DefinesList( DefinesList *listPtr,  DefineElementNode *nodePtr); 
+void Add_To_Back_Of_DefinesList( DefinesList *listPtr,  DefineElementNode *nodePtr); 
+void Add_To_DefinesList_After( DefineElementNode *nodePtr,  DefineElementNode *nodePtrToAppend); 
+void Append_DefinesList( DefinesList *listToModify,  DefinesList *listToAppend); 
+ DefineElementNode * Remove_From_Front_Of_DefinesList( DefinesList *listPtr); 
+void Remove_From_DefinesList( DefinesList *listPtr,  DefineElementNode *nodePtr); 
+int Is_DefinesList_Empty( DefinesList *listPtr) ;
+
+
+
+	
+	struct CharacterLine
+	{
+		Character buffer[512 ]; 
+		int length;      
+		int pos;         
+		int posInString; 
+		int posEscaped;  
+		int skip;        
+	};
+
+	
+	struct preproc
+	{
+		FileStackItem filestack[20       ];  
+		FilenamesList filenames;        
+		int currentFileIdx;             
+
+		CharacterLine commstage;        
+		CharacterLine directivestage;   
+		DefinesList definesList;        
+		int branchStack[20       ]; 
+		int branchStackIdx;             
+		CharacterLine substage;         
+		DefineElementNode *replacement; 
+		int replacementPos;             
+		Character *paramReplacement;    
+		int paramReplacementPos;        
+	};
+
+	
+	
+
+	
+	int preproc_create(preproc *instance, char *filename);
+
+	
+	void preproc_destroy(preproc *instance);
+
+	
+	int preproc_getNext(preproc *instance, Character *next);
+
+	
+	char *preproc_getFilename(preproc *instance, int id);
+
+	
+	int preproc_addDefine(preproc *instance, char *name);
+
+
+
+
+struct scanner
+{
+		
+		Character nextinput;
+
+		
+		int state;
+
+		
+		preproc* pp;
+};
+
+
+
+int scanner_init(scanner* scan, preproc* pp);
+
+
+int scanner_getToken(scanner* scan, token* tok);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+struct parser
+{
+		
+		scanner* scan;
+
+		
+		symbolTable* symTable;
+
+		
+		codegen* cg;
+
+		
+		int cnterrors;
+
+		
+		token* curr;
+
+		
+		token tokbuffer[4];
+};
+
+
+
+int parser_init( parser* parser, scanner* scan);
+
+
+void parser_setSymbolTable( parser* parser, symbolTable* symTable);
+
+
+void parser_setCodegen( parser* parser, codegen* cg);
+
+
+int parser_buildSyntaxTree( parser* parser, syntaxTreeNode* root);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+struct symbolTableNode
+{
+		
+		token name;
+
+		
+		int type;
+
+		
+		syntaxTreeNode* structure;
+
+
+		 
+     symbolTableNode  * prevsymbolTableNode_List; 
+	 symbolTableNode  * nextsymbolTableNode_List;
+};
+
+
+		
+struct symbolTableNode_List {					
+    symbolTableNode *head;			
+	symbolTableNode *tail;			
+};
+ 
+void Clear_symbolTableNode_List(symbolTableNode_List *listPtr); 
+int Is_Member_Of_symbolTableNode_List(symbolTableNode_List *listPtr, symbolTableNode *nodePtr); 
+ symbolTableNode * Get_Front_Of_symbolTableNode_List(symbolTableNode_List *listPtr); 
+ symbolTableNode * Get_Back_Of_symbolTableNode_List(symbolTableNode_List *listPtr); 
+ symbolTableNode * Get_Next_In_symbolTableNode_List(symbolTableNode *nodePtr); 
+void Set_Next_In_symbolTableNode_List(symbolTableNode *nodePtr, symbolTableNode *value); 
+ symbolTableNode * Get_Prev_In_symbolTableNode_List( symbolTableNode *nodePtr); 
+void Set_Prev_In_symbolTableNode_List( symbolTableNode *nodePtr,  symbolTableNode *value); 
+void Add_To_Front_Of_symbolTableNode_List( symbolTableNode_List *listPtr,  symbolTableNode *nodePtr); 
+void Add_To_Back_Of_symbolTableNode_List( symbolTableNode_List *listPtr,  symbolTableNode *nodePtr); 
+void Add_To_symbolTableNode_List_After( symbolTableNode *nodePtr,  symbolTableNode *nodePtrToAppend); 
+void Append_symbolTableNode_List( symbolTableNode_List *listToModify,  symbolTableNode_List *listToAppend); 
+ symbolTableNode * Remove_From_Front_Of_symbolTableNode_List( symbolTableNode_List *listPtr); 
+void Remove_From_symbolTableNode_List( symbolTableNode_List *listPtr,  symbolTableNode *nodePtr); 
+int Is_symbolTableNode_List_Empty( symbolTableNode_List *listPtr) ;
+
+
+
+struct symbolTable
+{
+		
+		parser* parse;
+
+		
+		int cnterrors;
+
+		
+		symbolTableNode_List list;
+};
+
+
+
+
+
+void symbol_CreateSymbolTable(parser* parser, symbolTable* table);
+
+void symbol_printTable( symbolTable* table);
+
+void symbol_destroy( symbolTable* table);
+
+
+
+int symbol_CountEntries(symbolTable* table);
+
+symbolTableNode* symbol_GetEntry(symbolTable* table, int idx);
+		
+
+
+symbolTableNode* symbol_FindGlobalVariable( symbolTable* table, token name);
+
+symbolTableNode* symbol_FindNonGlobalVariable( symbolTable* table, token name);
+
+symbolTableNode* symbol_FindVariable (symbolTable* table, token name );
+
+symbolTableNode* symbol_FindFunction (symbolTable* table, token name );
+
+symbolTableNode* symbol_FindStruct (symbolTable* table, token name );
+
+symbolTableNode* symbol_FindString (symbolTable* table, token string);
+
+
+int symbol_DefineGlobalVariable (symbolTable* table, syntaxTreeNode* structure);
+
+int symbol_DefineLocalVariable (symbolTable* table, syntaxTreeNode* structure);
+
+
+
+int symbol_DefineStruct (symbolTable* table, syntaxTreeNode* structure);
+
+int symbol_DeclareFunction (symbolTable* table, syntaxTreeNode* structure);
+
+int symbol_DefineFunction (symbolTable* table, syntaxTreeNode* structure);
+
+int symbol_DefineString (symbolTable* table, syntaxTreeNode* structure);
+
+
+
+
+void symbol_ClearNonGlobalVariables (symbolTable* table);
+
+
+int symbol_CountFunctions( symbolTable* table);
+
+symbolTableNode* symbol_GetFunction( symbolTable* table, int idx);
+
+
+
+int symbol_Sizeof_Vardecl (symbolTable* table, syntaxTreeNode* var_decl);
+
+int symbol_Sizeof_DataType (symbolTable* table, syntaxTreeNode* data_type);
+
+int symbol_Sizeof_Structdef (symbolTable* table, syntaxTreeNode* structnode);
+
+int symbol_Sizeof_String (symbolTable* table, syntaxTreeNode* string);
+
+int symbol_Sizeof_Symbol( symbolTable* table, symbolTableNode* symbol );
+
+int symbol_Sizeof_FunctionArgs( symbolTable *table, syntaxTreeNode* structure);
+
+
+int symbol_CountFunctionArgs( symbolTable* table, syntaxTreeNode* func_decl);
+
+syntaxTreeNode* symbol_GetFunctionArg( symbolTable* table, syntaxTreeNode* func_decl, int idx);
+
+syntaxTreeNode* symbol_GetReturnType( symbolTable* table, syntaxTreeNode* func_decl);
+
+int symbol_IsReturnTypeVoid( symbolTable* table, syntaxTreeNode* structure );
+
+
+int symbol_GetOffsetInStruct( symbolTable* table, symbolTableNode* structNode, token entry);
+
+syntaxTreeNode* symbol_GetMemberDeclInStruct( symbolTable* table, symbolTableNode* structNode, token entry);
+
+int symbol_CountStructEntries( symbolTable* table, syntaxTreeNode* structure );
+
+syntaxTreeNode* symbol_GetStructEntry( symbolTable* table, syntaxTreeNode* structure, int idx);
+
+
+int symbol_GetParameterBlockSize( symbolTable* table );
+
+int symbol_GetLocalVarBlockSize( symbolTable* table );
+
+int symbol_GetGlobalsBlockSize( symbolTable* table );
+
+
+
+
+
+int symbol_GetGlobalOffset( symbolTable* table, symbolTableNode* global );
+
+int symbol_GetNonGlobalOffset( symbolTable* table, symbolTableNode* nonglobal );
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+
+
+
+	
+	
+
+
+
+
+
+
+
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+void test_Sizeof()
+{
+		preproc testpreproc;
+		scanner testscanner;
+		parser testparser;
+		symbolTable testsymtable;
+		syntaxTreeNode* tree;
+		syntaxTreeNode* body;
+		syntaxTreeNode* tmp;
+		token tok;
+		symbolTableNode* node;
+
+
+		puts("\n\nTest sizeof.c\n");
+
+		puts("Create preproc...");
+		if( preproc_create( &testpreproc, "testdata/sizeof.c") )
+			return;
+
+		puts("Init scanner...");
+		scanner_init( &testscanner, &testpreproc );
+
+		puts("Init parser...");
+		parser_init( &testparser, &testscanner );
+
+		puts("Create symbol table...\n");
+		symbol_CreateSymbolTable( &testparser, &testsymtable );
+
+
+		tree = syntax_CreateTreeNode();
+		parser_buildSyntaxTree( &testparser, tree );
+
+		if( testparser.cnterrors > 0 )
+		{
+			printf("Detected %d errors.\n", testparser.cnterrors);
+			return;
+		}
+
+
+		
+
+
+		tmp = syntax_GetChild( tree, 0);
+		symbol_DefineGlobalVariable( &testsymtable, tmp);
+
+		tmp = syntax_GetChild( tree, 1);
+		symbol_DefineGlobalVariable( &testsymtable, tmp);
+
+		tmp = syntax_GetChild( tree, 2);
+		symbol_DefineGlobalVariable( &testsymtable, tmp);
+	
+		tmp = syntax_GetChild( tree, 3);
+		symbol_DefineStruct( &testsymtable, tmp);
+
+		tmp = syntax_GetChild( tree, 4);
+		symbol_DefineStruct( &testsymtable, tmp);
+
+		tmp = syntax_GetChild( tree, 5);
+		symbol_DefineGlobalVariable( &testsymtable, tmp);
+		
+		tmp = syntax_GetChild( tree, 6);
+		symbol_DefineGlobalVariable( &testsymtable, tmp);
+
+		tmp = syntax_GetChild( tree, 7);
+		symbol_DefineGlobalVariable( &testsymtable, tmp);
+
+		tmp = syntax_GetChild( tree, 8);
+		symbol_DefineGlobalVariable( &testsymtable, tmp);
+		
+		tmp = syntax_GetChild( tree, 9);
+		symbol_DefineGlobalVariable( &testsymtable, tmp);
+
+
+		tmp = syntax_GetChild( tree, 10);
+		symbol_DefineFunction( &testsymtable, tmp);
+
+		body = syntax_GetChild( tmp, 2);
+
+		tmp = syntax_GetChild( body, 1);
+		symbol_DefineLocalVariable( &testsymtable, tmp);
+
+		tmp = syntax_GetChild( body, 2);
+		symbol_DefineLocalVariable( &testsymtable, tmp);
+
+		tmp = syntax_GetChild( body, 3);
+		symbol_DefineLocalVariable( &testsymtable, tmp);
+
+		tmp = syntax_GetChild( body, 4);
+		symbol_DefineLocalVariable( &testsymtable, tmp);
+
+		tmp = syntax_GetChild( body, 5);
+		symbol_DefineLocalVariable( &testsymtable, tmp);
+
+		tmp = syntax_GetChild( body, 6);
+		symbol_DefineLocalVariable( &testsymtable, tmp);
+
+
+
+		tmp = syntax_GetChild( body, 7);
+		tmp = syntax_GetChild( tmp, 0 );
+		tmp = syntax_GetChild( tmp, 0 );
+		tmp = syntax_GetChild( tmp, 2 );
+		tmp = syntax_GetChild( tmp, 0 );
+		tmp = syntax_GetChild( tmp, 0 );
+		tmp = syntax_GetChild( tmp, 0 );
+		tmp = syntax_GetChild( tmp, 0 );
+		tmp = syntax_GetChild( tmp, 0 );
+		tmp = syntax_GetChild( tmp, 0 );
+		tmp = syntax_GetChild( tmp, 0 );
+		tmp = syntax_GetChild( tmp, 0 );
+		symbol_DefineString( &testsymtable, tmp );
+		printf("Sizeof %s", tmp->tok.content );
+		printf(": %d\n", symbol_Sizeof_String(&testsymtable, tmp) );
+
+
+
+		tok.type = 43		;
+		strcpy( tok.content, "a");
+		node = symbol_FindVariable( &testsymtable, tok);
+		printf("\nType of variable \"a\": %d\n", node->type );
+
+
+		strcpy( tok.content, "mystruct");
+		node = symbol_FindStruct( &testsymtable, tok);
+		strcpy( tok.content, "c");
+		printf("Offset of 'c' in 'mystruct': %d\n", 
+					symbol_GetOffsetInStruct(&testsymtable, node, tok));
+	
+		strcpy( tok.content, "b");
+		node = symbol_FindGlobalVariable( &testsymtable, tok);
+		printf("Offset of 'b' in globals: %d\n", 
+					symbol_GetGlobalOffset(&testsymtable, node));	
+		
+		strcpy( tok.content, "b");
+		node = symbol_FindNonGlobalVariable( &testsymtable, tok);
+		printf("Offset of 'b' in non-globals: %d\n", 
+					symbol_GetNonGlobalOffset(&testsymtable, node));	
+
+		strcpy( tok.content, "p2");
+		node = symbol_FindNonGlobalVariable( &testsymtable, tok);
+		printf("Offset of 'p2' in non-globals: %d\n", 
+					symbol_GetNonGlobalOffset(&testsymtable, node));	
+
+		strcpy( tok.content, "\"hello\"");
+		node = symbol_FindString( &testsymtable, tok );
+		printf("Offset of '\"hello\"' in globals: %d\n", 
+					symbol_GetGlobalOffset(&testsymtable, node));	
+
+
+
+		
+		puts("\nSymbol table:");
+		symbol_printTable( &testsymtable );
+
+		puts("\nClear non-globals");
+		symbol_ClearNonGlobalVariables( &testsymtable );
+
+		puts("\nSymbol table:");
+		symbol_printTable( &testsymtable );
+
+
+		strcpy( tok.content, "a");
+		node = symbol_FindVariable( &testsymtable, tok);
+		printf("\nType of variable \"a\": %d\n", node->type );
+
+
+		printf("\nEnded with %d symtable erros.\n", testsymtable.cnterrors);
+
+
+
+		syntax_FreeSyntaxTree( tree );
+		preproc_destroy( &testpreproc );
+}
+
+
+
+
+
+void test_Functions()
+{
+		preproc testpreproc;
+		scanner testscanner;
+		parser testparser;
+		symbolTable testsymtable;
+		syntaxTreeNode* tree;
+		syntaxTreeNode* tmp;
+
+
+		puts("\n\nTest functions.c\n");
+
+		puts("Create preproc...");
+		if( preproc_create( &testpreproc, "testdata/functions.c") )
+			return;
+
+		puts("Init scanner...");
+		scanner_init( &testscanner, &testpreproc );
+
+		puts("Init parser...");
+		parser_init( &testparser, &testscanner );
+
+		puts("Create symbol table...\n");
+		symbol_CreateSymbolTable( &testparser, &testsymtable );
+
+
+		tree = syntax_CreateTreeNode();
+		parser_buildSyntaxTree( &testparser, tree );
+
+		if( testparser.cnterrors > 0 )
+		{
+			printf("Detected %d parser errors.\n", testparser.cnterrors);
+			return;
+		}
+
+
+		
+
+
+
+		puts("define struct...");
+		tmp = syntax_GetChild( tree, 0);
+		symbol_DefineStruct( &testsymtable, tmp);
+
+		puts("declare function...");
+		tmp = syntax_GetChild( tree, 1);
+		symbol_DeclareFunction( &testsymtable, tmp);
+
+		puts("declare function...");
+		tmp = syntax_GetChild( tree, 2);
+		symbol_DeclareFunction( &testsymtable, tmp);
+
+		puts("define function...");
+		tmp = syntax_GetChild( tree, 3);
+		symbol_DefineFunction( &testsymtable, tmp);
+
+		puts("Return type:");
+		syntax_printTree( symbol_GetReturnType(&testsymtable, tmp) );
+
+		printf("Arguments 1/%d:\n", symbol_CountFunctionArgs(&testsymtable,tmp) );
+		syntax_printTree( symbol_GetFunctionArg(&testsymtable, tmp, 0) );
+
+		printf("Arguments 2/%d:\n", symbol_CountFunctionArgs(&testsymtable,tmp) );
+		syntax_printTree( symbol_GetFunctionArg(&testsymtable, tmp, 1) );
+
+		printf("Arguments 3/%d:\n", symbol_CountFunctionArgs(&testsymtable,tmp) );
+		syntax_printTree( symbol_GetFunctionArg(&testsymtable, tmp, 2) );
+
+
+		puts("define function...");
+		tmp = syntax_GetChild( tree, 4);
+		symbol_DefineFunction( &testsymtable, tmp);
+
+		puts("define function...");
+		tmp = syntax_GetChild( tree, 5);
+		symbol_DefineFunction( &testsymtable, tmp);
+
+		puts("declare function...");
+		tmp = syntax_GetChild( tree, 6);
+		symbol_DeclareFunction( &testsymtable, tmp);
+
+		puts("declare function...");
+		tmp = syntax_GetChild( tree, 7);
+		symbol_DeclareFunction( &testsymtable, tmp);
+
+		puts("declare function...");
+		tmp = syntax_GetChild( tree, 8);
+		symbol_DeclareFunction( &testsymtable, tmp);
+
+		puts("declare function...");
+		tmp = syntax_GetChild( tree, 9);
+		symbol_DeclareFunction( &testsymtable, tmp);
+
+
+
+		puts("\nSymbol table:");
+		symbol_printTable( &testsymtable);
+
+		printf("\nEnded with %d symtable errors.\n", testsymtable.cnterrors);
+
+		
+
+
+
+		syntax_FreeSyntaxTree( tree );
+		preproc_destroy( &testpreproc );
+}
+
+
+
+void test_parser()
+{
+		preproc testpreproc;
+		scanner testscanner;
+		parser testparser;
+		symbolTable testsymtable;
+		syntaxTreeNode* tree;
+		symbolTableNode* node;
+		int idx;
+		int count;
+
+
+		puts("\n\nTest input.c with parser\n");
+
+		puts("Create preproc...");
+		if( preproc_create( &testpreproc, "testdata/input.c") )
+		
+			return;
+
+		preproc_addDefine(&testpreproc, "__HRWCC__");
+
+		puts("Init scanner...");
+		scanner_init( &testscanner, &testpreproc );
+
+		puts("Init parser...");
+		parser_init( &testparser, &testscanner );
+
+		puts("Create symbol table...");
+		symbol_CreateSymbolTable( &testparser, &testsymtable );
+		parser_setSymbolTable( &testparser, &testsymtable );
+
+
+
+		tree = syntax_CreateTreeNode();
+		parser_buildSyntaxTree( &testparser, tree );
+
+
+		puts("\nAfter parsing...");
+		symbol_printTable( &testsymtable );
+
+
+
+		
+		count = symbol_CountFunctions( &testsymtable );
+		idx = 0;
+
+		while( idx < count )
+		{
+				node = symbol_GetFunction( &testsymtable, idx);
+				printf("Function %d", idx);
+				printf(": %s\n", node->name.content);
+
+				idx = idx+1;
+		}
+
+
+
+		printf("\nDetected %d parser errors.\n", testparser.cnterrors);
+		printf("Detected %d symbol errors.\n", testsymtable.cnterrors);
+
+		
+
+
+		syntax_FreeSyntaxTree( tree );
+		symbol_destroy( &testsymtable);
+		preproc_destroy( &testpreproc );
+}
+
+
+
+
+int main()
+{
+		
+		
+		test_parser();
+
+
+		return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

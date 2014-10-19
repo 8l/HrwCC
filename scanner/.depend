@@ -1,0 +1,33 @@
+scanner.o: scanner.cpp ../include/hrwcccomp.h scanner.h token.h \
+  ../preproc/preproc.h ../preproc/../include/common.h \
+  ../preproc/../util/list.h ../include/error.h
+test-scanner.o: test-scanner.cpp token.h scanner.h ../preproc/preproc.h \
+  ../preproc/../include/common.h ../preproc/../util/list.h \
+  ../include/error.h
+preproc.o: ../preproc/preproc.cpp ../preproc/../include/hrwcccomp.h \
+  ../preproc/../include/error.h ../preproc/preproc.h \
+  ../preproc/../include/common.h ../preproc/../util/list.h \
+  ../preproc/stageutils.h ../preproc/filestack.h \
+  ../preproc/directiveutils.h
+stageutils.o: ../preproc/stageutils.cpp ../preproc/../include/hrwcccomp.h \
+  ../preproc/preproc.h ../preproc/../include/common.h \
+  ../preproc/../util/list.h ../preproc/stageutils.h \
+  ../preproc/../include/error.h ../preproc/filestack.h
+substage.o: ../preproc/substage.cpp ../preproc/../include/hrwcccomp.h \
+  ../preproc/../include/error.h ../preproc/preproc.h \
+  ../preproc/../include/common.h ../preproc/../util/list.h \
+  ../preproc/stageutils.h ../preproc/filestack.h \
+  ../preproc/directiveutils.h
+directivestage.o: ../preproc/directivestage.cpp \
+  ../preproc/../include/hrwcccomp.h ../preproc/../include/error.h \
+  ../preproc/preproc.h ../preproc/../include/common.h \
+  ../preproc/../util/list.h ../preproc/stageutils.h \
+  ../preproc/filestack.h ../preproc/directiveutils.h
+commstage.o: ../preproc/commstage.cpp ../preproc/../include/hrwcccomp.h \
+  ../preproc/../include/error.h ../preproc/preproc.h \
+  ../preproc/../include/common.h ../preproc/../util/list.h \
+  ../preproc/stageutils.h ../preproc/filestack.h
+filestack.o: ../preproc/filestack.cpp ../preproc/../include/hrwcccomp.h \
+  ../preproc/../include/error.h ../preproc/preproc.h \
+  ../preproc/../include/common.h ../preproc/../util/list.h \
+  ../preproc/filestack.h ../preproc/stageutils.h

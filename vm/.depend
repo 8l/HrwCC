@@ -1,0 +1,20 @@
+AllocateNode.o: AllocateNode.cpp AllocateNode.h
+Utils.o: Utils.cpp Utils.h
+InstructionsFetcher.o: InstructionsFetcher.cpp InstructionsFetcher.h \
+  GenericException.h Utils.h Instruction.h
+ExecParser.o: ExecParser.cpp ExecParser.h Memory.h AllocateNode.h \
+  VMConfig.h GenericException.h Utils.h InstructionsFetcher.h \
+  Instruction.h
+Instruction.o: Instruction.cpp Instruction.h
+Memory.o: Memory.cpp Memory.h AllocateNode.h VMConfig.h \
+  GenericException.h Utils.h InstructionsFetcher.h Instruction.h \
+  ExecParser.h
+CPU.o: CPU.cpp CPU.h Memory.h AllocateNode.h VMConfig.h \
+  GenericException.h Utils.h InstructionsFetcher.h Instruction.h \
+  Register.h
+VM.o: VM.cpp VM.h VMConfig.h CPU.h Memory.h AllocateNode.h \
+  GenericException.h Utils.h InstructionsFetcher.h Instruction.h \
+  Register.h ExecParser.h
+hrwvm.o: hrwvm.cpp VM.h VMConfig.h CPU.h Memory.h AllocateNode.h \
+  GenericException.h Utils.h InstructionsFetcher.h Instruction.h \
+  Register.h

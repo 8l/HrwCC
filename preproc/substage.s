@@ -1,0 +1,1596 @@
+
+.section	.text
+
+.globl	substage_init
+.type	substage_init,@function
+substage_init	:	
+	pushl	%ebp
+	movl	%esp,%ebp
+	subl	$0,%esp
+
+	subl	$4,%esp
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$14036,%eax
+	movl	%eax,0(%esp)
+	call	initLine
+	addl	$4,%esp
+
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$20712,%eax
+	movl	%eax,%ebx
+	movl	$0,(%ebx)
+
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$20716,%eax
+	movl	%eax,%ebx
+	movl	$0,(%ebx)
+
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$20720,%eax
+	movl	%eax,%ebx
+	movl	$0,(%ebx)
+
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$20724,%eax
+	movl	%eax,%ebx
+	movl	$0,(%ebx)
+
+	movl	$0,%eax
+	jmp	substage_init_ret
+substage_init_ret	:	
+	movl	%ebp,%esp
+	popl	%ebp
+	ret	
+
+.globl	substage_destroy
+.type	substage_destroy,@function
+substage_destroy	:	
+	pushl	%ebp
+	movl	%esp,%ebp
+	subl	$0,%esp
+
+	movl	$0,%eax
+	jmp	substage_destroy_ret
+substage_destroy_ret	:	
+	movl	%ebp,%esp
+	popl	%ebp
+	ret	
+
+.globl	isBufferPosMacroBegin
+.type	isBufferPosMacroBegin,@function
+isBufferPosMacroBegin	:	
+	pushl	%ebp
+	movl	%esp,%ebp
+	subl	$13,%esp
+
+	movl	16(%ebp),%ebx
+	cmpl	$0,%ebx
+	movl	$1,%eax
+	je	isBufferPosMacroBegin_reltrue_2
+	movl	$0,%eax
+isBufferPosMacroBegin_reltrue_2	:	
+	testl	%eax,%eax
+	jnz	isBufferPosMacroBegin_logexprtrue_1
+	movl	16(%ebp),%ebx
+	cmpl	12(%ebp),%ebx
+	movl	$1,%eax
+	je	isBufferPosMacroBegin_reltrue_3
+	movl	$0,%eax
+isBufferPosMacroBegin_reltrue_3	:	
+	testl	%eax,%eax
+	jnz	isBufferPosMacroBegin_logexprtrue_1
+	movl	$0,%eax
+	jmp	isBufferPosMacroBegin_logexprfalse_1
+isBufferPosMacroBegin_logexprtrue_1	:	
+	movl	$1,%eax
+isBufferPosMacroBegin_logexprfalse_1	:	
+	testl	%eax,%eax
+	jnz	isBufferPosMacroBegin_ifbl_0
+	jmp	isBufferPosMacroBegin_elsebl_0
+isBufferPosMacroBegin_ifbl_0	:	
+
+	movl	$1,%eax
+	jmp	isBufferPosMacroBegin_ret
+isBufferPosMacroBegin_elsebl_0	:	
+isBufferPosMacroBegin_endif_0	:	
+
+	movl	%ebp,%eax
+	addl	$-13,%eax
+	pushl	%eax
+	movl	16(%ebp),%ebx
+	subl	$1,%ebx
+	movl	%ebx,%eax
+	pushl	%eax
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	popl	%esi
+	imull	$13,%esi
+	addl	%esi,%eax
+	popl	%ebx
+	movl	(%eax),%ecx
+	movl	%ecx,(%ebx)
+	addl	$4,%eax
+	addl	$4,%ebx
+	movl	(%eax),%ecx
+	movl	%ecx,(%ebx)
+	addl	$4,%eax
+	addl	$4,%ebx
+	movl	(%eax),%ecx
+	movl	%ecx,(%ebx)
+	addl	$4,%eax
+	addl	$4,%ebx
+	movb	(%eax),%cl
+	movb	%cl,(%ebx)
+	addl	$1,%eax
+	addl	$1,%ebx
+
+	subl	$16,%esp
+	movl	8(%ebp),%eax
+	movl	%eax,0(%esp)
+	movl	16(%ebp),%eax
+	movl	%eax,4(%esp)
+	movl	$2,8(%esp)
+	movl	$symtab+0,12(%esp)
+	call	CharacterStrCmp
+	addl	$16,%esp
+	movl	%eax,%ebx
+	cmpl	$0,%ebx
+	movl	$1,%eax
+	je	isBufferPosMacroBegin_reltrue_5
+	movl	$0,%eax
+isBufferPosMacroBegin_reltrue_5	:	
+	testl	%eax,%eax
+	jnz	isBufferPosMacroBegin_ifbl_4
+	jmp	isBufferPosMacroBegin_elsebl_4
+isBufferPosMacroBegin_ifbl_4	:	
+
+	movl	%ebp,%eax
+	addl	$20,%eax
+	movl	(%eax),%eax
+	pushl	%eax
+	movl	16(%ebp),%ebx
+	addl	$2,%ebx
+	movl	%ebx,%eax
+	popl	%ebx
+	movl	%eax,(%ebx)
+
+	movl	$1,%eax
+	jmp	isBufferPosMacroBegin_ret
+isBufferPosMacroBegin_elsebl_4	:	
+
+	subl	$4,%esp
+	movl	%ebp,%eax
+	addl	$-13,%eax
+	addl	$0,%eax
+	movb	(%eax),%al
+	movsbl	%al,%eax
+	movl	%eax,0(%esp)
+	call	isalnum
+	addl	$4,%esp
+	movl	%eax,%ebx
+	cmpl	$0,%ebx
+	movl	$1,%eax
+	je	isBufferPosMacroBegin_reltrue_8
+	movl	$0,%eax
+isBufferPosMacroBegin_reltrue_8	:	
+	testl	%eax,%eax
+	jz	isBufferPosMacroBegin_logtermfalse_7
+	movl	%ebp,%eax
+	addl	$-13,%eax
+	addl	$0,%eax
+	movb	(%eax),%al
+	movsbl	%al,%eax
+	movl	%eax,%ebx
+	cmpl	$95,%ebx
+	movl	$1,%eax
+	jne	isBufferPosMacroBegin_reltrue_9
+	movl	$0,%eax
+isBufferPosMacroBegin_reltrue_9	:	
+	testl	%eax,%eax
+	jz	isBufferPosMacroBegin_logtermfalse_7
+	movl	$1,%eax
+	jmp	isBufferPosMacroBegin_logtermtrue_7
+isBufferPosMacroBegin_logtermfalse_7	:	
+	movl	$0,%eax
+isBufferPosMacroBegin_logtermtrue_7	:	
+	testl	%eax,%eax
+	jnz	isBufferPosMacroBegin_ifbl_6
+	jmp	isBufferPosMacroBegin_elsebl_6
+isBufferPosMacroBegin_ifbl_6	:	
+
+	movl	%ebp,%eax
+	addl	$20,%eax
+	movl	(%eax),%eax
+	pushl	%eax
+	movl	16(%ebp),%eax
+	popl	%ebx
+	movl	%eax,(%ebx)
+
+	movl	$1,%eax
+	jmp	isBufferPosMacroBegin_ret
+isBufferPosMacroBegin_elsebl_6	:	
+isBufferPosMacroBegin_endif_6	:	
+isBufferPosMacroBegin_endif_4	:	
+
+	movl	$0,%eax
+	jmp	isBufferPosMacroBegin_ret
+isBufferPosMacroBegin_ret	:	
+	movl	%ebp,%esp
+	popl	%ebp
+	ret	
+
+.globl	isBufferPosMacroEnd
+.type	isBufferPosMacroEnd,@function
+isBufferPosMacroEnd	:	
+	pushl	%ebp
+	movl	%esp,%ebp
+	subl	$13,%esp
+
+	movl	16(%ebp),%ebx
+	cmpl	12(%ebp),%ebx
+	movl	$1,%eax
+	jg	isBufferPosMacroEnd_reltrue_11
+	movl	$0,%eax
+isBufferPosMacroEnd_reltrue_11	:	
+	testl	%eax,%eax
+	jnz	isBufferPosMacroEnd_ifbl_10
+	jmp	isBufferPosMacroEnd_elsebl_10
+isBufferPosMacroEnd_ifbl_10	:	
+
+	movl	$0,%eax
+	jmp	isBufferPosMacroEnd_ret
+isBufferPosMacroEnd_elsebl_10	:	
+isBufferPosMacroEnd_endif_10	:	
+
+	movl	16(%ebp),%ebx
+	cmpl	12(%ebp),%ebx
+	movl	$1,%eax
+	je	isBufferPosMacroEnd_reltrue_13
+	movl	$0,%eax
+isBufferPosMacroEnd_reltrue_13	:	
+	testl	%eax,%eax
+	jnz	isBufferPosMacroEnd_ifbl_12
+	jmp	isBufferPosMacroEnd_elsebl_12
+isBufferPosMacroEnd_ifbl_12	:	
+
+	movl	%ebp,%eax
+	addl	$20,%eax
+	movl	(%eax),%eax
+	pushl	%eax
+	movl	16(%ebp),%eax
+	popl	%ebx
+	movl	%eax,(%ebx)
+
+	movl	$1,%eax
+	jmp	isBufferPosMacroEnd_ret
+isBufferPosMacroEnd_elsebl_12	:	
+isBufferPosMacroEnd_endif_12	:	
+
+	movl	%ebp,%eax
+	addl	$-13,%eax
+	pushl	%eax
+	pushl	16(%ebp)
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	popl	%esi
+	imull	$13,%esi
+	addl	%esi,%eax
+	popl	%ebx
+	movl	(%eax),%ecx
+	movl	%ecx,(%ebx)
+	addl	$4,%eax
+	addl	$4,%ebx
+	movl	(%eax),%ecx
+	movl	%ecx,(%ebx)
+	addl	$4,%eax
+	addl	$4,%ebx
+	movl	(%eax),%ecx
+	movl	%ecx,(%ebx)
+	addl	$4,%eax
+	addl	$4,%ebx
+	movb	(%eax),%cl
+	movb	%cl,(%ebx)
+	addl	$1,%eax
+	addl	$1,%ebx
+
+	subl	$16,%esp
+	movl	8(%ebp),%eax
+	movl	%eax,0(%esp)
+	movl	16(%ebp),%eax
+	movl	%eax,4(%esp)
+	movl	$2,8(%esp)
+	movl	$symtab+0,12(%esp)
+	call	CharacterStrCmp
+	addl	$16,%esp
+	movl	%eax,%ebx
+	cmpl	$0,%ebx
+	movl	$1,%eax
+	je	isBufferPosMacroEnd_reltrue_15
+	movl	$0,%eax
+isBufferPosMacroEnd_reltrue_15	:	
+	testl	%eax,%eax
+	jnz	isBufferPosMacroEnd_ifbl_14
+	jmp	isBufferPosMacroEnd_elsebl_14
+isBufferPosMacroEnd_ifbl_14	:	
+
+	movl	%ebp,%eax
+	addl	$20,%eax
+	movl	(%eax),%eax
+	pushl	%eax
+	movl	16(%ebp),%ebx
+	addl	$2,%ebx
+	movl	%ebx,%eax
+	popl	%ebx
+	movl	%eax,(%ebx)
+
+	movl	$1,%eax
+	jmp	isBufferPosMacroEnd_ret
+isBufferPosMacroEnd_elsebl_14	:	
+
+	subl	$4,%esp
+	movl	%ebp,%eax
+	addl	$-13,%eax
+	addl	$0,%eax
+	movb	(%eax),%al
+	movsbl	%al,%eax
+	movl	%eax,0(%esp)
+	call	isalnum
+	addl	$4,%esp
+	movl	%eax,%ebx
+	cmpl	$0,%ebx
+	movl	$1,%eax
+	je	isBufferPosMacroEnd_reltrue_18
+	movl	$0,%eax
+isBufferPosMacroEnd_reltrue_18	:	
+	testl	%eax,%eax
+	jz	isBufferPosMacroEnd_logtermfalse_17
+	movl	%ebp,%eax
+	addl	$-13,%eax
+	addl	$0,%eax
+	movb	(%eax),%al
+	movsbl	%al,%eax
+	movl	%eax,%ebx
+	cmpl	$95,%ebx
+	movl	$1,%eax
+	jne	isBufferPosMacroEnd_reltrue_19
+	movl	$0,%eax
+isBufferPosMacroEnd_reltrue_19	:	
+	testl	%eax,%eax
+	jz	isBufferPosMacroEnd_logtermfalse_17
+	movl	$1,%eax
+	jmp	isBufferPosMacroEnd_logtermtrue_17
+isBufferPosMacroEnd_logtermfalse_17	:	
+	movl	$0,%eax
+isBufferPosMacroEnd_logtermtrue_17	:	
+	testl	%eax,%eax
+	jnz	isBufferPosMacroEnd_ifbl_16
+	jmp	isBufferPosMacroEnd_elsebl_16
+isBufferPosMacroEnd_ifbl_16	:	
+
+	movl	%ebp,%eax
+	addl	$20,%eax
+	movl	(%eax),%eax
+	pushl	%eax
+	movl	16(%ebp),%eax
+	popl	%ebx
+	movl	%eax,(%ebx)
+
+	movl	$1,%eax
+	jmp	isBufferPosMacroEnd_ret
+isBufferPosMacroEnd_elsebl_16	:	
+isBufferPosMacroEnd_endif_16	:	
+isBufferPosMacroEnd_endif_14	:	
+
+	movl	$0,%eax
+	jmp	isBufferPosMacroEnd_ret
+isBufferPosMacroEnd_ret	:	
+	movl	%ebp,%esp
+	popl	%ebp
+	ret	
+
+.globl	setReplacementCharacter
+.type	setReplacementCharacter,@function
+setReplacementCharacter	:	
+	pushl	%ebp
+	movl	%esp,%ebp
+	subl	$24,%esp
+
+	movl	%ebp,%eax
+	addl	$12,%eax
+	movl	(%eax),%eax
+	addl	$0,%eax
+	movl	%eax,%ebx
+	movb	$0,(%ebx)
+
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$20712,%eax
+	movl	(%eax),%eax
+	movl	%eax,%ebx
+	cmpl	$0,%ebx
+	movl	$1,%eax
+	je	setReplacementCharacter_reltrue_21
+	movl	$0,%eax
+setReplacementCharacter_reltrue_21	:	
+	testl	%eax,%eax
+	jnz	setReplacementCharacter_ifbl_20
+	jmp	setReplacementCharacter_elsebl_20
+setReplacementCharacter_ifbl_20	:	
+
+	jmp	setReplacementCharacter_ret
+setReplacementCharacter_elsebl_20	:	
+setReplacementCharacter_endif_20	:	
+
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$20712,%eax
+	movl	(%eax),%eax
+	movl	%eax,-20(%ebp)
+
+	movl	%ebp,%eax
+	addl	$-20,%eax
+	movl	(%eax),%eax
+	addl	$832,%eax
+	movl	(%eax),%eax
+	movl	%eax,-24(%ebp)
+
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$20720,%eax
+	movl	(%eax),%eax
+	movl	%eax,%ebx
+	cmpl	$0,%ebx
+	movl	$1,%eax
+	je	setReplacementCharacter_reltrue_23
+	movl	$0,%eax
+setReplacementCharacter_reltrue_23	:	
+	testl	%eax,%eax
+	jnz	setReplacementCharacter_ifbl_22
+	jmp	setReplacementCharacter_elsebl_22
+setReplacementCharacter_ifbl_22	:	
+
+	subl	$4,%esp
+	movl	%ebp,%eax
+	addl	$-20,%eax
+	movl	(%eax),%eax
+	addl	$840,%eax
+	movl	%eax,0(%esp)
+	call	Get_Front_Of_ParametersList
+	addl	$4,%esp
+	movl	%eax,-16(%ebp)
+
+setReplacementCharacter_while_24	:	
+	movl	-16(%ebp),%ebx
+	cmpl	$0,%ebx
+	movl	$1,%eax
+	jne	setReplacementCharacter_reltrue_25
+	movl	$0,%eax
+setReplacementCharacter_reltrue_25	:	
+	testl	%eax,%eax
+	jz	setReplacementCharacter_endwhile_24
+
+	subl	$4,%esp
+	movl	%ebp,%eax
+	addl	$-16,%eax
+	movl	(%eax),%eax
+	addl	$0,%eax
+	movl	%eax,0(%esp)
+	call	CharacterLen
+	addl	$4,%esp
+	movl	%eax,-4(%ebp)
+
+	movl	$0,-8(%ebp)
+
+	movl	$0,-12(%ebp)
+
+	subl	$16,%esp
+	movl	-24(%ebp),%eax
+	movl	%eax,0(%esp)
+	movl	%ebp,%eax
+	addl	$-20,%eax
+	movl	(%eax),%eax
+	addl	$836,%eax
+	movl	(%eax),%eax
+	movl	%eax,4(%esp)
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$20716,%eax
+	movl	(%eax),%eax
+	movl	%eax,8(%esp)
+	movl	%ebp,%eax
+	addl	$-8,%eax
+	movl	%eax,12(%esp)
+	call	isBufferPosMacroBegin
+	addl	$16,%esp
+	movl	%eax,%ebx
+	cmpl	$1,%ebx
+	movl	$1,%eax
+	je	setReplacementCharacter_reltrue_28
+	movl	$0,%eax
+setReplacementCharacter_reltrue_28	:	
+	testl	%eax,%eax
+	jz	setReplacementCharacter_logtermfalse_27
+	subl	$16,%esp
+	movl	-24(%ebp),%eax
+	movl	%eax,0(%esp)
+	movl	%ebp,%eax
+	addl	$-20,%eax
+	movl	(%eax),%eax
+	addl	$836,%eax
+	movl	(%eax),%eax
+	movl	%eax,4(%esp)
+	movl	-8(%ebp),%ebx
+	addl	-4(%ebp),%ebx
+	movl	%ebx,%eax
+	movl	%eax,8(%esp)
+	movl	%ebp,%eax
+	addl	$-12,%eax
+	movl	%eax,12(%esp)
+	call	isBufferPosMacroEnd
+	addl	$16,%esp
+	movl	%eax,%ebx
+	cmpl	$1,%ebx
+	movl	$1,%eax
+	je	setReplacementCharacter_reltrue_29
+	movl	$0,%eax
+setReplacementCharacter_reltrue_29	:	
+	testl	%eax,%eax
+	jz	setReplacementCharacter_logtermfalse_27
+	movl	$1,%eax
+	jmp	setReplacementCharacter_logtermtrue_27
+setReplacementCharacter_logtermfalse_27	:	
+	movl	$0,%eax
+setReplacementCharacter_logtermtrue_27	:	
+	testl	%eax,%eax
+	jnz	setReplacementCharacter_ifbl_26
+	jmp	setReplacementCharacter_elsebl_26
+setReplacementCharacter_ifbl_26	:	
+
+	subl	$16,%esp
+	movl	-24(%ebp),%eax
+	movl	%eax,0(%esp)
+	movl	-8(%ebp),%eax
+	movl	%eax,4(%esp)
+	movl	-4(%ebp),%eax
+	movl	%eax,8(%esp)
+	movl	%ebp,%eax
+	addl	$-16,%eax
+	movl	(%eax),%eax
+	addl	$0,%eax
+	movl	%eax,12(%esp)
+	call	CharacterSubCmp
+	addl	$16,%esp
+	movl	%eax,%ebx
+	cmpl	$0,%ebx
+	movl	$1,%eax
+	je	setReplacementCharacter_reltrue_31
+	movl	$0,%eax
+setReplacementCharacter_reltrue_31	:	
+	testl	%eax,%eax
+	jnz	setReplacementCharacter_ifbl_30
+	jmp	setReplacementCharacter_elsebl_30
+setReplacementCharacter_ifbl_30	:	
+
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$20716,%eax
+	pushl	%eax
+	movl	-12(%ebp),%eax
+	popl	%ebx
+	movl	%eax,(%ebx)
+
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$20720,%eax
+	pushl	%eax
+	movl	%ebp,%eax
+	addl	$-16,%eax
+	movl	(%eax),%eax
+	addl	$832,%eax
+	popl	%ebx
+	movl	%eax,(%ebx)
+
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$20724,%eax
+	movl	%eax,%ebx
+	movl	$0,(%ebx)
+	jmp	setReplacementCharacter_endwhile_24
+setReplacementCharacter_elsebl_30	:	
+setReplacementCharacter_endif_30	:	
+	jmp	setReplacementCharacter_endif_26
+setReplacementCharacter_elsebl_26	:	
+setReplacementCharacter_endif_26	:	
+
+	subl	$4,%esp
+	movl	-16(%ebp),%eax
+	movl	%eax,0(%esp)
+	call	Get_Next_In_ParametersList
+	addl	$4,%esp
+	movl	%eax,-16(%ebp)
+	jmp	setReplacementCharacter_while_24
+setReplacementCharacter_endwhile_24	:	
+	jmp	setReplacementCharacter_endif_22
+setReplacementCharacter_elsebl_22	:	
+setReplacementCharacter_endif_22	:	
+
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$20720,%eax
+	movl	(%eax),%eax
+	movl	%eax,%ebx
+	cmpl	$0,%ebx
+	movl	$1,%eax
+	jne	setReplacementCharacter_reltrue_33
+	movl	$0,%eax
+setReplacementCharacter_reltrue_33	:	
+	testl	%eax,%eax
+	jnz	setReplacementCharacter_ifbl_32
+	jmp	setReplacementCharacter_elsebl_32
+setReplacementCharacter_ifbl_32	:	
+
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$20724,%eax
+	movl	(%eax),%eax
+	pushl	%eax
+	subl	$4,%esp
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$20720,%eax
+	movl	(%eax),%eax
+	movl	%eax,0(%esp)
+	call	CharacterLen
+	addl	$4,%esp
+	popl	%ebx
+	cmpl	%eax,%ebx
+	movl	$1,%eax
+	je	setReplacementCharacter_reltrue_35
+	movl	$0,%eax
+setReplacementCharacter_reltrue_35	:	
+	testl	%eax,%eax
+	jnz	setReplacementCharacter_ifbl_34
+	jmp	setReplacementCharacter_elsebl_34
+setReplacementCharacter_ifbl_34	:	
+
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$20720,%eax
+	movl	%eax,%ebx
+	movl	$0,(%ebx)
+
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$20724,%eax
+	movl	%eax,%ebx
+	movl	$0,(%ebx)
+	jmp	setReplacementCharacter_endif_34
+setReplacementCharacter_elsebl_34	:	
+
+	movl	%ebp,%eax
+	addl	$12,%eax
+	movl	(%eax),%eax
+	pushl	%eax
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$20724,%eax
+	movl	(%eax),%eax
+	pushl	%eax
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$20720,%eax
+	movl	(%eax),%eax
+	popl	%esi
+	imull	$13,%esi
+	addl	%esi,%eax
+	popl	%ebx
+	movl	(%eax),%ecx
+	movl	%ecx,(%ebx)
+	addl	$4,%eax
+	addl	$4,%ebx
+	movl	(%eax),%ecx
+	movl	%ecx,(%ebx)
+	addl	$4,%eax
+	addl	$4,%ebx
+	movl	(%eax),%ecx
+	movl	%ecx,(%ebx)
+	addl	$4,%eax
+	addl	$4,%ebx
+	movb	(%eax),%cl
+	movb	%cl,(%ebx)
+	addl	$1,%eax
+	addl	$1,%ebx
+
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$20724,%eax
+	pushl	%eax
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$20724,%eax
+	movl	(%eax),%eax
+	movl	%eax,%ebx
+	addl	$1,%ebx
+	movl	%ebx,%eax
+	popl	%ebx
+	movl	%eax,(%ebx)
+
+	jmp	setReplacementCharacter_ret
+setReplacementCharacter_endif_34	:	
+	jmp	setReplacementCharacter_endif_32
+setReplacementCharacter_elsebl_32	:	
+setReplacementCharacter_endif_32	:	
+
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$20716,%eax
+	movl	(%eax),%eax
+	pushl	%eax
+	movl	%ebp,%eax
+	addl	$-20,%eax
+	movl	(%eax),%eax
+	addl	$836,%eax
+	movl	(%eax),%eax
+	popl	%ebx
+	cmpl	%eax,%ebx
+	movl	$1,%eax
+	je	setReplacementCharacter_reltrue_37
+	movl	$0,%eax
+setReplacementCharacter_reltrue_37	:	
+	testl	%eax,%eax
+	jnz	setReplacementCharacter_ifbl_36
+	jmp	setReplacementCharacter_elsebl_36
+setReplacementCharacter_ifbl_36	:	
+
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$20712,%eax
+	movl	%eax,%ebx
+	movl	$0,(%ebx)
+
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$20716,%eax
+	movl	%eax,%ebx
+	movl	$0,(%ebx)
+
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$20720,%eax
+	movl	%eax,%ebx
+	movl	$0,(%ebx)
+
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$20724,%eax
+	movl	%eax,%ebx
+	movl	$0,(%ebx)
+	jmp	setReplacementCharacter_endif_36
+setReplacementCharacter_elsebl_36	:	
+
+	movl	%ebp,%eax
+	addl	$12,%eax
+	movl	(%eax),%eax
+	pushl	%eax
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$20716,%eax
+	movl	(%eax),%eax
+	pushl	%eax
+	movl	%ebp,%eax
+	addl	$-24,%eax
+	movl	(%eax),%eax
+	popl	%esi
+	imull	$13,%esi
+	addl	%esi,%eax
+	popl	%ebx
+	movl	(%eax),%ecx
+	movl	%ecx,(%ebx)
+	addl	$4,%eax
+	addl	$4,%ebx
+	movl	(%eax),%ecx
+	movl	%ecx,(%ebx)
+	addl	$4,%eax
+	addl	$4,%ebx
+	movl	(%eax),%ecx
+	movl	%ecx,(%ebx)
+	addl	$4,%eax
+	addl	$4,%ebx
+	movb	(%eax),%cl
+	movb	%cl,(%ebx)
+	addl	$1,%eax
+	addl	$1,%ebx
+
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$20716,%eax
+	pushl	%eax
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$20716,%eax
+	movl	(%eax),%eax
+	movl	%eax,%ebx
+	addl	$1,%ebx
+	movl	%ebx,%eax
+	popl	%ebx
+	movl	%eax,(%ebx)
+setReplacementCharacter_endif_36	:	
+setReplacementCharacter_ret	:	
+	movl	%ebp,%esp
+	popl	%ebp
+	ret	
+
+.globl	substage_getNext
+.type	substage_getNext,@function
+substage_getNext	:	
+	pushl	%ebp
+	movl	%esp,%ebp
+	subl	$53,%esp
+
+	subl	$8,%esp
+	movl	8(%ebp),%eax
+	movl	%eax,0(%esp)
+	movl	12(%ebp),%eax
+	movl	%eax,4(%esp)
+	call	setReplacementCharacter
+	addl	$8,%esp
+
+substage_getNext_while_38	:	
+	movl	%ebp,%eax
+	addl	$12,%eax
+	movl	(%eax),%eax
+	addl	$0,%eax
+	movb	(%eax),%al
+	movsbl	%al,%eax
+	movl	%eax,%ebx
+	cmpl	$0,%ebx
+	movl	$1,%eax
+	je	substage_getNext_reltrue_39
+	movl	$0,%eax
+substage_getNext_reltrue_39	:	
+	testl	%eax,%eax
+	jz	substage_getNext_endwhile_38
+
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$14036,%eax
+	movl	%eax,-40(%ebp)
+
+	movl	%ebp,%eax
+	addl	$-40,%eax
+	movl	(%eax),%eax
+	addl	$6660,%eax
+	movl	(%eax),%eax
+	pushl	%eax
+	movl	%ebp,%eax
+	addl	$-40,%eax
+	movl	(%eax),%eax
+	addl	$6656,%eax
+	movl	(%eax),%eax
+	popl	%ebx
+	cmpl	%eax,%ebx
+	movl	$1,%eax
+	jge	substage_getNext_reltrue_41
+	movl	$0,%eax
+substage_getNext_reltrue_41	:	
+	testl	%eax,%eax
+	jnz	substage_getNext_ifbl_40
+	jmp	substage_getNext_elsebl_40
+substage_getNext_ifbl_40	:	
+
+	subl	$12,%esp
+	movl	8(%ebp),%eax
+	movl	%eax,0(%esp)
+	movl	$3,4(%esp)
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$14036,%eax
+	movl	%eax,8(%esp)
+	call	getNextLine
+	addl	$12,%esp
+	movl	%eax,-4(%ebp)
+
+	movl	-4(%ebp),%ebx
+	cmpl	$0,%ebx
+	movl	$1,%eax
+	jne	substage_getNext_reltrue_43
+	movl	$0,%eax
+substage_getNext_reltrue_43	:	
+	testl	%eax,%eax
+	jnz	substage_getNext_ifbl_42
+	jmp	substage_getNext_elsebl_42
+substage_getNext_ifbl_42	:	
+
+	movl	-4(%ebp),%eax
+	jmp	substage_getNext_ret
+substage_getNext_elsebl_42	:	
+substage_getNext_endif_42	:	
+	jmp	substage_getNext_endif_40
+substage_getNext_elsebl_40	:	
+substage_getNext_endif_40	:	
+
+	subl	$4,%esp
+	movl	-40(%ebp),%eax
+	movl	%eax,0(%esp)
+	call	updateLineProperties
+	addl	$4,%esp
+
+	movl	%ebp,%eax
+	addl	$-40,%eax
+	movl	(%eax),%eax
+	addl	$6672,%eax
+	movl	(%eax),%eax
+	movl	%eax,%ebx
+	cmpl	$0,%ebx
+	movl	$1,%eax
+	je	substage_getNext_reltrue_46
+	movl	$0,%eax
+substage_getNext_reltrue_46	:	
+	testl	%eax,%eax
+	jz	substage_getNext_logtermfalse_45
+	movl	%ebp,%eax
+	addl	$-40,%eax
+	movl	(%eax),%eax
+	addl	$6664,%eax
+	movl	(%eax),%eax
+	movl	%eax,%ebx
+	cmpl	$0,%ebx
+	movl	$1,%eax
+	je	substage_getNext_reltrue_47
+	movl	$0,%eax
+substage_getNext_reltrue_47	:	
+	testl	%eax,%eax
+	jz	substage_getNext_logtermfalse_45
+	movl	$1,%eax
+	jmp	substage_getNext_logtermtrue_45
+substage_getNext_logtermfalse_45	:	
+	movl	$0,%eax
+substage_getNext_logtermtrue_45	:	
+	testl	%eax,%eax
+	jnz	substage_getNext_ifbl_44
+	jmp	substage_getNext_elsebl_44
+substage_getNext_ifbl_44	:	
+
+	subl	$4,%esp
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$13944,%eax
+	movl	%eax,0(%esp)
+	call	Get_Front_Of_DefinesList
+	addl	$4,%esp
+	movl	%eax,-20(%ebp)
+
+substage_getNext_while_48	:	
+	movl	-20(%ebp),%ebx
+	cmpl	$0,%ebx
+	movl	$1,%eax
+	jne	substage_getNext_reltrue_49
+	movl	$0,%eax
+substage_getNext_reltrue_49	:	
+	testl	%eax,%eax
+	jz	substage_getNext_endwhile_48
+
+	subl	$4,%esp
+	movl	%ebp,%eax
+	addl	$-20,%eax
+	movl	(%eax),%eax
+	addl	$0,%eax
+	movl	%eax,0(%esp)
+	call	CharacterLen
+	addl	$4,%esp
+	movl	%eax,-16(%ebp)
+
+	movl	$0,-8(%ebp)
+
+	movl	$0,-12(%ebp)
+
+	subl	$16,%esp
+	movl	%ebp,%eax
+	addl	$-40,%eax
+	movl	(%eax),%eax
+	addl	$0,%eax
+	movl	%eax,0(%esp)
+	movl	%ebp,%eax
+	addl	$-40,%eax
+	movl	(%eax),%eax
+	addl	$6656,%eax
+	movl	(%eax),%eax
+	movl	%eax,4(%esp)
+	movl	%ebp,%eax
+	addl	$-40,%eax
+	movl	(%eax),%eax
+	addl	$6660,%eax
+	movl	(%eax),%eax
+	movl	%eax,8(%esp)
+	movl	%ebp,%eax
+	addl	$-8,%eax
+	movl	%eax,12(%esp)
+	call	isBufferPosMacroBegin
+	addl	$16,%esp
+	movl	%eax,%ebx
+	cmpl	$1,%ebx
+	movl	$1,%eax
+	je	substage_getNext_reltrue_52
+	movl	$0,%eax
+substage_getNext_reltrue_52	:	
+	testl	%eax,%eax
+	jz	substage_getNext_logtermfalse_51
+	subl	$16,%esp
+	movl	%ebp,%eax
+	addl	$-40,%eax
+	movl	(%eax),%eax
+	addl	$0,%eax
+	movl	%eax,0(%esp)
+	movl	%ebp,%eax
+	addl	$-40,%eax
+	movl	(%eax),%eax
+	addl	$6656,%eax
+	movl	(%eax),%eax
+	movl	%eax,4(%esp)
+	movl	-8(%ebp),%ebx
+	addl	-16(%ebp),%ebx
+	movl	%ebx,%eax
+	movl	%eax,8(%esp)
+	movl	%ebp,%eax
+	addl	$-12,%eax
+	movl	%eax,12(%esp)
+	call	isBufferPosMacroEnd
+	addl	$16,%esp
+	movl	%eax,%ebx
+	cmpl	$1,%ebx
+	movl	$1,%eax
+	je	substage_getNext_reltrue_53
+	movl	$0,%eax
+substage_getNext_reltrue_53	:	
+	testl	%eax,%eax
+	jz	substage_getNext_logtermfalse_51
+	movl	$1,%eax
+	jmp	substage_getNext_logtermtrue_51
+substage_getNext_logtermfalse_51	:	
+	movl	$0,%eax
+substage_getNext_logtermtrue_51	:	
+	testl	%eax,%eax
+	jnz	substage_getNext_ifbl_50
+	jmp	substage_getNext_elsebl_50
+substage_getNext_ifbl_50	:	
+
+	subl	$16,%esp
+	movl	%ebp,%eax
+	addl	$-40,%eax
+	movl	(%eax),%eax
+	addl	$0,%eax
+	movl	%eax,0(%esp)
+	movl	-8(%ebp),%eax
+	movl	%eax,4(%esp)
+	movl	-16(%ebp),%eax
+	movl	%eax,8(%esp)
+	movl	%ebp,%eax
+	addl	$-20,%eax
+	movl	(%eax),%eax
+	addl	$0,%eax
+	movl	%eax,12(%esp)
+	call	CharacterSubCmp
+	addl	$16,%esp
+	movl	%eax,%ebx
+	cmpl	$0,%ebx
+	movl	$1,%eax
+	je	substage_getNext_reltrue_55
+	movl	$0,%eax
+substage_getNext_reltrue_55	:	
+	testl	%eax,%eax
+	jnz	substage_getNext_ifbl_54
+	jmp	substage_getNext_elsebl_54
+substage_getNext_ifbl_54	:	
+
+	movl	%ebp,%eax
+	addl	$-40,%eax
+	movl	(%eax),%eax
+	addl	$6660,%eax
+	pushl	%eax
+	movl	-12(%ebp),%eax
+	popl	%ebx
+	movl	%eax,(%ebx)
+
+	movl	%ebp,%eax
+	addl	$-40,%eax
+	movl	(%eax),%eax
+	addl	$6660,%eax
+	movl	(%eax),%eax
+	pushl	%eax
+	movl	%ebp,%eax
+	addl	$-40,%eax
+	movl	(%eax),%eax
+	addl	$6656,%eax
+	movl	(%eax),%eax
+	popl	%ebx
+	cmpl	%eax,%ebx
+	movl	$1,%eax
+	jg	substage_getNext_reltrue_57
+	movl	$0,%eax
+substage_getNext_reltrue_57	:	
+	testl	%eax,%eax
+	jnz	substage_getNext_ifbl_56
+	jmp	substage_getNext_elsebl_56
+substage_getNext_ifbl_56	:	
+	jmp	substage_getNext_while_48
+substage_getNext_elsebl_56	:	
+substage_getNext_endif_56	:	
+
+	movl	%ebp,%eax
+	addl	$-40,%eax
+	movl	(%eax),%eax
+	addl	$6660,%eax
+	movl	(%eax),%eax
+	movl	%eax,-12(%ebp)
+
+	subl	$4,%esp
+	movl	-40(%ebp),%eax
+	movl	%eax,0(%esp)
+	call	disposeWhitespace
+	addl	$4,%esp
+
+	movl	%ebp,%eax
+	addl	$-53,%eax
+	pushl	%eax
+	movl	%ebp,%eax
+	addl	$-40,%eax
+	movl	(%eax),%eax
+	addl	$6660,%eax
+	movl	(%eax),%eax
+	pushl	%eax
+	movl	%ebp,%eax
+	addl	$-40,%eax
+	movl	(%eax),%eax
+	addl	$0,%eax
+	popl	%esi
+	imull	$13,%esi
+	addl	%esi,%eax
+	popl	%ebx
+	movl	(%eax),%ecx
+	movl	%ecx,(%ebx)
+	addl	$4,%eax
+	addl	$4,%ebx
+	movl	(%eax),%ecx
+	movl	%ecx,(%ebx)
+	addl	$4,%eax
+	addl	$4,%ebx
+	movl	(%eax),%ecx
+	movl	%ecx,(%ebx)
+	addl	$4,%eax
+	addl	$4,%ebx
+	movb	(%eax),%cl
+	movb	%cl,(%ebx)
+	addl	$1,%eax
+	addl	$1,%ebx
+
+	subl	$4,%esp
+	movl	%ebp,%eax
+	addl	$-20,%eax
+	movl	(%eax),%eax
+	addl	$840,%eax
+	movl	%eax,0(%esp)
+	call	Is_ParametersList_Empty
+	addl	$4,%esp
+	testl	%eax,%eax
+	jnz	substage_getNext_logexprtrue_59
+	movl	%ebp,%eax
+	addl	$-53,%eax
+	addl	$0,%eax
+	movb	(%eax),%al
+	movsbl	%al,%eax
+	movl	%eax,%ebx
+	cmpl	$40,%ebx
+	movl	$1,%eax
+	jne	substage_getNext_reltrue_60
+	movl	$0,%eax
+substage_getNext_reltrue_60	:	
+	testl	%eax,%eax
+	jnz	substage_getNext_logexprtrue_59
+	movl	$0,%eax
+	jmp	substage_getNext_logexprfalse_59
+substage_getNext_logexprtrue_59	:	
+	movl	$1,%eax
+substage_getNext_logexprfalse_59	:	
+	testl	%eax,%eax
+	jnz	substage_getNext_ifbl_58
+	jmp	substage_getNext_elsebl_58
+substage_getNext_ifbl_58	:	
+
+	movl	%ebp,%eax
+	addl	$-40,%eax
+	movl	(%eax),%eax
+	addl	$6660,%eax
+	pushl	%eax
+	movl	-12(%ebp),%eax
+	popl	%ebx
+	movl	%eax,(%ebx)
+	jmp	substage_getNext_endif_58
+substage_getNext_elsebl_58	:	
+
+	subl	$12,%esp
+	movl	%ebp,%eax
+	addl	$-36,%eax
+	movl	%eax,0(%esp)
+	movl	$0,4(%esp)
+	movl	$8,8(%esp)
+	call	memset
+	addl	$12,%esp
+
+	subl	$16,%esp
+	movl	8(%ebp),%eax
+	movl	%eax,0(%esp)
+	movl	%ebp,%eax
+	addl	$-36,%eax
+	movl	%eax,4(%esp)
+	movl	-40(%ebp),%eax
+	movl	%eax,8(%esp)
+	movl	$0,12(%esp)
+	call	parseParametersList
+	addl	$16,%esp
+	movl	%eax,-4(%ebp)
+
+	movl	-4(%ebp),%ebx
+	cmpl	$0,%ebx
+	movl	$1,%eax
+	jne	substage_getNext_reltrue_62
+	movl	$0,%eax
+substage_getNext_reltrue_62	:	
+	testl	%eax,%eax
+	jnz	substage_getNext_ifbl_61
+	jmp	substage_getNext_elsebl_61
+substage_getNext_ifbl_61	:	
+
+	subl	$16,%esp
+	movl	8(%ebp),%eax
+	movl	%eax,0(%esp)
+	movl	$symtab+3,4(%esp)
+	movl	-40(%ebp),%eax
+	movl	%eax,8(%esp)
+	movl	$2,12(%esp)
+	call	preproc_reportError
+	addl	$16,%esp
+
+	subl	$4,%esp
+	movl	$1,0(%esp)
+	call	exit
+	addl	$4,%esp
+	jmp	substage_getNext_endif_61
+substage_getNext_elsebl_61	:	
+substage_getNext_endif_61	:	
+
+	subl	$4,%esp
+	movl	%ebp,%eax
+	addl	$-20,%eax
+	movl	(%eax),%eax
+	addl	$840,%eax
+	movl	%eax,0(%esp)
+	call	Get_Front_Of_ParametersList
+	addl	$4,%esp
+	movl	%eax,-24(%ebp)
+
+	subl	$4,%esp
+	movl	%ebp,%eax
+	addl	$-36,%eax
+	movl	%eax,0(%esp)
+	call	Get_Front_Of_ParametersList
+	addl	$4,%esp
+	movl	%eax,-28(%ebp)
+
+substage_getNext_while_63	:	
+	movl	-24(%ebp),%ebx
+	cmpl	$0,%ebx
+	movl	$1,%eax
+	jne	substage_getNext_reltrue_65
+	movl	$0,%eax
+substage_getNext_reltrue_65	:	
+	testl	%eax,%eax
+	jz	substage_getNext_logtermfalse_64
+	movl	-28(%ebp),%ebx
+	cmpl	$0,%ebx
+	movl	$1,%eax
+	jne	substage_getNext_reltrue_66
+	movl	$0,%eax
+substage_getNext_reltrue_66	:	
+	testl	%eax,%eax
+	jz	substage_getNext_logtermfalse_64
+	movl	$1,%eax
+	jmp	substage_getNext_logtermtrue_64
+substage_getNext_logtermfalse_64	:	
+	movl	$0,%eax
+substage_getNext_logtermtrue_64	:	
+	testl	%eax,%eax
+	jz	substage_getNext_endwhile_63
+
+	subl	$12,%esp
+	movl	%ebp,%eax
+	addl	$-24,%eax
+	movl	(%eax),%eax
+	addl	$832,%eax
+	movl	%eax,0(%esp)
+	movl	$0,4(%esp)
+	movl	$13,%ebx
+	imull	$64,%ebx
+	movl	%ebx,%eax
+	movl	%eax,8(%esp)
+	call	memset
+	addl	$12,%esp
+
+	subl	$8,%esp
+	movl	%ebp,%eax
+	addl	$-24,%eax
+	movl	(%eax),%eax
+	addl	$832,%eax
+	movl	%eax,0(%esp)
+	movl	%ebp,%eax
+	addl	$-28,%eax
+	movl	(%eax),%eax
+	addl	$0,%eax
+	movl	%eax,4(%esp)
+	call	CharacterCpy
+	addl	$8,%esp
+
+	subl	$4,%esp
+	movl	-24(%ebp),%eax
+	movl	%eax,0(%esp)
+	call	Get_Next_In_ParametersList
+	addl	$4,%esp
+	movl	%eax,-24(%ebp)
+
+	subl	$4,%esp
+	movl	-28(%ebp),%eax
+	movl	%eax,0(%esp)
+	call	Get_Next_In_ParametersList
+	addl	$4,%esp
+	movl	%eax,-28(%ebp)
+	jmp	substage_getNext_while_63
+substage_getNext_endwhile_63	:	
+
+	movl	-24(%ebp),%ebx
+	cmpl	$0,%ebx
+	movl	$1,%eax
+	jne	substage_getNext_reltrue_69
+	movl	$0,%eax
+substage_getNext_reltrue_69	:	
+	testl	%eax,%eax
+	jnz	substage_getNext_logexprtrue_68
+	movl	-28(%ebp),%ebx
+	cmpl	$0,%ebx
+	movl	$1,%eax
+	jne	substage_getNext_reltrue_70
+	movl	$0,%eax
+substage_getNext_reltrue_70	:	
+	testl	%eax,%eax
+	jnz	substage_getNext_logexprtrue_68
+	movl	$0,%eax
+	jmp	substage_getNext_logexprfalse_68
+substage_getNext_logexprtrue_68	:	
+	movl	$1,%eax
+substage_getNext_logexprfalse_68	:	
+	testl	%eax,%eax
+	jnz	substage_getNext_ifbl_67
+	jmp	substage_getNext_elsebl_67
+substage_getNext_ifbl_67	:	
+
+	subl	$16,%esp
+	movl	8(%ebp),%eax
+	movl	%eax,0(%esp)
+	movl	$symtab+53,4(%esp)
+	movl	-40(%ebp),%eax
+	movl	%eax,8(%esp)
+	movl	$2,12(%esp)
+	call	preproc_reportError
+	addl	$16,%esp
+
+	subl	$4,%esp
+	movl	$1,0(%esp)
+	call	exit
+	addl	$4,%esp
+	jmp	substage_getNext_endif_67
+substage_getNext_elsebl_67	:	
+substage_getNext_endif_67	:	
+substage_getNext_endif_58	:	
+
+	movl	%ebp,%eax
+	addl	$-20,%eax
+	movl	(%eax),%eax
+	addl	$836,%eax
+	movl	(%eax),%eax
+	movl	%eax,%ebx
+	cmpl	$0,%ebx
+	movl	$1,%eax
+	jg	substage_getNext_reltrue_72
+	movl	$0,%eax
+substage_getNext_reltrue_72	:	
+	testl	%eax,%eax
+	jnz	substage_getNext_ifbl_71
+	jmp	substage_getNext_elsebl_71
+substage_getNext_ifbl_71	:	
+
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$20712,%eax
+	pushl	%eax
+	movl	-20(%ebp),%eax
+	popl	%ebx
+	movl	%eax,(%ebx)
+
+	subl	$8,%esp
+	movl	8(%ebp),%eax
+	movl	%eax,0(%esp)
+	movl	12(%ebp),%eax
+	movl	%eax,4(%esp)
+	call	setReplacementCharacter
+	addl	$8,%esp
+	jmp	substage_getNext_endif_71
+substage_getNext_elsebl_71	:	
+substage_getNext_endif_71	:	
+	jmp	substage_getNext_endif_54
+substage_getNext_elsebl_54	:	
+substage_getNext_endif_54	:	
+	jmp	substage_getNext_endif_50
+substage_getNext_elsebl_50	:	
+substage_getNext_endif_50	:	
+
+	subl	$4,%esp
+	movl	-20(%ebp),%eax
+	movl	%eax,0(%esp)
+	call	Get_Next_In_DefinesList
+	addl	$4,%esp
+	movl	%eax,-20(%ebp)
+	jmp	substage_getNext_while_48
+substage_getNext_endwhile_48	:	
+	jmp	substage_getNext_endif_44
+substage_getNext_elsebl_44	:	
+substage_getNext_endif_44	:	
+
+	movl	%ebp,%eax
+	addl	$12,%eax
+	movl	(%eax),%eax
+	addl	$0,%eax
+	movb	(%eax),%al
+	movsbl	%al,%eax
+	movl	%eax,%ebx
+	cmpl	$0,%ebx
+	movl	$1,%eax
+	je	substage_getNext_reltrue_75
+	movl	$0,%eax
+substage_getNext_reltrue_75	:	
+	testl	%eax,%eax
+	jz	substage_getNext_logtermfalse_74
+	movl	%ebp,%eax
+	addl	$-40,%eax
+	movl	(%eax),%eax
+	addl	$6660,%eax
+	movl	(%eax),%eax
+	pushl	%eax
+	movl	%ebp,%eax
+	addl	$-40,%eax
+	movl	(%eax),%eax
+	addl	$6656,%eax
+	movl	(%eax),%eax
+	popl	%ebx
+	cmpl	%eax,%ebx
+	movl	$1,%eax
+	jle	substage_getNext_reltrue_76
+	movl	$0,%eax
+substage_getNext_reltrue_76	:	
+	testl	%eax,%eax
+	jz	substage_getNext_logtermfalse_74
+	movl	$1,%eax
+	jmp	substage_getNext_logtermtrue_74
+substage_getNext_logtermfalse_74	:	
+	movl	$0,%eax
+substage_getNext_logtermtrue_74	:	
+	testl	%eax,%eax
+	jnz	substage_getNext_ifbl_73
+	jmp	substage_getNext_elsebl_73
+substage_getNext_ifbl_73	:	
+
+	movl	%ebp,%eax
+	addl	$12,%eax
+	movl	(%eax),%eax
+	pushl	%eax
+	movl	%ebp,%eax
+	addl	$-40,%eax
+	movl	(%eax),%eax
+	addl	$6660,%eax
+	movl	(%eax),%eax
+	pushl	%eax
+	movl	%ebp,%eax
+	addl	$-40,%eax
+	movl	(%eax),%eax
+	addl	$0,%eax
+	popl	%esi
+	imull	$13,%esi
+	addl	%esi,%eax
+	popl	%ebx
+	movl	(%eax),%ecx
+	movl	%ecx,(%ebx)
+	addl	$4,%eax
+	addl	$4,%ebx
+	movl	(%eax),%ecx
+	movl	%ecx,(%ebx)
+	addl	$4,%eax
+	addl	$4,%ebx
+	movl	(%eax),%ecx
+	movl	%ecx,(%ebx)
+	addl	$4,%eax
+	addl	$4,%ebx
+	movb	(%eax),%cl
+	movb	%cl,(%ebx)
+	addl	$1,%eax
+	addl	$1,%ebx
+
+	movl	%ebp,%eax
+	addl	$-40,%eax
+	movl	(%eax),%eax
+	addl	$6660,%eax
+	pushl	%eax
+	movl	%ebp,%eax
+	addl	$-40,%eax
+	movl	(%eax),%eax
+	addl	$6660,%eax
+	movl	(%eax),%eax
+	movl	%eax,%ebx
+	addl	$1,%ebx
+	movl	%ebx,%eax
+	popl	%ebx
+	movl	%eax,(%ebx)
+	jmp	substage_getNext_endif_73
+substage_getNext_elsebl_73	:	
+substage_getNext_endif_73	:	
+	jmp	substage_getNext_while_38
+substage_getNext_endwhile_38	:	
+
+	movl	$0,%eax
+	jmp	substage_getNext_ret
+substage_getNext_ret	:	
+	movl	%ebp,%esp
+	popl	%ebp
+	ret	
+
+.section	.data
+symtab	:	
+.string	"##"
+.string	"Missformed macro (::parameters list::) call found"
+.string	"Missformed macro (::parameters count::) call found"

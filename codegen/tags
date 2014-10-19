@@ -1,0 +1,126 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.5.4	//
+CODEGEN_H	codegen.h	12;"	d
+CODEGEN_MAXLINE_SIZE	codegen.h	20;"	d
+CPPOBJ	Makefile	/^CPPOBJ = $(CPPSRC:%.cpp=%.o)$/;"	m
+CPPSRC	Makefile	/^CPPSRC = test-codegen.cpp codegen.cpp typearith.cpp ..\/symbolTable\/symbolTable.cpp ..\/parser\/parser.cpp ..\/parser\/syntaxTreeNode.cpp  ..\/scanner\/scanner.cpp  ..\/preproc\/preproc.cpp ..\/preproc\/stageutils.cpp ..\/preproc\/substage.cpp ..\/preproc\/directivestage.cpp ..\/preproc\/commstage.cpp ..\/preproc\/filestack.cpp $/;"	m
+CXX	Makefile	/^CXX = g++$/;"	m
+CXXFLAGS	Makefile	/^CXXFLAGS = $(CXXFLAGSDEBUG) -ansi$/;"	m
+CXXFLAGSDEBUG	Makefile	/^CXXFLAGSDEBUG = -Wall -g$/;"	m
+CXXFLAGSRELEASE	Makefile	/^CXXFLAGSRELEASE = -O3 -DNDEBUG$/;"	m
+DEPENDFILE	Makefile	/^DEPENDFILE = .depend$/;"	m
+DIRECTORY	Makefile	/^DIRECTORY = codegen$/;"	m
+PROGARGS	Makefile	/^PROGARGS = $/;"	m
+PROGRAMS	Makefile	/^PROGRAMS = test-codegen$/;"	m
+TYPEARITH_H	typearith.h	7;"	d
+a	testdata/euklid-ext.c	/^		mystruct a;$/;"	m	struct:mystruct2	file:
+a	testdata/input.c	/^		int a[3];$/;"	m	struct:firststruct	file:
+a	testdata/input.h	/^		int* a[5];$/;"	m	struct:firststruct
+b	testdata/euklid-ext.c	/^		mystruct2* b;$/;"	m	struct:mystruct2	file:
+b	testdata/input.c	/^		char b;$/;"	m	struct:firststruct	file:
+b	testdata/input.h	/^		char b[5];$/;"	m	struct:firststruct
+c	testdata/input.c	/^		int c;$/;"	m	struct:firststruct	file:
+c	testdata/input.h	/^		firststruct c;$/;"	m	struct:secondstruct
+c	testdata/input.h	/^		firststruct** c;$/;"	m	struct:firststruct
+cntBlocks	codegen.h	/^		int cntBlocks;$/;"	m	struct:codegen
+cnterrors	codegen.h	/^		int cnterrors;$/;"	m	struct:codegen
+cntwarnings	codegen.h	/^		int cntwarnings;$/;"	m	struct:codegen
+codegen	codegen.h	/^struct codegen$/;"	s
+codegen_CastToChar	codegen.cpp	/^syntaxTreeNode* codegen_CastToChar( codegen* cg, token tok, char* result,  syntaxTreeNode* tree )$/;"	f
+codegen_CastToInt	codegen.cpp	/^syntaxTreeNode* codegen_CastToInt( codegen* cg, token tok, char* result,  syntaxTreeNode* tree )$/;"	f
+codegen_CheckCasting	codegen.cpp	/^int codegen_CheckCasting( codegen* cg, syntaxTreeNode* target, syntaxTreeNode* source, token errtok)$/;"	f
+codegen_CreateCharType	codegen.cpp	/^syntaxTreeNode* codegen_CreateCharType( )$/;"	f
+codegen_CreateCodeGen	codegen.cpp	/^void codegen_CreateCodeGen( codegen* cg, int fd, parser* parser)$/;"	f
+codegen_CreateIntType	codegen.cpp	/^syntaxTreeNode* codegen_CreateIntType( )$/;"	f
+codegen_CreateVoidPntType	codegen.cpp	/^syntaxTreeNode* codegen_CreateVoidPntType()$/;"	f
+codegen_EmitArithExpr	codegen.cpp	/^syntaxTreeNode* codegen_EmitArithExpr( codegen* cg, syntaxTreeNode* tree, char* result)$/;"	f
+codegen_EmitArithFactor	codegen.cpp	/^syntaxTreeNode* codegen_EmitArithFactor( codegen* cg, syntaxTreeNode* tree, char* result)$/;"	f
+codegen_EmitArithTerm	codegen.cpp	/^syntaxTreeNode* codegen_EmitArithTerm( codegen* cg, syntaxTreeNode* tree, char* result)$/;"	f
+codegen_EmitAssign	codegen.cpp	/^int codegen_EmitAssign( codegen* cg, syntaxTreeNode* tree)$/;"	f
+codegen_EmitAtomicValue	codegen.cpp	/^syntaxTreeNode* codegen_EmitAtomicValue( codegen* cg, syntaxTreeNode* tree, char* result)$/;"	f
+codegen_EmitAvoidConstant	codegen.cpp	/^void codegen_EmitAvoidConstant(codegen* cg, char* result)$/;"	f
+codegen_EmitAvoidIndirect	codegen.cpp	/^void codegen_EmitAvoidIndirect(codegen* cg, char* result, syntaxTreeNode* type)$/;"	f
+codegen_EmitBeginFunction	codegen.cpp	/^int codegen_EmitBeginFunction( codegen* cg)$/;"	f
+codegen_EmitBeginIf	codegen.cpp	/^int codegen_EmitBeginIf( codegen* cg, syntaxTreeNode* tree, int* blocknr)$/;"	f
+codegen_EmitBeginWhile	codegen.cpp	/^int codegen_EmitBeginWhile( codegen* cg, syntaxTreeNode* tree, int* blocknr )$/;"	f
+codegen_EmitBreak	codegen.cpp	/^int codegen_EmitBreak( codegen* cg, syntaxTreeNode* tree )$/;"	f
+codegen_EmitContinue	codegen.cpp	/^int codegen_EmitContinue( codegen* cg, syntaxTreeNode* tree )$/;"	f
+codegen_EmitCopyJunk	codegen.cpp	/^int codegen_EmitCopyJunk( codegen* cg, char* destaddr, char* srcaddr, int size)$/;"	f
+codegen_EmitElseIf	codegen.cpp	/^int codegen_EmitElseIf( codegen* cg, syntaxTreeNode* tree, int blocknr)$/;"	f
+codegen_EmitEndFunction	codegen.cpp	/^int codegen_EmitEndFunction( codegen* cg)$/;"	f
+codegen_EmitEndIf	codegen.cpp	/^int codegen_EmitEndIf( codegen* cg, syntaxTreeNode* tree, int blocknr)$/;"	f
+codegen_EmitEndWhile	codegen.cpp	/^int codegen_EmitEndWhile( codegen* cg, syntaxTreeNode* tree, int blocknr)$/;"	f
+codegen_EmitFastAssign	codegen.cpp	/^int codegen_EmitFastAssign( codegen* cg, syntaxTreeNode* tree)$/;"	f
+codegen_EmitFastVariableExpr	codegen.cpp	/^syntaxTreeNode* codegen_EmitFastVariableExpr( codegen* cg, syntaxTreeNode* tree, char* result)$/;"	f
+codegen_EmitFuncCall	codegen.cpp	/^syntaxTreeNode* codegen_EmitFuncCall( codegen* cg, syntaxTreeNode* tree, char* result )$/;"	f
+codegen_EmitFuncCallExpr	codegen.cpp	/^int codegen_EmitFuncCallExpr( codegen* cg, syntaxTreeNode* tree, char* result)$/;"	f
+codegen_EmitLogExpr	codegen.cpp	/^syntaxTreeNode* codegen_EmitLogExpr( codegen* cg, syntaxTreeNode* tree, char* result)$/;"	f
+codegen_EmitLogFactor	codegen.cpp	/^syntaxTreeNode* codegen_EmitLogFactor( codegen* cg, syntaxTreeNode* tree, char* result)$/;"	f
+codegen_EmitLogTerm	codegen.cpp	/^syntaxTreeNode* codegen_EmitLogTerm( codegen* cg, syntaxTreeNode* tree, char* result)$/;"	f
+codegen_EmitProgrammStart	codegen.cpp	/^int codegen_EmitProgrammStart( codegen* cg)$/;"	f
+codegen_EmitRelExpr	codegen.cpp	/^syntaxTreeNode* codegen_EmitRelExpr( codegen* cg, syntaxTreeNode* tree, char* result)$/;"	f
+codegen_EmitReturn	codegen.cpp	/^int codegen_EmitReturn( codegen* cg, syntaxTreeNode* tree )$/;"	f
+codegen_EmitStartAddrOfNestedVar	codegen.cpp	/^syntaxTreeNode* codegen_EmitStartAddrOfNestedVar( codegen* cg, syntaxTreeNode* tree, char* result)$/;"	f
+codegen_EmitSymboltable	codegen.cpp	/^int codegen_EmitSymboltable( codegen* cg)$/;"	f
+codegen_EmitVarExprAdress	codegen.cpp	/^syntaxTreeNode* codegen_EmitVarExprAdress( codegen* cg, syntaxTreeNode* tree, char* result)$/;"	f
+codegen_EmitVariableAdress	codegen.cpp	/^syntaxTreeNode* codegen_EmitVariableAdress( codegen* cg, token varname)$/;"	f
+codegen_EmitVariableExpr	codegen.cpp	/^syntaxTreeNode* codegen_EmitVariableExpr( codegen* cg, syntaxTreeNode* tree, char* result)$/;"	f
+codegen_debug	codegen.cpp	/^void codegen_debug( codegen* cg, char* text, syntaxTreeNode* tree)$/;"	f
+codegen_emit	codegen.cpp	/^void codegen_emit( codegen* cg, char* text )$/;"	f
+codegen_emitTree	codegen.cpp	/^void codegen_emitTree( codegen* cg, syntaxTreeNode* tree)$/;"	f
+codegen_reportError	codegen.cpp	/^void codegen_reportError( codegen* cg, char* errstr, token name)$/;"	f
+codegen_reportWarning	codegen.cpp	/^void codegen_reportWarning( codegen* cg, char* errstr, token name)$/;"	f
+currFuncName	codegen.h	/^		token currFuncName;$/;"	m	struct:codegen
+currWhileNr	codegen.h	/^		int currWhileNr;$/;"	m	struct:codegen
+d	testdata/input.c	/^		firststruct* d;$/;"	m	struct:firststruct	file:
+d	testdata/input.h	/^		firststruct d[4];$/;"	m	struct:secondstruct
+e	testdata/input.c	/^		int* e;$/;"	m	struct:firststruct	file:
+emitdebug	codegen.h	/^		int emitdebug;$/;"	m	struct:codegen
+enOptConstfold	codegen.h	/^		int enOptConstfold;$/;"	m	struct:codegen
+enOptFastassign	codegen.h	/^		int enOptFastassign;$/;"	m	struct:codegen
+euklidggt	testdata/euklid-ext.c	/^int euklidggt( int var1, int var2 )$/;"	f
+euklidggt	testdata/euklid.c	/^int euklidggt( int var1, int var2 )$/;"	f
+fd	codegen.h	/^		int fd;$/;"	m	struct:codegen
+first	testdata/input.c	/^		firststruct first;$/;"	m	struct:secondstruct	file:
+firststruct	testdata/input.c	/^struct firststruct$/;"	s	file:
+firststruct	testdata/input.h	/^struct firststruct$/;"	s
+g2	testdata/euklid-ext.c	/^mystruct2 g2;$/;"	v
+g3	testdata/euklid-ext.c	/^mystruct2 g3;$/;"	v
+g4	testdata/euklid-ext.c	/^mystruct* g4;$/;"	v
+m	testdata/euklid-ext.c	/^	int m[3];$/;"	m	struct:mystruct	file:
+main	test-codegen.cpp	/^int main(int argc, char** argv)$/;"	f
+main	testdata/euklid-ext.c	/^int main(int argc, char** argv)$/;"	f
+main	testdata/euklid.c	/^int main(int argc, char** argv)$/;"	f
+main	testdata/input.c	/^void main( int argc, char** argv)$/;"	f
+main	testdata/main.c	/^int main(int argc, char** argv)$/;"	f
+mystruct	testdata/euklid-ext.c	/^struct mystruct$/;"	s	file:
+mystruct2	testdata/euklid-ext.c	/^struct mystruct2$/;"	s	file:
+next	testdata/input.c	/^		secondstruct* next;$/;"	m	struct:secondstruct	file:
+next	testdata/input.h	/^		secondstruct* next;$/;"	m	struct:secondstruct
+parse	codegen.h	/^		parser* parse;$/;"	m	struct:codegen
+secondstruct	testdata/input.c	/^struct secondstruct$/;"	s	file:
+secondstruct	testdata/input.h	/^struct secondstruct$/;"	s
+test	testdata/euklid-ext.c	/^void test( char ch )$/;"	f
+test	testdata/input.c	/^void test(firststruct f)$/;"	f
+type_AddStarToType	typearith.cpp	/^syntaxTreeNode* type_AddStarToType( syntaxTreeNode* type)$/;"	f
+type_ConvertSinglechar	typearith.cpp	/^int type_ConvertSinglechar(char* sngchar)$/;"	f
+type_CountVarexprResolutions	typearith.cpp	/^int type_CountVarexprResolutions( syntaxTreeNode* tree)$/;"	f
+type_CreateArrayElmType	typearith.cpp	/^syntaxTreeNode* type_CreateArrayElmType( syntaxTreeNode* varDef)$/;"	f
+type_CreateType	typearith.cpp	/^syntaxTreeNode* type_CreateType( syntaxTreeNode* varDef )$/;"	f
+type_GetArrayElmSize	typearith.cpp	/^int type_GetArrayElmSize( symbolTable* symtab, syntaxTreeNode* varDef)$/;"	f
+type_GetMemberDeclaration	typearith.cpp	/^syntaxTreeNode* type_GetMemberDeclaration( symbolTable* symtab, syntaxTreeNode* contType, token member)$/;"	f
+type_GetMemberOffset	typearith.cpp	/^int type_GetMemberOffset( symbolTable* symtab, syntaxTreeNode* contType, token member )$/;"	f
+type_IsAArrayVar	typearith.cpp	/^int type_IsAArrayVar( syntaxTreeNode* varDef )$/;"	f
+type_IsACharType	typearith.cpp	/^int type_IsACharType( syntaxTreeNode* type)$/;"	f
+type_IsAIntType	typearith.cpp	/^int type_IsAIntType( syntaxTreeNode* type)$/;"	f
+type_IsAPointerType	typearith.cpp	/^int type_IsAPointerType( syntaxTreeNode* type)$/;"	f
+type_IsAPointerVar	typearith.cpp	/^int type_IsAPointerVar( syntaxTreeNode* varDef )$/;"	f
+type_IsAStructType	typearith.cpp	/^int type_IsAStructType( syntaxTreeNode* type)$/;"	f
+type_IsAStructVar	typearith.cpp	/^int type_IsAStructVar( syntaxTreeNode* varDef )$/;"	f
+type_IsByteSized	typearith.cpp	/^int type_IsByteSized( syntaxTreeNode* type)$/;"	f
+type_IsLongSized	typearith.cpp	/^int type_IsLongSized( syntaxTreeNode* type)$/;"	f
+type_RemoveStarFromType	typearith.cpp	/^syntaxTreeNode* type_RemoveStarFromType( syntaxTreeNode* type)$/;"	f

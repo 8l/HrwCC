@@ -1,0 +1,38 @@
+
+#The parent directory
+DIRECTORY = HrwCC
+
+
+#Make executeable
+all:
+	make -C preproc -f Makefile.hrwcc 
+	make -C scanner  -f Makefile.hrwcc 
+	make -C parser  -f Makefile.hrwcc 
+	make -C symbolTable  -f Makefile.hrwcc 
+	make -C codegen  -f Makefile.hrwcc 
+	make -C hrwcc  -f Makefile.hrwcc 
+	make -C linker  -f Makefile.hrwcc 
+
+#I love ctags and vim
+.PHONY: tags
+tags:
+	exuberant-ctags --recurse *
+
+#Pack all in a tar.bz2
+dist: clean
+	tar -cvjf ../$(DIRECTORY).tar.bz2 --exclude '*/.*' ../$(DIRECTORY)
+
+#Get rid of all files which are build by make
+clean:
+	make -C preproc  -f Makefile.hrwcc clean
+	make -C scanner  -f Makefile.hrwcc clean
+	make -C parser  -f Makefile.hrwcc clean
+	make -C symbolTable  -f Makefile.hrwcc clean
+	make -C codegen  -f Makefile.hrwcc clean
+	make -C hrwcc  -f Makefile.hrwcc clean
+	make -C linker  -f Makefile.hrwcc clean
+
+
+
+
+

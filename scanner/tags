@@ -1,0 +1,116 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.5.4	//
+CPPOBJ	Makefile	/^CPPOBJ = $(CPPSRC:%.c=%.o)$/;"	m
+CPPSRC	Makefile	/^CPPSRC = scanner.c test-scanner.c$/;"	m
+CXX	Makefile	/^CXX = gcc$/;"	m
+CXXFLAGS	Makefile	/^CXXFLAGS = $(CXXFLAGSDEBUG) -ansi$/;"	m
+CXXFLAGSDEBUG	Makefile	/^CXXFLAGSDEBUG = -Wall -g$/;"	m
+CXXFLAGSRELEASE	Makefile	/^CXXFLAGSRELEASE = -O3 -DNDEBUG$/;"	m
+DEPENDFILE	Makefile	/^DEPENDFILE = .depend$/;"	m
+DIRECTORY	Makefile	/^DIRECTORY = scanner$/;"	m
+PROGARGS	Makefile	/^PROGARGS = $/;"	m
+PROGRAMS	Makefile	/^PROGRAMS = test-scanner$/;"	m
+SCANNER_H	scanner.h	7;"	d
+STATE_AND	scanner.c	32;"	d	file:
+STATE_ARROW	scanner.c	21;"	d	file:
+STATE_CALLSIGN	scanner.c	44;"	d	file:
+STATE_CHAR	scanner.c	48;"	d	file:
+STATE_CONST	scanner.c	46;"	d	file:
+STATE_CURPAR_BEGIN	scanner.c	12;"	d	file:
+STATE_CURPAR_END	scanner.c	13;"	d	file:
+STATE_DBLAND	scanner.c	35;"	d	file:
+STATE_DBLEQUAL	scanner.c	37;"	d	file:
+STATE_DBLPIPE	scanner.c	36;"	d	file:
+STATE_DETECTED	scanner.c	5;"	d	file:
+STATE_DIV	scanner.c	30;"	d	file:
+STATE_ELSE	scanner.c	24;"	d	file:
+STATE_EOF	scanner.c	11;"	d	file:
+STATE_EQUAL	scanner.c	22;"	d	file:
+STATE_HAT	scanner.c	34;"	d	file:
+STATE_IDENT	scanner.c	50;"	d	file:
+STATE_IF	scanner.c	23;"	d	file:
+STATE_INT	scanner.c	47;"	d	file:
+STATE_KOMMA	scanner.c	18;"	d	file:
+STATE_LESS	scanner.c	39;"	d	file:
+STATE_LESSEQUAL	scanner.c	40;"	d	file:
+STATE_MINUS	scanner.c	28;"	d	file:
+STATE_MORE	scanner.c	41;"	d	file:
+STATE_MOREEQUAL	scanner.c	42;"	d	file:
+STATE_NOTEQUAL	scanner.c	38;"	d	file:
+STATE_NUMBER	scanner.c	51;"	d	file:
+STATE_PERCENT	scanner.c	31;"	d	file:
+STATE_PIPE	scanner.c	33;"	d	file:
+STATE_PLUS	scanner.c	27;"	d	file:
+STATE_POINT	scanner.c	20;"	d	file:
+STATE_RECPAR_BEGIN	scanner.c	14;"	d	file:
+STATE_RECPAR_END	scanner.c	15;"	d	file:
+STATE_RETURN	scanner.c	26;"	d	file:
+STATE_RNDPAR_BEGIN	scanner.c	16;"	d	file:
+STATE_RNDPAR_END	scanner.c	17;"	d	file:
+STATE_SEMIKOLON	scanner.c	19;"	d	file:
+STATE_SINGLECHAR	scanner.c	53;"	d	file:
+STATE_SNAKE	scanner.c	43;"	d	file:
+STATE_STAR	scanner.c	29;"	d	file:
+STATE_START	scanner.c	4;"	d	file:
+STATE_STRING	scanner.c	52;"	d	file:
+STATE_STRUCT	scanner.c	45;"	d	file:
+STATE_VOID	scanner.c	49;"	d	file:
+STATE_WHILE	scanner.c	25;"	d	file:
+TOKEN_H	token.h	7;"	d
+TOK_AND	token.h	32;"	d
+TOK_ARROW	token.h	21;"	d
+TOK_CALLSIGN	token.h	44;"	d
+TOK_CHAR	token.h	48;"	d
+TOK_CONST	token.h	46;"	d
+TOK_CURPAR_BEGIN	token.h	12;"	d
+TOK_CURPAR_END	token.h	13;"	d
+TOK_DBLAND	token.h	35;"	d
+TOK_DBLEQUAL	token.h	37;"	d
+TOK_DBLPIPE	token.h	36;"	d
+TOK_DIV	token.h	30;"	d
+TOK_ELSE	token.h	24;"	d
+TOK_EOF	token.h	11;"	d
+TOK_EQUAL	token.h	22;"	d
+TOK_HAT	token.h	34;"	d
+TOK_IDENT	token.h	50;"	d
+TOK_IF	token.h	23;"	d
+TOK_INT	token.h	47;"	d
+TOK_KOMMA	token.h	18;"	d
+TOK_LESS	token.h	39;"	d
+TOK_LESSEQUAL	token.h	40;"	d
+TOK_MINUS	token.h	28;"	d
+TOK_MORE	token.h	41;"	d
+TOK_MOREEQUAL	token.h	42;"	d
+TOK_NOTEQUAL	token.h	38;"	d
+TOK_NUMBER	token.h	51;"	d
+TOK_PERCENT	token.h	31;"	d
+TOK_PIPE	token.h	33;"	d
+TOK_PLUS	token.h	27;"	d
+TOK_POINT	token.h	20;"	d
+TOK_RECPAR_BEGIN	token.h	14;"	d
+TOK_RECPAR_END	token.h	15;"	d
+TOK_RETURN	token.h	26;"	d
+TOK_RNDPAR_BEGIN	token.h	16;"	d
+TOK_RNDPAR_END	token.h	17;"	d
+TOK_SEMIKOLON	token.h	19;"	d
+TOK_SINGLECHAR	token.h	53;"	d
+TOK_SNAKE	token.h	43;"	d
+TOK_STAR	token.h	29;"	d
+TOK_STRING	token.h	52;"	d
+TOK_STRUCT	token.h	45;"	d
+TOK_VOID	token.h	49;"	d
+TOK_WHILE	token.h	25;"	d
+content	token.h	/^		char* content;$/;"	m	struct:token
+main	test-scanner.c	/^int main()$/;"	f
+nextinput	scanner.h	/^		char nextinput;$/;"	m	struct:scanner
+scanner	scanner.h	/^struct scanner$/;"	s
+scanner_getToken	scanner.c	/^struct token* scanner_getToken(struct scanner* scanner)$/;"	f
+scanner_inputChar	scanner.c	/^char scanner_inputChar()$/;"	f
+scanner_transFunc	scanner.c	/^int scanner_transFunc(int state, char input)$/;"	f
+state	scanner.h	/^		int state;$/;"	m	struct:scanner
+token	token.h	/^struct token$/;"	s
+type	token.h	/^		int type;$/;"	m	struct:token

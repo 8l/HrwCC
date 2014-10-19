@@ -1,0 +1,1839 @@
+
+.section	.text
+
+.globl	printCodeBuffer
+.type	printCodeBuffer,@function
+printCodeBuffer	:	
+	pushl	%ebp
+	movl	%esp,%ebp
+	subl	$4,%esp
+
+	movl	$0,-4(%ebp)
+
+printCodeBuffer_while_0	:	
+	movl	-4(%ebp),%ebx
+	cmpl	$4,%ebx
+	movl	$1,%eax
+	jl	printCodeBuffer_reltrue_1
+	movl	$0,%eax
+printCodeBuffer_reltrue_1	:	
+	testl	%eax,%eax
+	jz	printCodeBuffer_endwhile_0
+
+	subl	$4,%esp
+	pushl	-4(%ebp)
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$0,%eax
+	popl	%esi
+	imull	$8,%esi
+	addl	%esi,%eax
+	movl	%eax,0(%esp)
+	call	printTokensList
+	addl	$4,%esp
+
+	subl	$4,%esp
+	movl	$symtab+0,0(%esp)
+	call	puts
+	addl	$4,%esp
+
+	movl	-4(%ebp),%ebx
+	addl	$1,%ebx
+	movl	%ebx,%eax
+	movl	%eax,-4(%ebp)
+	jmp	printCodeBuffer_while_0
+printCodeBuffer_endwhile_0	:	
+
+	subl	$4,%esp
+	movl	$symtab+4,0(%esp)
+	call	puts
+	addl	$4,%esp
+printCodeBuffer_ret	:	
+	movl	%ebp,%esp
+	popl	%ebp
+	ret	
+
+.globl	asmopt_initInstance
+.type	asmopt_initInstance,@function
+asmopt_initInstance	:	
+	pushl	%ebp
+	movl	%esp,%ebp
+	subl	$4,%esp
+
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$36,%eax
+	movl	%eax,%ebx
+	movl	$0,(%ebx)
+
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$32,%eax
+	movl	%eax,%ebx
+	movl	$0,(%ebx)
+
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$48,%eax
+	movl	%eax,%ebx
+	movl	$0,(%ebx)
+
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$52,%eax
+	movl	%eax,%ebx
+	movl	$0,(%ebx)
+
+	movl	$0,-4(%ebp)
+
+asmopt_initInstance_while_2	:	
+	movl	-4(%ebp),%ebx
+	cmpl	$4,%ebx
+	movl	$1,%eax
+	jl	asmopt_initInstance_reltrue_3
+	movl	$0,%eax
+asmopt_initInstance_reltrue_3	:	
+	testl	%eax,%eax
+	jz	asmopt_initInstance_endwhile_2
+
+	subl	$4,%esp
+	pushl	-4(%ebp)
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$0,%eax
+	popl	%esi
+	imull	$8,%esi
+	addl	%esi,%eax
+	movl	%eax,0(%esp)
+	call	Clear_TokensList
+	addl	$4,%esp
+
+	movl	-4(%ebp),%ebx
+	addl	$1,%ebx
+	movl	%ebx,%eax
+	movl	%eax,-4(%ebp)
+	jmp	asmopt_initInstance_while_2
+asmopt_initInstance_endwhile_2	:	
+
+	movl	$0,%eax
+	jmp	asmopt_initInstance_ret
+asmopt_initInstance_ret	:	
+	movl	%ebp,%esp
+	popl	%ebp
+	ret	
+
+.globl	asmopt_freeCodeBufferSlot
+.type	asmopt_freeCodeBufferSlot,@function
+asmopt_freeCodeBufferSlot	:	
+	pushl	%ebp
+	movl	%esp,%ebp
+	subl	$0,%esp
+
+	subl	$4,%esp
+	pushl	12(%ebp)
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$0,%eax
+	popl	%esi
+	imull	$8,%esi
+	addl	%esi,%eax
+	movl	%eax,0(%esp)
+	call	freeTokensList
+	addl	$4,%esp
+
+	subl	$4,%esp
+	pushl	12(%ebp)
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$0,%eax
+	popl	%esi
+	imull	$8,%esi
+	addl	%esi,%eax
+	movl	%eax,0(%esp)
+	call	Clear_TokensList
+	addl	$4,%esp
+asmopt_freeCodeBufferSlot_ret	:	
+	movl	%ebp,%esp
+	popl	%ebp
+	ret	
+
+.globl	asmopt_freeInstance
+.type	asmopt_freeInstance,@function
+asmopt_freeInstance	:	
+	pushl	%ebp
+	movl	%esp,%ebp
+	subl	$4,%esp
+
+	movl	$0,-4(%ebp)
+
+asmopt_freeInstance_while_4	:	
+	movl	-4(%ebp),%ebx
+	cmpl	$4,%ebx
+	movl	$1,%eax
+	jl	asmopt_freeInstance_reltrue_5
+	movl	$0,%eax
+asmopt_freeInstance_reltrue_5	:	
+	testl	%eax,%eax
+	jz	asmopt_freeInstance_endwhile_4
+
+	subl	$8,%esp
+	movl	8(%ebp),%eax
+	movl	%eax,0(%esp)
+	movl	-4(%ebp),%eax
+	movl	%eax,4(%esp)
+	call	asmopt_freeCodeBufferSlot
+	addl	$8,%esp
+
+	movl	-4(%ebp),%ebx
+	addl	$1,%ebx
+	movl	%ebx,%eax
+	movl	%eax,-4(%ebp)
+	jmp	asmopt_freeInstance_while_4
+asmopt_freeInstance_endwhile_4	:	
+
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$32,%eax
+	pushl	%eax
+	movl	$0,%ebx
+	subl	$1,%ebx
+	movl	%ebx,%eax
+	popl	%ebx
+	movl	%eax,(%ebx)
+
+	movl	$0,%eax
+	jmp	asmopt_freeInstance_ret
+asmopt_freeInstance_ret	:	
+	movl	%ebp,%esp
+	popl	%ebp
+	ret	
+
+.globl	asmopt_popCodeBuffer
+.type	asmopt_popCodeBuffer,@function
+asmopt_popCodeBuffer	:	
+	pushl	%ebp
+	movl	%esp,%ebp
+	subl	$0,%esp
+
+	subl	$8,%esp
+	movl	8(%ebp),%eax
+	movl	%eax,0(%esp)
+	movl	12(%ebp),%eax
+	movl	%eax,4(%esp)
+	call	asmopt_freeCodeBufferSlot
+	addl	$8,%esp
+
+	movl	12(%ebp),%ebx
+	addl	$1,%ebx
+	movl	%ebx,%eax
+	movl	%eax,12(%ebp)
+
+asmopt_popCodeBuffer_while_6	:	
+	movl	12(%ebp),%ebx
+	cmpl	$4,%ebx
+	movl	$1,%eax
+	jl	asmopt_popCodeBuffer_reltrue_7
+	movl	$0,%eax
+asmopt_popCodeBuffer_reltrue_7	:	
+	testl	%eax,%eax
+	jz	asmopt_popCodeBuffer_endwhile_6
+
+	subl	$12,%esp
+	movl	12(%ebp),%ebx
+	subl	$1,%ebx
+	movl	%ebx,%eax
+	pushl	%eax
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$0,%eax
+	popl	%esi
+	imull	$8,%esi
+	addl	%esi,%eax
+	movl	%eax,0(%esp)
+	pushl	12(%ebp)
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$0,%eax
+	popl	%esi
+	imull	$8,%esi
+	addl	%esi,%eax
+	movl	%eax,4(%esp)
+	movl	$8,8(%esp)
+	call	memcpy
+	addl	$12,%esp
+
+	subl	$4,%esp
+	pushl	12(%ebp)
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$0,%eax
+	popl	%esi
+	imull	$8,%esi
+	addl	%esi,%eax
+	movl	%eax,0(%esp)
+	call	Clear_TokensList
+	addl	$4,%esp
+
+	movl	12(%ebp),%ebx
+	addl	$1,%ebx
+	movl	%ebx,%eax
+	movl	%eax,12(%ebp)
+	jmp	asmopt_popCodeBuffer_while_6
+asmopt_popCodeBuffer_endwhile_6	:	
+
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$32,%eax
+	pushl	%eax
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$32,%eax
+	movl	(%eax),%eax
+	movl	%eax,%ebx
+	subl	$1,%ebx
+	movl	%ebx,%eax
+	popl	%ebx
+	movl	%eax,(%ebx)
+asmopt_popCodeBuffer_ret	:	
+	movl	%ebp,%esp
+	popl	%ebp
+	ret	
+
+.globl	asmopt_codeBufferFetch
+.type	asmopt_codeBufferFetch,@function
+asmopt_codeBufferFetch	:	
+	pushl	%ebp
+	movl	%esp,%ebp
+	subl	$521,%esp
+
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$36,%eax
+	movl	(%eax),%eax
+	movl	%eax,%ebx
+	cmpl	$1,%ebx
+	movl	$1,%eax
+	je	asmopt_codeBufferFetch_reltrue_9
+	movl	$0,%eax
+asmopt_codeBufferFetch_reltrue_9	:	
+	testl	%eax,%eax
+	jnz	asmopt_codeBufferFetch_ifbl_8
+	jmp	asmopt_codeBufferFetch_elsebl_8
+asmopt_codeBufferFetch_ifbl_8	:	
+
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$32,%eax
+	movl	(%eax),%eax
+	movl	%eax,%ebx
+	cmpl	$0,%ebx
+	movl	$1,%eax
+	jg	asmopt_codeBufferFetch_reltrue_11
+	movl	$0,%eax
+asmopt_codeBufferFetch_reltrue_11	:	
+	testl	%eax,%eax
+	jnz	asmopt_codeBufferFetch_ifbl_10
+	jmp	asmopt_codeBufferFetch_elsebl_10
+asmopt_codeBufferFetch_ifbl_10	:	
+
+	movl	$1,%eax
+	jmp	asmopt_codeBufferFetch_ret
+asmopt_codeBufferFetch_elsebl_10	:	
+asmopt_codeBufferFetch_endif_10	:	
+
+	movl	$0,%eax
+	jmp	asmopt_codeBufferFetch_ret
+asmopt_codeBufferFetch_elsebl_8	:	
+asmopt_codeBufferFetch_endif_8	:	
+
+asmopt_codeBufferFetch_while_12	:	
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$32,%eax
+	movl	(%eax),%eax
+	movl	%eax,%ebx
+	cmpl	$4,%ebx
+	movl	$1,%eax
+	jl	asmopt_codeBufferFetch_reltrue_14
+	movl	$0,%eax
+asmopt_codeBufferFetch_reltrue_14	:	
+	testl	%eax,%eax
+	jz	asmopt_codeBufferFetch_logtermfalse_13
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$36,%eax
+	movl	(%eax),%eax
+	movl	%eax,%ebx
+	cmpl	$0,%ebx
+	movl	$1,%eax
+	je	asmopt_codeBufferFetch_reltrue_15
+	movl	$0,%eax
+asmopt_codeBufferFetch_reltrue_15	:	
+	testl	%eax,%eax
+	jz	asmopt_codeBufferFetch_logtermfalse_13
+	movl	$1,%eax
+	jmp	asmopt_codeBufferFetch_logtermtrue_13
+asmopt_codeBufferFetch_logtermfalse_13	:	
+	movl	$0,%eax
+asmopt_codeBufferFetch_logtermtrue_13	:	
+	testl	%eax,%eax
+	jz	asmopt_codeBufferFetch_endwhile_12
+
+	subl	$12,%esp
+	movl	%ebp,%eax
+	addl	$-521,%eax
+	movl	%eax,0(%esp)
+	movl	$0,4(%esp)
+	movl	$512,8(%esp)
+	call	memset
+	addl	$12,%esp
+
+	movl	$0,-8(%ebp)
+
+asmopt_codeBufferFetch_while_16	:	
+	movl	-8(%ebp),%ebx
+	cmpl	$512,%ebx
+	movl	$1,%eax
+	jl	asmopt_codeBufferFetch_reltrue_17
+	movl	$0,%eax
+asmopt_codeBufferFetch_reltrue_17	:	
+	testl	%eax,%eax
+	jz	asmopt_codeBufferFetch_endwhile_16
+
+	subl	$12,%esp
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$40,%eax
+	movl	(%eax),%eax
+	movl	%eax,0(%esp)
+	movl	%ebp,%eax
+	addl	$-9,%eax
+	movl	%eax,4(%esp)
+	movl	$1,8(%esp)
+	call	read
+	addl	$12,%esp
+	movl	%eax,-4(%ebp)
+
+	movl	-4(%ebp),%ebx
+	cmpl	$0,%ebx
+	movl	$1,%eax
+	je	asmopt_codeBufferFetch_reltrue_19
+	movl	$0,%eax
+asmopt_codeBufferFetch_reltrue_19	:	
+	testl	%eax,%eax
+	jnz	asmopt_codeBufferFetch_ifbl_18
+	jmp	asmopt_codeBufferFetch_elsebl_18
+asmopt_codeBufferFetch_ifbl_18	:	
+
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$36,%eax
+	movl	%eax,%ebx
+	movl	$1,(%ebx)
+	jmp	asmopt_codeBufferFetch_endwhile_16
+asmopt_codeBufferFetch_elsebl_18	:	
+asmopt_codeBufferFetch_endif_18	:	
+
+	movsbl	-9(%ebp),%eax
+	movl	%eax,%ebx
+	cmpl	$10,%ebx
+	movl	$1,%eax
+	je	asmopt_codeBufferFetch_reltrue_21
+	movl	$0,%eax
+asmopt_codeBufferFetch_reltrue_21	:	
+	testl	%eax,%eax
+	jnz	asmopt_codeBufferFetch_ifbl_20
+	jmp	asmopt_codeBufferFetch_elsebl_20
+asmopt_codeBufferFetch_ifbl_20	:	
+	jmp	asmopt_codeBufferFetch_endwhile_16
+asmopt_codeBufferFetch_elsebl_20	:	
+asmopt_codeBufferFetch_endif_20	:	
+
+	pushl	-8(%ebp)
+	movb	-9(%ebp),%ah
+	popl	%esi
+	movb	%ah,-521(%ebp,%esi,1)
+
+	movl	-8(%ebp),%ebx
+	addl	$1,%ebx
+	movl	%ebx,%eax
+	movl	%eax,-8(%ebp)
+	jmp	asmopt_codeBufferFetch_while_16
+asmopt_codeBufferFetch_endwhile_16	:	
+
+	movl	-8(%ebp),%ebx
+	cmpl	$512,%ebx
+	movl	$1,%eax
+	je	asmopt_codeBufferFetch_reltrue_24
+	movl	$0,%eax
+asmopt_codeBufferFetch_reltrue_24	:	
+	testl	%eax,%eax
+	jz	asmopt_codeBufferFetch_logtermfalse_23
+	pushl	-8(%ebp)
+	movl	%ebp,%eax
+	addl	$-521,%eax
+	popl	%esi
+	addl	%esi,%eax
+	movb	(%eax),%al
+	movsbl	%al,%eax
+	movl	%eax,%ebx
+	cmpl	$10,%ebx
+	movl	$1,%eax
+	jne	asmopt_codeBufferFetch_reltrue_25
+	movl	$0,%eax
+asmopt_codeBufferFetch_reltrue_25	:	
+	testl	%eax,%eax
+	jz	asmopt_codeBufferFetch_logtermfalse_23
+	movl	$1,%eax
+	jmp	asmopt_codeBufferFetch_logtermtrue_23
+asmopt_codeBufferFetch_logtermfalse_23	:	
+	movl	$0,%eax
+asmopt_codeBufferFetch_logtermtrue_23	:	
+	testl	%eax,%eax
+	jnz	asmopt_codeBufferFetch_ifbl_22
+	jmp	asmopt_codeBufferFetch_elsebl_22
+asmopt_codeBufferFetch_ifbl_22	:	
+
+	subl	$4,%esp
+	movl	$symtab+22,0(%esp)
+	call	puts
+	addl	$4,%esp
+
+	movl	$0,%ebx
+	subl	$1,%ebx
+	movl	%ebx,%eax
+	jmp	asmopt_codeBufferFetch_ret
+asmopt_codeBufferFetch_elsebl_22	:	
+asmopt_codeBufferFetch_endif_22	:	
+
+	movl	-8(%ebp),%ebx
+	cmpl	$0,%ebx
+	movl	$1,%eax
+	jg	asmopt_codeBufferFetch_reltrue_27
+	movl	$0,%eax
+asmopt_codeBufferFetch_reltrue_27	:	
+	testl	%eax,%eax
+	jnz	asmopt_codeBufferFetch_ifbl_26
+	jmp	asmopt_codeBufferFetch_elsebl_26
+asmopt_codeBufferFetch_ifbl_26	:	
+
+	subl	$8,%esp
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$32,%eax
+	movl	(%eax),%eax
+	pushl	%eax
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$0,%eax
+	popl	%esi
+	imull	$8,%esi
+	addl	%esi,%eax
+	movl	%eax,0(%esp)
+	movl	%ebp,%eax
+	addl	$-521,%eax
+	movl	%eax,4(%esp)
+	call	tokenizeString
+	addl	$8,%esp
+
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$32,%eax
+	pushl	%eax
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$32,%eax
+	movl	(%eax),%eax
+	movl	%eax,%ebx
+	addl	$1,%ebx
+	movl	%ebx,%eax
+	popl	%ebx
+	movl	%eax,(%ebx)
+	jmp	asmopt_codeBufferFetch_endif_26
+asmopt_codeBufferFetch_elsebl_26	:	
+asmopt_codeBufferFetch_endif_26	:	
+	jmp	asmopt_codeBufferFetch_while_12
+asmopt_codeBufferFetch_endwhile_12	:	
+
+	movl	$1,%eax
+	jmp	asmopt_codeBufferFetch_ret
+asmopt_codeBufferFetch_ret	:	
+	movl	%ebp,%esp
+	popl	%ebp
+	ret	
+
+.globl	isValidStackOptType
+.type	isValidStackOptType,@function
+isValidStackOptType	:	
+	pushl	%ebp
+	movl	%esp,%ebp
+	subl	$0,%esp
+
+	subl	$8,%esp
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$0,%eax
+	movl	%eax,0(%esp)
+	movl	$symtab+51,4(%esp)
+	call	strcmp
+	addl	$8,%esp
+	movl	%eax,%ebx
+	cmpl	$0,%ebx
+	movl	$1,%eax
+	je	isValidStackOptType_reltrue_29
+	movl	$0,%eax
+isValidStackOptType_reltrue_29	:	
+	testl	%eax,%eax
+	jnz	isValidStackOptType_logexprtrue_28
+	subl	$8,%esp
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$0,%eax
+	movl	%eax,0(%esp)
+	movl	$symtab+53,4(%esp)
+	call	strcmp
+	addl	$8,%esp
+	movl	%eax,%ebx
+	cmpl	$0,%ebx
+	movl	$1,%eax
+	je	isValidStackOptType_reltrue_30
+	movl	$0,%eax
+isValidStackOptType_reltrue_30	:	
+	testl	%eax,%eax
+	jnz	isValidStackOptType_logexprtrue_28
+	subl	$8,%esp
+	movl	%ebp,%eax
+	addl	$12,%eax
+	movl	(%eax),%eax
+	addl	$0,%eax
+	movl	%eax,0(%esp)
+	movl	$symtab+51,4(%esp)
+	call	strcmp
+	addl	$8,%esp
+	movl	%eax,%ebx
+	cmpl	$0,%ebx
+	movl	$1,%eax
+	je	isValidStackOptType_reltrue_31
+	movl	$0,%eax
+isValidStackOptType_reltrue_31	:	
+	testl	%eax,%eax
+	jnz	isValidStackOptType_logexprtrue_28
+	subl	$8,%esp
+	movl	%ebp,%eax
+	addl	$12,%eax
+	movl	(%eax),%eax
+	addl	$0,%eax
+	movl	%eax,0(%esp)
+	movl	$symtab+53,4(%esp)
+	call	strcmp
+	addl	$8,%esp
+	movl	%eax,%ebx
+	cmpl	$0,%ebx
+	movl	$1,%eax
+	je	isValidStackOptType_reltrue_32
+	movl	$0,%eax
+isValidStackOptType_reltrue_32	:	
+	testl	%eax,%eax
+	jnz	isValidStackOptType_logexprtrue_28
+	movl	$0,%eax
+	jmp	isValidStackOptType_logexprfalse_28
+isValidStackOptType_logexprtrue_28	:	
+	movl	$1,%eax
+isValidStackOptType_logexprfalse_28	:	
+	jmp	isValidStackOptType_ret
+isValidStackOptType_ret	:	
+	movl	%ebp,%esp
+	popl	%ebp
+	ret	
+
+.globl	appendTokens
+.type	appendTokens,@function
+appendTokens	:	
+	pushl	%ebp
+	movl	%esp,%ebp
+	subl	$0,%esp
+
+appendTokens_while_33	:	
+	movl	8(%ebp),%ebx
+	cmpl	$0,%ebx
+	movl	$1,%eax
+	jne	appendTokens_reltrue_34
+	movl	$0,%eax
+appendTokens_reltrue_34	:	
+	testl	%eax,%eax
+	jz	appendTokens_endwhile_33
+
+	subl	$8,%esp
+	movl	12(%ebp),%eax
+	movl	%eax,0(%esp)
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$0,%eax
+	movl	%eax,4(%esp)
+	call	strcat
+	addl	$8,%esp
+
+	subl	$4,%esp
+	movl	8(%ebp),%eax
+	movl	%eax,0(%esp)
+	call	Get_Next_In_TokensList
+	addl	$4,%esp
+	movl	%eax,8(%ebp)
+	jmp	appendTokens_while_33
+appendTokens_endwhile_33	:	
+appendTokens_ret	:	
+	movl	%ebp,%esp
+	popl	%ebp
+	ret	
+
+.globl	asmopt_analyzePushPopSequences
+.type	asmopt_analyzePushPopSequences,@function
+asmopt_analyzePushPopSequences	:	
+	pushl	%ebp
+	movl	%esp,%ebp
+	subl	$548,%esp
+
+	movl	$0,-4(%ebp)
+
+asmopt_analyzePushPopSequences_while_35	:	
+	pushl	-4(%ebp)
+	movl	$4,%ebx
+	subl	$1,%ebx
+	movl	%ebx,%eax
+	popl	%ebx
+	cmpl	%eax,%ebx
+	movl	$1,%eax
+	jl	asmopt_analyzePushPopSequences_reltrue_36
+	movl	$0,%eax
+asmopt_analyzePushPopSequences_reltrue_36	:	
+	testl	%eax,%eax
+	jz	asmopt_analyzePushPopSequences_endwhile_35
+
+	movl	$0,-16(%ebp)
+
+	subl	$4,%esp
+	pushl	-4(%ebp)
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$0,%eax
+	popl	%esi
+	imull	$8,%esi
+	addl	%esi,%eax
+	movl	%eax,0(%esp)
+	call	Get_Front_Of_TokensList
+	addl	$4,%esp
+	movl	%eax,-536(%ebp)
+
+	subl	$4,%esp
+	pushl	-4(%ebp)
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$0,%eax
+	popl	%esi
+	imull	$8,%esi
+	addl	%esi,%eax
+	movl	%eax,0(%esp)
+	call	getTokensListSize
+	addl	$4,%esp
+	movl	%eax,-8(%ebp)
+
+	movl	-536(%ebp),%ebx
+	cmpl	$0,%ebx
+	movl	$1,%eax
+	jne	asmopt_analyzePushPopSequences_reltrue_39
+	movl	$0,%eax
+asmopt_analyzePushPopSequences_reltrue_39	:	
+	testl	%eax,%eax
+	jz	asmopt_analyzePushPopSequences_logtermfalse_38
+	subl	$8,%esp
+	movl	%ebp,%eax
+	addl	$-536,%eax
+	movl	(%eax),%eax
+	addl	$0,%eax
+	movl	%eax,0(%esp)
+	movl	$symtab+55,4(%esp)
+	call	strcmp
+	addl	$8,%esp
+	movl	%eax,%ebx
+	cmpl	$0,%ebx
+	movl	$1,%eax
+	je	asmopt_analyzePushPopSequences_reltrue_40
+	movl	$0,%eax
+asmopt_analyzePushPopSequences_reltrue_40	:	
+	testl	%eax,%eax
+	jz	asmopt_analyzePushPopSequences_logtermfalse_38
+	movl	-8(%ebp),%ebx
+	cmpl	$3,%ebx
+	movl	$1,%eax
+	jge	asmopt_analyzePushPopSequences_reltrue_41
+	movl	$0,%eax
+asmopt_analyzePushPopSequences_reltrue_41	:	
+	testl	%eax,%eax
+	jz	asmopt_analyzePushPopSequences_logtermfalse_38
+	movl	$1,%eax
+	jmp	asmopt_analyzePushPopSequences_logtermtrue_38
+asmopt_analyzePushPopSequences_logtermfalse_38	:	
+	movl	$0,%eax
+asmopt_analyzePushPopSequences_logtermtrue_38	:	
+	testl	%eax,%eax
+	jnz	asmopt_analyzePushPopSequences_ifbl_37
+	jmp	asmopt_analyzePushPopSequences_elsebl_37
+asmopt_analyzePushPopSequences_ifbl_37	:	
+
+	movl	$1,-16(%ebp)
+	jmp	asmopt_analyzePushPopSequences_endif_37
+asmopt_analyzePushPopSequences_elsebl_37	:	
+asmopt_analyzePushPopSequences_endif_37	:	
+
+	movl	$0,-20(%ebp)
+
+	subl	$4,%esp
+	movl	-4(%ebp),%ebx
+	addl	$1,%ebx
+	movl	%ebx,%eax
+	pushl	%eax
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$0,%eax
+	popl	%esi
+	imull	$8,%esi
+	addl	%esi,%eax
+	movl	%eax,0(%esp)
+	call	Get_Front_Of_TokensList
+	addl	$4,%esp
+	movl	%eax,-540(%ebp)
+
+	subl	$4,%esp
+	movl	-4(%ebp),%ebx
+	addl	$1,%ebx
+	movl	%ebx,%eax
+	pushl	%eax
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$0,%eax
+	popl	%esi
+	imull	$8,%esi
+	addl	%esi,%eax
+	movl	%eax,0(%esp)
+	call	getTokensListSize
+	addl	$4,%esp
+	movl	%eax,-12(%ebp)
+
+	movl	-540(%ebp),%ebx
+	cmpl	$0,%ebx
+	movl	$1,%eax
+	jne	asmopt_analyzePushPopSequences_reltrue_44
+	movl	$0,%eax
+asmopt_analyzePushPopSequences_reltrue_44	:	
+	testl	%eax,%eax
+	jz	asmopt_analyzePushPopSequences_logtermfalse_43
+	subl	$8,%esp
+	movl	%ebp,%eax
+	addl	$-540,%eax
+	movl	(%eax),%eax
+	addl	$0,%eax
+	movl	%eax,0(%esp)
+	movl	$symtab+61,4(%esp)
+	call	strcmp
+	addl	$8,%esp
+	movl	%eax,%ebx
+	cmpl	$0,%ebx
+	movl	$1,%eax
+	je	asmopt_analyzePushPopSequences_reltrue_45
+	movl	$0,%eax
+asmopt_analyzePushPopSequences_reltrue_45	:	
+	testl	%eax,%eax
+	jz	asmopt_analyzePushPopSequences_logtermfalse_43
+	movl	-12(%ebp),%ebx
+	cmpl	$3,%ebx
+	movl	$1,%eax
+	jge	asmopt_analyzePushPopSequences_reltrue_46
+	movl	$0,%eax
+asmopt_analyzePushPopSequences_reltrue_46	:	
+	testl	%eax,%eax
+	jz	asmopt_analyzePushPopSequences_logtermfalse_43
+	movl	$1,%eax
+	jmp	asmopt_analyzePushPopSequences_logtermtrue_43
+asmopt_analyzePushPopSequences_logtermfalse_43	:	
+	movl	$0,%eax
+asmopt_analyzePushPopSequences_logtermtrue_43	:	
+	testl	%eax,%eax
+	jnz	asmopt_analyzePushPopSequences_ifbl_42
+	jmp	asmopt_analyzePushPopSequences_elsebl_42
+asmopt_analyzePushPopSequences_ifbl_42	:	
+
+	movl	$1,-20(%ebp)
+	jmp	asmopt_analyzePushPopSequences_endif_42
+asmopt_analyzePushPopSequences_elsebl_42	:	
+asmopt_analyzePushPopSequences_endif_42	:	
+
+	movl	-16(%ebp),%eax
+	testl	%eax,%eax
+	jz	asmopt_analyzePushPopSequences_logtermfalse_48
+	movl	-20(%ebp),%eax
+	testl	%eax,%eax
+	jz	asmopt_analyzePushPopSequences_logtermfalse_48
+	movl	$1,%eax
+	jmp	asmopt_analyzePushPopSequences_logtermtrue_48
+asmopt_analyzePushPopSequences_logtermfalse_48	:	
+	movl	$0,%eax
+asmopt_analyzePushPopSequences_logtermtrue_48	:	
+	testl	%eax,%eax
+	jnz	asmopt_analyzePushPopSequences_ifbl_47
+	jmp	asmopt_analyzePushPopSequences_elsebl_47
+asmopt_analyzePushPopSequences_ifbl_47	:	
+
+	subl	$4,%esp
+	movl	-536(%ebp),%eax
+	movl	%eax,0(%esp)
+	call	Get_Next_In_TokensList
+	addl	$4,%esp
+	movl	%eax,-544(%ebp)
+
+	subl	$4,%esp
+	movl	-540(%ebp),%eax
+	movl	%eax,0(%esp)
+	call	Get_Next_In_TokensList
+	addl	$4,%esp
+	movl	%eax,-548(%ebp)
+
+	subl	$4,%esp
+	movl	-544(%ebp),%eax
+	movl	%eax,0(%esp)
+	call	Get_Next_In_TokensList
+	addl	$4,%esp
+	movl	%eax,-536(%ebp)
+
+	subl	$4,%esp
+	movl	-548(%ebp),%eax
+	movl	%eax,0(%esp)
+	call	Get_Next_In_TokensList
+	addl	$4,%esp
+	movl	%eax,-540(%ebp)
+
+	subl	$8,%esp
+	movl	-544(%ebp),%eax
+	movl	%eax,0(%esp)
+	movl	-548(%ebp),%eax
+	movl	%eax,4(%esp)
+	call	isValidStackOptType
+	addl	$8,%esp
+	testl	%eax,%eax
+	jnz	asmopt_analyzePushPopSequences_ifbl_49
+	jmp	asmopt_analyzePushPopSequences_elsebl_49
+asmopt_analyzePushPopSequences_ifbl_49	:	
+
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$48,%eax
+	pushl	%eax
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$48,%eax
+	movl	(%eax),%eax
+	movl	%eax,%ebx
+	addl	$1,%ebx
+	movl	%ebx,%eax
+	popl	%ebx
+	movl	%eax,(%ebx)
+
+	subl	$8,%esp
+	movl	%ebp,%eax
+	addl	$-536,%eax
+	movl	(%eax),%eax
+	addl	$0,%eax
+	movl	%eax,0(%esp)
+	movl	%ebp,%eax
+	addl	$-540,%eax
+	movl	(%eax),%eax
+	addl	$0,%eax
+	movl	%eax,4(%esp)
+	call	strcmp
+	addl	$8,%esp
+	movl	%eax,%ebx
+	cmpl	$0,%ebx
+	movl	$1,%eax
+	je	asmopt_analyzePushPopSequences_reltrue_51
+	movl	$0,%eax
+asmopt_analyzePushPopSequences_reltrue_51	:	
+	testl	%eax,%eax
+	jnz	asmopt_analyzePushPopSequences_ifbl_50
+	jmp	asmopt_analyzePushPopSequences_elsebl_50
+asmopt_analyzePushPopSequences_ifbl_50	:	
+
+	subl	$8,%esp
+	movl	8(%ebp),%eax
+	movl	%eax,0(%esp)
+	movl	-4(%ebp),%eax
+	movl	%eax,4(%esp)
+	call	asmopt_popCodeBuffer
+	addl	$8,%esp
+
+	subl	$8,%esp
+	movl	8(%ebp),%eax
+	movl	%eax,0(%esp)
+	movl	-4(%ebp),%eax
+	movl	%eax,4(%esp)
+	call	asmopt_popCodeBuffer
+	addl	$8,%esp
+
+	subl	$4,%esp
+	movl	8(%ebp),%eax
+	movl	%eax,0(%esp)
+	call	asmopt_codeBufferFetch
+	addl	$4,%esp
+	jmp	asmopt_analyzePushPopSequences_while_35
+asmopt_analyzePushPopSequences_elsebl_50	:	
+
+	subl	$12,%esp
+	movl	%ebp,%eax
+	addl	$-532,%eax
+	movl	%eax,0(%esp)
+	movl	$0,4(%esp)
+	movl	$512,8(%esp)
+	call	memset
+	addl	$12,%esp
+
+	subl	$8,%esp
+	movl	%ebp,%eax
+	addl	$-532,%eax
+	movl	%eax,0(%esp)
+	movl	$symtab+66,4(%esp)
+	call	strcpy
+	addl	$8,%esp
+
+	subl	$8,%esp
+	movl	-544(%ebp),%eax
+	movl	%eax,0(%esp)
+	movl	%ebp,%eax
+	addl	$-532,%eax
+	movl	%eax,4(%esp)
+	call	appendTokens
+	addl	$8,%esp
+
+	subl	$8,%esp
+	movl	%ebp,%eax
+	addl	$-532,%eax
+	movl	%eax,0(%esp)
+	movl	$symtab+73,4(%esp)
+	call	strcat
+	addl	$8,%esp
+
+	subl	$8,%esp
+	movl	-548(%ebp),%eax
+	movl	%eax,0(%esp)
+	movl	%ebp,%eax
+	addl	$-532,%eax
+	movl	%eax,4(%esp)
+	call	appendTokens
+	addl	$8,%esp
+
+	subl	$8,%esp
+	movl	8(%ebp),%eax
+	movl	%eax,0(%esp)
+	movl	-4(%ebp),%eax
+	movl	%eax,4(%esp)
+	call	asmopt_popCodeBuffer
+	addl	$8,%esp
+
+	subl	$8,%esp
+	movl	8(%ebp),%eax
+	movl	%eax,0(%esp)
+	movl	-4(%ebp),%eax
+	movl	%eax,4(%esp)
+	call	asmopt_freeCodeBufferSlot
+	addl	$8,%esp
+
+	subl	$8,%esp
+	pushl	-4(%ebp)
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$0,%eax
+	popl	%esi
+	imull	$8,%esi
+	addl	%esi,%eax
+	movl	%eax,0(%esp)
+	movl	%ebp,%eax
+	addl	$-532,%eax
+	movl	%eax,4(%esp)
+	call	tokenizeString
+	addl	$8,%esp
+
+	subl	$4,%esp
+	movl	8(%ebp),%eax
+	movl	%eax,0(%esp)
+	call	asmopt_codeBufferFetch
+	addl	$4,%esp
+asmopt_analyzePushPopSequences_endif_50	:	
+	jmp	asmopt_analyzePushPopSequences_endif_49
+asmopt_analyzePushPopSequences_elsebl_49	:	
+asmopt_analyzePushPopSequences_endif_49	:	
+	jmp	asmopt_analyzePushPopSequences_endif_47
+asmopt_analyzePushPopSequences_elsebl_47	:	
+asmopt_analyzePushPopSequences_endif_47	:	
+
+	movl	-4(%ebp),%ebx
+	addl	$1,%ebx
+	movl	%ebx,%eax
+	movl	%eax,-4(%ebp)
+	jmp	asmopt_analyzePushPopSequences_while_35
+asmopt_analyzePushPopSequences_endwhile_35	:	
+
+	movl	$0,%eax
+	jmp	asmopt_analyzePushPopSequences_ret
+asmopt_analyzePushPopSequences_ret	:	
+	movl	%ebp,%esp
+	popl	%ebp
+	ret	
+
+.globl	asmopt_analyzeJumps
+.type	asmopt_analyzeJumps,@function
+asmopt_analyzeJumps	:	
+	pushl	%ebp
+	movl	%esp,%ebp
+	subl	$24,%esp
+
+	movl	$0,-4(%ebp)
+
+asmopt_analyzeJumps_while_52	:	
+	pushl	-4(%ebp)
+	movl	$4,%ebx
+	subl	$1,%ebx
+	movl	%ebx,%eax
+	popl	%ebx
+	cmpl	%eax,%ebx
+	movl	$1,%eax
+	jl	asmopt_analyzeJumps_reltrue_53
+	movl	$0,%eax
+asmopt_analyzeJumps_reltrue_53	:	
+	testl	%eax,%eax
+	jz	asmopt_analyzeJumps_endwhile_52
+
+	subl	$4,%esp
+	pushl	-4(%ebp)
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$0,%eax
+	popl	%esi
+	imull	$8,%esi
+	addl	%esi,%eax
+	movl	%eax,0(%esp)
+	call	Get_Front_Of_TokensList
+	addl	$4,%esp
+	movl	%eax,-16(%ebp)
+
+	subl	$4,%esp
+	pushl	-4(%ebp)
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$0,%eax
+	popl	%esi
+	imull	$8,%esi
+	addl	%esi,%eax
+	movl	%eax,0(%esp)
+	call	getTokensListSize
+	addl	$4,%esp
+	movl	%eax,-8(%ebp)
+
+	movl	-16(%ebp),%ebx
+	cmpl	$0,%ebx
+	movl	$1,%eax
+	jne	asmopt_analyzeJumps_reltrue_56
+	movl	$0,%eax
+asmopt_analyzeJumps_reltrue_56	:	
+	testl	%eax,%eax
+	jz	asmopt_analyzeJumps_logtermfalse_55
+	subl	$8,%esp
+	movl	%ebp,%eax
+	addl	$-16,%eax
+	movl	(%eax),%eax
+	addl	$0,%eax
+	movl	%eax,0(%esp)
+	movl	$symtab+76,4(%esp)
+	call	strcmp
+	addl	$8,%esp
+	movl	%eax,%ebx
+	cmpl	$0,%ebx
+	movl	$1,%eax
+	je	asmopt_analyzeJumps_reltrue_57
+	movl	$0,%eax
+asmopt_analyzeJumps_reltrue_57	:	
+	testl	%eax,%eax
+	jz	asmopt_analyzeJumps_logtermfalse_55
+	movl	-8(%ebp),%ebx
+	cmpl	$2,%ebx
+	movl	$1,%eax
+	je	asmopt_analyzeJumps_reltrue_58
+	movl	$0,%eax
+asmopt_analyzeJumps_reltrue_58	:	
+	testl	%eax,%eax
+	jz	asmopt_analyzeJumps_logtermfalse_55
+	movl	$1,%eax
+	jmp	asmopt_analyzeJumps_logtermtrue_55
+asmopt_analyzeJumps_logtermfalse_55	:	
+	movl	$0,%eax
+asmopt_analyzeJumps_logtermtrue_55	:	
+	testl	%eax,%eax
+	jnz	asmopt_analyzeJumps_ifbl_54
+	jmp	asmopt_analyzeJumps_elsebl_54
+asmopt_analyzeJumps_ifbl_54	:	
+
+	subl	$4,%esp
+	movl	-16(%ebp),%eax
+	movl	%eax,0(%esp)
+	call	Get_Next_In_TokensList
+	addl	$4,%esp
+	movl	%eax,-24(%ebp)
+
+	subl	$8,%esp
+	movl	%ebp,%eax
+	addl	$-24,%eax
+	movl	(%eax),%eax
+	addl	$0,%eax
+	movl	%eax,0(%esp)
+	movl	$symtab+80,4(%esp)
+	call	strcmp
+	addl	$8,%esp
+	movl	%eax,%ebx
+	cmpl	$0,%ebx
+	movl	$1,%eax
+	jne	asmopt_analyzeJumps_reltrue_60
+	movl	$0,%eax
+asmopt_analyzeJumps_reltrue_60	:	
+	testl	%eax,%eax
+	jnz	asmopt_analyzeJumps_ifbl_59
+	jmp	asmopt_analyzeJumps_elsebl_59
+asmopt_analyzeJumps_ifbl_59	:	
+
+	subl	$4,%esp
+	movl	-4(%ebp),%ebx
+	addl	$1,%ebx
+	movl	%ebx,%eax
+	pushl	%eax
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$0,%eax
+	popl	%esi
+	imull	$8,%esi
+	addl	%esi,%eax
+	movl	%eax,0(%esp)
+	call	Get_Front_Of_TokensList
+	addl	$4,%esp
+	movl	%eax,-20(%ebp)
+
+	subl	$4,%esp
+	movl	-4(%ebp),%ebx
+	addl	$1,%ebx
+	movl	%ebx,%eax
+	pushl	%eax
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$0,%eax
+	popl	%esi
+	imull	$8,%esi
+	addl	%esi,%eax
+	movl	%eax,0(%esp)
+	call	getTokensListSize
+	addl	$4,%esp
+	movl	%eax,-12(%ebp)
+
+	movl	-20(%ebp),%ebx
+	cmpl	$0,%ebx
+	movl	$1,%eax
+	jne	asmopt_analyzeJumps_reltrue_63
+	movl	$0,%eax
+asmopt_analyzeJumps_reltrue_63	:	
+	testl	%eax,%eax
+	jz	asmopt_analyzeJumps_logtermfalse_62
+	subl	$12,%esp
+	movl	%ebp,%eax
+	addl	$-20,%eax
+	movl	(%eax),%eax
+	addl	$0,%eax
+	movl	%eax,0(%esp)
+	movl	$symtab+82,4(%esp)
+	movl	$1,8(%esp)
+	call	strncmp
+	addl	$12,%esp
+	movl	%eax,%ebx
+	cmpl	$0,%ebx
+	movl	$1,%eax
+	je	asmopt_analyzeJumps_reltrue_64
+	movl	$0,%eax
+asmopt_analyzeJumps_reltrue_64	:	
+	testl	%eax,%eax
+	jz	asmopt_analyzeJumps_logtermfalse_62
+	movl	-12(%ebp),%ebx
+	cmpl	$2,%ebx
+	movl	$1,%eax
+	je	asmopt_analyzeJumps_reltrue_65
+	movl	$0,%eax
+asmopt_analyzeJumps_reltrue_65	:	
+	testl	%eax,%eax
+	jz	asmopt_analyzeJumps_logtermfalse_62
+	movl	$1,%eax
+	jmp	asmopt_analyzeJumps_logtermtrue_62
+asmopt_analyzeJumps_logtermfalse_62	:	
+	movl	$0,%eax
+asmopt_analyzeJumps_logtermtrue_62	:	
+	testl	%eax,%eax
+	jnz	asmopt_analyzeJumps_ifbl_61
+	jmp	asmopt_analyzeJumps_elsebl_61
+asmopt_analyzeJumps_ifbl_61	:	
+
+	subl	$4,%esp
+	movl	-20(%ebp),%eax
+	movl	%eax,0(%esp)
+	call	Get_Next_In_TokensList
+	addl	$4,%esp
+	movl	%eax,-24(%ebp)
+
+	subl	$8,%esp
+	movl	%ebp,%eax
+	addl	$-24,%eax
+	movl	(%eax),%eax
+	addl	$0,%eax
+	movl	%eax,0(%esp)
+	movl	$symtab+80,4(%esp)
+	call	strcmp
+	addl	$8,%esp
+	movl	%eax,%ebx
+	cmpl	$0,%ebx
+	movl	$1,%eax
+	jne	asmopt_analyzeJumps_reltrue_67
+	movl	$0,%eax
+asmopt_analyzeJumps_reltrue_67	:	
+	testl	%eax,%eax
+	jnz	asmopt_analyzeJumps_ifbl_66
+	jmp	asmopt_analyzeJumps_elsebl_66
+asmopt_analyzeJumps_ifbl_66	:	
+
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$52,%eax
+	pushl	%eax
+	movl	%ebp,%eax
+	addl	$8,%eax
+	movl	(%eax),%eax
+	addl	$52,%eax
+	movl	(%eax),%eax
+	movl	%eax,%ebx
+	addl	$1,%ebx
+	movl	%ebx,%eax
+	popl	%ebx
+	movl	%eax,(%ebx)
+
+	subl	$8,%esp
+	movl	8(%ebp),%eax
+	movl	%eax,0(%esp)
+	movl	-4(%ebp),%ebx
+	addl	$1,%ebx
+	movl	%ebx,%eax
+	movl	%eax,4(%esp)
+	call	asmopt_popCodeBuffer
+	addl	$8,%esp
+
+	subl	$4,%esp
+	movl	8(%ebp),%eax
+	movl	%eax,0(%esp)
+	call	asmopt_codeBufferFetch
+	addl	$4,%esp
+	jmp	asmopt_analyzeJumps_endif_66
+asmopt_analyzeJumps_elsebl_66	:	
+asmopt_analyzeJumps_endif_66	:	
+	jmp	asmopt_analyzeJumps_endif_61
+asmopt_analyzeJumps_elsebl_61	:	
+asmopt_analyzeJumps_endif_61	:	
+	jmp	asmopt_analyzeJumps_endif_59
+asmopt_analyzeJumps_elsebl_59	:	
+asmopt_analyzeJumps_endif_59	:	
+	jmp	asmopt_analyzeJumps_endif_54
+asmopt_analyzeJumps_elsebl_54	:	
+asmopt_analyzeJumps_endif_54	:	
+
+	movl	-4(%ebp),%ebx
+	addl	$1,%ebx
+	movl	%ebx,%eax
+	movl	%eax,-4(%ebp)
+	jmp	asmopt_analyzeJumps_while_52
+asmopt_analyzeJumps_endwhile_52	:	
+
+	movl	$0,%eax
+	jmp	asmopt_analyzeJumps_ret
+asmopt_analyzeJumps_ret	:	
+	movl	%ebp,%esp
+	popl	%ebp
+	ret	
+
+.globl	asmopt_execute
+.type	asmopt_execute,@function
+asmopt_execute	:	
+	pushl	%ebp
+	movl	%esp,%ebp
+	subl	$80,%esp
+
+	subl	$4,%esp
+	movl	%ebp,%eax
+	addl	$-56,%eax
+	movl	%eax,0(%esp)
+	call	asmopt_initInstance
+	addl	$4,%esp
+	movl	%eax,-68(%ebp)
+
+	movl	-68(%ebp),%ebx
+	cmpl	$0,%ebx
+	movl	$1,%eax
+	jne	asmopt_execute_reltrue_69
+	movl	$0,%eax
+asmopt_execute_reltrue_69	:	
+	testl	%eax,%eax
+	jnz	asmopt_execute_ifbl_68
+	jmp	asmopt_execute_elsebl_68
+asmopt_execute_ifbl_68	:	
+
+	subl	$4,%esp
+	movl	%ebp,%eax
+	addl	$-56,%eax
+	movl	%eax,0(%esp)
+	call	asmopt_freeInstance
+	addl	$4,%esp
+
+	movl	-68(%ebp),%eax
+	jmp	asmopt_execute_ret
+asmopt_execute_elsebl_68	:	
+asmopt_execute_endif_68	:	
+
+	movl	%ebp,%eax
+	addl	$-56,%eax
+	addl	$40,%eax
+	pushl	%eax
+	movl	8(%ebp),%eax
+	popl	%ebx
+	movl	%eax,(%ebx)
+
+	movl	%ebp,%eax
+	addl	$-56,%eax
+	addl	$44,%eax
+	pushl	%eax
+	movl	12(%ebp),%eax
+	popl	%ebx
+	movl	%eax,(%ebx)
+
+asmopt_execute_while_70	:	
+	subl	$4,%esp
+	movl	%ebp,%eax
+	addl	$-56,%eax
+	movl	%eax,0(%esp)
+	call	asmopt_codeBufferFetch
+	addl	$4,%esp
+	testl	%eax,%eax
+	jz	asmopt_execute_endwhile_70
+
+	subl	$4,%esp
+	movl	%ebp,%eax
+	addl	$-56,%eax
+	movl	%eax,0(%esp)
+	call	asmopt_analyzePushPopSequences
+	addl	$4,%esp
+	movl	%eax,-68(%ebp)
+
+	movl	-68(%ebp),%ebx
+	cmpl	$0,%ebx
+	movl	$1,%eax
+	jne	asmopt_execute_reltrue_72
+	movl	$0,%eax
+asmopt_execute_reltrue_72	:	
+	testl	%eax,%eax
+	jnz	asmopt_execute_ifbl_71
+	jmp	asmopt_execute_elsebl_71
+asmopt_execute_ifbl_71	:	
+
+	subl	$4,%esp
+	movl	%ebp,%eax
+	addl	$-56,%eax
+	movl	%eax,0(%esp)
+	call	asmopt_freeInstance
+	addl	$4,%esp
+
+	movl	-68(%ebp),%eax
+	jmp	asmopt_execute_ret
+asmopt_execute_elsebl_71	:	
+asmopt_execute_endif_71	:	
+
+	subl	$4,%esp
+	movl	%ebp,%eax
+	addl	$-56,%eax
+	movl	%eax,0(%esp)
+	call	asmopt_analyzeJumps
+	addl	$4,%esp
+	movl	%eax,-68(%ebp)
+
+	movl	-68(%ebp),%ebx
+	cmpl	$0,%ebx
+	movl	$1,%eax
+	jne	asmopt_execute_reltrue_74
+	movl	$0,%eax
+asmopt_execute_reltrue_74	:	
+	testl	%eax,%eax
+	jnz	asmopt_execute_ifbl_73
+	jmp	asmopt_execute_elsebl_73
+asmopt_execute_ifbl_73	:	
+
+	subl	$4,%esp
+	movl	%ebp,%eax
+	addl	$-56,%eax
+	movl	%eax,0(%esp)
+	call	asmopt_freeInstance
+	addl	$4,%esp
+
+	movl	-68(%ebp),%eax
+	jmp	asmopt_execute_ret
+asmopt_execute_elsebl_73	:	
+asmopt_execute_endif_73	:	
+
+	subl	$4,%esp
+	pushl	$0
+	movl	%ebp,%eax
+	addl	$-56,%eax
+	addl	$0,%eax
+	popl	%esi
+	imull	$8,%esi
+	addl	%esi,%eax
+	movl	%eax,0(%esp)
+	call	Get_Front_Of_TokensList
+	addl	$4,%esp
+	movl	%eax,-60(%ebp)
+
+	movl	$1,-72(%ebp)
+
+asmopt_execute_while_75	:	
+	movl	-60(%ebp),%ebx
+	cmpl	$0,%ebx
+	movl	$1,%eax
+	jne	asmopt_execute_reltrue_76
+	movl	$0,%eax
+asmopt_execute_reltrue_76	:	
+	testl	%eax,%eax
+	jz	asmopt_execute_endwhile_75
+
+	subl	$4,%esp
+	movl	-60(%ebp),%eax
+	movl	%eax,0(%esp)
+	call	Get_Next_In_TokensList
+	addl	$4,%esp
+	movl	%eax,-64(%ebp)
+
+	movl	$0,-76(%ebp)
+
+	movl	-64(%ebp),%ebx
+	cmpl	$0,%ebx
+	movl	$1,%eax
+	jne	asmopt_execute_reltrue_79
+	movl	$0,%eax
+asmopt_execute_reltrue_79	:	
+	testl	%eax,%eax
+	jz	asmopt_execute_logtermfalse_78
+	subl	$8,%esp
+	movl	%ebp,%eax
+	addl	$-64,%eax
+	movl	(%eax),%eax
+	addl	$0,%eax
+	movl	%eax,0(%esp)
+	movl	$symtab+80,4(%esp)
+	call	strcmp
+	addl	$8,%esp
+	movl	%eax,%ebx
+	cmpl	$0,%ebx
+	movl	$1,%eax
+	je	asmopt_execute_reltrue_80
+	movl	$0,%eax
+asmopt_execute_reltrue_80	:	
+	testl	%eax,%eax
+	jz	asmopt_execute_logtermfalse_78
+	movl	$1,%eax
+	jmp	asmopt_execute_logtermtrue_78
+asmopt_execute_logtermfalse_78	:	
+	movl	$0,%eax
+asmopt_execute_logtermtrue_78	:	
+	testl	%eax,%eax
+	jnz	asmopt_execute_ifbl_77
+	jmp	asmopt_execute_elsebl_77
+asmopt_execute_ifbl_77	:	
+
+	movl	$1,-76(%ebp)
+	jmp	asmopt_execute_endif_77
+asmopt_execute_elsebl_77	:	
+asmopt_execute_endif_77	:	
+
+	movl	$0,-80(%ebp)
+
+	subl	$12,%esp
+	movl	%ebp,%eax
+	addl	$-60,%eax
+	movl	(%eax),%eax
+	addl	$0,%eax
+	movl	%eax,0(%esp)
+	movl	$symtab+84,4(%esp)
+	movl	$1,8(%esp)
+	call	strncmp
+	addl	$12,%esp
+	movl	%eax,%ebx
+	cmpl	$0,%ebx
+	movl	$1,%eax
+	je	asmopt_execute_reltrue_83
+	movl	$0,%eax
+asmopt_execute_reltrue_83	:	
+	testl	%eax,%eax
+	jz	asmopt_execute_logtermfalse_82
+	subl	$4,%esp
+	movl	%ebp,%eax
+	addl	$-60,%eax
+	movl	(%eax),%eax
+	addl	$0,%eax
+	movl	%eax,0(%esp)
+	call	strlen
+	addl	$4,%esp
+	movl	%eax,%ebx
+	cmpl	$5,%ebx
+	movl	$1,%eax
+	jge	asmopt_execute_reltrue_84
+	movl	$0,%eax
+asmopt_execute_reltrue_84	:	
+	testl	%eax,%eax
+	jz	asmopt_execute_logtermfalse_82
+	movl	$1,%eax
+	jmp	asmopt_execute_logtermtrue_82
+asmopt_execute_logtermfalse_82	:	
+	movl	$0,%eax
+asmopt_execute_logtermtrue_82	:	
+	testl	%eax,%eax
+	jnz	asmopt_execute_ifbl_81
+	jmp	asmopt_execute_elsebl_81
+asmopt_execute_ifbl_81	:	
+
+	movl	$1,-80(%ebp)
+	jmp	asmopt_execute_endif_81
+asmopt_execute_elsebl_81	:	
+asmopt_execute_endif_81	:	
+
+	movl	-72(%ebp),%eax
+	testl	%eax,%eax
+	jz	asmopt_execute_logtermfalse_86
+	movl	-76(%ebp),%eax
+	testl	%eax,%eax
+	movl	$1,%eax
+	jz	asmopt_execute_logfactfalse_87
+	movl	$0,%eax
+asmopt_execute_logfactfalse_87	:	
+	testl	%eax,%eax
+	jz	asmopt_execute_logtermfalse_86
+	movl	-80(%ebp),%eax
+	testl	%eax,%eax
+	movl	$1,%eax
+	jz	asmopt_execute_logfactfalse_88
+	movl	$0,%eax
+asmopt_execute_logfactfalse_88	:	
+	testl	%eax,%eax
+	jz	asmopt_execute_logtermfalse_86
+	movl	$1,%eax
+	jmp	asmopt_execute_logtermtrue_86
+asmopt_execute_logtermfalse_86	:	
+	movl	$0,%eax
+asmopt_execute_logtermtrue_86	:	
+	testl	%eax,%eax
+	jnz	asmopt_execute_ifbl_85
+	jmp	asmopt_execute_elsebl_85
+asmopt_execute_ifbl_85	:	
+
+	subl	$12,%esp
+	movl	%ebp,%eax
+	addl	$-56,%eax
+	addl	$44,%eax
+	movl	(%eax),%eax
+	movl	%eax,0(%esp)
+	movl	$symtab+86,4(%esp)
+	movl	$1,8(%esp)
+	call	write
+	addl	$12,%esp
+	jmp	asmopt_execute_endif_85
+asmopt_execute_elsebl_85	:	
+asmopt_execute_endif_85	:	
+
+	subl	$12,%esp
+	movl	%ebp,%eax
+	addl	$-56,%eax
+	addl	$44,%eax
+	movl	(%eax),%eax
+	movl	%eax,0(%esp)
+	movl	%ebp,%eax
+	addl	$-60,%eax
+	movl	(%eax),%eax
+	addl	$0,%eax
+	movl	%eax,4(%esp)
+	subl	$4,%esp
+	movl	%ebp,%eax
+	addl	$-60,%eax
+	movl	(%eax),%eax
+	addl	$0,%eax
+	movl	%eax,0(%esp)
+	call	strlen
+	addl	$4,%esp
+	movl	%eax,8(%esp)
+	call	write
+	addl	$12,%esp
+
+	movl	-72(%ebp),%eax
+	testl	%eax,%eax
+	jz	asmopt_execute_logtermfalse_90
+	movl	-76(%ebp),%eax
+	testl	%eax,%eax
+	movl	$1,%eax
+	jz	asmopt_execute_logfactfalse_91
+	movl	$0,%eax
+asmopt_execute_logfactfalse_91	:	
+	testl	%eax,%eax
+	jz	asmopt_execute_logtermfalse_90
+	movl	$1,%eax
+	jmp	asmopt_execute_logtermtrue_90
+asmopt_execute_logtermfalse_90	:	
+	movl	$0,%eax
+asmopt_execute_logtermtrue_90	:	
+	testl	%eax,%eax
+	jnz	asmopt_execute_ifbl_89
+	jmp	asmopt_execute_elsebl_89
+asmopt_execute_ifbl_89	:	
+
+	subl	$12,%esp
+	movl	%ebp,%eax
+	addl	$-56,%eax
+	addl	$44,%eax
+	movl	(%eax),%eax
+	movl	%eax,0(%esp)
+	movl	$symtab+86,4(%esp)
+	movl	$1,8(%esp)
+	call	write
+	addl	$12,%esp
+
+	movl	$0,-72(%ebp)
+	jmp	asmopt_execute_endif_89
+asmopt_execute_elsebl_89	:	
+asmopt_execute_endif_89	:	
+
+	movl	-64(%ebp),%eax
+	movl	%eax,-60(%ebp)
+	jmp	asmopt_execute_while_75
+asmopt_execute_endwhile_75	:	
+
+	subl	$12,%esp
+	movl	%ebp,%eax
+	addl	$-56,%eax
+	addl	$44,%eax
+	movl	(%eax),%eax
+	movl	%eax,0(%esp)
+	movl	$symtab+88,4(%esp)
+	movl	$1,8(%esp)
+	call	write
+	addl	$12,%esp
+
+	subl	$8,%esp
+	movl	%ebp,%eax
+	addl	$-56,%eax
+	movl	%eax,0(%esp)
+	movl	$0,4(%esp)
+	call	asmopt_popCodeBuffer
+	addl	$8,%esp
+	jmp	asmopt_execute_while_70
+asmopt_execute_endwhile_70	:	
+
+	subl	$4,%esp
+	movl	%ebp,%eax
+	addl	$-56,%eax
+	movl	%eax,0(%esp)
+	call	asmopt_freeInstance
+	addl	$4,%esp
+
+	subl	$8,%esp
+	movl	$symtab+90,0(%esp)
+	movl	%ebp,%eax
+	addl	$-56,%eax
+	addl	$48,%eax
+	movl	(%eax),%eax
+	movl	%eax,4(%esp)
+	call	printf
+	addl	$8,%esp
+
+	subl	$8,%esp
+	movl	$symtab+129,0(%esp)
+	movl	%ebp,%eax
+	addl	$-56,%eax
+	addl	$52,%eax
+	movl	(%eax),%eax
+	movl	%eax,4(%esp)
+	call	printf
+	addl	$8,%esp
+
+	movl	$0,%eax
+	jmp	asmopt_execute_ret
+asmopt_execute_ret	:	
+	movl	%ebp,%esp
+	popl	%ebp
+	ret	
+
+.section	.data
+symtab	:	
+.string	"---"
+.string	"================="
+.string	"AsmOpt: Source line too long"
+.string	"%"
+.string	"$"
+.string	"pushl"
+.string	"popl"
+.string	"\tmovl\t"
+.string	", "
+.string	"jmp"
+.string	":"
+.string	"j"
+.string	"."
+.string	"\t"
+.string	"\n"
+.string	"ASM Optimizer: Push/Pop Sequences: %d\n"
+.string	"               JMP Sequences:      %d\n"

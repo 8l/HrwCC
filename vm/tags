@@ -1,0 +1,153 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.5.4	//
+ALLOCATENODE_H	AllocateNode.h	2;"	d
+AllocateNode	AllocateNode.cpp	/^AllocateNode::AllocateNode()$/;"	f	class:AllocateNode
+AllocateNode	AllocateNode.h	/^class AllocateNode$/;"	c
+CPU	CPU.cpp	/^CPU::CPU(Memory *_memory)$/;"	f	class:CPU
+CPU	CPU.h	/^class CPU$/;"	c
+CPU_H	CPU.h	2;"	d
+EXEC_PARSER_H	ExecParser.h	2;"	d
+Eflag_register	Register.h	/^struct Eflag_register$/;"	s
+ExecParser	ExecParser.cpp	/^ExecParser::ExecParser(ifstream &_input, Memory *_memory) : input(_input), memory(_memory)$/;"	f	class:ExecParser
+ExecParser	ExecParser.h	/^class ExecParser$/;"	c
+GENERIC_EXCEPTION_H	GenericException.h	2;"	d
+GenericException	GenericException.h	/^		GenericException(string what) : _what(what) {};$/;"	f	class:GenericException
+GenericException	GenericException.h	/^		GenericException(string what, int line_no) : _what(what + " [on line " + Utils::intToString(line_no) + "]") {};$/;"	f	class:GenericException
+GenericException	GenericException.h	/^class GenericException : public exception$/;"	c
+INSTRUCTIONS_DECODER_H	InstructionsFetcher.h	2;"	d
+INSTRUCTION_H	Instruction.h	2;"	d
+Instruction	Instruction.cpp	/^Instruction::Instruction()$/;"	f	class:Instruction
+Instruction	Instruction.h	/^	class Instruction$/;"	c
+Instructions	InstructionsFetcher.h	/^typedef vector<Instruction*> Instructions;$/;"	t
+InstructionsFetcher	InstructionsFetcher.cpp	/^InstructionsFetcher::InstructionsFetcher()$/;"	f	class:InstructionsFetcher
+InstructionsFetcher	InstructionsFetcher.h	/^class InstructionsFetcher$/;"	c
+MEMORY_H	Memory.h	2;"	d
+Memory	Memory.cpp	/^Memory::Memory()$/;"	f	class:Memory
+Memory	Memory.h	/^class Memory$/;"	c
+REGISETR_H	Register.h	2;"	d
+Register	Register.h	/^} Register;$/;"	t
+Tokens	Instruction.h	/^	class Tokens : public vector<string>$/;"	c
+UTILS_H	Utils.h	3;"	d
+Utils	Utils.h	/^	class Utils$/;"	c
+VM	VM.cpp	/^VM::VM(ifstream &_input)$/;"	f	class:VM
+VM	VM.h	/^class VM$/;"	c
+VM_BYTE_SIZE	VMConfig.h	11;"	d
+VM_CONFIG_H	VMConfig.h	2;"	d
+VM_EOF	VMConfig.h	4;"	d
+VM_H	VM.h	2;"	d
+VM_MALLOC_SIZE	VMConfig.h	12;"	d
+VM_MAX_STRING_LENGTH	VMConfig.h	14;"	d
+VM_STACK_BASE_ADDR	VMConfig.h	10;"	d
+VM_VIRTUAL_MEM_BLOCK_SIZE	VMConfig.h	8;"	d
+VM_VIRTUAL_MEM_SIZE	VMConfig.h	7;"	d
+VM_VIRTUAL_MEM_STACK_SIZE	VMConfig.h	9;"	d
+_what	GenericException.h	/^		string _what;$/;"	m	class:GenericException
+ac	Register.h	/^	int ac   : 1;$/;"	m	struct:Eflag_register
+addInstructionTokens	InstructionsFetcher.cpp	/^void InstructionsFetcher::addInstructionTokens(Tokens tokens) throw(GenericException)$/;"	f	class:InstructionsFetcher
+adjustStack	CPU.cpp	/^void CPU::adjustStack()$/;"	f	class:CPU
+af	Register.h	/^	int af   : 1;$/;"	m	struct:Eflag_register
+allocate	Memory.cpp	/^int Memory::allocate(int size)$/;"	f	class:Memory
+allocateBlocks	Memory.cpp	/^void Memory::allocateBlocks()$/;"	f	class:Memory
+allocate_nodes	Memory.h	/^		vector<AllocateNode> allocate_nodes;$/;"	m	class:Memory
+args_pushed	Memory.h	/^		bool args_pushed;$/;"	m	class:Memory
+assertBlock	Memory.cpp	/^void Memory::assertBlock(int addr, int block)$/;"	f	class:Memory
+assertBoundaries	Memory.cpp	/^void Memory::assertBoundaries(int addr, int block)$/;"	f	class:Memory
+byte	Memory.h	/^typedef char byte;$/;"	t
+cf	Register.h	/^	int cf   : 1;$/;"	m	struct:Eflag_register
+cpu	VM.h	/^		CPU *cpu;$/;"	m	class:VM
+decodeInstruction	CPU.cpp	/^int CPU::decodeInstruction( Instruction *instruction )$/;"	f	class:CPU
+df	Register.h	/^	int df   : 1;$/;"	m	struct:Eflag_register
+eflag	CPU.h	/^		Eflag_register eflag;$/;"	m	class:CPU
+executeNextInstruction	CPU.cpp	/^int CPU::executeNextInstruction()$/;"	f	class:CPU
+executeNextInstruction	VM.cpp	/^int VM::executeNextInstruction()$/;"	f	class:VM
+free	Memory.cpp	/^void Memory::free(int mem)$/;"	f	class:Memory
+getBlock	Memory.cpp	/^int Memory::getBlock(int addr)$/;"	f	class:Memory
+getDataSize	ExecParser.cpp	/^int ExecParser::getDataSize(Tokens &tokens)$/;"	f	class:ExecParser
+getDestinationb	CPU.cpp	/^int CPU::getDestinationb(Tokens tokens)$/;"	f	class:CPU
+getDestinationl	CPU.cpp	/^int CPU::getDestinationl(Tokens tokens)$/;"	f	class:CPU
+getInstance	InstructionsFetcher.cpp	/^InstructionsFetcher *InstructionsFetcher::getInstance()$/;"	f	class:InstructionsFetcher
+getInstruction	InstructionsFetcher.cpp	/^Instruction *InstructionsFetcher::getInstruction(int idx)$/;"	f	class:InstructionsFetcher
+getInstructionsSize	InstructionsFetcher.cpp	/^int InstructionsFetcher::getInstructionsSize()$/;"	f	class:InstructionsFetcher
+getOffset	AllocateNode.cpp	/^int AllocateNode::getOffset()$/;"	f	class:AllocateNode
+getOp1	Instruction.cpp	/^Tokens Instruction::getOp1()$/;"	f	class:Instruction
+getOp2	Instruction.cpp	/^Tokens Instruction::getOp2()$/;"	f	class:Instruction
+getOpcode	Instruction.cpp	/^string Instruction::getOpcode()$/;"	f	class:Instruction
+getSize	AllocateNode.cpp	/^int AllocateNode::getSize()$/;"	f	class:AllocateNode
+getSlot	Memory.cpp	/^int Memory::getSlot(int addr)$/;"	f	class:Memory
+getString	CPU.cpp	/^char *CPU::getString (int addr)$/;"	f	class:CPU
+getValueb	CPU.cpp	/^char CPU::getValueb(Tokens tokens)$/;"	f	class:CPU
+getValuel	CPU.cpp	/^int CPU::getValuel(Tokens tokens)$/;"	f	class:CPU
+getb	Memory.cpp	/^char Memory::getb(int addr)$/;"	f	class:Memory
+getl	Memory.cpp	/^int Memory::getl(int addr)$/;"	f	class:Memory
+id	Register.h	/^	int id   : 1;$/;"	m	struct:Eflag_register
+input	ExecParser.h	/^		ifstream &input;$/;"	m	class:ExecParser
+insertAllocateNode	Memory.cpp	/^int Memory::insertAllocateNode(AllocateNode new_node)$/;"	f	class:Memory
+instance	InstructionsFetcher.cpp	/^InstructionsFetcher* InstructionsFetcher::instance = 0;$/;"	m	class:InstructionsFetcher	file:
+instance	InstructionsFetcher.h	/^		static InstructionsFetcher* instance;$/;"	m	class:InstructionsFetcher
+instructions	InstructionsFetcher.h	/^		Instructions instructions;$/;"	m	class:InstructionsFetcher
+intToString	Utils.cpp	/^string Utils::intToString(int x)$/;"	f	class:Utils
+iopl	Register.h	/^	int iopl : 1;$/;"	m	struct:Eflag_register
+isEof	VM.cpp	/^bool VM::isEof(int _state)$/;"	f	class:VM
+line_no	Instruction.h	/^			int line_no;$/;"	m	class:Tokens
+main	hrwvm.cpp	/^int main(int argc, char **argv)$/;"	f
+memory	CPU.h	/^		Memory *memory;$/;"	m	class:CPU
+memory	ExecParser.h	/^		Memory *memory;$/;"	m	class:ExecParser
+memory	Memory.h	/^		byte *memory[VM_VIRTUAL_MEM_SIZE];$/;"	m	class:Memory
+memory	VM.h	/^		Memory *memory;$/;"	m	class:VM
+nt	Register.h	/^	int nt   : 1;$/;"	m	struct:Eflag_register
+of	Register.h	/^	int of   : 1;$/;"	m	struct:Eflag_register
+offset	AllocateNode.h	/^		int offset;$/;"	m	class:AllocateNode
+op1	Instruction.h	/^			Tokens op1;$/;"	m	class:Instruction
+op2	Instruction.h	/^			Tokens op2;$/;"	m	class:Instruction
+opcode	Instruction.h	/^			string opcode;$/;"	m	class:Instruction
+parse	ExecParser.cpp	/^void ExecParser::parse() throw(GenericException)$/;"	f	class:ExecParser
+parseTokens	ExecParser.cpp	/^void ExecParser::parseTokens(string line, Tokens &tokens)$/;"	f	class:ExecParser
+pc	CPU.h	/^		int pc;$/;"	m	class:CPU
+pf	Register.h	/^	int pf   : 1;$/;"	m	struct:Eflag_register
+print	InstructionsFetcher.cpp	/^void InstructionsFetcher::print()$/;"	f	class:InstructionsFetcher
+print	Memory.cpp	/^void Memory::print(int start, int end)$/;"	f	class:Memory
+printUsage	hrwvm.cpp	/^void printUsage(char *program_name)$/;"	f
+registers	CPU.h	/^		Register registers[10];$/;"	m	class:CPU
+replaceEscapeChrs	ExecParser.cpp	/^void ExecParser::replaceEscapeChrs(string &str)$/;"	f	class:ExecParser
+resolveRegister	CPU.cpp	/^int CPU::resolveRegister (string reg)$/;"	f	class:CPU
+rf	Register.h	/^	int rf   : 1;$/;"	m	struct:Eflag_register
+setDebug	VM.cpp	/^void VM::setDebug(bool _state)$/;"	f	class:VM
+setOffset	AllocateNode.cpp	/^void AllocateNode::setOffset(int offset)$/;"	f	class:AllocateNode
+setOp1	Instruction.cpp	/^void Instruction::setOp1(Tokens op)$/;"	f	class:Instruction
+setOp2	Instruction.cpp	/^void Instruction::setOp2(Tokens op)$/;"	f	class:Instruction
+setOpcode	Instruction.cpp	/^void Instruction::setOpcode(string opcode)$/;"	f	class:Instruction
+setProgramArguments	Memory.cpp	/^void Memory::setProgramArguments(int argc, char **argv)$/;"	f	class:Memory
+setProgramArguments	VM.cpp	/^void VM::setProgramArguments(int argc, char **argv)$/;"	f	class:VM
+setSize	AllocateNode.cpp	/^void AllocateNode::setSize(int size)$/;"	f	class:AllocateNode
+setValueb	CPU.cpp	/^void CPU::setValueb(Tokens tokens, char value)$/;"	f	class:CPU
+setValuel	CPU.cpp	/^void CPU::setValuel(Tokens tokens, int value)$/;"	f	class:CPU
+setb	Memory.cpp	/^void Memory::setb(int addr, char val)$/;"	f	class:Memory
+setl	Memory.cpp	/^void Memory::setl(int addr, int val)$/;"	f	class:Memory
+sf	Register.h	/^	int sf   : 2;$/;"	m	struct:Eflag_register
+showRegisters	CPU.cpp	/^void CPU::showRegisters ()$/;"	f	class:CPU
+showStack	CPU.cpp	/^void CPU::showStack ()$/;"	f	class:CPU
+size	AllocateNode.h	/^		int size;$/;"	m	class:AllocateNode
+stackSize	CPU.h	/^		int stackSize;$/;"	m	class:CPU
+stringToInt	Utils.cpp	/^int Utils::stringToInt(string str)$/;"	f	class:Utils
+tf	Register.h	/^	int tf   : 1;$/;"	m	struct:Eflag_register
+value	Register.h	/^	int value;$/;"	m
+value_hl	Register.h	/^	char value_hl[2];$/;"	m
+value_x	Register.h	/^	short value_x;$/;"	m
+vif	Register.h	/^	int vif  : 1;$/;"	m	struct:Eflag_register
+vip	Register.h	/^	int vip  : 1;$/;"	m	struct:Eflag_register
+vm	Register.h	/^	int vm   : 1;$/;"	m	struct:Eflag_register
+what	GenericException.h	/^		virtual const char* what() const throw() { return _what.c_str(); }$/;"	f	class:GenericException
+wrapFunction	CPU.cpp	/^void CPU::wrapFunction (string function_name)$/;"	f	class:CPU
+zf	Register.h	/^	int zf   : 2;$/;"	m	struct:Eflag_register
+~AllocateNode	AllocateNode.cpp	/^AllocateNode::~AllocateNode()$/;"	f	class:AllocateNode
+~CPU	CPU.cpp	/^CPU::~CPU()$/;"	f	class:CPU
+~ExecParser	ExecParser.cpp	/^ExecParser::~ExecParser()$/;"	f	class:ExecParser
+~GenericException	GenericException.h	/^		~GenericException() throw () {};$/;"	f	class:GenericException
+~Instruction	Instruction.cpp	/^Instruction::~Instruction()$/;"	f	class:Instruction
+~InstructionsFetcher	InstructionsFetcher.cpp	/^InstructionsFetcher::~InstructionsFetcher()$/;"	f	class:InstructionsFetcher
+~Memory	Memory.cpp	/^Memory::~Memory()$/;"	f	class:Memory
+~VM	VM.cpp	/^VM::~VM()$/;"	f	class:VM

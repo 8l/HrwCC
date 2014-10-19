@@ -1,0 +1,111 @@
+test-codegen.o: test-codegen.cpp ../include/hrwcccomp.h codegen.h \
+  ../symbolTable/symbolTable.h ../symbolTable/../util/list.h \
+  ../symbolTable/../scanner/token.h \
+  ../symbolTable/../parser/syntaxTreeNode.h \
+  ../symbolTable/../parser/../util/list.h \
+  ../symbolTable/../parser/../scanner/token.h \
+  ../symbolTable/../parser/parser.h \
+  ../symbolTable/../parser/syntaxTreeNode.h \
+  ../symbolTable/../parser/../scanner/scanner.h \
+  ../symbolTable/../parser/../scanner/token.h \
+  ../symbolTable/../parser/../scanner/../preproc/preproc.h \
+  ../symbolTable/../parser/../scanner/../preproc/../include/common.h \
+  ../symbolTable/../parser/../scanner/../preproc/../util/list.h \
+  ../symbolTable/../parser/../symbolTable/symbolTable.h \
+  ../parser/parser.h ../preproc/preproc.h ../parser/syntaxTreeNode.h \
+  ../scanner/token.h ../scanner/scanner.h
+codegen.o: codegen.cpp codegen.h ../symbolTable/symbolTable.h \
+  ../symbolTable/../util/list.h ../symbolTable/../scanner/token.h \
+  ../symbolTable/../parser/syntaxTreeNode.h \
+  ../symbolTable/../parser/../util/list.h \
+  ../symbolTable/../parser/../scanner/token.h \
+  ../symbolTable/../parser/parser.h \
+  ../symbolTable/../parser/syntaxTreeNode.h \
+  ../symbolTable/../parser/../scanner/scanner.h \
+  ../symbolTable/../parser/../scanner/token.h \
+  ../symbolTable/../parser/../scanner/../preproc/preproc.h \
+  ../symbolTable/../parser/../scanner/../preproc/../include/common.h \
+  ../symbolTable/../parser/../scanner/../preproc/../util/list.h \
+  ../symbolTable/../parser/../symbolTable/symbolTable.h \
+  ../parser/parser.h ../preproc/preproc.h ../include/hrwcccomp.h \
+  typearith.h ../parser/syntaxTreeNode.h
+typearith.o: typearith.cpp typearith.h codegen.h \
+  ../symbolTable/symbolTable.h ../symbolTable/../util/list.h \
+  ../symbolTable/../scanner/token.h \
+  ../symbolTable/../parser/syntaxTreeNode.h \
+  ../symbolTable/../parser/../util/list.h \
+  ../symbolTable/../parser/../scanner/token.h \
+  ../symbolTable/../parser/parser.h \
+  ../symbolTable/../parser/syntaxTreeNode.h \
+  ../symbolTable/../parser/../scanner/scanner.h \
+  ../symbolTable/../parser/../scanner/token.h \
+  ../symbolTable/../parser/../scanner/../preproc/preproc.h \
+  ../symbolTable/../parser/../scanner/../preproc/../include/common.h \
+  ../symbolTable/../parser/../scanner/../preproc/../util/list.h \
+  ../symbolTable/../parser/../symbolTable/symbolTable.h \
+  ../parser/parser.h ../preproc/preproc.h ../parser/syntaxTreeNode.h \
+  ../include/hrwcccomp.h
+symbolTable.o: ../symbolTable/symbolTable.cpp \
+  ../symbolTable/symbolTable.h ../symbolTable/../util/list.h \
+  ../symbolTable/../scanner/token.h \
+  ../symbolTable/../parser/syntaxTreeNode.h \
+  ../symbolTable/../parser/../util/list.h \
+  ../symbolTable/../parser/../scanner/token.h \
+  ../symbolTable/../parser/parser.h \
+  ../symbolTable/../parser/syntaxTreeNode.h \
+  ../symbolTable/../parser/../scanner/scanner.h \
+  ../symbolTable/../parser/../scanner/token.h \
+  ../symbolTable/../parser/../scanner/../preproc/preproc.h \
+  ../symbolTable/../parser/../scanner/../preproc/../include/common.h \
+  ../symbolTable/../parser/../scanner/../preproc/../util/list.h \
+  ../symbolTable/../parser/../symbolTable/symbolTable.h \
+  ../symbolTable/../include/hrwcccomp.h
+parser.o: ../parser/parser.cpp ../parser/parser.h \
+  ../parser/syntaxTreeNode.h ../parser/../util/list.h \
+  ../parser/../scanner/token.h ../parser/../scanner/scanner.h \
+  ../parser/../scanner/token.h ../parser/../scanner/../preproc/preproc.h \
+  ../parser/../scanner/../preproc/../include/common.h \
+  ../parser/../scanner/../preproc/../util/list.h \
+  ../parser/../symbolTable/symbolTable.h \
+  ../parser/../symbolTable/../util/list.h \
+  ../parser/../symbolTable/../scanner/token.h \
+  ../parser/../symbolTable/../parser/syntaxTreeNode.h \
+  ../parser/../symbolTable/../parser/parser.h \
+  ../parser/../include/hrwcccomp.h ../parser/../codegen/codegen.h \
+  ../parser/../codegen/../symbolTable/symbolTable.h \
+  ../parser/../codegen/../parser/parser.h \
+  ../parser/../codegen/../preproc/preproc.h
+syntaxTreeNode.o: ../parser/syntaxTreeNode.cpp ../parser/syntaxTreeNode.h \
+  ../parser/../util/list.h ../parser/../scanner/token.h \
+  ../parser/../include/hrwcccomp.h
+scanner.o: ../scanner/scanner.cpp ../scanner/../include/hrwcccomp.h \
+  ../scanner/scanner.h ../scanner/token.h ../scanner/../preproc/preproc.h \
+  ../scanner/../preproc/../include/common.h \
+  ../scanner/../preproc/../util/list.h ../scanner/../include/error.h
+preproc.o: ../preproc/preproc.cpp ../preproc/../include/hrwcccomp.h \
+  ../preproc/../include/error.h ../preproc/preproc.h \
+  ../preproc/../include/common.h ../preproc/../util/list.h \
+  ../preproc/stageutils.h ../preproc/filestack.h \
+  ../preproc/directiveutils.h
+stageutils.o: ../preproc/stageutils.cpp ../preproc/../include/hrwcccomp.h \
+  ../preproc/preproc.h ../preproc/../include/common.h \
+  ../preproc/../util/list.h ../preproc/stageutils.h \
+  ../preproc/../include/error.h ../preproc/filestack.h
+substage.o: ../preproc/substage.cpp ../preproc/../include/hrwcccomp.h \
+  ../preproc/../include/error.h ../preproc/preproc.h \
+  ../preproc/../include/common.h ../preproc/../util/list.h \
+  ../preproc/stageutils.h ../preproc/filestack.h \
+  ../preproc/directiveutils.h
+directivestage.o: ../preproc/directivestage.cpp \
+  ../preproc/../include/hrwcccomp.h ../preproc/../include/error.h \
+  ../preproc/preproc.h ../preproc/../include/common.h \
+  ../preproc/../util/list.h ../preproc/stageutils.h \
+  ../preproc/filestack.h ../preproc/directiveutils.h
+commstage.o: ../preproc/commstage.cpp ../preproc/../include/hrwcccomp.h \
+  ../preproc/../include/error.h ../preproc/preproc.h \
+  ../preproc/../include/common.h ../preproc/../util/list.h \
+  ../preproc/stageutils.h ../preproc/filestack.h
+filestack.o: ../preproc/filestack.cpp ../preproc/../include/hrwcccomp.h \
+  ../preproc/../include/error.h ../preproc/preproc.h \
+  ../preproc/../include/common.h ../preproc/../util/list.h \
+  ../preproc/filestack.h ../preproc/stageutils.h

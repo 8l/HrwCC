@@ -1,0 +1,81 @@
+[Breakpoint 0]
+Enabled=true
+File=../parser/parser.cpp
+Line=658
+Temporary=false
+
+[Breakpoint 1]
+Enabled=true
+File=../preproc/preproc.cpp
+Line=43
+Temporary=false
+
+[Breakpoint 2]
+Enabled=true
+File=../preproc/substage.cpp
+Line=200
+Temporary=false
+
+[Breakpoint 3]
+Enabled=true
+File=../preproc/directivestage.cpp
+Line=602
+Temporary=false
+
+[Breakpoint 4]
+Enabled=true
+File=../preproc/commstage.cpp
+Line=26
+Temporary=false
+
+[Breakpoint 5]
+Enabled=true
+File=../preproc/commstage.cpp
+Line=72
+Temporary=false
+
+[Breakpoint 6]
+Enabled=true
+File=../preproc/commstage.cpp
+Line=84
+Temporary=false
+
+[Breakpoint 7]
+Enabled=true
+File=../preproc/commstage.cpp
+Line=82
+Temporary=false
+
+[Breakpoint 8]
+Enabled=true
+File=../preproc/filestack.cpp
+Line=363
+Temporary=false
+
+[Breakpoint 9]
+Enabled=true
+File=../preproc/filestack.cpp
+Line=373
+Temporary=false
+
+[General]
+DebuggerCmdStr=
+DriverName=GDB
+FileVersion=1
+OptionsSelected=
+ProgramArgs=
+TTYLevel=7
+WorkingDirectory=
+
+[Memory]
+ColumnWidths=80,0
+NumExprs=0
+
+[Watches]
+Expr0=idx
+Expr1=line->buffer[idx]
+Expr2=line
+Expr3=line->buffer[line->pos]
+Expr4=line->buffer[line->pos].line
+Expr5=curr_stack_item
+Expr6=instance

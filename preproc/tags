@@ -1,0 +1,136 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.5.4	//
+BRANCH_ELSE	directivestage.cpp	496;"	d	file:
+BRANCH_ENDIF	directivestage.cpp	497;"	d	file:
+BRANCH_IFDEF	directivestage.cpp	494;"	d	file:
+BRANCH_IFNDEF	directivestage.cpp	495;"	d	file:
+COMMSTAGE	stageutils.h	12;"	d
+Character	preproc.h	/^	struct Character$/;"	s
+CharacterCat	stageutils.cpp	/^int CharacterCat(Character *dest, Character *src)$/;"	f
+CharacterCmp	stageutils.cpp	/^int CharacterCmp(Character *s1, Character *s2)$/;"	f
+CharacterCpy	stageutils.cpp	/^int CharacterCpy(Character *dest, Character *src)$/;"	f
+CharacterLen	stageutils.cpp	/^int CharacterLen(Character *s)$/;"	f
+CharacterLine	preproc.h	/^	struct CharacterLine$/;"	s
+CharacterStrCmp	stageutils.cpp	/^int CharacterStrCmp(Character *buffer, int start, int length, char *cmp)$/;"	f
+CharacterSubCmp	stageutils.cpp	/^int CharacterSubCmp(Character *s1, int start, int length, Character *s2)$/;"	f
+DIRECTIVESTAGE	stageutils.h	13;"	d
+DIRECTIVEUTILS_H	directiveutils.h	2;"	d
+DefineElementNode	preproc.h	/^	struct DefineElementNode$/;"	s
+FILESTACKSTAGE	stageutils.h	11;"	d
+FILESTACK_H	filestack.h	2;"	d
+FINALSTAGE	stageutils.h	15;"	d
+FileStackItem	preproc.h	/^	struct FileStackItem$/;"	s
+FilenameNode	preproc.h	/^	struct FilenameNode$/;"	s
+PREPROC_BRANCH_STACK_SIZE	preproc.h	13;"	d
+PREPROC_EOF	preproc.h	8;"	d
+PREPROC_ERROR	stageutils.h	18;"	d
+PREPROC_H	preproc.h	2;"	d
+PREPROC_MAX_INCLUDEFILE_LENGTH	preproc.h	10;"	d
+PREPROC_MAX_INCLUDE_FILES	preproc.h	9;"	d
+PREPROC_MAX_LINE_LENGTH	preproc.h	14;"	d
+PREPROC_MAX_MACRO_NAME_LENGTH	preproc.h	11;"	d
+PREPROC_MAX_PARAM_NAME_LENGTH	preproc.h	12;"	d
+PREPROC_WARNING	stageutils.h	17;"	d
+ParameterElement	preproc.h	/^	struct ParameterElement$/;"	s
+STAGEUTILS_H	stageutils.h	2;"	d
+SUBSTAGE	stageutils.h	14;"	d
+VALUE_BUFFER_SIZE	directivestage.cpp	291;"	d	file:
+addNewFilenameNode	filestack.cpp	/^int addNewFilenameNode(preproc *instance, char *filename)$/;"	f
+branchStack	preproc.h	/^		int branchStack[PREPROC_BRANCH_STACK_SIZE]; \/\/our "stack" for branches$/;"	m	struct:preproc
+branchStackIdx	preproc.h	/^		int branchStackIdx;             \/\/ current idx for the stack$/;"	m	struct:preproc
+buffer	preproc.h	/^		Character buffer[PREPROC_MAX_LINE_LENGTH]; $/;"	m	struct:CharacterLine
+cmpDirectiveLine	directivestage.cpp	/^int cmpDirectiveLine(CharacterLine *line, char *directive)$/;"	f
+column	preproc.h	/^		int column;      \/\/column of the file we are currently handling$/;"	m	struct:FileStackItem
+column	preproc.h	/^		int column; \/\/column where the character is located$/;"	m	struct:Character
+commstage	preproc.h	/^		CharacterLine commstage;        \/\/ buffer for the commstage$/;"	m	struct:preproc
+commstage_destroy	commstage.cpp	/^int commstage_destroy(preproc *instance)$/;"	f
+commstage_getNext	commstage.cpp	/^int commstage_getNext(preproc *instance, Character *next)$/;"	f
+commstage_init	commstage.cpp	/^int commstage_init(preproc *instance)$/;"	f
+currentFileIdx	preproc.h	/^		int currentFileIdx;             \/\/ stackpos where the next char can be read from$/;"	m	struct:preproc
+definesList	preproc.h	/^		DefinesList definesList;        \/\/ list of all defines$/;"	m	struct:preproc
+directivestage	preproc.h	/^		CharacterLine directivestage;   \/\/ buffer for the directivestage$/;"	m	struct:preproc
+directivestage_addDefine	directivestage.cpp	/^int directivestage_addDefine(preproc *instance, char *name)$/;"	f
+directivestage_destroy	directivestage.cpp	/^int directivestage_destroy(preproc *instance)$/;"	f
+directivestage_getNext	directivestage.cpp	/^int directivestage_getNext(preproc *instance, Character *next)$/;"	f
+directivestage_init	directivestage.cpp	/^int directivestage_init(preproc *instance)$/;"	f
+disposeMultilineSatement	stageutils.cpp	/^int disposeMultilineSatement(preproc *instance, int curr_stage, CharacterLine *line)$/;"	f
+disposeRestOfLine	stageutils.cpp	/^void disposeRestOfLine(CharacterLine *line)$/;"	f
+disposeUntilBranchEnds	directivestage.cpp	/^int disposeUntilBranchEnds(preproc *instance, CharacterLine *line)$/;"	f
+disposeWhitespace	stageutils.cpp	/^void disposeWhitespace(CharacterLine *line)$/;"	f
+fh	preproc.h	/^		int fh;          \/\/filehandle$/;"	m	struct:FileStackItem
+fileId	preproc.h	/^		int fileId;      \/\/id of the file that corresponds to the filename list$/;"	m	struct:FileStackItem
+fileId	preproc.h	/^		int fileId; \/\/fileId where this character originates$/;"	m	struct:Character
+filenames	preproc.h	/^		FilenamesList filenames;        \/\/ list with all filenames we are iterating through$/;"	m	struct:preproc
+filestack	preproc.h	/^		FileStackItem filestack[PREPROC_MAX_INCLUDE_FILES];  \/\/stack which stores all opened files (through include)$/;"	m	struct:preproc
+fstack_destroy	filestack.cpp	/^int fstack_destroy(preproc *instance)$/;"	f
+fstack_getFilename	filestack.cpp	/^char *fstack_getFilename(preproc *instance, int id)$/;"	f
+fstack_getNext	filestack.cpp	/^int fstack_getNext(preproc *instance, Character *next)$/;"	f
+fstack_init	filestack.cpp	/^int fstack_init(preproc *instance)$/;"	f
+fstack_pushFile	filestack.cpp	/^int fstack_pushFile(preproc *instance, char *filename, int is_system_include)$/;"	f
+getAbsoluteIncludePath	filestack.cpp	/^int getAbsoluteIncludePath(preproc *instance, char *filename, char *path)$/;"	f
+getDefineProcessed	directivestage.cpp	/^int getDefineProcessed(preproc *instance, CharacterLine *line)$/;"	f
+getIncludeProcessed	directivestage.cpp	/^int getIncludeProcessed(preproc *instance, CharacterLine *line)$/;"	f
+getMacroValue	directivestage.cpp	/^int getMacroValue(preproc *instance, DefineElementNode *node, CharacterLine *line)$/;"	f
+getNextIdentifier	stageutils.cpp	/^int getNextIdentifier(Character *buffer, int buffer_length, CharacterLine *line)$/;"	f
+getNextLine	stageutils.cpp	/^int getNextLine(preproc *instance, int curr_stage, CharacterLine *line)$/;"	f
+getNextParamValue	stageutils.cpp	/^int getNextParamValue(Character *buffer, int buffer_length, CharacterLine *line) $/;"	f
+getSystemIncludePaths	filestack.cpp	/^void getSystemIncludePaths(char *result)$/;"	f
+id	preproc.h	/^		int id;$/;"	m	struct:FilenameNode
+initLine	stageutils.cpp	/^void initLine(CharacterLine *line)$/;"	f
+isBufferPosMacroBegin	substage.cpp	/^int isBufferPosMacroBegin(Character *buffer, int buffer_length, int pos, int *offset)$/;"	f
+isBufferPosMacroEnd	substage.cpp	/^int isBufferPosMacroEnd(Character *buffer, int buffer_length, int pos, int *offset)$/;"	f
+isDefineDirective	directivestage.cpp	/^int isDefineDirective(CharacterLine *line)$/;"	f
+isDirectiveLine	directivestage.cpp	/^int isDirectiveLine(CharacterLine *line)$/;"	f
+isElseDirective	directivestage.cpp	/^int isElseDirective(CharacterLine *line)$/;"	f
+isEndifDirective	directivestage.cpp	/^int isEndifDirective(CharacterLine *line)$/;"	f
+isFileAlreadyOnStack	filestack.cpp	/^int isFileAlreadyOnStack(preproc *instance, char *filename)$/;"	f
+isIfdefDirective	directivestage.cpp	/^int isIfdefDirective(CharacterLine *line)$/;"	f
+isIfndefDirective	directivestage.cpp	/^int isIfndefDirective(CharacterLine *line)$/;"	f
+isIncludeDirective	directivestage.cpp	/^int isIncludeDirective(CharacterLine *line)$/;"	f
+isMacroDefined	stageutils.cpp	/^int isMacroDefined(preproc *instance, Character *name)$/;"	f
+isPreprocError	stageutils.cpp	/^int isPreprocError(int code)$/;"	f
+isPreprocWarning	stageutils.cpp	/^int isPreprocWarning(int code)$/;"	f
+length	preproc.h	/^		int length;      \/\/how many characters in that line?$/;"	m	struct:CharacterLine
+line	preproc.h	/^		int line;        \/\/line of the file we are currently handling$/;"	m	struct:FileStackItem
+line	preproc.h	/^		int line;   \/\/line where the character is located$/;"	m	struct:Character
+main	test-preproc.cpp	/^int main()$/;"	f
+name	preproc.h	/^		Character name[PREPROC_MAX_MACRO_NAME_LENGTH];$/;"	m	struct:DefineElementNode
+name	preproc.h	/^		Character name[PREPROC_MAX_PARAM_NAME_LENGTH];        \/\/original pattern we will find in the replacement$/;"	m	struct:ParameterElement
+name	preproc.h	/^		char name[MAX_FILENAME_LENGTH];$/;"	m	struct:FilenameNode
+paramReplacement	preproc.h	/^		Character *paramReplacement;    \/\/ parameter we are handling (if any)$/;"	m	struct:preproc
+paramReplacementPos	preproc.h	/^		int paramReplacementPos;        \/\/ position in the replacement parameter we are at$/;"	m	struct:preproc
+parameters	preproc.h	/^		ParametersList parameters;$/;"	m	struct:DefineElementNode
+parseParametersList	stageutils.cpp	/^int parseParametersList(preproc *instance, ParametersList *parameters, CharacterLine *line, int idents_only)$/;"	f
+popBranchStack	directivestage.cpp	/^void popBranchStack(preproc *instance, int state, CharacterLine *line)$/;"	f
+pos	preproc.h	/^		int pos;         \/\/position in the line we are dealing with$/;"	m	struct:CharacterLine
+posEscaped	preproc.h	/^		int posEscaped;  \/\/current position escaped$/;"	m	struct:CharacterLine
+posInString	preproc.h	/^		int posInString; \/\/current position in a string$/;"	m	struct:CharacterLine
+preproc	preproc.h	/^	struct preproc$/;"	s
+preproc_addDefine	preproc.cpp	/^int preproc_addDefine(preproc *instance, char *name)$/;"	f
+preproc_create	preproc.cpp	/^int preproc_create(preproc *instance, char *filename)$/;"	f
+preproc_destroy	preproc.cpp	/^void preproc_destroy(preproc *instance)$/;"	f
+preproc_getFilename	preproc.cpp	/^char *preproc_getFilename(preproc *instance, int id)$/;"	f
+preproc_getNext	preproc.cpp	/^int preproc_getNext(preproc *instance, Character *next)$/;"	f
+preproc_reportError	stageutils.cpp	/^void preproc_reportError(preproc *instance, char *errstr, CharacterLine *line, int type)$/;"	f
+preproc_reportError_s	stageutils.cpp	/^void preproc_reportError_s(preproc *instance, char *errstr_format, char *arg1, int type)$/;"	f
+prev	preproc.h	/^		Character prev;  \/\/previous character$/;"	m	struct:FileStackItem
+prevstage_getNext	stageutils.cpp	/^int prevstage_getNext(preproc *instance, int curr_stage, Character *next)$/;"	f
+printCharacters	stageutils.cpp	/^void printCharacters(Character *s)$/;"	f
+pushBranchStack	directivestage.cpp	/^void pushBranchStack(preproc *instance, int state, CharacterLine *line)$/;"	f
+replacement	preproc.h	/^		Character replacement[PREPROC_MAX_PARAM_NAME_LENGTH]; \/\/replacement name for the pattern (used in the macro call)$/;"	m	struct:ParameterElement
+replacement	preproc.h	/^		DefineElementNode *replacement; \/\/ current replacement that is handled (if any)$/;"	m	struct:preproc
+replacementPos	preproc.h	/^		int replacementPos;             \/\/ position in the replacement we are at$/;"	m	struct:preproc
+setReplacementCharacter	substage.cpp	/^void setReplacementCharacter(preproc *instance, Character *next)$/;"	f
+skip	preproc.h	/^		int skip;        \/\/used by stages to indicate that it should not be handled internally$/;"	m	struct:CharacterLine
+substage	preproc.h	/^		CharacterLine substage;         \/\/ buffer for the substitution stage$/;"	m	struct:preproc
+substage_destroy	substage.cpp	/^int substage_destroy(preproc *instance)$/;"	f
+substage_getNext	substage.cpp	/^int substage_getNext(preproc *instance, Character *next)$/;"	f
+substage_init	substage.cpp	/^int substage_init(preproc *instance)$/;"	f
+updateLineProperties	stageutils.cpp	/^void updateLineProperties(CharacterLine *line)$/;"	f
+value	preproc.h	/^		Character *value;$/;"	m	struct:DefineElementNode
+value	preproc.h	/^		char value; \/\/'real' value of this Character$/;"	m	struct:Character
+valueLength	preproc.h	/^		int valueLength;$/;"	m	struct:DefineElementNode

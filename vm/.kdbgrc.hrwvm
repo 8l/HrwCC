@@ -1,0 +1,22 @@
+[Breakpoint 0]
+Enabled=true
+File=CPU.cpp
+Line=571
+Temporary=false
+
+[General]
+DebuggerCmdStr=
+DriverName=GDB
+FileVersion=1
+OptionsSelected=
+ProgramArgs=../hrwcc/hrwcc.exe -g -O -o outfile hrwcc.s ../codegen/codegen.s ../codegen/typearith.s ../symbolTable/symbolTable.s ../parser/parser.s ../parser/syntaxTreeNode.s ../scanner/scanner.s ../preproc/preproc.s ../preproc/stageutils.s ../preproc/substage.s ../preproc/directivestage.s ../preproc/commstage.s ../preproc/filestack.s ../linker/linker.s ../linker/asmopt.s ../linker/utils.s\n
+TTYLevel=7
+WorkingDirectory=
+
+[Memory]
+ColumnWidths=80,0
+NumExprs=0
+
+[Watches]
+Expr0=fmt[idx]
+Expr1=idx

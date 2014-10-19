@@ -1,0 +1,18 @@
+stageutils.o: stageutils.cpp ../include/hrwcccomp.h preproc.h \
+  ../include/common.h ../util/list.h stageutils.h ../include/error.h \
+  filestack.h
+substage.o: substage.cpp ../include/hrwcccomp.h ../include/error.h \
+  preproc.h ../include/common.h ../util/list.h stageutils.h filestack.h \
+  directiveutils.h
+directivestage.o: directivestage.cpp ../include/hrwcccomp.h \
+  ../include/error.h preproc.h ../include/common.h ../util/list.h \
+  stageutils.h filestack.h directiveutils.h
+commstage.o: commstage.cpp ../include/hrwcccomp.h ../include/error.h \
+  preproc.h ../include/common.h ../util/list.h stageutils.h filestack.h
+filestack.o: filestack.cpp ../include/hrwcccomp.h ../include/error.h \
+  preproc.h ../include/common.h ../util/list.h filestack.h stageutils.h
+preproc.o: preproc.cpp ../include/hrwcccomp.h ../include/error.h \
+  preproc.h ../include/common.h ../util/list.h stageutils.h filestack.h \
+  directiveutils.h
+test-preproc.o: test-preproc.cpp ../include/hrwcccomp.h \
+  ../include/error.h preproc.h ../include/common.h ../util/list.h

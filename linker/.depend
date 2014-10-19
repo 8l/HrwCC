@@ -1,0 +1,117 @@
+codegen.o: ../codegen/codegen.cpp ../codegen/codegen.h \
+  ../codegen/../symbolTable/symbolTable.h \
+  ../codegen/../symbolTable/../util/list.h \
+  ../codegen/../symbolTable/../scanner/token.h \
+  ../codegen/../symbolTable/../parser/syntaxTreeNode.h \
+  ../codegen/../symbolTable/../parser/../util/list.h \
+  ../codegen/../symbolTable/../parser/../scanner/token.h \
+  ../codegen/../symbolTable/../parser/parser.h \
+  ../codegen/../symbolTable/../parser/syntaxTreeNode.h \
+  ../codegen/../symbolTable/../parser/../scanner/scanner.h \
+  ../codegen/../symbolTable/../parser/../scanner/token.h \
+  ../codegen/../symbolTable/../parser/../scanner/../preproc/preproc.h \
+  ../codegen/../symbolTable/../parser/../scanner/../preproc/../include/common.h \
+  ../codegen/../symbolTable/../parser/../scanner/../preproc/../util/list.h \
+  ../codegen/../symbolTable/../parser/../symbolTable/symbolTable.h \
+  ../codegen/../parser/parser.h ../codegen/../preproc/preproc.h \
+  ../codegen/../include/hrwcccomp.h ../codegen/typearith.h \
+  ../codegen/../parser/syntaxTreeNode.h
+typearith.o: ../codegen/typearith.cpp ../codegen/typearith.h \
+  ../codegen/codegen.h ../codegen/../symbolTable/symbolTable.h \
+  ../codegen/../symbolTable/../util/list.h \
+  ../codegen/../symbolTable/../scanner/token.h \
+  ../codegen/../symbolTable/../parser/syntaxTreeNode.h \
+  ../codegen/../symbolTable/../parser/../util/list.h \
+  ../codegen/../symbolTable/../parser/../scanner/token.h \
+  ../codegen/../symbolTable/../parser/parser.h \
+  ../codegen/../symbolTable/../parser/syntaxTreeNode.h \
+  ../codegen/../symbolTable/../parser/../scanner/scanner.h \
+  ../codegen/../symbolTable/../parser/../scanner/token.h \
+  ../codegen/../symbolTable/../parser/../scanner/../preproc/preproc.h \
+  ../codegen/../symbolTable/../parser/../scanner/../preproc/../include/common.h \
+  ../codegen/../symbolTable/../parser/../scanner/../preproc/../util/list.h \
+  ../codegen/../symbolTable/../parser/../symbolTable/symbolTable.h \
+  ../codegen/../parser/parser.h ../codegen/../preproc/preproc.h \
+  ../codegen/../parser/syntaxTreeNode.h ../codegen/../include/hrwcccomp.h
+symbolTable.o: ../symbolTable/symbolTable.cpp \
+  ../symbolTable/symbolTable.h ../symbolTable/../util/list.h \
+  ../symbolTable/../scanner/token.h \
+  ../symbolTable/../parser/syntaxTreeNode.h \
+  ../symbolTable/../parser/../util/list.h \
+  ../symbolTable/../parser/../scanner/token.h \
+  ../symbolTable/../parser/parser.h \
+  ../symbolTable/../parser/syntaxTreeNode.h \
+  ../symbolTable/../parser/../scanner/scanner.h \
+  ../symbolTable/../parser/../scanner/token.h \
+  ../symbolTable/../parser/../scanner/../preproc/preproc.h \
+  ../symbolTable/../parser/../scanner/../preproc/../include/common.h \
+  ../symbolTable/../parser/../scanner/../preproc/../util/list.h \
+  ../symbolTable/../parser/../symbolTable/symbolTable.h \
+  ../symbolTable/../include/hrwcccomp.h
+parser.o: ../parser/parser.cpp ../parser/parser.h \
+  ../parser/syntaxTreeNode.h ../parser/../util/list.h \
+  ../parser/../scanner/token.h ../parser/../scanner/scanner.h \
+  ../parser/../scanner/token.h ../parser/../scanner/../preproc/preproc.h \
+  ../parser/../scanner/../preproc/../include/common.h \
+  ../parser/../scanner/../preproc/../util/list.h \
+  ../parser/../symbolTable/symbolTable.h \
+  ../parser/../symbolTable/../util/list.h \
+  ../parser/../symbolTable/../scanner/token.h \
+  ../parser/../symbolTable/../parser/syntaxTreeNode.h \
+  ../parser/../symbolTable/../parser/parser.h \
+  ../parser/../include/hrwcccomp.h ../parser/../codegen/codegen.h \
+  ../parser/../codegen/../symbolTable/symbolTable.h \
+  ../parser/../codegen/../parser/parser.h \
+  ../parser/../codegen/../preproc/preproc.h
+syntaxTreeNode.o: ../parser/syntaxTreeNode.cpp ../parser/syntaxTreeNode.h \
+  ../parser/../util/list.h ../parser/../scanner/token.h \
+  ../parser/../include/hrwcccomp.h
+scanner.o: ../scanner/scanner.cpp ../scanner/../include/hrwcccomp.h \
+  ../scanner/scanner.h ../scanner/token.h ../scanner/../preproc/preproc.h \
+  ../scanner/../preproc/../include/common.h \
+  ../scanner/../preproc/../util/list.h ../scanner/../include/error.h
+preproc.o: ../preproc/preproc.cpp ../preproc/../include/hrwcccomp.h \
+  ../preproc/../include/error.h ../preproc/preproc.h \
+  ../preproc/../include/common.h ../preproc/../util/list.h \
+  ../preproc/stageutils.h ../preproc/filestack.h \
+  ../preproc/directiveutils.h
+stageutils.o: ../preproc/stageutils.cpp ../preproc/../include/hrwcccomp.h \
+  ../preproc/preproc.h ../preproc/../include/common.h \
+  ../preproc/../util/list.h ../preproc/stageutils.h \
+  ../preproc/../include/error.h ../preproc/filestack.h
+substage.o: ../preproc/substage.cpp ../preproc/../include/hrwcccomp.h \
+  ../preproc/../include/error.h ../preproc/preproc.h \
+  ../preproc/../include/common.h ../preproc/../util/list.h \
+  ../preproc/stageutils.h ../preproc/filestack.h \
+  ../preproc/directiveutils.h
+directivestage.o: ../preproc/directivestage.cpp \
+  ../preproc/../include/hrwcccomp.h ../preproc/../include/error.h \
+  ../preproc/preproc.h ../preproc/../include/common.h \
+  ../preproc/../util/list.h ../preproc/stageutils.h \
+  ../preproc/filestack.h ../preproc/directiveutils.h
+commstage.o: ../preproc/commstage.cpp ../preproc/../include/hrwcccomp.h \
+  ../preproc/../include/error.h ../preproc/preproc.h \
+  ../preproc/../include/common.h ../preproc/../util/list.h \
+  ../preproc/stageutils.h ../preproc/filestack.h
+filestack.o: ../preproc/filestack.cpp ../preproc/../include/hrwcccomp.h \
+  ../preproc/../include/error.h ../preproc/preproc.h \
+  ../preproc/../include/common.h ../preproc/../util/list.h \
+  ../preproc/filestack.h ../preproc/stageutils.h
+utils.o: utils.cpp ../include/hrwcccomp.h ../include/error.h utils.h \
+  linker.h ../include/common.h ../util/list.h
+linker.o: linker.cpp ../include/hrwcccomp.h ../include/error.h \
+  ../preproc/preproc.h ../preproc/../include/common.h \
+  ../preproc/../util/list.h ../scanner/scanner.h ../scanner/token.h \
+  ../scanner/../preproc/preproc.h ../parser/parser.h \
+  ../parser/syntaxTreeNode.h ../parser/../util/list.h \
+  ../parser/../scanner/token.h ../parser/../scanner/scanner.h \
+  ../parser/../symbolTable/symbolTable.h \
+  ../parser/../symbolTable/../util/list.h \
+  ../parser/../symbolTable/../scanner/token.h \
+  ../parser/../symbolTable/../parser/syntaxTreeNode.h \
+  ../parser/../symbolTable/../parser/parser.h linker.h \
+  ../include/common.h ../util/list.h utils.h
+asmopt.o: asmopt.cpp ../include/hrwcccomp.h asmopt.h utils.h linker.h \
+  ../include/common.h ../util/list.h
+test-linker.o: test-linker.cpp ../include/hrwcccomp.h linker.h \
+  ../include/common.h ../util/list.h asmopt.h

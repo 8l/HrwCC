@@ -1,0 +1,41 @@
+[Breakpoint 0]
+Enabled=true
+File=../parser/parser.cpp
+Line=870
+Temporary=false
+
+[Breakpoint 1]
+Enabled=true
+File=../parser/parser.cpp
+Line=895
+Temporary=false
+
+[Breakpoint 2]
+Enabled=true
+File=../parser/parser.cpp
+Line=907
+Temporary=false
+
+[General]
+DebuggerCmdStr=
+DriverName=GDB
+FileVersion=1
+OptionsSelected=
+ProgramArgs=
+TTYLevel=7
+WorkingDirectory=
+
+[Memory]
+ColumnWidths=80,233
+Expression1=0xbfc2b638
+Expression2=scan
+Format1=19
+Format2=19
+NumExprs=2
+
+[Watches]
+Expr0=parser
+Expr1=root
+Expr2=tree
+Expr3=cg
+Expr4=parser

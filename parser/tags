@@ -1,0 +1,90 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.5.4	//
+CPPOBJ	Makefile	/^CPPOBJ = $(CPPSRC:%.cpp=%.o)$/;"	m
+CPPSRC	Makefile	/^CPPSRC = test-parser.cpp parser.cpp syntaxTreeNode.cpp  ..\/scanner\/scanner.cpp ..\/util\/ctype.cpp ..\/util\/error.cpp ..\/util\/string.cpp ..\/preproc\/preproc.cpp ..\/preproc\/stageutils.cpp ..\/preproc\/substage.cpp ..\/preproc\/directivestage.cpp ..\/preproc\/commstage.cpp ..\/preproc\/filestack.cpp ..\/symbolTable\/symbolTable.cpp$/;"	m
+CXX	Makefile	/^CXX = g++$/;"	m
+CXXFLAGS	Makefile	/^CXXFLAGS = $(CXXFLAGSDEBUG) -ansi$/;"	m
+CXXFLAGSDEBUG	Makefile	/^CXXFLAGSDEBUG = -Wall -g$/;"	m
+CXXFLAGSRELEASE	Makefile	/^CXXFLAGSRELEASE = -O3 -DNDEBUG$/;"	m
+DEPENDFILE	Makefile	/^DEPENDFILE = .depend$/;"	m
+DIRECTORY	Makefile	/^DIRECTORY = parser$/;"	m
+PARSER_H	parser.h	7;"	d
+PARSER_TOKBUFFER_SIZE	parser.h	24;"	d
+PROGARGS	Makefile	/^PROGARGS = $/;"	m
+PROGRAMS	Makefile	/^PROGRAMS = test-parser$/;"	m
+SYNTAXTREENODE_H	syntaxTreeNode.h	7;"	d
+a	input.c	/^		int a;$/;"	m	struct:mystruct	file:
+addAndEatSpecificToken	parser.cpp	/^int addAndEatSpecificToken( parser* parser, syntaxTreeNode* root, int toktype, char* errstr)$/;"	f
+addAndEatToken	parser.cpp	/^void addAndEatToken( parser* parser, syntaxTreeNode* root)$/;"	f
+array	input.h	/^int array[10];$/;"	v
+b	input.c	/^		int** b;$/;"	m	struct:mystruct	file:
+c	input.c	/^		struct mystruct* c;$/;"	m	struct:mystruct	file:
+c	input.h	/^		int c;$/;"	m	struct:hell
+child	syntaxTreeNode.h	/^		syntaxTreeNode* child;$/;"	m	struct:syntaxTreeNode_ListNode
+children	syntaxTreeNode.h	/^		syntaxTreeNode_List children;$/;"	m	struct:syntaxTreeNode
+cnterrors	parser.h	/^		int cnterrors;$/;"	m	struct:parser
+eatToken	parser.cpp	/^void eatToken( parser* parser )$/;"	f
+global	input.c	/^int global;$/;"	v
+global2	input.c	/^void** global2;$/;"	v
+global3	input.c	/^char global3;$/;"	v
+hell	input.h	/^struct hell$/;"	s
+main	input.c	/^void main()$/;"	f
+main	test-parser.cpp	/^int main()$/;"	f
+mystruct	input.c	/^struct mystruct$/;"	s	file:
+mytestfunction	input.c	/^int* mytestfunction( int arg1, mystruct arg3)$/;"	f
+parse_argListDef	parser.cpp	/^int parse_argListDef( parser* parser, syntaxTreeNode* root )$/;"	f
+parse_arithExpr	parser.cpp	/^int parse_arithExpr( parser* parser, syntaxTreeNode* root)$/;"	f
+parse_arithFactor	parser.cpp	/^int parse_arithFactor( parser* parser, syntaxTreeNode* root)$/;"	f
+parse_arithTerm	parser.cpp	/^int parse_arithTerm( parser* parser, syntaxTreeNode* root)$/;"	f
+parse_assignStmt	parser.cpp	/^int parse_assignStmt( parser* parser, syntaxTreeNode* root)$/;"	f
+parse_atomicValExpr	parser.cpp	/^int parse_atomicValExpr( parser* parser, syntaxTreeNode* root)$/;"	f
+parse_breakStmt	parser.cpp	/^int parse_breakStmt( parser* parser, syntaxTreeNode* root)$/;"	f
+parse_continueStmt	parser.cpp	/^int parse_continueStmt( parser* parser, syntaxTreeNode* root)$/;"	f
+parse_dataType	parser.cpp	/^int parse_dataType( parser* parser, syntaxTreeNode* root)$/;"	f
+parse_funcBody	parser.cpp	/^int parse_funcBody( parser* parser, syntaxTreeNode* root)$/;"	f
+parse_funcCall	parser.cpp	/^int parse_funcCall( parser* parser, syntaxTreeNode* root)$/;"	f
+parse_funcCallStmt	parser.cpp	/^int parse_funcCallStmt( parser* parser, syntaxTreeNode* root)$/;"	f
+parse_ifStmt	parser.cpp	/^int parse_ifStmt( parser* parser, syntaxTreeNode* root)$/;"	f
+parse_logExpr	parser.cpp	/^int parse_logExpr( parser* parser, syntaxTreeNode* root)$/;"	f
+parse_logFactor	parser.cpp	/^int parse_logFactor( parser* parser, syntaxTreeNode* root)$/;"	f
+parse_logTerm	parser.cpp	/^int parse_logTerm( parser* parser, syntaxTreeNode* root)$/;"	f
+parse_program	parser.cpp	/^int parse_program( parser* parser, syntaxTreeNode* root)$/;"	f
+parse_relExpr	parser.cpp	/^int parse_relExpr( parser* parser, syntaxTreeNode* root)$/;"	f
+parse_returnStmt	parser.cpp	/^int parse_returnStmt( parser* parser, syntaxTreeNode* root)$/;"	f
+parse_sizeofExpr	parser.cpp	/^int parse_sizeofExpr( parser* parser, syntaxTreeNode* root)$/;"	f
+parse_statement	parser.cpp	/^int parse_statement( parser* parser, syntaxTreeNode* root)$/;"	f
+parse_stmtBlock	parser.cpp	/^int parse_stmtBlock( parser* parser, syntaxTreeNode* root)$/;"	f
+parse_structDef	parser.cpp	/^int parse_structDef( parser* parser, syntaxTreeNode* root)$/;"	f
+parse_tracemsg	parser.cpp	/^void parse_tracemsg(parser* parser, char* msg)$/;"	f
+parse_typedIdent	parser.cpp	/^int parse_typedIdent( parser* parser, syntaxTreeNode* root)$/;"	f
+parse_varDecl	parser.cpp	/^int parse_varDecl( parser* parser, syntaxTreeNode* root)$/;"	f
+parse_varfuncDefdec	parser.cpp	/^int parse_varfuncDefdec (parser* parser, syntaxTreeNode* root)$/;"	f
+parse_variableExpr	parser.cpp	/^int parse_variableExpr( parser* parser, syntaxTreeNode* root)$/;"	f
+parse_whileStmt	parser.cpp	/^int parse_whileStmt( parser* parser, syntaxTreeNode* root)$/;"	f
+parser	parser.h	/^struct parser$/;"	s
+parser_buildSyntaxTree	parser.cpp	/^int parser_buildSyntaxTree( parser* parser, syntaxTreeNode* root)$/;"	f
+parser_init	parser.cpp	/^int parser_init( parser* parser, scanner* scan)$/;"	f
+parser_setSymbolTable	parser.cpp	/^void parser_setSymbolTable( parser* parser, symbolTable* symTable)$/;"	f
+report_error	parser.cpp	/^void report_error(parser* parser, char* errstr)$/;"	f
+scan	parser.h	/^		scanner* scan;$/;"	m	struct:parser
+symTable	parser.h	/^		symbolTable* symTable;$/;"	m	struct:parser
+sync_toStrongKeyword	parser.cpp	/^void sync_toStrongKeyword(parser* parser)$/;"	f
+syntaxTreeNode	syntaxTreeNode.h	/^struct syntaxTreeNode$/;"	s
+syntaxTreeNode_ListNode	syntaxTreeNode.h	/^struct syntaxTreeNode_ListNode$/;"	s
+syntax_AddChildNode	syntaxTreeNode.cpp	/^void syntax_AddChildNode( syntaxTreeNode* parent, token childToken)$/;"	f
+syntax_AddChildTree	syntaxTreeNode.cpp	/^void syntax_AddChildTree( syntaxTreeNode* parent, syntaxTreeNode* child)$/;"	f
+syntax_CountChilds	syntaxTreeNode.cpp	/^int syntax_CountChilds( syntaxTreeNode* parent)$/;"	f
+syntax_CreateTreeNode	syntaxTreeNode.cpp	/^syntaxTreeNode* syntax_CreateTreeNode()$/;"	f
+syntax_EqualTrees	syntaxTreeNode.cpp	/^int syntax_EqualTrees( syntaxTreeNode* tree1, syntaxTreeNode* tree2)$/;"	f
+syntax_FreeSyntaxTree	syntaxTreeNode.cpp	/^void syntax_FreeSyntaxTree( syntaxTreeNode* root )$/;"	f
+syntax_GetChild	syntaxTreeNode.cpp	/^syntaxTreeNode* syntax_GetChild( syntaxTreeNode* parent, int idx)$/;"	f
+syntax_printTree	syntaxTreeNode.cpp	/^void syntax_printTree( syntaxTreeNode* root )$/;"	f
+syntax_printTree	syntaxTreeNode.cpp	/^void syntax_printTree( syntaxTreeNode* root, char* prefix )$/;"	f
+test_Parser	test-parser.cpp	/^void test_Parser()$/;"	f
+test_syntaxTree	test-parser.cpp	/^void test_syntaxTree()$/;"	f
+tok	syntaxTreeNode.h	/^		token tok;$/;"	m	struct:syntaxTreeNode
+tokbuffer	parser.h	/^		token tokbuffer[PARSER_TOKBUFFER_SIZE];$/;"	m	struct:parser
